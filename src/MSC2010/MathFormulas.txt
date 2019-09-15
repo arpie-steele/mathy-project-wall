@@ -1,0 +1,89 @@
+Prove:
+
+\forall n \in \mathbb{N}^{+} \,  \sum_{k=1}^{n} 1 = n
+\forall n \in \mathbb{N}^{+} \,  \sum_{k=1}^{n} (2k - 1) = n^2
+\forall n \in \mathbb{N}^{+} \,  \sum_{k=1}^{n} (n^2 + 2 k - n - 1) = n^3
+
+\forall n \in \mathbb{N}^{+} \,  \sum_{k=1}^{n} k = \frac{(n+1)n}{2}
+\forall n \in \mathbb{N}^{+} \,  \sum_{k=1}^{n} k^2 = \frac{(2n+1)(n+1)n}{6}
+\forall n \in \mathbb{N}^{+} \,  \sum_{k=1}^{n} k^3 = \left( \frac{(n+1)n}{2} \right)^2
+
+\forall n \in \mathbb{N}^{+} \, \sum_{k=1}^{n} \frac{1}{(k+1)k} = 1 - \frac{1}{n+1}
+\forall n \in \mathbb{N}^{+} \, \sum_{k=1}^{n} (-1)^{n+k} k^2 = \frac{(n+1) n}{2}
+
+\forall n \in \mathbb{N}_0 \, (1 - x ) \sum_{j=0}^{n} a x^j = a - a x^{n+1}
+
+\forall n \in \mathbb{N}_0 \,  \sum_{j=0}^{n} (a + b j) = (n+1) a + \frac{(n +1) b n}{2}
+
+ 
+
+
+( 0 \lt a \lt 1 ) \implies \forall n \in \mathbb{N}_0 \, (1 - a)^n \geq 1 - na
+
+( x \gt 0 ) \implies \forall n \in \mathbb{N}^{+} \, \sqrt[n]{1 + x} \leq 1 + x/n
+
+\forall n \in \mathbb{N}_0 \, 2^{10+n} \gt (10+n)^3
+
+\forall n \in \mathbb{N}_0 \, \sum_{k=0}^{n} \frac{(-1)^k (2k + 1)^3}{4 + (2k+1)^4} = \frac{(-1)^n (n+1)}{5 + 4 n (n+2)} 
+
+\frac{170}{171} \lt \ln 2 + \log_{10} 2 \lt \frac{171}{172}
+
+\forall n \in \mathbb{N}_0 \, \sum_{i=0}^n \sum_{j=0}^{i} a_i a_j = \frac{1}{2} \left( \left( \sum_{i=0}^n a_i \right)^2 \; + \; \left( \sum_{i=0}^n a_i^2 \right) \right)
+
+
+
+Given:
+
+F_0 = 0
+F_1 = 1
+\forall n \in \mathbb{N}^{+} \, F_{n+1} = F_n + F_{n-1}
+\phi = \frac{1 + \sqrt{5}}{2}
+
+Prove:
+
+\forall n \in \mathbb{N}^{+} F_n \leq \phi^{n-1} \leq F_{n+1}
+
+
+\forall m \in \mathbb{N}^{+} m \gt 0
+
+Given:
+
+S = \left\{ v \in \mathbb{Z}^6 \, | \, 0 \wedge v_6 \gt 0 \right\}
+
+N(v) = \left\{ \begin{array}{lll} s  & \quad & \textrm{if} \; v_5 = v_6 \lfloor v_5 / v_6 \rfloor \\ ( v_3 - v_1 \lfloor v_5 / v_6 \rfloor, v_4 - v_2 \lfloor v_5 / v_6 \rfloor, v_1, v_2, v_6, v_5 - v_6 \lfloor v_5 / v_6 \rfloor ) & \quad & \textrm{otherwise} \end{array} \right.
+
+S_0 = \left\{ v \in \mathbb{Z}^6 \, | \, v_1 = 0 \wedge v_2 = 1 \wedge v_3 = 1 \wedge v_4 = 0 \wedge v_5 \gt 0 \wedge v_6 \gt 0 \right\}
+
+S_1 = \left\{ v \in \mathbb{Z}^6 \, | \,
+\exists k \in \mathbb{N}_0 \exists s \in S_0 v = N^k(s) \wedge v = N(v) \right\}
+
+s(m,n) = (0,1,1,0,m,n)
+
+Prove:
+
+s(2166,6099) = (0,1,1,0,2166,6099)
+N(s(2166,6099)) = ( 1, 0, 0, 1, 6099, 2166 )
+N^2(s(2166,6099)) = ( -2, 1, 1, 0, 2166, 1767 )
+N^3(s(2166,6099)) = ( 3,  -1, -2, 1, 1767, 399 )
+N^4(s(2166,6099)) = ( -14, 5, 3, -1, 399, 171 )
+N^5(s(2166,6099)) = ( 31, -11, -14, 5, 171, 57 )
+N^6(s(2166,6099)) = ( 31, -11, -14, 5, 171, 57 )
+
+
+S_0 \subseteq S
+S_1 \subseteq S
+\forall m, n \in \mathbb{N}^{+} s(m,n) \in S_0
+\forall k in \mathbb{N}_0 \forall m, n \in \mathbb{N}^{+} N^k(s(m,n))_6 = m N^k(s(m,n))_1 + n N^k(s(m,n))_2
+\forall k in \mathbb{N}_0 \forall m, n \in \mathbb{N}^{+} N^k(s(m,n))_5 = m N^k(s(m,n))_3 + n N^k(s(m,n))_4
+
+\forall k in \mathbb{N}_0 \forall m, n \in \mathbb{N}^{+}
+0 \leq N^k(s(m,n))_5 - N^k(s(m,n))_6 \lfloor N^k(s(m,n))_5 / N^k(s(m,n))_6 \rfloor  \lt N^k(s(m,n))_6
+
+\forall k in \mathbb{N}_0 \forall m, n \in \mathbb{N}^{+} (N^k(s(m,n))_5 \neq N^k(s(m,n))_6 \lfloor N^k(s(m,n))_5 / N^k(s(m,n))_6 ) \implies 
+0 \lt N^k(s(m,n))_5 - N^k(s(m,n))_6 \lfloor N^k(s(m,n))_5 / N^k(s(m,n))_6 \rfloor  \lt N^k(s(m,n))_6
+
+\forall k in \mathbb{N}_0 \forall m, n \in \mathbb{N}^{+} GCD(N^k(s(m,n))_5, N^k(s(m,n))_6) = GCD(m,n)
+
+\forall k in \mathbb{N}^+ \forall m, n \in \mathbb{N}^{+}
+N^k(s(m,n))_5 \geq N^k(s(m,n))_6 
+

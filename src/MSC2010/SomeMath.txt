@@ -1,0 +1,48 @@
+A sphere is a surface with equation x^2 + y^2 + z^2 = R^2 where R is the radius of the sphere.
+
+The top hemisphere is given by z = Sqrt[R^2 - x^2 - y^2] where x^2 + y^2 <= R^2.
+
+We can generalize a hemisphere into a spherical cap of height h where 0 < h <= R.
+
+z = Sqrt[R^2 - x^2 - y^2] + h - R where x^2 + y^2 <= ( 2 R - h) h
+
+Or in cylindrical coordinates:
+
+z = Sqrt[R^2 - r^2] + h - R where r <= Sqrt[ (2 R - h) h ]
+
+So the Euclidean distance, D, from the center of the cap at (r=0,z=h) to the edge (r=Sqrt[ (2 R - h) h ], z=0) is D = Sqrt[ 2 R h ]
+
+While the distance embedded in the surface of the sphere is 
+
+d = Integrate[Simplify[Sqrt[(D[r,r])^2 + (D[Sqrt[R^2 - r^2] + h - R, r])^2] , {0 < r < R}], {r, 0, Sqrt[ (2 R - h) h ]}]
+
+= Integrate[R/Sqrt[R^2 - r^2] , {r, 0, Sqrt[ (2 R - h) h ]}]
+
+= Simplify[( R ArcTan(r / Sqrt[R^2 - r^2] /. r -> Sqrt[ (2 R - h) h ] ) - ( R ArcTan(r / Sqrt[R^2 - r^2] /. r -> 0 ), {0 < h < R}]
+
+= R ArcTan[ Sqrt[(2 R - h) h] / (R-h) ]
+
+While the surface area is 
+
+A = Integrate[Simplify[r Sqrt[(D[r,r])^2 + (D[Sqrt[R^2 - r^2] + h - R, r])^2] , {0 < r < R}], {r, 0, Sqrt[ (2 R - h) h ]}, {\[Theta], 0, 2 Pi}]
+
+= Integrate[Simplify[r Sqrt[1 + r^2/(R^2 - r^2)] , {0 < r < R}], {r, 0, Sqrt[ (2 R - h) h ]}, {\[Theta], 0, 2 Pi}]
+
+= Integrate[ (r R) / Sqrt[R^2 - r^2], {r, 0, Sqrt[ (2 R - h) h ]}, {\[Theta], 0, 2 Pi}]
+
+= Integrate[ Simplify[( -R  Sqrt[R^2 - r^2] /. r -> Sqrt[ (2 R - h) h ] ) - ( -R  Sqrt[R^2 - r^2] /. r -> 0 ),  {0 < h < R}], {\[Theta], 0, 2 Pi}]
+
+= Integrate[ h R ,  {0 < h < R}], {\[Theta], 0, 2 Pi}]
+
+= 2 Pi h R
+
+which gives us the area of a hemisphere when h == R.
+
+Now h(D) = D^2/(2 R) so A(D,R) = Pi D^2, and surface area of a spherical cap doesn't depend on curvature when we use a compass in 3-D Euclidean space.
+
+While h(d) = R (1 - Cos[d/R] ) so A(d,R) = 2 Pi R^2 (1 - Cos[d/R] ) which for fixed d  is a strictly decreasing function of R when R > (2 d / Pi).
+
+
+clarification
+
+ls -r
