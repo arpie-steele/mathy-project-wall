@@ -6,6 +6,7 @@
 
 use strict;
 use warnings;
+use Math::Logic::TruthTable;
 use Encode qw(encode);
 
 use Carp;
