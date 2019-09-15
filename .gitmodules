@@ -1,0 +1,9 @@
+[submodule "submodules/metamath-exe"]
+	path = submodules/metamath-exe
+	url = https://github.com/metamath/metamath-exe.git
+[submodule "submodules/metamath-book"]
+	path = submodules/metamath-book
+	url = https://github.com/metamath/metamath-book.git
+[submodule "submodules/set.mm"]
+	path = submodules/set.mm
+	url = https://github.com/metamath/set.mm.git
