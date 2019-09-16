@@ -87,6 +87,12 @@ hs_err_pid*
 
 ## Metamath
 
+# built from submodules
+
+/metamath
+/metamath.exe
+
+# Almost certainly artifacts leaked from submodules
 iset.mm
 nf.mm
 set.mm
