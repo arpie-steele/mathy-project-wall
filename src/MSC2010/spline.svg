@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="280" style="position: absolute; top: 0px; pointer-events: none;">
+<g transform="matrix(1, 0, 0, 1, -66, -5)" data-name="rootGraphicsGroup">
+	<polyline points="73.18,277.018 89.5834,245.925" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="89.5834,245.925 106.672,218.928" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="106.672,218.928 124.445,196.025" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="124.445,196.025 142.903,177.218" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="142.903,177.218 162.046,162.505" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="162.046,162.505 181.873,151.889" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="181.873,151.889 202.386,145.367" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="202.386,145.367 223.584,142.94" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="223.584,142.94 245.466,144.609" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="245.466,144.609 268.033,150.373" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="268.033,150.373 291.286,160.233" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="291.286,160.233 315.223,174.187" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="315.223,174.187 339.845,192.237" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="339.845,192.237 365.152,214.382" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="365.152,214.382 391.143,240.622" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="391.143,240.622 417.82,270.958" cursor="auto" fill="none" stroke="rgb(255,0,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="73.18,277.018 201.667,11.8928 417.82,270.958" cursor="auto" fill="none" stroke="rgb(128,128,128)" stroke-opacity="1" stroke-linecap="square" stroke-width="3" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<g id="point-group">
+		<circle cx="73" cy="277" fill="rgb(255,0,0)" fill-opacity="1" shape-rendering="geometricPrecision" r="2.5" cursor="auto"></circle>
+		<circle cx="202" cy="12" fill="rgb(255,0,0)" fill-opacity="1" shape-rendering="geometricPrecision" r="2.5" cursor="auto"></circle>
+		<circle cx="418" cy="271" fill="rgb(255,0,0)" fill-opacity="1" shape-rendering="geometricPrecision" r="2.5" cursor="auto"></circle>
+	</g>
+	<polyline points="73.18,277.018 89.5834,245.925" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="89.5834,245.925 106.672,218.928" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="106.672,218.928 124.445,196.025" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="124.445,196.025 142.903,177.218" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="142.903,177.218 162.046,162.505" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="162.046,162.505 181.873,151.889" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="181.873,151.889 202.386,145.367" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="202.386,145.367 223.584,142.94" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="223.584,142.94 245.466,144.609" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="245.466,144.609 268.033,150.373" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="268.033,150.373 291.286,160.233" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="291.286,160.233 315.223,174.187" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="315.223,174.187 339.845,192.237" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="339.845,192.237 365.152,214.382" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="365.152,214.382 391.143,240.622" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="391.143,240.622 417.82,270.958" cursor="auto" fill="none" stroke="rgb(0,0,255)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<polyline points="73.18,277.018 158.838,100.268 273.718,98.2477 417.82,270.958" cursor="auto" fill="none" stroke="rgb(0,255,0)" stroke-opacity="1" stroke-linecap="square" stroke-width="1" stroke-dasharray="" vector-effect="non-scaling-stroke" stroke-linejoin="miter" stroke-miterlimit="3.25" shape-rendering="geometricPrecision">
+	</polyline>
+	<g id="point-group">
+		<circle cx="73" cy="277" fill="rgb(0,0,255)" fill-opacity="1" shape-rendering="geometricPrecision" r="1" cursor="auto"></circle>
+		<circle cx="159" cy="100" fill="rgb(0,0,255)" fill-opacity="1" shape-rendering="geometricPrecision" r="1" cursor="auto"></circle>
+		<circle cx="274" cy="98" fill="rgb(0,0,255)" fill-opacity="1" shape-rendering="geometricPrecision" r="1" cursor="auto"></circle>
+		<circle cx="418" cy="271" fill="rgb(0,0,255)" fill-opacity="1" shape-rendering="geometricPrecision" r="1" cursor="auto"></circle>
+	</g>
+</g>
+</svg>
