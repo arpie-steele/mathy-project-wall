@@ -31,7 +31,7 @@ ${
 
 $d b g x y $.
 $( Definition of a magma. A magma is a set equipped with an everywhere
-       defined internal operation ( see ~ mgmclNEW ). 
+       defined internal operation ( see ~ mgmclNEW ). $)
 df-mgmNEW $a |- MagmaNEW = { g | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ].
 A. x e. b A. y e. b ( x p y ) e. b } $.
 
