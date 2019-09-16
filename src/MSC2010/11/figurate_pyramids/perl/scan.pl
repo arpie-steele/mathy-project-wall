@@ -14,19 +14,19 @@ use Math::BigInt;
 
 my $start_time = time;
 
-my $one = Math::BigInt->bone();
-my $two = Math::BigInt->new(2);
-my $three = Math::BigInt->new(3);
-my $four = Math::BigInt->new(4);
-my $five = Math::BigInt->new(5);
-my $six = Math::BigInt->new(6);
-my $nine = Math::BigInt->new(9);
+my $one    = Math::BigInt->bone();
+my $two    = Math::BigInt->new(2);
+my $three  = Math::BigInt->new(3);
+my $four   = Math::BigInt->new(4);
+my $five   = Math::BigInt->new(5);
+my $six    = Math::BigInt->new(6);
+my $nine   = Math::BigInt->new(9);
 my $twelve = Math::BigInt->new(12);
 
 my $record;
-for(my $height = 1; $height <= 1_000_000_000 ; $height ++) {
+for ( my $height = 1 ; $height <= 1_000_000_000 ; $height++ ) {
 
-    my $m = Math::BigInt->new($height); 
+    my $m   = Math::BigInt->new($height);
     my $mm1 = $m->copy()->bsub($one);
     my $mp1 = $m->copy()->badd($one);
     my $mp2 = $m->copy()->badd($two);
@@ -34,63 +34,74 @@ for(my $height = 1; $height <= 1_000_000_000 ; $height ++) {
     # SM0 = (2 m - 5)(m)(m + 1)/6
     # SM1 = (m - 1)(m)(m + 1)/6
 
-    my $sm0 = $m->copy()->bmul($two)->bsub($five)->bmul($m)->bmul($mp1)->bdiv($six);
+    my $sm0 =
+      $m->copy()->bmul($two)->bsub($five)->bmul($m)->bmul($mp1)->bdiv($six);
     my $sm1 = $mm1->copy()->bmul($m)->bmul($mp1)->bdiv($six);
 
-    # 3 <= s -> (3 + sqrt(9 + 12 (m - 1)(m)(m+1)))/6 < n <= (-3 + sqrt(9 + 12(m)(m+1)(m+2)) )/6
-    # n in Integers -> floor((9 + sqrt(9 + 12 (m - 1)(m)(m+1)))/6) <= n <= floor((-3 + sqrt(9 + 12(m)(m+1)(m+2)) )/6)
+# 3 <= s -> (3 + sqrt(9 + 12 (m - 1)(m)(m+1)))/6 < n <= (-3 + sqrt(9 + 12(m)(m+1)(m+2)) )/6
+# n in Integers -> floor((9 + sqrt(9 + 12 (m - 1)(m)(m+1)))/6) <= n <= floor((-3 + sqrt(9 + 12(m)(m+1)(m+2)) )/6)
 
-    my $nlb = $mm1->copy()->bmul($m)->bmul($mp1)->bmul($twelve)->badd($nine)->bsqrt()->badd($nine)->bdiv($six);
-    my $nub = $m->copy()->bmul($mp1)->bmul($mp2)->bmul($twelve)->badd($nine)->bsqrt()->bsub($three)->bdiv($six);
+    my $nlb =
+      $mm1->copy()->bmul($m)->bmul($mp1)->bmul($twelve)->badd($nine)->bsqrt()
+      ->badd($nine)->bdiv($six);
+    my $nub =
+      $m->copy()->bmul($mp1)->bmul($mp2)->bmul($twelve)->badd($nine)->bsqrt()
+      ->bsub($three)->bdiv($six);
 
     # print "$m, $nlb, $nub\n";
 
-    my $trivial_n; # initial to undefined
+    my $trivial_n;    # initial to undefined
 
     # Guess k = floor(sqrt( (m + 2) / 3 )) then test 3 k^2 -2 == m
     my $k = $m->copy()->badd($two)->bdiv($three)->bsqrt();
-    if ( $k->copy()->bmul($k) ->bmul($three) ->bsub($two)->bsub($m)->is_zero() ) {
+    if ( $k->copy()->bmul($k)->bmul($three)->bsub($two)->bsub($m)->is_zero() ) {
 
         # m =  3 k^2 -2, n = 3 k^3 - 3k + 1 is a known answer
 
-	$trivial_n =  $k->copy()->bmul($k) ->bmul($k)->bsub($k)->bmul($three)->badd($one);
-	# print "$m, $nlb, $nub, skip $trivial_n\n";
+        $trivial_n =
+          $k->copy()->bmul($k)->bmul($k)->bsub($k)->bmul($three)->badd($one);
+
+        # print "$m, $nlb, $nub, skip $trivial_n\n";
     }
 
-    for(my $n = $nlb->copy(); $n->bcmp($nub) <= 0 ; $n->binc() ) {
+    for ( my $n = $nlb->copy() ; $n->bcmp($nub) <= 0 ; $n->binc() ) {
 
-	# print "m = $m, n = $n\n";
+        # print "m = $m, n = $n\n";
 
         # s = ( (n - 2) n - SM0 ) / ( (n - 1) n / 2 - SM1 )
 
-	my $s0 = $n->copy()->bsub($two)->bmul($n)->bsub($sm0);
-	my $s1 = $n->copy()->bsub($one)->bmul($n)->bdiv($two)->bsub($sm1);
-	my ($s, $rem) = $s0->copy()->bdiv($s1);
+        my $s0 = $n->copy()->bsub($two)->bmul($n)->bsub($sm0);
+        my $s1 = $n->copy()->bsub($one)->bmul($n)->bdiv($two)->bsub($sm1);
+        my ( $s, $rem ) = $s0->copy()->bdiv($s1);
 
-	if ($rem->is_zero) {
+        if ( $rem->is_zero ) {
 
-	    my $is_trivial = q();
-	    if ( defined $trivial_n && $trivial_n->bcmp($n) == 0 ) {
-		$is_trivial=' (trivial)';
-	    }
+            my $is_trivial = q();
+            if ( defined $trivial_n && $trivial_n->bcmp($n) == 0 ) {
+                $is_trivial = ' (trivial)';
+            }
 
-            # Total = ( (s - 2) n + (4 - s) ) n / 2 
-	    my $total = $s->copy()->bsub($two)->bmul($n)->badd($four)->bsub($s)->bmul($n)->bdiv($two);
+            # Total = ( (s - 2) n + (4 - s) ) n / 2
+            my $total =
+              $s->copy()->bsub($two)->bmul($n)->badd($four)->bsub($s)->bmul($n)
+              ->bdiv($two);
 
-	    my $new_record = q();
-	    if ( ! defined $record || $record->bcmp($total) < 0 ) {
-		$record = $total ;
-		$new_record = q( *NEW RECORD*);
-	    }
+            my $new_record = q();
+            if ( !defined $record || $record->bcmp($total) < 0 ) {
+                $record     = $total;
+                $new_record = q( *NEW RECORD*);
+            }
 
-	    my $now = scalar localtime time;
+            my $now     = scalar localtime time;
             my $seconds = time - $start_time;
 
-	    print "m = $m, n = $n, s = $s, total = $total$is_trivial$new_record\n$seconds : $now\n";
+            print
+"m = $m, n = $n, s = $s, total = $total$is_trivial$new_record\n$seconds : $now\n";
 
-	} elsif ( defined $trivial_n && $trivial_n->bcmp($n) == 0 ) {
-	    print "ERROR m = $m, n = $n, s = $s + $rem/$s1\n";
-	}
+        }
+        elsif ( defined $trivial_n && $trivial_n->bcmp($n) == 0 ) {
+            print "ERROR m = $m, n = $n, s = $s + $rem/$s1\n";
+        }
 
     }
 
