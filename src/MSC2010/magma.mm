@@ -34,8 +34,14 @@ A. x e. b A. y e. b ( x p y ) e. b } $.
   $}
 
   ${
+      dfmgm2lem1 $p |- ( A. x e. ( A X. B ) E! y e. C x F y <-> A. u e. A A. v e. B ( u F v ) e. C ) $=
+        vx cv vy cv cF wbr vy cC wreu vu cv vv cv cF co cC wcel vx vu vv cA cB
+        ? ralxp $.
+  $}
+
+  ${
     dfmgm2 $p |- MagmaNEW = { g | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ].
-p : ( b X. b ) --> b }
+( p |` ( b X. b ) ) : ( b X. b ) --> b } $= ? $.
   $}
 
   ${
