@@ -160,6 +160,11 @@ sub DESTROY {
 sub tokenize {
     my ($self) = @_;
     while ( defined (my $token = $self->grab_next_token() ) ) {
+        if ( $token->is_ws() ) {
+	    $token->dump_ws();
+        } else {
+	    $token->dump();
+        }
     }
     return;
 }

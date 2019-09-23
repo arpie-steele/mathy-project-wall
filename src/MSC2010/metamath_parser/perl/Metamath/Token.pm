@@ -24,10 +24,22 @@ sub set_fn {
     return $self;
 }
 
+sub get_fn {
+    my ($self) = @_;
+    if ( exists $self->{'fn'} ) { return $self->{'fn'}; }
+    return '<UNKNOWN>';
+}
+
 sub set_ln {
     my ($self, $value) = @_;
     $self->{'ln'} = $value;
     return $self;
+}
+
+sub get_ln {
+    my ($self) = @_;
+    if ( exists $self->{'ln'} ) { return $self->{'ln'}; }
+    return '<UNKNOWN>';
 }
 
 sub set_string {
@@ -37,6 +49,12 @@ sub set_string {
         $self->{'ws'} = 1;
     }
     return $self;
+}
+
+sub get_string {
+    my ($self) = @_;
+    if ( exists $self->{'str'} ) { return $self->{'str'}; }
+    croak "Hey! There was supposed to be a string here...";
 }
 
 sub is_ws {
@@ -52,6 +70,25 @@ sub glue {
     }
     $self->{'str'} .= $other->{'str'};
     return $self;
+}
+
+sub dump {
+    my ($self) = @_;
+    my $fn = $self->get_fn();
+    my $ln = $self->get_ln();
+    my $str = $self->get_string();
+    print "$fn line $ln : $str\n";
+}
+
+sub dump_ws {
+    my ($self) = @_;
+    my $fn = $self->get_fn();
+    my $ln = $self->get_ln();
+    my $str = $self->get_string();
+    my $len = length $str;
+    my $nl = 0;
+    foreach my $c ( split //xms, $str ) { if ($c eq "\n") { $nl ++; } }
+    print "$fn line $ln : WS length = $len, NL = $nl\n";
 }
 
 1;
