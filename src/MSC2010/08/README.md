@@ -1,6 +1,6 @@
 # MSC-2010 : 08
 
-## 08-XX GENERAL ALGEBRAIC SYSTEMS
+## 08-XX General Algebraic Systems
 
 ### 08-00 General reference works (handbooks, dictionaries, bibliographies, etc.)
 
@@ -17,6 +17,8 @@
 ### 08Axx Algebraic structures
 
 \[See also 03C05]
+
+[Bruck] Richard Hubert Bruck, "A Survey of Binary Systems", 3rd Edition (1971).
 
 #### 08A02 Relational systems, laws of composition
 
