@@ -138,7 +138,7 @@ $)
 
   $( Extend class notation with the class of all magmas. $)
   cpmgm $a class PartialMagma $.
-  $( PLEASE PUT DESCRIPTION HERE. $)
+  $( Define subset of Partial Magma $)
   cspmgm $a class SubPartialMagma $.
 
   ${
@@ -150,18 +150,6 @@ $)
 
        Based on definition halfgroupoid in [Bruck] p. 1. $)
     df-pmgm $a |- PartialMagma = { g | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ]. ( b =/= (/) /\ A. x e. b A. y e. b ( <. x , y >. e. dom p -> ( x p y ) e. b ) ) } $.
-
-  $}
-
-  ${
-
-    $d b c g h $.
-    $( Definition of a sub partial magma.  A sub partial magma is partial magma
-       where the operation (restricted to the base set) is a subset of that of
-       another partial magma.
-
-       Based on definition subhalfgroupoid in [Bruck] p. 1. $)
-    df-spmgm $a |- SubPartialMagma = { <. h , g >. | ( h e. PartialMagma /\ g e. PartialMagma /\ [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ]. [. ( Base ` h ) / c ]. [. ( +g ` h ) / o ]. ( o |` ( c X. c ) ) C_ ( p |` ( b X. b ) ) ) } $.
 
   $}
 
@@ -181,6 +169,37 @@ $)
     ispmgm2 $p |- ( G e. PartialMagma <-> ( B =/= (/) /\ .+ : S --> B ) ) $= ? $.
 
   $}
+
+  ${
+    ispmgm3.b $e |- B = ( Base ` G ) $.
+    ispmgm3.p $e |- .+ = ( +g ` G ) |` ( B X. B ) $.
+    $( A _halfgroupoid_ ` G ` is a system consisting of a non-empty set ` G `
+       and a binary operation on ` G ` .
+
+       Based on definition halfgroupoid in [Bruck] p. 1. $)
+    ispmgm3 $p |- ( G e. PartialMagma <-> .+ PartialBinOp B ) $= ? $.
+
+  $}
+
+$( A (proper or improper) subset ` H ` of the halfgroupoid ` G `
+   is a _subhalfgroupoid_ ` G ` such that ` a b = c ` in ` G `
+   whenever ` a b = c ` in ` H ` .
+
+   Definition subhalfgroupoid in [Bruck] p. 1.
+$)
+
+  ${
+
+    $d b c g h $.
+    $( Definition of a sub partial magma.  A sub partial magma is partial magma
+       where the operation (restricted to the base set) is a subset of that of
+       another partial magma.
+
+       Based on definition subhalfgroupoid in [Bruck] p. 1. $)
+    df-spmgm $a |- SubPartialMagma = { <. h , g >. | ( h e. PartialMagma /\ g e. PartialMagma /\ [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ]. [. ( Base ` h ) / c ]. [. ( +g ` h ) / o ]. ( o |` ( c X. c ) ) C_ ( p |` ( b X. b ) ) ) } $.
+
+  $}
+
 
   ${
     isspmgm.c $e |- S = ( Base ` H ) $.
@@ -218,13 +237,31 @@ $(
 $)
 
   $c MagmaNEW $.
+  $c MagmaRP $.
+  $c SubMagma $.
 
   $( Extend class notation with the class of all magmas. $)
   cmgmNEW $a class MagmaNEW $.
+  $( Extend class notation with the class of all magmas. $)
+  cmgm $a class MagmaRP $.
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  csmgm $a class SubMagma $.
 
 $( df-gsum can be used to map words to elements of a magma. See gsumval2a $)
 
 $( mndcl proves a Mnd is closed under the binary operation, thus a magma. $)
+
+  ${
+
+    $d b g x y $.
+    $( Definition of a magma.  A magma is a non-empty set equipped with a
+       completely-defined internal operation ( see ~ mgmcl ).
+
+       Based on definition groupoid in [Bruck] p. 1. $)
+    df-mgmRP $a |- MagmaRP = { g e. PartialMagma | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ]. A. x e. b A. y e. b ( <. x , y >. e. dom b /\ ( x p y ) e. b ) ) } $.
+
+  $}
+
   ${
 
     $d b g x y $.
@@ -246,6 +283,43 @@ A. x e. b A. y e. b ( x p y ) e. b } $.
     $( PLEASE PUT DESCRIPTION HERE. $)
     dfmgm2 $p |- MagmaNEW = { g | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ].
 ( p |` ( b X. b ) ) : ( b X. b ) --> b } $= ? $.
+  $}
+
+  ${
+    ismgmRP.b $e |- B = ( Base ` G ) $.
+    ismgmRP.p $e |- .+ = ( +g ` G ) $.
+    $( The predicate "is a magma." $)
+    ismgmRP $p |- ( G e. MagmaRP <-> ( B =/= (/) /\ A. a e. B A. b e. B ( <. a , b >. e. dom .+ /\ ( a .+ b ) e. B ) ) ) $= ? $.
+
+  $}
+
+  ${
+    ismgm2.b $e |- B = ( Base ` G ) $.
+    ismgm2.p $e |- .+ = ( +g ` G ) |` ( B X. B ) $.
+    $( The predicate "is a magma." $)
+    ismgm2 $p |- ( G e. MagmaRP <-> ( B =/= (/) /\ .+ : ( B X. B ) --> B ) ) $= ? $.
+  $}
+
+  ${
+    ismgm3.b $e |- B = ( Base ` G ) $.
+    ismgm3.p $e |- .+ = ( +g ` G ) $.
+    $( A _groupoid_ ` G ` is a halfgroupoid such that ` a b ` is defined in
+       ` G ` for all ` a , b ` in ` G ` .
+
+       Based on definition halfgroupoid in [Bruck] p. 1. $)
+    ismgm3 $p |- ( G e. MagmaRP <-> ( G e. PartialMagma /\ ( B X. B ) C_ dom .+ ) ) $= ? $.
+
+  $}
+
+  ${
+    ismgm4.b $e |- B = ( Base ` G ) $.
+    ismgm4.p $e |- .+ = ( +g ` G ) $.
+    $( A _groupoid_ ` G ` is a halfgroupoid such that ` a b ` is defined in
+       ` G ` for all ` a , b ` in ` G ` .
+
+       Based on definition halfgroupoid in [Bruck] p. 1. $)
+    ismgm4 $p |- ( G e. MagmaRP <-> ( G e. PartialMagma /\ A. a e. B A. b e. B <. a , b >. e. dom .+ ) ) $= ? $.
+
   $}
 
   ${
