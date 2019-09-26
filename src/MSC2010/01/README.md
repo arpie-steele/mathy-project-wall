@@ -1,6 +1,6 @@
 # MSC-2010 : 01
 
-## 01-XX HISTORY AND BIOGRAPHY
+## 01-XX History and Biography
 
 \[See also the classification number–03 in the other sections]
 
