@@ -1,6 +1,207 @@
 $[ set.mm $]
 
 $(
+  Add to #bib section of mmset.raw.html :
+
+  <LI><A NAME="Bruck"></A> [Bruck] Richard Hubert Bruck, <I>A Survey
+  of Binary Systems</I>, 3rd Edition, Springer-Verlag Berlin,
+  Heidelberg (1971);</LI>
+
+$)
+
+$(
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+                   Single-Valued Mappings and Partial Binary Operations
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+$)
+
+  $c PartialBinOp $.
+
+  ${
+    $( A single-valued mapping ` A ` of a set ` G ` into a set ` H ` is a
+       correspondence which assigns to each ` g ` in ` G ` a unique element
+       ` ( A `` g ) ` in ` H ` .
+
+       [Bruck] p. 1 $)
+    fveu2 $p |- ( A : G --> H -> A. g e. G E! h e. H ( A ` g ) = h ) $= ? $.
+
+  $}
+
+  ${
+    $( If ` A , B ` are single-valued mappings of ` G ` into ` H ` then
+       ` A = B ` if and only if ` ( A `` g ) = ( B `` g ) ` for every ` g ` in
+       ` G ` .  See ~ eqfnfv .
+
+       [Bruck] p. 1 $)
+    eqffv $p |- ( ( A : G --> H /\ B : G --> H ) -> ( A = B <->
+              A. g e. G ( A ` g ) = ( B ` g ) ) ) $= ? $.
+  $}
+
+  ${
+    $( We allow the possibility that ` G ` may be the empty set.
+
+       [Bruck] p. 1
+
+       (Contributed by Richard Penner, 26-Sep-2019.) $)
+    0fex $p |- ( ( A : G --> H /\ G = (/) ) -> A e. _V ) $=
+    cG c0 wceq cG cH cA wf cG cvv wcel cA cvv wcel c0 cvv wcel cG c0 wceq cG
+    cvv wcel wi 0ex c0 cvv cG eleq1a ax-mp cG cH cvv cA fex sylan2 $.
+  $}
+
+  ${
+  $( If ` G , H ` are non-empty sets, the logical product
+     ` G X. H ` is the set of all ordered pairs ` <. a , b >. ` ,
+     ` a ` in ` G ` , ` b ` in ` H ` , where
+     ` <. a , b >. = <. c , d >. ` if and only if ` a = c ` , ` b = d ` .
+     See ~ df-xp and ~ opthg .
+
+     [Bruck] p. 1
+  $)
+  $}
+
+  ${
+    $d x y u v $.
+    $( By a (single-valued) _binary operation_ ` A ` on the (non-empty) set G
+       we mean a single-valued mapping ` A ` from some subset ` dom A ` of
+       ` G X. G ` into G. Here ` dom A ` is the is the _domain_ of ` A ` ;
+
+       *N. B.* Bruck uses _range_ for what metamath calls ` dom ` .
+
+       Definition binary operation in [Bruck] p. 1 $)
+    df-pbo $a |- PartialBinOp = { <. x , y >. | ( y =/= (/) /\ x C_ ( ( y X. y ) X. y ) /\ A. u E* v u x v ) } $.
+  $}
+
+  ${
+    $( we allow the possibility that ` dom A ` may be empty.
+
+       [Bruck] p. 1 $)
+    pbodm0 $p |- ( A = (/) -> A. b ( b =/= (/) -> ( A PartialBinOp b /\ dom A = (/) ) ) ) $= ? $.
+  $}
+
+  ${
+    $( Two binary operations ` A , B ` on G are equal ( ` A = B ` ) if and only
+       if ` dom A = dom B ` and ` A = B ` on ` dom A ` .
+
+       [Bruck] p. 1 $)
+    eqpbo $p |- ( ( A PartialBinOp G /\ B PartialBinOp G ) -> ( A = B <-> ( dom A = dom B /\ A. x e. dom A ( A ` x ) = ( B ` x ) ) ) ) $= ? $.
+  $}
+
+$( We make the following conventions in connection with a binary operation ` A ` on ` G ` :
+
+   [Bruck] p. 1
+$)
+
+  ${
+    $( (1) If ` <. a , b >. ` is in ` dom A ` , we usually write the "product"
+       ` ( a A b ) ` instead of ` ( A `` <. a , b >. ) ` .  See ~ df-ov .
+
+       [Bruck] p. 1 $)
+    pbov $p |- ( ( A PartialBinOp B /\ <. a , b >. e. dom A ) -> ( a A b ) = ( A ` <. a , b >. ) ) $= ? $.
+
+  $}
+
+$( (2) The statement " ` ( a A b ) ` is defined in ` G ` " means that
+   ` <. a , b >. ` is in ` dom A ` .
+
+   (3) The statement " ` a b = c ` in ` G ` " means ` <. a , b >. `
+   is in ` dom A ` , ` c ` is in ` G ` and
+   ` ( A `` <. a , b >. ) = c ` . It will be obvious from the
+   context what operations are in question.
+
+   [Bruck] p. 1
+$)
+
+$(
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+                   Partial Magmas
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+
+  A partial magma is a universal algebra with one (perhaps
+  incompletely-defined) binary operation, which need not have any
+  special conditions placed on it (other than the closure property
+  common to binary operations).
+
+  In [Bruck] and earlier works, these are called _halfgroupoids_
+  which is not quantitatively correct and inconvinient in that
+  groupoid is more commonly associated today with a entirely different
+  concept in the theory of categories.
+$)
+
+$(
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                   Definition and basic properties
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+$)
+
+  $c PartialMagma $.
+  $c SubPartialMagma $.
+
+  $( Extend class notation with the class of all magmas. $)
+  cpmgm $a class PartialMagma $.
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  cspmgm $a class SubPartialMagma $.
+
+  ${
+
+    $d b g x y $.
+    $( Definition of a partial magma.  A partial magma is a non-empty set
+       equipped with perhaps only partially-defined internal operation ( see
+       ~ pmgmcl ).
+
+       Based on definition halfgroupoid in [Bruck] p. 1. $)
+    df-pmgm $a |- PartialMagma = { g | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ]. ( b =/= (/) /\ A. x e. b A. y e. b ( <. x , y >. e. dom p -> ( x p y ) e. b ) ) } $.
+
+  $}
+
+  ${
+
+    $d b c g h $.
+    $( Definition of a sub partial magma.  A sub partial magma is partial magma
+       where the operation (restricted to the base set) is a subset of that of
+       another partial magma.
+
+       Based on definition subhalfgroupoid in [Bruck] p. 1. $)
+    df-spmgm $a |- SubPartialMagma = { <. h , g >. | ( h e. PartialMagma /\ g e. PartialMagma /\ [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ]. [. ( Base ` h ) / c ]. [. ( +g ` h ) / o ]. ( o |` ( c X. c ) ) C_ ( p |` ( b X. b ) ) ) } $.
+
+  $}
+
+  ${
+    ispmgm.b $e |- B = ( Base ` G ) $.
+    ispmgm.p $e |- .+ = ( +g ` G ) $.
+    $( The predicate "is a partial magma." $)
+    ispmgm $p |- ( G e. PartialMagma <-> ( B =/= (/) /\ A. a e. B A. b e. B ( <. a , b >. e. dom .+ /\ ( a .+ b ) e. B ) ) ) $= ? $.
+
+  $}
+
+  ${
+    ispmgm2.b $e |- B = ( Base ` G ) $.
+    ispmgm2.p $e |- .+ = ( +g ` G ) |` ( B X. B ) $.
+    ispmgm2.s $e |- S = dom .+ $.
+    $( The predicate "is a partial magma." $)
+    ispmgm2 $p |- ( G e. PartialMagma <-> ( B =/= (/) /\ .+ : S --> B ) ) $= ? $.
+
+  $}
+
+  ${
+    isspmgm.c $e |- S = ( Base ` H ) $.
+    isspmgm.b $e |- B = ( Base ` G ) $.
+    isspmgm.o $e |- .(+) = ( +g ` H ) $.
+    isspmgm.p $e |- .+ = ( +g ` G ) $.
+    $( PLEASE PUT DESCRIPTION HERE. $)
+    isspmgm $p ( H SubPartialMagma G <-> ( H e. PartialMagma /\ G e. PartialMagma /\ ( .(+) |` ( H X. H ) ) C_ ( .+ |` ( B X. B ) ) ) ) $= ? $.
+  $}
+
+  ${
+    isspmgm2.c $e |- S = ( Base ` H ) $.
+    isspmgm2.b $e |- B = ( Base ` G ) $.
+    isspmgm2.o $e |- .(+) = ( +g ` H ) |` ( S X. S ) $.
+    isspmgm2.p $e |- .+ = ( +g ` G ) |` ( B X. B ) $.
+    $( PLEASE PUT DESCRIPTION HERE. $)
+    isspmgm2 $p ( H SubPartialMagma G <-> ( H e. PartialMagma /\ G e. PartialMagma /\ .(+) C_ .+ ) ) $= ? $.
+  $}
+
+
+$(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
                    Magmas
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
@@ -34,12 +235,15 @@ A. x e. b A. y e. b ( x p y ) e. b } $.
   $}
 
   ${
-      dfmgm2lem1 $p |- ( A. x e. ( A X. B ) E! y e. C x F y <-> A. u e. A A. v e. B ( u F v ) e. C ) $=
+    $d u v y $.  $d u v x A $.  $d u v x B $.  $d u v x C $.  $d u v x F $.
+    $( This lemma might be useful. $)
+    dfmgm2lem1 $p |- ( A. x e. ( A X. B ) E! y e. C x F y <-> A. u e. A A. v e. B ( u F v ) e. C ) $=
         vx cv vy cv cF wbr vy cC wreu vu cv vv cv cF co cC wcel vx vu vv cA cB
         ? ralxp $.
   $}
 
   ${
+    $( PLEASE PUT DESCRIPTION HERE. $)
     dfmgm2 $p |- MagmaNEW = { g | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ].
 ( p |` ( b X. b ) ) : ( b X. b ) --> b } $= ? $.
   $}
@@ -50,8 +254,8 @@ A. x e. b A. y e. b ( x p y ) e. b } $.
     ismgmNEW.g $e |- G e. _V $.
     ismgmNEW.b $e |- B = ( Base ` G ) $.
     ismgmNEW.p $e |- .+ = ( +g ` G ) $.
-    $( The predicate "is a magma."
-       (Contributed by Richard Penner, 21-Sep-2019.) $)
+    $( The predicate "is a magma."  (Contributed by Richard Penner,
+       21-Sep-2019.) $)
     ismgmNEW $p |- ( G e. MagmaNEW <-> A. a e. B A. b e. B ( a .+ b ) e. B ) $=
       cG cmgmNEW wcel cG va cv vb cv vp cv co vv cv wcel vb vv cv wral va vv cv
       wral vp vg cv cplusg cfv wsbc vv vg cv cbs cfv wsbc vg cab wcel va cv vb
@@ -103,17 +307,12 @@ A. x e. b A. y e. b ( x p y ) e. b } $.
 
 
   ${
-    $d a b B $.
-    $d a b G $.
-    $d a b .+ $.
-    $d a b X $.
-    $d b Y $.
+    $d a b B $.  $d a b G $.  $d a b .+ $.  $d a b X $.  $d b Y $.
     mgmclNEW.g $e |- G e. _V $.
     mgmclNEW.b $e |- B = ( Base ` G ) $.
     mgmclNEW.p $e |- .+ = ( +g ` G ) $.
-
-    $( Closure of the operation of a magma.
-       (Contributed by Richard Penner, 22-Sep-2019.) $)
+    $( Closure of the operation of a magma.  (Contributed by Richard Penner,
+       22-Sep-2019.) $)
     mgmclNEW $p |- ( ( G e. MagmaNEW /\ X e. B /\ Y e. B ) -> ( X .+ Y ) e. B ) $=
       cG cmgmNEW wcel cX cB wcel cY cB wcel cX cY c.pl co cB wcel cG cmgmNEW
       wcel va cv vb cv c.pl co cB wcel vb cB wral va cB wral cX cB wcel cY cB
@@ -139,10 +338,9 @@ $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 $)
 
-   ${
+  ${
 
-$( A monoid is a magma. $)
+    $( A monoid is a magma. $)
+    mndmgm $p |- ( G e. Mnd -> G e. MagmaNEW ) $= ? $.
 
-mndmgm $p |- ( G e. Mnd -> G e. MagmaNEW ) $= ? $.
-
-   $}
+  $}
