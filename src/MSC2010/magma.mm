@@ -18,6 +18,14 @@ $)
   $c PartialBinOp $.
 
   ${
+    $( Placeholder lemma. $)
+    fveu2lem $p |- ( A Fn G -> ( ran A C_ H -> ( g e. G -> ( x = ( A ` g ) -> ( ( h e. H /\ ( A ` g ) = h ) <-> h = x ) ) ) ) ) $= ? $.
+
+  $}
+
+  ${
+    $d g h x A $.  $d g h x G $.  $d g h x H $.
+
     $( A single-valued mapping ` A ` of a set ` G ` into a set ` H ` is a
        correspondence which assigns to each ` g ` in ` G ` a unique element
        ` ( A `` g ) ` in ` H ` .
@@ -56,6 +64,8 @@ $)
   $}
 
   ${
+    $d g A $.  $d g B $.  $d g G $.  $d g H $.
+
     $( If ` A , B ` are single-valued mappings of ` G ` into ` H ` then
        ` A = B ` if and only if ` ( A `` g ) = ( B `` g ) ` for every ` g ` in
        ` G ` .  See ~ eqfnfv .
