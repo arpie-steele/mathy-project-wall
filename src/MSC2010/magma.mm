@@ -23,7 +23,35 @@ $)
        ` ( A `` g ) ` in ` H ` .
 
        [Bruck] p. 1 $)
-    fveu2 $p |- ( A : G --> H -> A. g e. G E! h e. H ( A ` g ) = h ) $= ? $.
+    fveu2 $p |- ( A : G --> H -> A. g e. G E! h e. H ( A ` g ) = h ) $=
+      cG cH cA wf vg cv cA cfv vh cv wceq vh cH wreu vg cG cG cH cA wf cA cG
+      wfn cA crn cH wss wa vg cv cG wcel vg cv cA cfv vh cv wceq vh cH wreu wi
+      cG cH cA df-f cA cG wfn cA crn cH wss vg cv cG wcel vg cv cA cfv vh cv
+      wceq vh cH wreu wi cA cG wfn cA crn cH wss vg cv cG wcel vg cv cA cfv vh
+      cv wceq vh cH wreu cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH
+      wcel vg cv cA cfv vh cv wceq wa vh weu vg cv cA cfv vh cv wceq vh cH wreu
+      cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg cv cA cfv vh
+      cv wceq wa vh vx weq wb vh wal vx wex vh cv cH wcel vg cv cA cfv vh cv
+      wceq wa vh weu cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg
+      cv cA cfv vh cv wceq wa vh vx weq wb vh wal vx ? cA cG wfn cA crn cH wss
+      vg cv cG wcel w3a cA cG wfn cA crn cH wss vg cv cG wcel w3a vx cA cG wfn
+      cA crn cH wss vg cv cG wcel w3a id alrimiv vx cv vg cv cA cfv wceq cA cG
+      wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg cv cA cfv vh cv wceq
+      wa vh vx weq wb vh vx cv vg cv cA cfv wceq vh ax-5 cA cG wfn cA crn cH
+      wss vg cv cG wcel w3a vh ax-5 cA cG wfn cA crn cH wss vg cv cG wcel w3a
+      vx cv vg cv cA cfv wceq vh cv cH wcel vg cv cA cfv vh cv wceq wa vh vx
+      weq wb cA cG wfn cA crn cH wss vg cv cG wcel vx cv vg cv cA cfv wceq vh
+      cv cH wcel vg cv cA cfv vh cv wceq wa vh vx weq wb wi ? 3imp com12
+      alrimdh spimeh vh cv cH wcel vg cv cA cfv vh cv wceq wa vh vx df-eu
+      sylibr vg cv cA cfv vh cv wceq vh cH df-reu sylibr 3exp imp sylbi
+      ralrimiv $.
+
+$(
+Stuck at 
+|- ( A Fn G -> ( ran A C_ H -> ( g
+   e. G -> ( x = ( A ` g ) -> ( ( h e. H /\ ( A ` g ) = h ) <-> h = x ) ) ) ) )
+
+$)
 
   $}
 
@@ -32,9 +60,13 @@ $)
        ` A = B ` if and only if ` ( A `` g ) = ( B `` g ) ` for every ` g ` in
        ` G ` .  See ~ eqfnfv .
 
-       [Bruck] p. 1 $)
+       [Bruck] p. 1 
+       (Contributed by Richard Penner, 26-Sep-2019.) $)
     eqffv $p |- ( ( A : G --> H /\ B : G --> H ) -> ( A = B <->
-              A. g e. G ( A ` g ) = ( B ` g ) ) ) $= ? $.
+              A. g e. G ( A ` g ) = ( B ` g ) ) ) $=
+      cG cH cA wf cG cH cB wf wa cA cG wfn cB cG wfn wa cA cB wceq vg cv cA cfv
+      vg cv cB cfv wceq vg cG wral wb cG cH cA wf cA cG wfn cG cH cB wf cB cG
+      wfn cG cH cA ffn cG cH cB ffn anim12i vg cG cA cB eqfnfv syl $.
   $}
 
   ${
@@ -258,7 +290,7 @@ $( mndcl proves a Mnd is closed under the binary operation, thus a magma. $)
        completely-defined internal operation ( see ~ mgmcl ).
 
        Based on definition groupoid in [Bruck] p. 1. $)
-    df-mgmRP $a |- MagmaRP = { g e. PartialMagma | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ]. A. x e. b A. y e. b ( <. x , y >. e. dom b /\ ( x p y ) e. b ) ) } $.
+    df-mgmRP $a |- MagmaRP = { g e. PartialMagma | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ]. A. x e. b A. y e. b ( <. x , y >. e. dom b /\ ( x p y ) e. b ) } $.
 
   $}
 
