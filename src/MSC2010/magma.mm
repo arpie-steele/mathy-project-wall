@@ -129,6 +129,184 @@ $)
   $}
 
   ${
+    $d x y u v $.
+    $( Partial Binary Operation is a relation.  (Contributed by Richard Penner,
+       28-Sep-2019.) $)
+    relpbo $p |- Rel PartialBinOp $=
+      vy cv c0 wne vx cv vy cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv wbr vv
+      wmo vu wal w3a vx vy cpbo vx vy vv vu df-pbo relopabi $.
+  $}
+
+  ${
+    $( If classes are related by Partial Binary Operation, both classes are
+       sets.  (Contributed by Richard Penner, 28-Sep-2019.) $)
+    pbocv $p |- ( A PartialBinOp B -> ( A e. _V /\ B e. _V ) ) $=
+      cpbo wrel cA cB cpbo wbr cA cvv wcel cB cvv wcel wa relpbo cA cB cpbo
+      brrelex12 mpan $.
+  $}
+
+  ${
+    $d u v x y A $.  $d x y B $.
+    $( Partial Binary Operation relation.  (Contributed by Richard Penner,
+       28-Sep-2019.) $)
+    brpbo $p |- ( A PartialBinOp B <-> ( ( A e. _V /\ B e. _V ) /\ ( B =/= (/) /\ A C_ ( ( B X. B ) X. B ) /\ A. u E* v u A v ) ) ) $=
+      cA cB cpbo wbr cA cvv wcel cB cvv wcel wa cA cvv wcel cB cvv wcel wa cB
+      c0 wne cA cB cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a wa cA
+      cB pbocv cA cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp wss vu
+      cv vv cv cA wbr vv wmo vu wal w3a simpl vy cv c0 wne vx cv vy cv vy cv
+      cxp vy cv cxp wss vu cv vv cv vx cv wbr vv wmo vu wal w3a cA cvv wcel vy
+      cv c0 wne cA vy cv vy cv cxp vy cv cxp wss vu cv vv cv cA wbr vv wmo vu
+      wal w3a wa cA cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp wss
+      vu cv vv cv cA wbr vv wmo vu wal w3a wa vx vy cA cB cvv cvv cpbo vx cv cA
+      wceq vy cv c0 wne vx cv vy cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv
+      wbr vv wmo vu wal w3a cA cvv wcel vy cv c0 wne cA vy cv vy cv cxp vy cv
+      cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a wa vx cv cA wceq vy cv c0
+      wne vx cv vy cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv wbr vv wmo vu
+      wal w3a cA cvv wcel vy cv c0 wne cA vy cv vy cv cxp vy cv cxp wss vu cv
+      vv cv cA wbr vv wmo vu wal w3a vx cv cA wceq cA cvv wcel vy cv c0 wne vx
+      cv vy cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv wbr vv wmo vu wal w3a
+      vx cA eqvisset a1d vx cv cA wceq vy cv c0 wne vy cv c0 wne vx cv vy cv vy
+      cv cxp vy cv cxp wss cA vy cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv
+      wbr vv wmo vu wal vu cv vv cv cA wbr vv wmo vu wal vx cv cA wceq vy cv c0
+      wne idd vx cv cA wceq vx cv vy cv vy cv cxp vy cv cxp wss cA vy cv vy cv
+      cxp vy cv cxp wss vx cv cA vy cv vy cv cxp vy cv cxp sseq1 biimpd vx cv
+      cA wceq vu cv vv cv vx cv wbr vv wmo vu wal vu cv vv cv cA wbr vv wmo vu
+      wal vx cv cA wceq vu cv vv cv vx cv wbr vv wmo vu cv vv cv cA wbr vv wmo
+      vu vx cv cA wceq vu ax-5 vx cv cA wceq vu cv vv cv vx cv wbr vu cv vv cv
+      cA wbr vv vu cv vv cv vx cv cA breq mobidv albidh biimpd 3anim123d jcad
+      vx cv cA wceq vy cv c0 wne cA vy cv vy cv cxp vy cv cxp wss vu cv vv cv
+      cA wbr vv wmo vu wal w3a vy cv c0 wne vx cv vy cv vy cv cxp vy cv cxp wss
+      vu cv vv cv vx cv wbr vv wmo vu wal w3a cA cvv wcel vy cv c0 wne cA vy cv
+      vy cv cxp vy cv cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a vy cv c0 wne
+      vx cv vy cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv wbr vv wmo vu wal
+      w3a wi cA vx cv cA vx cv wceq vy cv c0 wne vy cv c0 wne cA vy cv vy cv
+      cxp vy cv cxp wss vx cv vy cv vy cv cxp vy cv cxp wss vu cv vv cv cA wbr
+      vv wmo vu wal vu cv vv cv vx cv wbr vv wmo vu wal cA vx cv wceq vy cv c0
+      wne idd cA vx cv wceq cA vy cv vy cv cxp vy cv cxp wss vx cv vy cv vy cv
+      cxp vy cv cxp wss cA vx cv vy cv vy cv cxp vy cv cxp sseq1 biimpd cA vx
+      cv wceq vu cv vv cv cA wbr vv wmo vu wal vu cv vv cv vx cv wbr vv wmo vu
+      wal cA vx cv wceq vu cv vv cv cA wbr vv wmo vu cv vv cv vx cv wbr vv wmo
+      vu cA vx cv wceq vu ax-5 cA vx cv wceq vu cv vv cv cA wbr vu cv vv cv vx
+      cv wbr vv vu cv vv cv cA vx cv breq mobidv albidh biimpd 3anim123d eqcoms
+      adantld impbid vy cv cB wceq cA cvv wcel vy cv c0 wne cA vy cv vy cv cxp
+      vy cv cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a wa cA cvv wcel cB cvv
+      wcel wa cB c0 wne cA cB cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu
+      wal w3a wa vy cv cB wceq cA cvv wcel vy cv c0 wne cA vy cv vy cv cxp vy
+      cv cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a wa cA cvv wcel cB cvv
+      wcel wa cB c0 wne cA cB cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu
+      wal w3a vy cv cB wceq cA cvv wcel cA cvv wcel cB cvv wcel wa vy cv c0 wne
+      cA vy cv vy cv cxp vy cv cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a vy
+      cv cB wceq cB cvv wcel cA cvv wcel cA cvv wcel cB cvv wcel wa wi vy cB
+      eqvisset cA cvv wcel cB cvv wcel cA cvv wcel cB cvv wcel wa cA cvv wcel
+      cB cvv wcel cA cvv wcel cB cvv wcel wa cA cvv wcel cB cvv wcel wa id ex
+      com12 syl adantrd vy cv cB wceq vy cv c0 wne cA vy cv vy cv cxp vy cv cxp
+      wss vu cv vv cv cA wbr vv wmo vu wal w3a cB c0 wne cA cB cB cxp cB cxp
+      wss vu cv vv cv cA wbr vv wmo vu wal w3a cA cvv wcel vy cv cB wceq vy cv
+      c0 wne cB c0 wne cA vy cv vy cv cxp vy cv cxp wss cA cB cB cxp cB cxp wss
+      vu cv vv cv cA wbr vv wmo vu wal vu cv vv cv cA wbr vv wmo vu wal vy cv
+      cB wceq vy cv c0 wne cB c0 wne vy cv cB c0 neeq1 biimpd vy cv cB wceq cA
+      vy cv vy cv cxp vy cv cxp wss cA cB cB cxp cB cxp wss vy cv cB wceq vy cv
+      vy cv cxp vy cv cxp cB cB cxp cB cxp wceq cA vy cv vy cv cxp vy cv cxp
+      wss cA cB cB cxp cB cxp wss wb vy cv cB wceq vy cv vy cv cxp cB cB cxp
+      wceq vy cv cB wceq wa vy cv vy cv cxp vy cv cxp cB cB cxp cB cxp wceq vy
+      cv cB wceq vy cv vy cv cxp cB cB cxp wceq vy cv cB wceq vy cv cB wceq vy
+      cv cB wceq wa vy cv vy cv cxp cB cB cxp wceq vy cv cB wceq vy cv cB wceq
+      vy cv cB wceq vy cv cB wceq id vy cv cB wceq id jca vy cv cB vy cv cB
+      xpeq12 syl ancri vy cv vy cv cxp cB cB cxp vy cv cB xpeq12 syl vy cv vy
+      cv cxp vy cv cxp cB cB cxp cB cxp cA sseq2 syl biimpd vy cv cB wceq vu cv
+      vv cv cA wbr vv wmo vu wal vu cv vv cv cA wbr vv wmo vu wal vy cv cB wceq
+      vu cv vv cv cA wbr vv wmo vu wal biidd biimpd 3anim123d adantld jcad cA
+      cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp wss vu cv vv cv cA
+      wbr vv wmo vu wal w3a wa cA cvv wcel vy cv c0 wne cA vy cv vy cv cxp vy
+      cv cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a wa wi cB vy cv cB vy cv
+      wceq cA cvv wcel cB cvv wcel wa cA cvv wcel cB c0 wne cA cB cB cxp cB cxp
+      wss vu cv vv cv cA wbr vv wmo vu wal w3a vy cv c0 wne cA vy cv vy cv cxp
+      vy cv cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a cA cvv wcel cB cvv
+      wcel wa cA cvv wcel wi cB vy cv wceq cA cvv wcel cB cvv wcel simpl a1i cB
+      vy cv wceq cB c0 wne vy cv c0 wne cA cB cB cxp cB cxp wss cA vy cv vy cv
+      cxp vy cv cxp wss vu cv vv cv cA wbr vv wmo vu wal vu cv vv cv cA wbr vv
+      wmo vu wal cB vy cv wceq cB c0 wne vy cv c0 wne cB vy cv c0 neeq1 biimpd
+      cB vy cv wceq cA cB cB cxp cB cxp wss cA vy cv vy cv cxp vy cv cxp wss cB
+      vy cv wceq cB cB cxp cB cxp vy cv vy cv cxp vy cv cxp wceq cA cB cB cxp
+      cB cxp wss cA vy cv vy cv cxp vy cv cxp wss wb cB vy cv wceq cB cB cxp vy
+      cv vy cv cxp wceq cB vy cv wceq wa cB cB cxp cB cxp vy cv vy cv cxp vy cv
+      cxp wceq cB vy cv wceq cB cB cxp vy cv vy cv cxp wceq cB vy cv wceq cB vy
+      cv wceq cB vy cv wceq wa cB cB cxp vy cv vy cv cxp wceq cB vy cv wceq cB
+      vy cv wceq cB vy cv wceq cB vy cv wceq id cB vy cv wceq id jca cB vy cv
+      cB vy cv xpeq12 syl ancri cB cB cxp vy cv vy cv cxp cB vy cv xpeq12 syl
+      cB cB cxp cB cxp vy cv vy cv cxp vy cv cxp cA sseq2 syl biimpd cB vy cv
+      wceq vu cv vv cv cA wbr vv wmo vu wal idd 3anim123d anim12d eqcoms impbid
+      vx vy vv vu df-pbo brabg pm5.21nii $.
+  $}
+
+  ${
+    $d A u v $.
+    $( Partial Binary Operation relation.  
+       (Contributed by Richard Penner, 28-Sep-2019.) $)
+    brpbo2 $p |- ( A PartialBinOp B <-> ( ( A e. _V /\ B e. _V ) /\ ( B =/= (/) /\ A C_ ( ( B X. B ) X. B ) /\ Fun A ) ) ) $=
+      cA cB cpbo wbr cA cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp
+      wss vu cv vv cv cA wbr vv wmo vu wal w3a wa cA cvv wcel cB cvv wcel wa cB
+      c0 wne cA cB cB cxp cB cxp wss cA wfun w3a wa vv vu cA cB brpbo cA cvv
+      wcel cB cvv wcel wa cA cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB
+      cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a cB c0 wne cA cB cB cxp cB
+      cxp wss cA wfun w3a cA cvv wcel cB cvv wcel wa biid cB c0 wne cA cB cB
+      cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu wal w3a cB c0 wne cA cB cB
+      cxp cB cxp wss cA wfun w3a cB c0 wne cA cB cB cxp cB cxp wss vu cv vv cv
+      cA wbr vv wmo vu wal w3a cB c0 wne cA cB cB cxp cB cxp wss cA wfun cB c0
+      wne cA cB cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu wal simp1 cB c0
+      wne cA cB cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu wal simp2 cA cB
+      cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu wal cA wfun cB c0 wne cA
+      cB cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu wal wa cA wrel vu cv vv
+      cv cA wbr vv wmo vu wal wa cA wfun cA cB cB cxp cB cxp wss vu cv vv cv cA
+      wbr vv wmo vu wal wa cA wrel vu cv vv cv cA wbr vv wmo vu wal cA cB cB
+      cxp cB cxp wss cA wrel vu cv vv cv cA wbr vv wmo vu wal cA cB cB cxp cB
+      cxp wss cA cvv cvv cxp wss cA wrel cB cB cxp cB cxp cvv cvv cxp wss cA cB
+      cB cxp cB cxp wss cA cvv cvv cxp wss wi cB cB cxp cB xpss cA cB cB cxp cB
+      cxp wss cB cB cxp cB cxp cvv cvv cxp wss cA cvv cvv cxp wss cA cB cB cxp
+      cB cxp cvv cvv cxp sstr2 com12 ax-mp cA wrel cA cvv cvv cxp wss cA df-rel
+      biimpri syl adantr cA cB cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu
+      wal simpr jca cA wfun cA wrel vu cv vv cv cA wbr vv wmo vu wal wa vu vv
+      cA dffun6 biimpri syl 3adant1 3jca cB c0 wne cA cB cB cxp cB cxp wss cA
+      wfun w3a cB c0 wne cA cB cB cxp cB cxp wss vu cv vv cv cA wbr vv wmo vu
+      wal cB c0 wne cA cB cB cxp cB cxp wss cA wfun simp1 cB c0 wne cA cB cB
+      cxp cB cxp wss cA wfun simp2 cA cB cB cxp cB cxp wss cA wfun vu cv vv cv
+      cA wbr vv wmo vu wal cB c0 wne cA wfun vu cv vv cv cA wbr vv wmo vu wal
+      cA cB cB cxp cB cxp wss cA wfun cA wrel vu cv vv cv cA wbr vv wmo vu wal
+      cA wfun cA wrel vu cv vv cv cA wbr vv wmo vu wal wa vu vv cA dffun6
+      biimpi simprd adantl 3adant1 3jca impbii anbi12i bitri $.
+  $}
+
+  ${
+    $( Partial Binary Operation relation.  $)
+    brpbo3 $p |- ( A PartialBinOp B <-> ( ( A e. _V /\ B e. _V ) /\ B =/= (/) /\ E. d ( d C_ ( B X. B ) /\ A : d --> B ) ) ) $=
+      cA cB cpbo wbr cA cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp
+      wss cA wfun w3a wa cA cvv wcel cB cvv wcel wa cB c0 wne vd cv cB cB cxp
+      wss vd cv cB cA wf wa vd wex w3a cA cB brpbo2 cA cvv wcel cB cvv wcel wa
+      cB c0 wne cA cB cB cxp cB cxp wss cA wfun w3a wa cA cvv wcel cB cvv wcel
+      wa cB c0 wne vd cv cB cB cxp wss vd cv cB cA wf wa vd wex w3a cA cvv wcel
+      cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp wss cA wfun w3a cA cvv wcel
+      cB cvv wcel wa cB c0 wne vd cv cB cB cxp wss vd cv cB cA wf wa vd wex w3a
+      cA cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp wss cA wfun w3a
+      cA cvv wcel cB cvv wcel wa cB c0 wne vd cv cB cB cxp wss vd cv cB cA wf
+      wa vd wex cA cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp wss cA
+      wfun w3a ax-1 cB c0 wne cA cB cB cxp cB cxp wss cA wfun w3a cB c0 wne wi
+      cA cvv wcel cB cvv wcel wa cB c0 wne cA cB cB cxp cB cxp wss cA wfun
+      simp1 a1i cB c0 wne cA cB cB cxp cB cxp wss cA wfun w3a vd cv cB cB cxp
+      wss vd cv cB cA wf wa vd wex wi cA cvv wcel cB cvv wcel wa cA cB cB cxp
+      cB cxp wss cA wfun vd cv cB cB cxp wss vd cv cB cA wf wa vd wex cB c0 wne
+      ? 3adant1 a1i 3jcad imp cA cvv wcel cB cvv wcel wa cB c0 wne vd cv cB cB
+      cxp wss vd cv cB cA wf wa vd wex w3a cA cvv wcel cB cvv wcel wa cB c0 wne
+      cA cB cB cxp cB cxp wss cA wfun w3a cA cvv wcel cB cvv wcel wa cB c0 wne
+      vd cv cB cB cxp wss vd cv cB cA wf wa vd wex simp1 cA cvv wcel cB cvv
+      wcel wa cB c0 wne vd cv cB cB cxp wss vd cv cB cA wf wa vd wex w3a cB c0
+      wne cA cB cB cxp cB cxp wss cA wfun cA cvv wcel cB cvv wcel wa cB c0 wne
+      vd cv cB cB cxp wss vd cv cB cA wf wa vd wex simp2 vd cv cB cB cxp wss vd
+      cv cB cA wf wa vd wex cA cvv wcel cB cvv wcel wa cA cB cB cxp cB cxp wss
+      cB c0 wne ? 3ad2ant3 vd cv cB cB cxp wss vd cv cB cA wf wa vd wex cA cvv
+      wcel cB cvv wcel wa cA wfun cB c0 wne ? 3ad2ant3 3jca jca impbii bitri $.
+  $}
+
+  ${
     $d b A $.  $d b x y $.  $d u v x y $.
     $( we allow the possibility that ` dom A ` may be empty.
 
@@ -342,7 +520,7 @@ $)
   cmgmNEW $a class MagmaNEW $.
   $( Extend class notation with the class of all magmas. $)
   cmgm $a class MagmaRP $.
-  $( Extend class notation with the relation of submagmas to magmas $)
+  $( Extend class notation with the relation of submagmas to magmas. $)
   csmgm $a class SubMagma $.
 
 $( df-gsum can be used to map words to elements of a magma. See gsumval2a $)
