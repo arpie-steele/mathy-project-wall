@@ -16,12 +16,8 @@ $(
 $)
 
   $c PartialBinOp $.
-
-  ${
-    $( Placeholder lemma. $)
-    fveu2lem $p |- ( A Fn G -> ( ran A C_ H -> ( g e. G -> ( x = ( A ` g ) -> ( ( h e. H /\ ( A ` g ) = h ) <-> h = x ) ) ) ) ) $= ? $.
-
-  $}
+  $( Partial binary operation. $)
+  cpbo $a class PartialBinOp $.
 
   ${
     $d g h x A $.  $d g h x G $.  $d g h x H $.
@@ -30,36 +26,56 @@ $)
        correspondence which assigns to each ` g ` in ` G ` a unique element
        ` ( A `` g ) ` in ` H ` .
 
-       [Bruck] p. 1 $)
+       [Bruck] p. 1 (Contributed by Richard Penner, 28-Sep-2019.) $)
     fveu2 $p |- ( A : G --> H -> A. g e. G E! h e. H ( A ` g ) = h ) $=
       cG cH cA wf vg cv cA cfv vh cv wceq vh cH wreu vg cG cG cH cA wf cA cG
       wfn cA crn cH wss wa vg cv cG wcel vg cv cA cfv vh cv wceq vh cH wreu wi
       cG cH cA df-f cA cG wfn cA crn cH wss vg cv cG wcel vg cv cA cfv vh cv
-      wceq vh cH wreu wi cA cG wfn cA crn cH wss vg cv cG wcel vg cv cA cfv vh
-      cv wceq vh cH wreu cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH
-      wcel vg cv cA cfv vh cv wceq wa vh weu vg cv cA cfv vh cv wceq vh cH wreu
-      cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg cv cA cfv vh
-      cv wceq wa vh vx weq wb vh wal vx wex vh cv cH wcel vg cv cA cfv vh cv
-      wceq wa vh weu cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg
-      cv cA cfv vh cv wceq wa vh vx weq wb vh wal vx ? cA cG wfn cA crn cH wss
-      vg cv cG wcel w3a cA cG wfn cA crn cH wss vg cv cG wcel w3a vx cA cG wfn
-      cA crn cH wss vg cv cG wcel w3a id alrimiv vx cv vg cv cA cfv wceq cA cG
+      wceq vh cH wreu cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel
+      vg cv cA cfv vh cv wceq wa vh weu vg cv cA cfv vh cv wceq vh cH wreu cA
+      cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg cv cA cfv vh cv
+      wceq wa vh vx weq wb vh wal vx wex vh cv cH wcel vg cv cA cfv vh cv wceq
+      wa vh weu cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg cv
+      cA cfv vh cv wceq wa vh vx weq wb vh wal vx vg cv cA cfv vx cv wceq cA cG
       wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg cv cA cfv vh cv wceq
-      wa vh vx weq wb vh vx cv vg cv cA cfv wceq vh ax-5 cA cG wfn cA crn cH
-      wss vg cv cG wcel w3a vh ax-5 cA cG wfn cA crn cH wss vg cv cG wcel w3a
-      vx cv vg cv cA cfv wceq vh cv cH wcel vg cv cA cfv vh cv wceq wa vh vx
-      weq wb cA cG wfn cA crn cH wss vg cv cG wcel vx cv vg cv cA cfv wceq vh
-      cv cH wcel vg cv cA cfv vh cv wceq wa vh vx weq wb wi ? 3imp com12
-      alrimdh spimeh vh cv cH wcel vg cv cA cfv vh cv wceq wa vh vx df-eu
-      sylibr vg cv cA cfv vh cv wceq vh cH df-reu sylibr 3exp imp sylbi
-      ralrimiv $.
-
-$(
-Stuck at 
-|- ( A Fn G -> ( ran A C_ H -> ( g
-   e. G -> ( x = ( A ` g ) -> ( ( h e. H /\ ( A ` g ) = h ) <-> h = x ) ) ) ) )
-
-$)
+      wa vh vx weq wb vh wal wi vx vx cv vg cv cA cfv wceq vg cv cA cfv vx cv
+      wceq vx vx vg cv cA cfv vg cv cA fvex isseti vx cv vg cv cA cfv wceq vg
+      cv cA cfv vx cv wceq vx cv vg cv cA cfv eqcom biimpi eximii vg cv cA cfv
+      vx cv wceq cA cG wfn cA crn cH wss vg cv cG wcel w3a vh cv cH wcel vg cv
+      cA cfv vh cv wceq wa vh vx weq wb vh vg cv cA cfv vx cv wceq cA cG wfn cA
+      crn cH wss vg cv cG wcel w3a vh cv cH wcel vg cv cA cfv vh cv wceq wa vh
+      vx weq vg cv cA cfv vx cv wceq cA cG wfn cA crn cH wss vg cv cG wcel w3a
+      vh cv cH wcel vg cv cA cfv vh cv wceq wa vh vx weq vg cv cA cfv vx cv
+      wceq vh cv cH wcel vg cv cA cfv vh cv wceq wa vh vx weq cA cG wfn cA crn
+      cH wss vg cv cG wcel w3a vg cv cA cfv vx cv wceq vg cv cA cfv vh cv wceq
+      vh vx weq vh cv cH wcel vg cv cA cfv vh cv wceq vg cv cA cfv vx cv wceq
+      vh vx weq vg cv cA cfv vh cv vx cv eqtr2 ancoms adantrl 3adant2 3exp vg
+      cv cA cfv vx cv wceq cA cG wfn cA crn cH wss vg cv cG wcel w3a vh vx weq
+      vh cv cH wcel vg cv cA cfv vh cv wceq wa vg cv cA cfv vx cv wceq cA cG
+      wfn cA crn cH wss vg cv cG wcel w3a vh vx weq w3a vh cv cH wcel vg cv cA
+      cfv vh cv wceq vg cv cA cfv vx cv wceq cA cG wfn cA crn cH wss vg cv cG
+      wcel w3a vh vx weq vh cv cH wcel cA cG wfn cA crn cH wss vg cv cG wcel
+      w3a vg cv cA cfv vx cv wceq vh vx weq vh cv cH wcel wi cA cG wfn cA crn
+      cH wss vg cv cG wcel vg cv cA cfv vx cv wceq vh vx weq vh cv cH wcel wi
+      wi cA cG wfn vg cv cG wcel cA crn cH wss vg cv cA cfv vx cv wceq vh vx
+      weq vh cv cH wcel wi wi cA cG wfn vg cv cG wcel cA crn cH wss vg cv cA
+      cfv vx cv wceq vh vx weq vh cv cH wcel wi wi wi cA cG wfn vg cv cG wcel
+      wa vg cv cA cfv cA crn wcel cA crn cH wss vg cv cA cfv vx cv wceq vh vx
+      weq vh cv cH wcel wi wi wi cG vg cv cA fnfvelrn cA crn cH wss vg cv cA
+      cfv cA crn wcel vg cv cA cfv vx cv wceq vh vx weq vh cv cH wcel wi wi cA
+      crn cH wss vg cv cA cfv cA crn wcel wa vg cv cA cfv cH wcel vg cv cA cfv
+      vx cv wceq vh vx weq vh cv cH wcel wi wi cA crn cH vg cv cA cfv ssel2 vh
+      vx weq vg cv cA cfv vx cv wceq vg cv cA cfv cH wcel vh cv cH wcel vh vx
+      weq vg cv cA cfv vx cv wceq vg cv cA cfv cH wcel vh cv cH wcel wi vh vx
+      weq vg cv cA cfv vx cv wceq wa vh cv vg cv cA cfv wceq vg cv cA cfv cH
+      wcel vh cv cH wcel wi vh cv vg cv cA cfv vx cv eqtr3 vg cv cA cfv cH wcel
+      vh cv cH wcel wi vg cv cA cfv vh cv vg cv cA cfv vh cv wceq vg cv cA cfv
+      cH wcel vh cv cH wcel vg cv cA cfv vh cv cH eleq1 biimpd eqcoms syl ex
+      com13 syl expcom syl ex com23 3imp com12 3imp vg cv cA cfv vx cv wceq vh
+      vx weq vg cv cA cfv vh cv wceq cA cG wfn cA crn cH wss vg cv cG wcel w3a
+      vg cv cA cfv vh cv vx cv eqtr3 3adant2 jca 3exp impbidd alrimdv eximii
+      19.37aiv vh cv cH wcel vg cv cA cfv vh cv wceq wa vh vx df-eu sylibr vg
+      cv cA cfv vh cv wceq vh cH df-reu sylibr 3expia sylbi ralrimiv $.
 
   $}
 
@@ -70,8 +86,7 @@ $)
        ` A = B ` if and only if ` ( A `` g ) = ( B `` g ) ` for every ` g ` in
        ` G ` .  See ~ eqfnfv .
 
-       [Bruck] p. 1 
-       (Contributed by Richard Penner, 26-Sep-2019.) $)
+       [Bruck] p. 1 (Contributed by Richard Penner, 26-Sep-2019.) $)
     eqffv $p |- ( ( A : G --> H /\ B : G --> H ) -> ( A = B <->
               A. g e. G ( A ` g ) = ( B ` g ) ) ) $=
       cG cH cA wf cG cH cB wf wa cA cG wfn cB cG wfn wa cA cB wceq vg cv cA cfv
@@ -114,10 +129,51 @@ $)
   $}
 
   ${
+    $d b A $.  $d b x y $.  $d u v x y $.
     $( we allow the possibility that ` dom A ` may be empty.
 
-       [Bruck] p. 1 $)
-    pbodm0 $p |- ( A = (/) -> A. b ( b =/= (/) -> ( A PartialBinOp b /\ dom A = (/) ) ) ) $= ? $.
+       [Bruck] p. 1 (Contributed by Richard Penner, 28-Sep-2019.) $)
+    pbodm0 $p |- ( A = (/) -> A. b ( b =/= (/) -> ( A PartialBinOp b /\ dom A = (/) ) ) ) $=
+      cA c0 wceq vb cv c0 wne cA vb cv cpbo wbr cA cdm c0 wceq wa wi vb cA c0
+      wceq vb cv c0 wne cA vb cv cpbo wbr cA cdm c0 wceq cA c0 wceq vb cv c0
+      wne cA vb cv cop cpbo wcel cA vb cv cpbo wbr cA c0 wceq cA vb cv cop c0
+      vb cv cop wceq vb cv c0 wne cA vb cv cop cpbo wcel wi cA c0 vb cv opeq1
+      vb cv c0 wne cA vb cv cop cpbo wcel cA vb cv cop c0 vb cv cop wceq c0 vb
+      cv cop cpbo wcel vb cv c0 wne c0 vb cv cop vy cv c0 wne vx cv vy cv vy cv
+      cxp vy cv cxp wss vu cv vv cv vx cv wbr vv wmo vu wal w3a vx vy copab
+      cpbo vb cv c0 wne vy cv c0 wne vx cv vy cv vy cv cxp vy cv cxp wss vu cv
+      vv cv vx cv wbr vv wmo vu wal w3a vy vb cv wsbc vx c0 wsbc c0 vb cv cop
+      vy cv c0 wne vx cv vy cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv wbr vv
+      wmo vu wal w3a vx vy copab wcel vb cv c0 wne vb cv c0 wne c0 vb cv vb cv
+      cxp vb cv cxp wss vu cv vv cv c0 wbr vv wmo vu wal vy cv c0 wne vx cv vy
+      cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv wbr vv wmo vu wal w3a vy vb
+      cv wsbc vx c0 wsbc vb cv c0 wne id c0 vb cv vb cv cxp vb cv cxp wss vb cv
+      c0 wne vb cv vb cv cxp vb cv cxp 0ss a1i vu cv vv cv c0 wbr vv wmo vu wal
+      vb cv c0 wne vu cv vv cv c0 wbr vv wmo vu vu cv vv cv c0 wbr vv wmo vu cv
+      vv cv c0 wbr vv wex vu cv vv cv c0 wbr vv weu wi vu cv vv cv c0 wbr vv
+      wex vu cv vv cv c0 wbr vv weu vu cv vv cv c0 wbr vv vu cv vv cv br0 nex
+      pm2.21i vu cv vv cv c0 wbr vv df-mo mpbir ax-gen a1i vy cv c0 wne vx cv
+      vy cv vy cv cxp vy cv cxp wss vu cv vv cv vx cv wbr vv wmo vu wal w3a vb
+      cv c0 wne c0 vb cv vb cv cxp vb cv cxp wss vu cv vv cv c0 wbr vv wmo vu
+      wal w3a vx vy c0 vb cv 0ex vb vex vx cv c0 wceq vy vb weq wa vy cv c0 wne
+      vb cv c0 wne vx cv vy cv vy cv cxp vy cv cxp wss c0 vb cv vb cv cxp vb cv
+      cxp wss vu cv vv cv vx cv wbr vv wmo vu wal vu cv vv cv c0 wbr vv wmo vu
+      wal vy vb weq vy cv c0 wne vb cv c0 wne wb vx cv c0 wceq vy cv vb cv c0
+      neeq1 adantl vx cv c0 wceq vx cv vy cv vy cv cxp vy cv cxp wss c0 vb cv
+      vb cv cxp vb cv cxp wss wb vy vb weq vx cv c0 wceq vx cv vy cv vy cv cxp
+      vy cv cxp wss c0 vb cv vb cv cxp vb cv cxp wss vx cv c0 wceq vx cv vy cv
+      vy cv cxp vy cv cxp wss c0 vy cv vy cv cxp vy cv cxp wss vy cv vy cv cxp
+      vy cv cxp 0ss vx cv c0 vy cv vy cv cxp vy cv cxp sseq1 mpbiri c0 vb cv vb
+      cv cxp vb cv cxp wss vx cv c0 wceq vb cv vb cv cxp vb cv cxp 0ss a1i 2thd
+      adantr vx cv c0 wceq vu cv vv cv vx cv wbr vv wmo vu wal vu cv vv cv c0
+      wbr vv wmo vu wal wb vy vb weq vx cv c0 wceq vu cv vv cv vx cv wbr vv wmo
+      vu cv vv cv c0 wbr vv wmo vu vx cv c0 wceq vu cv vv cv vx cv wbr vu cv vv
+      cv c0 wbr vv vu cv vv cv vx cv c0 breq mobidv albidv adantr 3anbi123d
+      sbc2ie syl3anbrc vy cv c0 wne vx cv vy cv vy cv cxp vy cv cxp wss vu cv
+      vv cv vx cv wbr vv wmo vu wal w3a vx vy c0 vb cv opelopabsb sylibr vx vy
+      vv vu df-pbo syl6eleqr cA vb cv cop c0 vb cv cop cpbo eleq1 syl5ibr syl
+      cA vb cv cpbo df-br syl6ibr cA c0 wceq cA cdm c0 cdm c0 cA c0 dmeq dm0
+      syl6eq jctird alrimiv $.
   $}
 
   ${
@@ -180,7 +236,7 @@ $)
 
   $( Extend class notation with the class of all magmas. $)
   cpmgm $a class PartialMagma $.
-  $( Define subset of Partial Magma $)
+  $( Define subset of Partial Magma. $)
   cspmgm $a class SubPartialMagma $.
 
   ${
@@ -248,7 +304,7 @@ $)
     isspmgm.b $e |- B = ( Base ` G ) $.
     isspmgm.o $e |- .(+) = ( +g ` H ) $.
     isspmgm.p $e |- .+ = ( +g ` G ) $.
-    $( PLEASE PUT DESCRIPTION HERE. $)
+    $( Relationship of a ` SubPartialMagma ` . $)
     isspmgm $p ( H SubPartialMagma G <-> ( H e. PartialMagma /\ G e. PartialMagma /\ ( .(+) |` ( H X. H ) ) C_ ( .+ |` ( B X. B ) ) ) ) $= ? $.
   $}
 
@@ -257,7 +313,7 @@ $)
     isspmgm2.b $e |- B = ( Base ` G ) $.
     isspmgm2.o $e |- .(+) = ( +g ` H ) |` ( S X. S ) $.
     isspmgm2.p $e |- .+ = ( +g ` G ) |` ( B X. B ) $.
-    $( PLEASE PUT DESCRIPTION HERE. $)
+    $( Relationship of a ` SubPartialMagma ` . $)
     isspmgm2 $p ( H SubPartialMagma G <-> ( H e. PartialMagma /\ G e. PartialMagma /\ .(+) C_ .+ ) ) $= ? $.
   $}
 
@@ -286,7 +342,7 @@ $)
   cmgmNEW $a class MagmaNEW $.
   $( Extend class notation with the class of all magmas. $)
   cmgm $a class MagmaRP $.
-  $( PLEASE PUT DESCRIPTION HERE. $)
+  $( Extend class notation with the relation of submagmas to magmas $)
   csmgm $a class SubMagma $.
 
 $( df-gsum can be used to map words to elements of a magma. See gsumval2a $)
@@ -322,7 +378,7 @@ A. x e. b A. y e. b ( x p y ) e. b } $.
   $}
 
   ${
-    $( PLEASE PUT DESCRIPTION HERE. $)
+    $( Definition of a magma. $)
     dfmgm2 $p |- MagmaNEW = { g | [. ( Base ` g ) / b ]. [. ( +g ` g ) / p ].
 ( p |` ( b X. b ) ) : ( b X. b ) --> b } $= ? $.
   $}
