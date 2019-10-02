@@ -114,6 +114,20 @@ sub get_types {
 	    $types{'COMMENT'} = 'COMMENT';
 	    $types{'MATH'} = 'SYMBOL';
 	}
+	if ( $str =~ /\A(?:theorem|lemma|definition|compare|proposition
+	    |corollary|axiom|rule|remark|exercise|problem|notation|example
+	    |property|figure|postulate|equation|scheme|chapter)\z/xms )
+	{
+	    $types{'COMMENT'} = 'BIB_KEYWORD';
+        }
+	if ( $str =~ /\A(?:of|in|from|on)\z/xms )
+	{
+	    $types{'COMMENT'} = 'BIB_NOISE';
+        }
+	if ( $str =~ /\A\[[\w.-]+\]\z/xms )
+	{
+	    $types{'COMMENT'} = 'BIB_REF';
+        }
         if ( $str eq q{$(} ) {
 	    $types{'TOP'} = 'BEGIN_COMMENT';
 	    $types{'BODY'} = 'BEGIN_COMMENT';
@@ -136,17 +150,31 @@ sub get_types {
         if ( $str eq q{$t} ) {
 	    $types{'COMMENT'} = 'TYPESETTING';
         }
+        if ( $str eq q{``} ) {
+	    $types{'COMMENT'} = 'ESCAPED_BACKQUOTE';
+	    $types{'COMMENT_MATH'} = 'ESCAPED_BACKQUOTE';
+        }
+        if ( $str eq q{`} ) {
+	    $types{'COMMENT_MATH'} = 'END_MATHMODE_MARKER';
+	    $types{'COMMENT'} = 'BEGIN_MATHMODE_MARKER';
+        }
+        if ( $str eq q{~~} ) {
+	    $types{'COMMENT'} = 'ESCAPED_TILDE';
+        }
+        if ( $str eq q{~} ) {
+	    $types{'COMMENT'} = 'LABEL_REFERENCE';
+        }
         if ( $str =~ /\A[\#]{4,}\z/ ) {
-	    $types{'COMMENT'} = 'H1MARKER';
+	    $types{'COMMENT'} = 'H1_MARKER';
         }
         if ( $str =~ /\A(:?[\#][*]){2,}[\#]?\z/ ) {
-	    $types{'COMMENT'} = 'H2MARKER';
+	    $types{'COMMENT'} = 'H2_MARKER';
         }
         if ( $str =~ /\A(:?[=][-]){2,}[=]?\z/ ) {
-	    $types{'COMMENT'} = 'H3MARKER';
+	    $types{'COMMENT'} = 'H3_MARKER';
         }
         if ( $str =~ /\A(:?[-][.]){2,}[-]?\z/ ) {
-	    $types{'COMMENT'} = 'H4MARKER';
+	    $types{'COMMENT'} = 'H4_MARKER';
         }
         if ( $str eq q{$)} ) {
 	    %types = ();
