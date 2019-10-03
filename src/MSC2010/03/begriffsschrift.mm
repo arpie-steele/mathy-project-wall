@@ -131,6 +131,33 @@ $)
     wps wph wch wph wi wi wi wps wph wi wps wch wph wi wi wi wps wph wch fr1
     wps wph wch wph wi ax-2 ax-mp $.
 
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  fr6 $p |- ( ph -> ( ( ps -> ( ( ch -> ps ) -> th ) ) -> ( ps -> th ) ) ) $=
+    wps wch wps wi wth wi wi wps wth wi wi wph wps wch wps wi wth wi wi wps wth
+    wi wi wi wps wch wth fr4 wps wch wps wi wth wi wi wps wth wi wi wph ax-1
+    ax-mp $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  fr7 $p |- ( ( ph -> ( ps -> ch ) )
+              -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
+    wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wth wph wps
+    wi wph wch wi wi wi wi wph wps wch ax-2 wph wps wi wph wch wi wi wph wps
+    wch wi wi wth fr5 ax-mp $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  fr8 $p |- ( ( ph -> ( ps -> ( ( ch -> ps ) -> th ) ) )
+              -> ( ph -> ( ps -> th ) ) )  $=
+    wph wps wch wps wi wth wi wi wps wth wi wi wi wph wps wch wps wi wth wi wi
+    wi wph wps wth wi wi wi wph wps wch wth fr6 wph wps wch wps wi wth wi wi
+    wps wth wi ax-2 ax-mp $.
+
+
   $( Add antecedent to ~ ax-2 .
 
      (Contributed by Richard Penner, 1-Oct-2019.)
@@ -195,16 +222,8 @@ $)
      (Proof modification is discouraged.) $)
   frege8ALT $p |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $=
     wph wps wch wi wi wps wph wps wi wph wch wi wi wi wi wph wps wch wi wi wps
-    wph wch wi wi wi wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch
-    wi wi wps wph wps wi wph wch wi wi wi wi wph wps wch ax-2 wph wps wi wph
-    wch wi wi wph wps wch wi wi wps fr5 ax-mp wph wps wch wi wi wps wph wps wi
-    wph wch wi wi wi wps wph wch wi wi wi wi wph wps wch wi wi wps wph wps wi
-    wph wch wi wi wi wi wph wps wch wi wi wps wph wch wi wi wi wi wps wph wps
-    wi wph wch wi wi wi wps wph wch wi wi wi wph wps wch wi wi wps wph wps wi
-    wph wch wi wi wi wps wph wch wi wi wi wi wps wph wph wch wi fr4 wps wph wps
-    wi wph wch wi wi wi wps wph wch wi wi wi wph wps wch wi wi ax-1 ax-mp wph
-    wps wch wi wi wps wph wps wi wph wch wi wi wi wps wph wch wi wi ax-2 ax-mp
-    ax-mp $.
+    wph wch wi wi wi wph wps wch wps fr7 wph wps wch wi wi wps wph wph wch wi
+    fr8 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE. This proposition differs from ~ frege5 only
      in an unessential way.  Identical to ~ imim1 .
@@ -235,21 +254,327 @@ $)
     wi wch frege9 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE. $)
+  frege12 $p |- ( ph -> -. ph ) $= ? $.
 
   $( PLEASE PUT DESCRIPTION HERE. $)
+  frege13 $p |- ( ph -> -. ph ) $= ? $.
 
   $( PLEASE PUT DESCRIPTION HERE. $)
+  frege14 $p |- ( ph -> -. ph ) $= ? $.
 
   $( PLEASE PUT DESCRIPTION HERE. $)
+  frege15 $p |- ( ph -> -. ph ) $= ? $.
 
   $( PLEASE PUT DESCRIPTION HERE. $)
+  frege16 $p |- ( ph -> -. ph ) $= ? $.
 
   $( PLEASE PUT DESCRIPTION HERE. $)
+  frege17 $p |- ( ph -> -. ph ) $= ? $.
 
   $( PLEASE PUT DESCRIPTION HERE. $)
+  frege18 $p |- ( ph -> -. ph ) $= ? $.
 
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege19 $p |- ( ph -> -. ph ) $= ? $.
 
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege20 $p |- ( ph -> -. ph ) $= ? $.
 
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege21 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege22 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege23 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege24 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege25 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege26 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege27 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. 
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege28 $p |- ( ( ph -> ps ) -> ( -. ps -> -. ph ) ) $=
+    wph wps con3th $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege29 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege30 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. 
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege31 $p |- ( -. -. ph -> ph ) $=
+    wph notnot2 $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege32 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege33 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege34 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege35 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege36 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege37 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege38 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege39 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege40 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. 
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege41 $p |- ( ph -> -. -. ph ) $=
+    wph notnot1 $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege42 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege43 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege44 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege45 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege46 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege47 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege48 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege49 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege50 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege51 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. 
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege52a $p |- ( A = B -> ( [. A / x ]. ph <-> [. B / x ]. ph ) ) $=
+    wph vx cA cB dfsbcq $.
+
+  $( PLEASE PUT DESCRIPTION HERE. 
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege52b $p |- ( A = B -> ( F ` A ) = ( F ` B ) ) $=
+    cA cB cF fveq2 $.
+
+  ${ 
+    $d ph ch $.  $d ph th $.  $d ps ch $.  $d ps th $.
+    $( PLEASE PUT DESCRIPTION HERE. 
+       (Contributed by Richard Penner, 2-Oct-2019.) $)
+    frege52c $p |- ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) )
+                     -> -. ( ( -. ( ( ph -> ch ) -> -. ( -. ph -> th ) )
+                     -> -. ( ( ps -> ch ) -> -. ( -. ps -> th ) ) )
+                     -> -. ( -. ( ( ps -> ch ) -> -. ( -. ps -> th ) )
+                     -> -. ( ( ph -> ch ) -> -. ( -. ph -> th ) ) ) ) ) $=
+      wph wps wi wps wph wi wn wi wn wph wps wb wph wch wi wph wn wth wi wn wi
+      wn wps wch wi wps wn wth wi wn wi wn wi wps wch wi wps wn wth wi wn wi wn
+      wph wch wi wph wn wth wi wn wi wn wi wn wi wn wph wps wb wph wps wi wps
+      wph wi wn wi wn wph wps wb wph wps wi wps wph wi wa wph wps wi wps wph wi
+      wn wi wn wph wps dfbi2 wph wps wi wps wph wi df-an bitri biimpri wph wps
+      wb wph wch wi wph wn wth wi wn wi wn wps wch wi wps wn wth wi wn wi wn wb
+      wph wch wi wph wn wth wi wn wi wn wps wch wi wps wn wth wi wn wi wn wi
+      wps wch wi wps wn wth wi wn wi wn wph wch wi wph wn wth wi wn wi wn wi wn
+      wi wn wph wps wb wph wch wi wph wn wth wi wn wi wn wps wch wi wps wn wth
+      wi wa wps wch wi wps wn wth wi wn wi wn wph wch wi wph wn wth wi wn wi wn
+      wph wch wi wph wn wth wi wa wph wps wb wps wch wi wps wn wth wi wa wph
+      wch wi wph wn wth wi df-an wph wps wb wph wch wi wps wch wi wph wn wth wi
+      wps wn wth wi wph wps wch imbi1 wph wps wb wph wn wps wn wb wph wn wth wi
+      wps wn wth wi wb wph wps wb wph wn wps wn wb wph wps notbi biimpi wph wn
+      wps wn wth imbi1 syl anbi12d syl5bbr wps wch wi wps wn wth wi df-an
+      syl6bb wph wch wi wph wn wth wi wn wi wn wps wch wi wps wn wth wi wn wi
+      wn wb wph wch wi wph wn wth wi wn wi wn wps wch wi wps wn wth wi wn wi wn
+      wi wps wch wi wps wn wth wi wn wi wn wph wch wi wph wn wth wi wn wi wn wi
+      wa wph wch wi wph wn wth wi wn wi wn wps wch wi wps wn wth wi wn wi wn wi
+      wps wch wi wps wn wth wi wn wi wn wph wch wi wph wn wth wi wn wi wn wi wn
+      wi wn wph wch wi wph wn wth wi wn wi wn wps wch wi wps wn wth wi wn wi wn
+      dfbi2 wph wch wi wph wn wth wi wn wi wn wps wch wi wps wn wth wi wn wi wn
+      wi wps wch wi wps wn wth wi wn wi wn wph wch wi wph wn wth wi wn wi wn wi
+      df-an bitri sylib syl $.
+
+  $}
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege53 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( Reflexive equality of classes. 
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege54a $p |- A = A $=
+    cA eqid $.
+
+  $( Reflexive equality of logical propositions. 
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege54b $p |- -. ( ( ph -> ph ) -> -. ( ph -> ph ) ) $=
+    wph wph wi wph wph wi wa wph wph wi wph wph wi wn wi wn wph wph wb wph wph
+    wi wph wph wi wa wph biid wph wph wb wph wph wi wph wph wi wa wph wph dfbi2
+    biimpi ax-mp wph wph wi wph wph wi wa wph wph wi wph wph wi wn wi wn wph
+    wph wi wph wph wi df-an biimpi ax-mp $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege55 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege56 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege57 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege58 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege59 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege60 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege61 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege62 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege63 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege64 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege65 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege66 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege67 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege68 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege69 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege70 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege71 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege72 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege73 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege74 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege75 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege76 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege77 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege78 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege79 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege80 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege81 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege82 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege83 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege84 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege85 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege86 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege87 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege88 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege89 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege90 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege91 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege92 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege93 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege94 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege95 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege96 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege97 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege98 $p |- ( ph -> -. ph ) $= ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE. $)
+  frege99 $p |- ( ph -> -. ph ) $= ? $.
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
