@@ -133,10 +133,10 @@ $)
     wph wps wph wi wch wi wi wph wps wph wi wi wi wph wps wph wi wch wi wi wph
     wch wi wi wph wps wph wi wch wi wi wph wps fr1 wph wps wph wi wch fr2 ax-mp
     $.
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE. Alternate proof for ~ frege24 .
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  fr5 $p |- ( ( ps -> ph ) -> ( ps -> ( ch -> ph ) ) ) $=
+  frege24ALT $p |- ( ( ps -> ph ) -> ( ps -> ( ch -> ph ) ) ) $=
     wps wph wch wph wi wi wi wps wph wi wps wch wph wi wi wi wps wph wch fr1
     wps wph wch wph wi ax-2 ax-mp $.
 
@@ -155,7 +155,7 @@ $)
               -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
     wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wth wph wps
     wi wph wch wi wi wi wi wph wps wch ax-2 wph wps wi wph wch wi wi wph wps
-    wch wi wi wth fr5 ax-mp $.
+    wch wi wi wth frege24ALT ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -347,53 +347,100 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 18 of [Frege1879] p. 39. $)
-  frege18 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 18 of [Frege1879] p. 39.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege18 $p |- ( ( ph -> ( ps -> ch ) )
+                  -> ( ( th -> ph ) -> ( ps -> ( th -> ch ) ) ) ) $=
+    wph wps wch wi wi wth wph wi wth wps wch wi wi wi wi wph wps wch wi wi wth
+    wph wi wps wth wch wi wi wi wi wph wps wch wi wth frege5 wph wps wch wi wi
+    wth wph wi wth wps wch frege16 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 19 of [Frege1879] p. 39. $)
-  frege19 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 19 of [Frege1879] p. 39.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege19 $p |- ( ( ph -> ( ps -> ch ) )
+                  -> ( ( ch -> th ) -> ( ph -> ( ps -> th ) ) ) ) $=
+    wps wch wi wch wth wi wps wth wi wi wi wph wps wch wi wi wch wth wi wph wps
+    wth wi wi wi wi wps wch wth frege9 wps wch wi wch wth wi wps wth wi wph
+    frege18 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 20 of [Frege1879] p. 40. $)
-  frege20 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 20 of [Frege1879] p. 40.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege20 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                  -> ( ( th -> ta ) -> ( ph -> ( ps -> ( ch -> ta ) ) ) ) ) $=
+    wps wch wth wi wi wth wta wi wps wch wta wi wi wi wi wph wps wch wth wi wi
+    wi wth wta wi wph wps wch wta wi wi wi wi wi wps wch wth wta frege19 wps
+    wch wth wi wi wth wta wi wps wch wta wi wi wph frege18 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 21 of [Frege1879] p. 40. $)
-  frege21 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 21 of [Frege1879] p. 40.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege21 $p |- ( ( ( ph -> ps ) -> ch )
+                  -> ( ( ph -> th ) -> ( ( th -> ps ) -> ch ) ) )  $=
+    wph wth wi wth wps wi wph wps wi wi wi wph wps wi wch wi wph wth wi wth wps
+    wi wch wi wi wi wph wth wps frege9 wph wth wi wth wps wi wph wps wi wch
+    frege19 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 22 of [Frege1879] p. 41. $)
-  frege22 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 22 of [Frege1879] p. 41.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege22 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ( ta -> et ) ) ) ) )
+                  -> ( ph -> ( ps -> ( ch -> ( ta -> ( th -> et ) ) ) ) ) ) $=
+    wps wch wth wta wet wi wi wi wi wps wch wta wth wet wi wi wi wi wi wph wps
+    wch wth wta wet wi wi wi wi wi wph wps wch wta wth wet wi wi wi wi wi wi
+    wps wch wth wta wet frege16 wps wch wth wta wet wi wi wi wi wps wch wta wth
+    wet wi wi wi wi wph frege5 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 23 of [Frege1879] p. 42. $)
-  frege23 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 23 of [Frege1879] p. 42.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege23 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                  -> ( ( ta -> ph )
+                       -> ( ps -> ( ch -> ( ta -> th ) ) ) ) ) $=
+    wph wps wch wth wi wi wi wta wph wi wps wta wch wth wi wi wi wi wi wph wps
+    wch wth wi wi wi wta wph wi wps wch wta wth wi wi wi wi wi wph wps wch wth
+    wi wta frege18 wph wps wch wth wi wi wi wta wph wi wps wta wch wth frege22
+    ax-mp $.
+
+  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ frege24ALT which
+     was proved without relying on ~ frege8 .
+
+     Proposition 24 of [Frege1879] p. 42.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege24 $p |- ( ( ph -> ps ) -> ( ph -> ( ch -> ps ) ) ) $=
+    wph wps wi wch wph wps wi wi wi wph wps wi wph wch wps wi wi wi wph wps wi
+    wch ax-1 wph wps wi wch wph wps frege12 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 24 of [Frege1879] p. 42. $)
-  frege24 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 25 of [Frege1879] p. 42.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege25 $p |- ( ( ph -> ( ps -> ch ) )
+                  -> ( ph -> ( ps -> ( th -> ch ) ) ) ) $=
+    wps wch wi wps wth wch wi wi wi wph wps wch wi wi wph wps wth wch wi wi wi
+    wi wps wch wth frege24 wps wch wi wps wth wch wi wi wph frege5 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ idd .
 
-     Proposition 25 of [Frege1879] p. 42. $)
-  frege25 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 26 of [Frege1879] p. 42.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege26 $p |- ( ph -> ( ps -> ps ) ) $=
+    wps wph wps wi wi wph wps wps wi wi wps wph ax-1 wps wph wps frege8 ax-mp
+    $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ id .
 
-     Proposition 26 of [Frege1879] p. 42. $)
-  frege26 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 27 of [Frege1879] p. 43. $)
-  frege27 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 27 of [Frege1879] p. 43.
+     (Contributed by Richard Penner, 4-Oct-2019.) $)
+  frege27 $p |- ( ph -> ph ) $=
+    wph wps wph wi wi wph wph wi wph wps ax-1 wph wps wph wi wi wph frege26
+    ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE. Identical to ~ con3th .
 
