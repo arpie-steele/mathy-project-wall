@@ -286,33 +286,64 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 12 of [Frege1879] p. 37. $)
-  frege12 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 12 of [Frege1879] p. 37.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege12 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                  -> ( ph -> ( ch -> ( ps -> th ) ) ) ) $=
+    wps wch wth wi wi wch wps wth wi wi wi wph wps wch wth wi wi wi wph wch wps
+    wth wi wi wi wi wps wch wth frege8 wps wch wth wi wi wch wps wth wi wi wph
+    frege5 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 13 of [Frege1879] p. 37. $)
-  frege13 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 13 of [Frege1879] p. 37.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege13 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                  -> ( ch -> ( ph -> ( ps -> th ) ) ) ) $=
+    wph wps wch wth wi wi wi wph wch wps wth wi wi wi wi wph wps wch wth wi wi
+    wi wch wph wps wth wi wi wi wi wph wps wch wth frege12 wph wps wch wth wi
+    wi wi wph wch wps wth wi frege12 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 14 of [Frege1879] p. 37. $)
-  frege14 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 14 of [Frege1879] p. 37.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege14 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )
+                  -> ( ph -> ( th -> ( ps -> ( ch -> ta ) ) ) ) ) $=
+    wps wch wth wta wi wi wi wth wps wch wta wi wi wi wi wph wps wch wth wta wi
+    wi wi wi wph wth wps wch wta wi wi wi wi wi wps wch wth wta frege13 wps wch
+    wth wta wi wi wi wth wps wch wta wi wi wi wph frege5 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 15 of [Frege1879] p. 38. $)
-  frege15 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 15 of [Frege1879] p. 38.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege15 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )
+                  -> ( th -> ( ph -> ( ps -> ( ch -> ta ) ) ) ) ) $=
+    wph wps wch wth wta wi wi wi wi wph wth wps wch wta wi wi wi wi wi wph wps
+    wch wth wta wi wi wi wi wth wph wps wch wta wi wi wi wi wi wph wps wch wth
+    wta frege14 wph wps wch wth wta wi wi wi wi wph wth wps wch wta wi wi
+    frege12 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 16 of [Frege1879] p. 38. $)
-  frege16 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 16 of [Frege1879] p. 38.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege16 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )
+                  -> ( ph -> ( ps -> ( th -> ( ch -> ta ) ) ) ) ) $=
+    wps wch wth wta wi wi wi wps wth wch wta wi wi wi wi wph wps wch wth wta wi
+    wi wi wi wph wps wth wch wta wi wi wi wi wi wps wch wth wta frege12 wps wch
+    wth wta wi wi wi wps wth wch wta wi wi wi wph frege5 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 17 of [Frege1879] p. 39. $)
-  frege17 $p |- ( ph -> -. ph ) $= ? $.
+     Proposition 17 of [Frege1879] p. 39.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege17 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                  -> ( ps -> ( ch -> ( ph -> th ) ) ) ) $=
+    wph wps wch wth wi wi wi wps wph wch wth wi wi wi wi wph wps wch wth wi wi
+    wi wps wch wph wth wi wi wi wi wph wps wch wth wi frege8 wph wps wch wth wi
+    wi wi wps wph wch wth frege16 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -612,7 +643,7 @@ $)
      Proposition 58 of [Frege1879] p. 51. $)
   frege58 $p |- ( ph -> -. ph ) $= ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( A kind of Aristotelian inference.
 
      Proposition 59 of [Frege1879] p. 51. $)
   frege59 $p |- ( ph -> -. ph ) $= ? $.
@@ -627,7 +658,7 @@ $)
      Proposition 61 of [Frege1879] p. 52. $)
   frege61 $p |- ( ph -> -. ph ) $= ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( A kind of Aristotelian inference.
 
      Proposition 62 of [Frege1879] p. 52. $)
   frege62 $p |- ( ph -> -. ph ) $= ? $.
@@ -642,7 +673,7 @@ $)
      Proposition 64 of [Frege1879] p. 53. $)
   frege64 $p |- ( ph -> -. ph ) $= ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( A kind of Aristotelian inference.
 
      Proposition 65 of [Frege1879] p. 53. $)
   frege65 $p |- ( ph -> -. ph ) $= ? $.
