@@ -364,7 +364,7 @@ $)
      Proposition 27 of [Frege1879] p. 43. $)
   frege27 $p |- ( ph -> -. ph ) $= ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ con3th .
 
      Axiom 28 of [Frege1879] p. 43.
 
@@ -382,7 +382,7 @@ $)
      Proposition 30 of [Frege1879] p. 44. $)
   frege30 $p |- ( ph -> -. ph ) $= ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ notnot2 .
 
      Axiom 31 of [Frege1879] p. 44.
 
@@ -435,7 +435,7 @@ $)
      Proposition 40 of [Frege1879] p. 46. $)
   frege40 $p |- ( ph -> -. ph ) $= ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ notnot1 .
 
      Axiom 41 of [Frege1879] p. 47.
 
@@ -493,7 +493,7 @@ $)
      Proposition 51 of [Frege1879] p. 50. $)
   frege51 $p |- ( ph -> -. ph ) $= ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ dfsbcq .
 
      Part of Axiom 52 of [Frege1879] p. 50.
 
@@ -501,7 +501,7 @@ $)
   frege52a $p |- ( A = B -> ( [. A / x ]. ph <-> [. B / x ]. ph ) ) $=
     wph vx cA cB dfsbcq $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ fveq2 .
 
      Part of Axiom 52 of [Frege1879] p. 50.
 
@@ -509,14 +509,12 @@ $)
   frege52b $p |- ( A = B -> ( F ` A ) = ( F ` B ) ) $=
     cA cB cF fveq2 $.
 
-  ${
-    $d ph ch $.  $d ph th $.  $d ps ch $.  $d ps th $.
-    $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE.
 
-       Part of Axiom 52 of [Frege1879] p. 50.
+     Part of Axiom 52 of [Frege1879] p. 50.
 
-       (Contributed by Richard Penner, 2-Oct-2019.) $)
-    frege52c $p |- ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) )
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege52c $p |- ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) )
                      -> -. ( ( -. ( ( ph -> ch ) -> -. ( -. ph -> th ) )
                      -> -. ( ( ps -> ch ) -> -. ( -. ps -> th ) ) )
                      -> -. ( -. ( ( ps -> ch ) -> -. ( -. ps -> th ) )
@@ -546,7 +544,21 @@ $)
       wi wps wch wi wps wn wth wi wn wi wn wph wch wi wph wn wth wi wn wi wn wi
       df-an bitri sylib syl $.
 
-  $}
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Part of Axiom 52 of [Frege1879] p. 50.
+
+     (Contributed by Richard Penner, 3-Oct-2019.) $)
+  frege52cALT $p |- ( ( ph <-> ps )
+                        -> ( if- ( ph , ch , th )
+                           <-> if- ( ps , ch , th ) ) ) $=
+    wph wch wth wif wph wch wa wph wn wth wa wo wph wps wb wps wch wth wif wph
+    wch wth bj-dfif2 wph wps wb wph wch wa wph wn wth wa wo wps wch wa wps wn
+    wth wa wo wps wch wth wif wph wps wb wph wch wa wps wch wa wph wn wth wa
+    wps wn wth wa wph wps wb wph wps wch wph wps wb id anbi1d wph wps wb wph wn
+    wps wn wth wph wps wb wph wn wps wn wb wph wps notbi biimpi anbi1d orbi12d
+    wps wch wth bj-dfif2 syl6bbr syl5bb $.
+
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -555,13 +567,14 @@ $)
 
   $( Reflexive equality of classes.
 
-     Part of Axiom 54 of [Frege1879] p. 50.
+     Part of Axiom 54 of [Frege1879] p. 50.  Identical to ~ eqid .
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
   frege54a $p |- A = A $=
     cA eqid $.
 
-  $( Reflexive equality of logical propositions.
+  $( Reflexive equality of logical propositions.  Basically identical to
+     ~ biid .
 
      Part of Axiom 54 of [Frege1879] p. 50.
 
@@ -571,6 +584,13 @@ $)
     wi wph wph wi wa wph biid wph wph wb wph wph wi wph wph wi wa wph wph dfbi2
     biimpi ax-mp wph wph wi wph wph wi wa wph wph wi wph wph wi wn wi wn wph
     wph wi wph wph wi df-an biimpi ax-mp $.
+
+  $( Reflexive equality of logical propositions.  Identical to ~ biid .
+
+     Part of Axiom 54 of [Frege1879] p. 50.
+
+     (Contributed by Richard Penner, 3-Oct-2019.) $)
+  frege54bALT $p |- ( ph <-> ph ) $= wph biid $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
