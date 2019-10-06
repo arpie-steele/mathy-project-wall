@@ -102,21 +102,35 @@ $)
   $( Simplification of triple conjunction. Compare with ~ simp2 .
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  fr1 $p |- ( ph -> ( ps -> ( ch -> ps ) ) ) $=
+  simp2frege $p |- ( ph -> ( ps -> ( ch -> ps ) ) ) $=
     wps wch wps wi wi wph wps wch wps wi wi wi wps wch ax-1 wps wch wps wi wi
     wph ax-1 ax-mp $.
 
-  $( Simplification of triple conjunction via Frege. Identical to ~ simp2 .
+  $( More general statement than ~ frege3 . Like ~ ax-2 , it is
+     essentially a closed form of ~ mpd , however it has an extra
+     antecedent.
 
-     (Contributed by Richard Penner, 4-Oct-2019.) $)
-  simp2frege $p |- ( ( ph /\ ps /\ ch ) -> ps ) $=
-    wph wps wch wps wph wps wch fr1 3imp $.
+     It would be more natural to prove from ~ a1i and ~ ax-2 in Metamath.
+     (Contributed by Richard Penner, 1-Oct-2019.) $)
+  frege3gen $p |- ( ph
+                    -> ( ( ps -> ( ch -> th ) )
+                         -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
+    wps wch wth wi wi wps wch wi wps wth wi wi wi wph wps wch wth wi wi wps wch
+    wi wps wth wi wi wi wi wps wch wth ax-2 wps wch wth wi wi wps wch wi wps
+    wth wi wi wi wph ax-1 ax-mp $.
 
-  $( Closed form of a  modus ponens double deduction.
+  $( Specialized form of ~ idd .
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  iddspfrege $p |- ( ( ph -> ps ) -> ( ph -> ph ) ) $=
+    wph wps wph wi wi wph wps wi wph wph wi wi wph wps ax-1 wph wps wph ax-2
+    ax-mp $.
+
+  $( Double-use of ~ ax-2 .
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  fr2 $p |- ( ( ( ph -> ( ps -> ch ) ) -> ( ph -> ps ) ) ->
-              ( ( ph -> ( ps -> ch ) ) -> ( ph -> ch ) ) ) $=
+  misc1frege $p |- ( ( ( ph -> ( ps -> ch ) ) -> ( ph -> ps ) )
+                     -> ( ( ph -> ( ps -> ch ) ) -> ( ph -> ch ) ) ) $=
     wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wph wps wi
     wi wph wps wch wi wi wph wch wi wi wi wph wps wch ax-2 wph wps wch wi wi
     wph wps wi wph wch wi ax-2 ax-mp $.
@@ -133,28 +147,64 @@ $)
       ax-mp $.
   $}
 
-  $( More general statement than ~ frege3 . Like ~ ax-2 , it is
-     essentially a closed form of ~ mpd , however it has an extra
-     antecedent.
+  $( Simplify when consequent is also third antecedent.
 
-     It would be more natural to prove from ~ a1i and ~ ax-2 in Metamath.
-     (Contributed by Richard Penner, 1-Oct-2019.) $)
-  fr3 $p |- ( ph ->
-              ( ( ps -> ( ch -> th ) )
-                -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
-    wps wch wth wi wi wps wch wi wps wth wi wi wi wph wps wch wth wi wi wps wch
-    wi wps wth wi wi wi wi wps wch wth ax-2 wps wch wth wi wi wps wch wi wps
-    wth wi wi wi wph ax-1 ax-mp $.
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  simprlfrege $p |- ( ph -> ( ps -> ( ch -> ( th -> ch ) ) ) ) $=
+    wps wch wth wch wi wi wi wph wps wch wth wch wi wi wi wi wps wch wth
+    simp2frege wps wch wth wch wi wi wi wph ax-1 ax-mp $.
 
+  $( Distribution with two unnecessary antecendents.
 
-  $( Elimination of a nested antecedent of special form. More
-     naturally proved in Metamath from ~ ax-1 , ~ ax-2 , and ~ mpi .
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  misc3frege $p |- ( ph
+                     -> ( ps
+                          -> ( ( ch -> ( th -> ta ) )
+                               -> ( ( ch -> th ) -> ( ch -> ta ) ) ) ) ) $=
+    wps wch wth wta wi wi wch wth wi wch wta wi wi wi wi wph wps wch wth wta wi
+    wi wch wth wi wch wta wi wi wi wi wi wps wch wth wta frege3gen wps wch wth
+    wta wi wi wch wth wi wch wta wi wi wi wi wph ax-1 ax-mp $.
+
+  $( Introducing an embedded antecedent.  Alternate proof for
+     ~ frege24 .  Closed form for ~ a1d .
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege24ALT $p |- ( ( ph -> ps ) -> ( ph -> ( ch -> ps ) ) ) $=
+    wph wps wch wps wi wi wi wph wps wi wph wch wps wi wi wi wph
+    wps wch simp2frege wph wps wch wps wi ax-2 ax-mp $.
+
+  ${
+    a1dfrege.1 $e |- ( ph -> ps ) $.
+    $( Deduction introducing an embedded antecedent. Identical to ~ a1d .
+
+       (Contributed by Richard Penner, 4-Oct-2019.) $)
+    a1dfrege $p |- ( ph -> ( ch -> ps ) ) $=
+      wph wps wi wph wch wps wi wi a1dfrege.1 wph wps wch frege24ALT ax-mp $.
+  $}
+
+  $( Simplify when consequent is also the first antecedent.
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  simp1frege $p |- ( ph -> ( ps -> ( ch -> ph ) ) ) $=
+    wph wch wph wi wi wph wps wch wph wi wi wi wph wch ax-1 wph wch wph wi wps
+    frege24ALT ax-mp $.
+
+  $( Deduction relatied to distribution.
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  frege3gendist $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                        -> ( ph -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
+    wph wps wch wth wi wi wps wch wi wps wth wi wi wi wi wph wps wch wth wi wi
+    wi wph wps wch wi wps wth wi wi wi wi wph wps wch wth frege3gen wph wps wch
+    wth wi wi wps wch wi wps wth wi wi ax-2 ax-mp $.
+
+  $( Elimination of a nested antecedent of special form.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
   fr4 $p |- ( ( ph -> ( ( ps -> ph ) -> ch ) ) -> ( ph -> ch ) ) $=
     wph wps wph wi wch wi wi wph wps wph wi wi wi wph wps wph wi wch wi wi wph
-    wch wi wi wph wps wph wi wch wi wi wph wps fr1 wph wps wph wi wch fr2 ax-mp
-    $.
+    wch wi wi wph wps wph wi wch wi wi wph wps simp2frege wph wps wph wi wch
+    misc1frege ax-mp $.
 
   ${
     fr4i.1 $e |- ( ph -> ( ( ps -> ph ) -> ch ) ) $.
@@ -165,22 +215,14 @@ $)
       wph wps wph wi wch wi wi wph wch wi fr4i.1 wph wps wch fr4 ax-mp $.
   $}
 
-  $( Deduction introducing an embedded antecedent.  Alternate proof
-     for ~ frege24 .  Closed form for ~ a1d .
+  $( Distribute antecedent and add another.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege24ALT $p |- ( ( ps -> ph ) -> ( ps -> ( ch -> ph ) ) ) $=
-    wps wph wch wph wi wi wi wps wph wi wps wch wph wi wi wi wps wph wch fr1
-    wps wph wch wph wi ax-2 ax-mp $.
-
-  ${
-    a1dfrege.1 $e |- ( ph -> ps ) $.
-    $( Deduction introducing an embedded antecedent. Identical to ~ a1d .
-
-       (Contributed by Richard Penner, 4-Oct-2019.) $)
-    a1dfrege $p |- ( ph -> ( ch -> ps ) ) $=
-      wph wps wi wph wch wps wi wi a1dfrege.1 wps wph wch frege24ALT ax-mp $.
-  $}
+  fr7 $p |- ( ( ph -> ( ps -> ch ) )
+              -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
+    wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wth wph wps
+    wi wph wch wi wi wi wi wph wps wch ax-2 wph wps wch wi wi wph wps wi wph
+    wch wi wi wth frege24ALT ax-mp $.
 
   $( Elimination of a nested antecedent of special form.
 
@@ -189,15 +231,6 @@ $)
     wps wch wps wi wth wi wi wps wth wi wi wph wps wch wps wi wth wi wi wps wth
     wi wi wi wps wch wth fr4 wps wch wps wi wth wi wi wps wth wi wi wph ax-1
     ax-mp $.
-
-  $( Distribute antecedent and add another.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  fr7 $p |- ( ( ph -> ( ps -> ch ) )
-              -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
-    wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wth wph wps
-    wi wph wch wi wi wi wi wph wps wch ax-2 wph wps wi wph wch wi wi wph wps
-    wch wi wi wth frege24ALT ax-mp $.
 
   $( Eliminate antecedent when it is implied by previous antecedent.
 
@@ -209,7 +242,7 @@ $)
     wps wth wi ax-2 ax-mp $.
 
 
-  $( Add antecedent to ~ ax-2 .  Special case of ~ fr3 .
+  $( Add antecedent to ~ ax-2 .  Special case of ~ frege3gen .
 
      Proposition 3 of [Frege1879] p. 29.
 
@@ -432,7 +465,7 @@ $)
     wi wth wta wi wph wps wch wta wi wi wi wi wi wps wch wth wta frege19 wps
     wch wth wi wi wth wta wi wps wch wta wi wi wph frege18 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Replace antecedent in antecedent.
 
      Proposition 21 of [Frege1879] p. 40.
      (Contributed by Richard Penner, 4-Oct-2019.) $)
@@ -510,7 +543,7 @@ $)
   frege28 $p |- ( ( ph -> ps ) -> ( -. ps -> -. ph ) ) $=
     wph wps con3 $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Closed form of ~ con3d .
 
      Proposition 29 of [Frege1879] p. 43.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -518,7 +551,7 @@ $)
     wps wch wi wch wn wps wn wi wi wph wps wch wi wi wph wch wn wps wn wi wi wi
     wps wch frege28 wps wch wi wch wn wps wn wi wph frege5 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Commuted, closed form of ~ con3d .
 
      Proposition 30 of [Frege1879] p. 44.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -527,7 +560,7 @@ $)
     wph wn wi wi wi wps wph wch frege29 wps wph wch wps wch wn wph wn wi wi
     frege10 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ notnot2 .
+  $( Identical to ~ notnot2 .
 
      Axiom 31 of [Frege1879] p. 44.
 
@@ -535,7 +568,7 @@ $)
   frege31 $p |- ( -. -. ph -> ph ) $=
     wph notnot2 $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Deduce ~ con1 from ~ con3 .
 
      Proposition 32 of [Frege1879] p. 44.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -544,14 +577,15 @@ $)
     wph wn wn wph wi wph wn wps wi wps wn wph wn wn wi wi wph wn wps wi wps wn
     wph wi wi wi wph frege31 wph wn wn wph wph wn wps wi wps wn frege7 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ con1 .
+  $( Identical to ~ con1 .
 
      Proposition 33 of [Frege1879] p. 44.
-     (Contributed by Richard Penner, 5-Oct-2019.) $)
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
   frege33 $p |- ( ( -. ph -> ps ) -> ( -. ps -> ph ) ) $=
-    wph wps con1 $.
+    wph wn wps wi wps wn wph wn wn wi wi wph wn wps wi wps wn wph wi wi wph wn
+    wps frege28 wph wps frege32 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Closed form of ~ con1d .
 
      Proposition 34 of [Frege1879] p. 45.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -559,7 +593,7 @@ $)
     wps wn wch wi wch wn wps wi wi wph wps wn wch wi wi wph wch wn wps wi wi wi
     wps wch frege33 wps wn wch wi wch wn wps wi wph frege5 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Commuted, closed form of ~ con1d .
 
      Proposition 35 of [Frege1879] p. 45.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -568,7 +602,7 @@ $)
     wph wps wi wi wi wph wps wch frege34 wph wps wn wch wi wi wph wch wn wps
     frege12 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ pm2.24 .
+  $( Identical to ~ pm2.24 .
 
      Proposition 36 of [Frege1879] p. 45.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -576,7 +610,7 @@ $)
     wph wps wn wph wi wi wph wph wn wps wi wi wph wps wn ax-1 wph wps wph
     frege34 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Similar to a closed form of ~ orcs .
 
      Proposition 37 of [Frege1879] p. 46.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -584,7 +618,7 @@ $)
     wph wph wn wps wi wi wph wn wps wi wch wi wph wch wi wi wph wps frege36 wph
     wph wn wps wi wch frege9 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ pm2.21 .
+  $( Identical to ~ pm2.21 .
 
      Proposition 38 of [Frege1879] p. 46.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -592,7 +626,7 @@ $)
     wph wph wn wps wi wi wph wn wph wps wi wi wph wps frege36 wph wph wn wps
     frege8 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Syllogism between ~ pm2.18 and ~ pm2.24 .
 
      Proposition 39 of [Frege1879] p. 46.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -600,7 +634,7 @@ $)
     wph wn wph wps wi wi wph wn wph wi wph wn wps wi wi wph wps frege38 wph wn
     wph wps ax-2 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Anything implies ~ pm2.18 .
 
      Proposition 40 of [Frege1879] p. 46.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -608,7 +642,7 @@ $)
     wps wn wps wi wps wn wph wi wi wph wn wps wn wps wi wps wi wi wps wph
     frege39 wps wn wps wi wps wph frege35 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ notnot1 .
+  $( Identical to ~ notnot1 .
 
      Axiom 41 of [Frege1879] p. 47.
 
@@ -616,14 +650,14 @@ $)
   frege41 $p |- ( ph -> -. -. ph ) $=
     wph notnot1 $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Not not ~ id .
 
      Proposition 42 of [Frege1879] p. 47.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
   frege42 $p |- -. -. ( ph -> ph ) $=
     wph wph wi wph wph wi wn wn wph frege27 wph wph wi frege41 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ pm2.18 .
+  $( Identical to ~ pm2.18 .
 
      Proposition 43 of [Frege1879] p. 47.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -631,7 +665,7 @@ $)
     wph wph wi wn wn wph wn wph wi wph wi wph frege42 wph wph wi wn wph frege40
     ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Similar to a commuted ~ pm2.62 .
 
      Proposition 44 of [Frege1879] p. 47.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -639,7 +673,7 @@ $)
     wph wn wph wi wph wi wph wn wps wi wps wph wi wph wi wi wph frege43 wph wn
     wph wph wps frege21 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Deduce ~ pm2.6 from ~ con1 .
 
      Proposition 45 of [Frege1879] p. 47.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -649,7 +683,7 @@ $)
     wps wi wph wps wi wps wi wi wi wps wph frege44 wps wn wph wi wph wps wi wps
     wi wph wn wps wi frege5 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ pm2.6 .
+  $( Identical to ~ pm2.6 .
 
      Proposition 46 of [Frege1879] p. 48.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -657,7 +691,7 @@ $)
     wph wn wps wi wps wn wph wi wi wph wn wps wi wph wps wi wps wi wi wph wps
     frege33 wph wps frege45 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Deduce consequence follows from either path implied by a disjunction.
 
      Proposition 47 of [Frege1879] p. 48.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -666,7 +700,7 @@ $)
     wph wn wch wi wph wch wi wch wi wi wph wn wps wi wps wch wi wph wch wi wch
     wi wi wi wph wch frege46 wph wn wch wph wch wi wch wi wps frege21 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Closed form of syllogism with internal disjunction.
 
      Proposition 48 of [Frege1879] p. 49.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -676,7 +710,7 @@ $)
     wth wi wps wth wi wph wth wi wi wi wi wps wch wth frege47 wps wn wch wi wch
     wth wi wps wth wi wth wph frege23 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Closed form of deduction with disjunction.
 
      Proposition 49 of [Frege1879] p. 49.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -686,7 +720,7 @@ $)
     wps wch wi wch wi wi wi wph wps wch frege47 wph wn wps wi wps wch wi wph
     wch wi wch frege12 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Closed form of ~ jaoi .
 
      Proposition 50 of [Frege1879] p. 49.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -696,7 +730,7 @@ $)
     wn wch wi wps wi wi wi wph wch wps frege49 wph wn wch wi wph wps wi wch wps
     wi wps frege17 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( Compare with ~ jaod .
 
      Proposition 51 of [Frege1879] p. 50.
      (Contributed by Richard Penner, 5-Oct-2019.) $)
@@ -707,7 +741,7 @@ $)
     wi wph wps wn wth wi wch wi wi wi wi wps wch wth frege50 wps wch wi wth wch
     wi wps wn wth wi wch wi wph frege18 ax-mp $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ dfsbcq .
+  $( Identical to ~ dfsbcq .
 
      Part of Axiom 52 of [Frege1879] p. 50.
 
@@ -715,7 +749,7 @@ $)
   frege52a $p |- ( A = B -> ( [. A / x ]. ph <-> [. B / x ]. ph ) ) $=
     wph vx cA cB dfsbcq $.
 
-  $( PLEASE PUT DESCRIPTION HERE. Identical to ~ fveq2 .
+  $( Identical to ~ fveq2 .
 
      Part of Axiom 52 of [Frege1879] p. 50.
 
