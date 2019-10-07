@@ -135,18 +135,6 @@ $)
     wi wph wps wch wi wi wph wch wi wi wi wph wps wch ax-2 wph wps wch wi wi
     wph wps wi wph wch wi ax-2 ax-mp $.
 
-  ${
-    fr2i.1 $e |- ( ( ph -> ( ps -> ch ) ) -> ( ph -> ps ) ) $.
-    fr2i.2 $e |- ( ph -> ( ps -> ch ) ) $.
-    $( A modus ponens double deduction.
-
-       (Contributed by Richard Penner, 4-Oct-2019.) $)
-    fr2i $p |- ( ph -> ch ) $=
-      wph wps wi wph wch wi wph wps wch wi wi wph wps wi fr2i.2 fr2i.1 ax-mp
-      wph wps wch wi wi wph wps wi wph wch wi wi fr2i.2 wph wps wch ax-2 ax-mp
-      ax-mp $.
-  $}
-
   $( Simplify when consequent is also third antecedent.
 
      (Contributed by Richard Penner, 6-Oct-2019.) $)
@@ -201,24 +189,25 @@ $)
   $( Elimination of a nested antecedent of special form.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  fr4 $p |- ( ( ph -> ( ( ps -> ph ) -> ch ) ) -> ( ph -> ch ) ) $=
+  rp4frege $p |- ( ( ph -> ( ( ps -> ph ) -> ch ) ) -> ( ph -> ch ) ) $=
     wph wps wph wi wch wi wi wph wps wph wi wi wi wph wps wph wi wch wi wi wph
     wch wi wi wph wps wph wi wch wi wi wph wps simp2frege wph wps wph wi wch
     misc1frege ax-mp $.
 
   ${
-    fr4i.1 $e |- ( ph -> ( ( ps -> ph ) -> ch ) ) $.
+    rp4fregei.1 $e |- ( ph -> ( ( ps -> ph ) -> ch ) ) $.
     $( More naturally proved in Metamath from ~ ax-1 and ~ mpd .
 
        (Contributed by RichardPenner, 5-Oct-2019.) $)
-    fr4i $p |- ( ph -> ch ) $=
-      wph wps wph wi wch wi wi wph wch wi fr4i.1 wph wps wch fr4 ax-mp $.
+    rp4fregei $p |- ( ph -> ch ) $=
+      wph wps wph wi wch wi wi wph wch wi rp4fregei.1 wph wps wch rp4frege
+      ax-mp $.
   $}
 
   $( Distribute antecedent and add another.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  fr7 $p |- ( ( ph -> ( ps -> ch ) )
+  rp7frege $p |- ( ( ph -> ( ps -> ch ) )
               -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
     wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wth wph wps
     wi wph wch wi wi wi wi wph wps wch ax-2 wph wps wch wi wi wph wps wi wph
@@ -227,19 +216,20 @@ $)
   $( Elimination of a nested antecedent of special form.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  fr6 $p |- ( ph -> ( ( ps -> ( ( ch -> ps ) -> th ) ) -> ( ps -> th ) ) ) $=
+  rp6frege $p |- ( ph
+                   -> ( ( ps -> ( ( ch -> ps ) -> th ) ) -> ( ps -> th ) ) ) $=
     wps wch wps wi wth wi wi wps wth wi wi wph wps wch wps wi wth wi wi wps wth
-    wi wi wi wps wch wth fr4 wps wch wps wi wth wi wi wps wth wi wi wph ax-1
-    ax-mp $.
+    wi wi wi wps wch wth rp4frege wps wch wps wi wth wi wi wps wth wi wi wph
+    ax-1 ax-mp $.
 
   $( Eliminate antecedent when it is implied by previous antecedent.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  fr8 $p |- ( ( ph -> ( ps -> ( ( ch -> ps ) -> th ) ) )
-              -> ( ph -> ( ps -> th ) ) ) $=
+  rp8frege $p |- ( ( ph -> ( ps -> ( ( ch -> ps ) -> th ) ) )
+                   -> ( ph -> ( ps -> th ) ) ) $=
     wph wps wch wps wi wth wi wi wps wth wi wi wi wph wps wch wps wi wth wi wi
-    wi wph wps wth wi wi wi wph wps wch wth fr6 wph wps wch wps wi wth wi wi
-    wps wth wi ax-2 ax-mp $.
+    wi wph wps wth wi wi wi wph wps wch wth rp6frege wph wps wch wps wi wth wi
+    wi wps wth wi ax-2 ax-mp $.
 
 
   $( Add antecedent to ~ ax-2 .  Special case of ~ frege3gen .
@@ -336,8 +326,8 @@ $)
      (Proof modification is discouraged.) $)
   frege8ALT $p |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $=
     wph wps wch wi wi wps wph wps wi wph wch wi wi wi wi wph wps wch wi wi wps
-    wph wch wi wi wi wph wps wch wps fr7 wph wps wch wi wi wps wph wph wch wi
-    fr8 ax-mp $.
+    wph wch wi wi wi wph wps wch wps rp7frege wph wps wch wi wi wps wph wph wch
+    wi rp8frege ax-mp $.
 
   $( Closed form of ~ syl with swapped antecedents. This proposition
      differs from ~ frege5 only in an unessential way.  Identical to ~ imim1 .
