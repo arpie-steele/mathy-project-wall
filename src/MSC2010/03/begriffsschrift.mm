@@ -12,7 +12,6 @@ $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 $)
 
-
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Propositions from _Begriffschift_
@@ -48,7 +47,7 @@ $)
     frege1just1.1 $e |- ph $.
     frege1just1.2 $e |- ps $.
     frege1just1.3 $e |- -. ch $.
-    $( Justification for ~ frege1 .
+    $( Partial justification for ~ frege1 .
 
        (Contributed by Richard Penner, 1-Oct-2019.) $)
     frege1just1 $p |- -. ( ph -> ( ps -> ch ) ) $=
@@ -60,7 +59,7 @@ $)
 
   ${
     frege1just2.1 $e |- ch $.
-    $( Justification for ~ frege1 .
+    $( Partial justification for ~ frege1 .
 
        (Contributed by Richard Penner, 1-Oct-2019.) $)
     frege1just2 $p |- ( ph -> ( ps -> ch ) ) $=
@@ -69,7 +68,7 @@ $)
 
   ${
     frege1just3.1 $e |- -. ps $.
-    $( Justification for ~ frege1 .
+    $( Partial justification for ~ frege1 .
 
        (Contributed by Richard Penner, 1-Oct-2019.) $)
     frege1just3 $p |- ( ph -> ( ps -> ch ) ) $=
@@ -78,7 +77,7 @@ $)
 
   ${
     frege1just4.1 $e |- -. ph $.
-    $( Justification for ~ frege1 .
+    $( Partial justification for ~ frege1 .
 
        (Contributed by Richard Penner, 1-Oct-2019.) $)
     frege1just4 $p |- ( ph -> ( ps -> ch ) ) $=
@@ -98,139 +97,6 @@ $)
                  -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) $=
     wph wps wch ax-2 $.
   $( $j restatement 'frege2' of 'ax-2'; $)
-
-  $( Simplification of triple conjunction. Compare with ~ simp2 .
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  simp2frege $p |- ( ph -> ( ps -> ( ch -> ps ) ) ) $=
-    wps wch wps wi wi wph wps wch wps wi wi wi wps wch ax-1 wps wch wps wi wi
-    wph ax-1 ax-mp $.
-
-  $( More general statement than ~ frege3 . Like ~ ax-2 , it is
-     essentially a closed form of ~ mpd , however it has an extra
-     antecedent.
-
-     It would be more natural to prove from ~ a1i and ~ ax-2 in Metamath.
-     (Contributed by Richard Penner, 1-Oct-2019.) $)
-  frege3gen $p |- ( ph
-                    -> ( ( ps -> ( ch -> th ) )
-                         -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
-    wps wch wth wi wi wps wch wi wps wth wi wi wi wph wps wch wth wi wi wps wch
-    wi wps wth wi wi wi wi wps wch wth ax-2 wps wch wth wi wi wps wch wi wps
-    wth wi wi wi wph ax-1 ax-mp $.
-
-  $( Specialized form of ~ idd .
-
-     (Contributed by Richard Penner, 6-Oct-2019.) $)
-  iddspfrege $p |- ( ( ph -> ps ) -> ( ph -> ph ) ) $=
-    wph wps wph wi wi wph wps wi wph wph wi wi wph wps ax-1 wph wps wph ax-2
-    ax-mp $.
-
-  $( Double-use of ~ ax-2 .
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  misc1frege $p |- ( ( ( ph -> ( ps -> ch ) ) -> ( ph -> ps ) )
-                     -> ( ( ph -> ( ps -> ch ) ) -> ( ph -> ch ) ) ) $=
-    wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wph wps wi
-    wi wph wps wch wi wi wph wch wi wi wi wph wps wch ax-2 wph wps wch wi wi
-    wph wps wi wph wch wi ax-2 ax-mp $.
-
-  $( Simplify when consequent is also third antecedent.
-
-     (Contributed by Richard Penner, 6-Oct-2019.) $)
-  simprlfrege $p |- ( ph -> ( ps -> ( ch -> ( th -> ch ) ) ) ) $=
-    wps wch wth wch wi wi wi wph wps wch wth wch wi wi wi wi wps wch wth
-    simp2frege wps wch wth wch wi wi wi wph ax-1 ax-mp $.
-
-  $( Distribution with two unnecessary antecendents.
-
-     (Contributed by Richard Penner, 6-Oct-2019.) $)
-  misc3frege $p |- ( ph
-                     -> ( ps
-                          -> ( ( ch -> ( th -> ta ) )
-                               -> ( ( ch -> th ) -> ( ch -> ta ) ) ) ) ) $=
-    wps wch wth wta wi wi wch wth wi wch wta wi wi wi wi wph wps wch wth wta wi
-    wi wch wth wi wch wta wi wi wi wi wi wps wch wth wta frege3gen wps wch wth
-    wta wi wi wch wth wi wch wta wi wi wi wi wph ax-1 ax-mp $.
-
-  $( Introducing an embedded antecedent.  Alternate proof for
-     ~ frege24 .  Closed form for ~ a1d .
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege24ALT $p |- ( ( ph -> ps ) -> ( ph -> ( ch -> ps ) ) ) $=
-    wph wps wch wps wi wi wi wph wps wi wph wch wps wi wi wi wph
-    wps wch simp2frege wph wps wch wps wi ax-2 ax-mp $.
-
-  ${
-    a1dfrege.1 $e |- ( ph -> ps ) $.
-    $( Deduction introducing an embedded antecedent. Identical to ~ a1d .
-
-       (Contributed by Richard Penner, 4-Oct-2019.) $)
-    a1dfrege $p |- ( ph -> ( ch -> ps ) ) $=
-      wph wps wi wph wch wps wi wi a1dfrege.1 wph wps wch frege24ALT ax-mp $.
-  $}
-
-  $( Simplify when consequent is also the first antecedent.
-
-     (Contributed by Richard Penner, 6-Oct-2019.) $)
-  simp1frege $p |- ( ph -> ( ps -> ( ch -> ph ) ) ) $=
-    wph wch wph wi wi wph wps wch wph wi wi wi wph wch ax-1 wph wch wph wi wps
-    frege24ALT ax-mp $.
-
-  $( Deduction relatied to distribution.
-
-     (Contributed by Richard Penner, 6-Oct-2019.) $)
-  frege3gendist $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
-                        -> ( ph -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
-    wph wps wch wth wi wi wps wch wi wps wth wi wi wi wi wph wps wch wth wi wi
-    wi wph wps wch wi wps wth wi wi wi wi wph wps wch wth frege3gen wph wps wch
-    wth wi wi wps wch wi wps wth wi wi ax-2 ax-mp $.
-
-  $( Elimination of a nested antecedent of special form.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  rp4frege $p |- ( ( ph -> ( ( ps -> ph ) -> ch ) ) -> ( ph -> ch ) ) $=
-    wph wps wph wi wch wi wi wph wps wph wi wi wi wph wps wph wi wch wi wi wph
-    wch wi wi wph wps wph wi wch wi wi wph wps simp2frege wph wps wph wi wch
-    misc1frege ax-mp $.
-
-  ${
-    rp4fregei.1 $e |- ( ph -> ( ( ps -> ph ) -> ch ) ) $.
-    $( More naturally proved in Metamath from ~ ax-1 and ~ mpd .
-
-       (Contributed by RichardPenner, 5-Oct-2019.) $)
-    rp4fregei $p |- ( ph -> ch ) $=
-      wph wps wph wi wch wi wi wph wch wi rp4fregei.1 wph wps wch rp4frege
-      ax-mp $.
-  $}
-
-  $( Distribute antecedent and add another.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  rp7frege $p |- ( ( ph -> ( ps -> ch ) )
-              -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
-    wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wth wph wps
-    wi wph wch wi wi wi wi wph wps wch ax-2 wph wps wch wi wi wph wps wi wph
-    wch wi wi wth frege24ALT ax-mp $.
-
-  $( Elimination of a nested antecedent of special form.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  rp6frege $p |- ( ph
-                   -> ( ( ps -> ( ( ch -> ps ) -> th ) ) -> ( ps -> th ) ) ) $=
-    wps wch wps wi wth wi wi wps wth wi wi wph wps wch wps wi wth wi wi wps wth
-    wi wi wi wps wch wth rp4frege wps wch wps wi wth wi wi wps wth wi wi wph
-    ax-1 ax-mp $.
-
-  $( Eliminate antecedent when it is implied by previous antecedent.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  rp8frege $p |- ( ( ph -> ( ps -> ( ( ch -> ps ) -> th ) ) )
-                   -> ( ph -> ( ps -> th ) ) ) $=
-    wph wps wch wps wi wth wi wi wps wth wi wi wi wph wps wch wps wi wth wi wi
-    wi wph wps wth wi wi wi wph wps wch wth rp6frege wph wps wch wps wi wth wi
-    wi wps wth wi ax-2 ax-mp $.
-
 
   $( Add antecedent to ~ ax-2 .  Special case of ~ frege3gen .
 
@@ -256,16 +122,6 @@ $)
     wph wps wi wch wph wps wi wi wch wph wi wch wps wi wi wi wi wph wps wi wch
     wph wps wi wi wi wph wps wi wch wph wi wch wps wi wi wi wi wph wps wch
     frege3 wph wps wi wch wph wps wi wi wch wph wi wch wps wi wi ax-2 ax-mp $.
-
-  ${
-    a2dspfrege.1 $e |- ( ( ph -> ps ) -> ( ch -> ( ph -> ps ) ) ) $.
-    $( Deduction distributing an embedded antecedent. Special case of ~ a2d .
-
-       (Contributed by Richard Penner, 4-Oct-2019.) $)
-    a2dspfrege $p |- ( ( ph -> ps ) -> ( ( ch -> ph ) -> ( ch -> ps ) ) ) $=
-      wph wps wi wch wph wps wi wi wi wph wps wi wch wph wi wch wps wi wi wi
-      a2dspfrege.1 wph wps wch frege4 ax-mp $.
-  $}
 
   $( A closed form of ~ syl . Identical to ~ imim2 .
 
@@ -313,21 +169,6 @@ $)
      (Contributed by Richard Penner, 1-Oct-2019.) $)
   frege8 $p |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $=
   wph wps wch pm2.04 $.
-
-  $( Swap antecedents. Identical to ~ pm2.04 .
-
-     Proof follows closely proof of ~ pm2.04 in
-     ~ http://us.metamath.org/mmsolitaire/pmproofs.txt , but in the style of
-     [Frege1879] .
-
-     This demonstrates that Axiom 8 of [Frege1879] p. 35 is redundant.
-
-     (Contributed by Richard Penner, 1-Oct-2019.)  (New usage is discouraged.)
-     (Proof modification is discouraged.) $)
-  frege8ALT $p |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $=
-    wph wps wch wi wi wps wph wps wi wph wch wi wi wi wi wph wps wch wi wi wps
-    wph wch wi wi wi wph wps wch wps rp7frege wph wps wch wi wi wps wph wph wch
-    wi rp8frege ax-mp $.
 
   $( Closed form of ~ syl with swapped antecedents. This proposition
      differs from ~ frege5 only in an unessential way.  Identical to ~ imim1 .
@@ -731,13 +572,143 @@ $)
     wi wph wps wn wth wi wch wi wi wi wi wps wch wth frege50 wps wch wi wth wch
     wi wps wn wth wi wch wi wph frege18 ax-mp $.
 
-  $( Identical to ~ dfsbcq .
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     _Begriffschift_ Chapter II with equivalence of sets
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+$)
+
+  $( One side of ~ dfsbcq .
 
      Part of Axiom 52 of [Frege1879] p. 50.
 
+     (Contributed by Richard Penner, 7-Oct-2019.) $)
+  frege52a $p |- ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     _Note:_ in the Bauer-Meenfelberg translation published in van
+     Heijenoort's collection _From Frege to Goedel_, this proof has
+     the minor clause and result swapped.
+
+     Proposition 53 of [Frege1879] p. 50. $)
+  frege53a $p |- ( [. A / x ]. ph -> ( A = B -> [. B / x ]. ph ) ) $=
+    ? $.
+
+  $( Reflexive equality of sets (as classes).
+
+     Part of Axiom 54 of [Frege1879] p. 50.  Identical to ~ eqid .
+
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege52a $p |- ( A = B -> ( [. A / x ]. ph <-> [. B / x ]. ph ) ) $=
-    wph vx cA cB dfsbcq $.
+  frege54a $p |- A = A $=
+    cA eqid $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 55 of [Frege1879] p. 50. $)
+  frege55a $p |- ( x = A -> [. A / z ]. z = x )  $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 56 of [Frege1879] p. 50. $)
+  frege56a $p |- ( ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) )
+                   -> ( B = A -> ( [. A / x ]. ph -> [. B / x ]. ph ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 57 of [Frege1879] p. 51. $)
+  frege57a $p |- ( A = B -> ( [. B / x ]. ph -> [. A / x ]. ph ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 58 of [Frege1879] p. 51. $)
+  frege58a $p |- ( A. x ph -> [. A / x ]. ph ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference.
+
+     Proposition 59 of [Frege1879] p. 51. $)
+  frege59a $p |- ( [. A / x ]. ph
+                   -> ( -. [. A / x ]. ps -> -. A x ( ph -> ps ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 60 of [Frege1879] p. 52. $)
+  frege60a $p |- ( A. x ( ph -> ( ps -> ch ) )
+                   -> ( [. A / x ]. ph
+                        -> ( [. A / x ]. ps -> [. A / x ]. ch ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 61 of [Frege1879] p. 52. $)
+  frege61a $p |- ( ( [. A / x ]. ph -> ps ) -> ( A. x ph -> ps ) ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference. This judgement replaces the mode
+     of inference ~ barbara when the minor premise has a particular context.
+
+     Proposition 62 of [Frege1879] p. 52. $)
+  frege62a $p |- ( [. A / x ]. ph
+                   -> ( A. x ( ph -> ps ) -> [. A / x ]. ps ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 63 of [Frege1879] p. 52. $)
+  frege63a $p |- ( [. A / x ]. ph
+                   -> ( ps
+                        -> ( A. x ( ph -> ch ) -> [. A / x ]. ch ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 64 of [Frege1879] p. 53. $)
+  frege64a $p |- ( ( [. A / x ]. ph -> [. B / x ]. ps )
+                   -> ( A. x ( ps -> ch )
+                        -> ( [. A / x ]. ph -> [. B / x ]. ch ) ) ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference. This judgement replaces the mode
+     of inference ~ barbara when the minor premise has a general context.
+
+     Proposition 65 of [Frege1879] p. 53. $)
+  frege65a $p |- ( A. x ( ph -> ps )
+                   -> ( A. x ( ps -> ch )
+                        -> ( [. A / x ]. ph -> [. A / x ]. ch ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 66 of [Frege1879] p. 54. $)
+  frege66a $p |- ( A. x ( ph -> ps )
+                   -> ( A. x ( ch -> ph )
+                        -> ( [. A / x ]. ch -> [. A / x ]. ps ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 67 of [Frege1879] p. 54. $)
+  frege67a $p |- ( ( ( A. x ph <-> ps ) -> ( ps -> A. x ph ) )
+                   -> ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 68 of [Frege1879] p. 54. $)
+  frege68a $p |- ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) $=
+    ? $.
+
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     _Begriffschift_ Chapter II with logical equivalence
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+$)
 
   $( Identical to ~ fveq2 .
 
@@ -797,20 +768,6 @@ $)
     wps wn wth wph wps wb wph wn wps wn wb wph wps notbi biimpi anbi1d orbi12d
     wps wch wth bj-dfif2 syl6bbr syl5bb $.
 
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 53 of [Frege1879] p. 50. $)
-  frege53 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( Reflexive equality of classes.
-
-     Part of Axiom 54 of [Frege1879] p. 50.  Identical to ~ eqid .
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege54a $p |- A = A $=
-    cA eqid $.
-
   $( Reflexive equality of logical propositions.  Basically identical to
      ~ biid .
 
@@ -829,76 +786,6 @@ $)
 
      (Contributed by Richard Penner, 3-Oct-2019.) $)
   frege54bALT $p |- ( ph <-> ph ) $= wph biid $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 55 of [Frege1879] p. 50. $)
-  frege55 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 56 of [Frege1879] p. 50. $)
-  frege56 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 57 of [Frege1879] p. 51. $)
-  frege57 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 58 of [Frege1879] p. 51. $)
-  frege58 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( A kind of Aristotelian inference.
-
-     Proposition 59 of [Frege1879] p. 51. $)
-  frege59 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 60 of [Frege1879] p. 52. $)
-  frege60 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 61 of [Frege1879] p. 52. $)
-  frege61 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( A kind of Aristotelian inference.
-
-     Proposition 62 of [Frege1879] p. 52. $)
-  frege62 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 63 of [Frege1879] p. 52. $)
-  frege63 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 64 of [Frege1879] p. 53. $)
-  frege64 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( A kind of Aristotelian inference.
-
-     Proposition 65 of [Frege1879] p. 53. $)
-  frege65 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 66 of [Frege1879] p. 54. $)
-  frege66 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 67 of [Frege1879] p. 54. $)
-  frege67 $p |- ( ph -> -. ph ) $= ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 68 of [Frege1879] p. 54. $)
-  frege68 $p |- ( ph -> -. ph ) $= ? $.
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
@@ -1230,3 +1117,172 @@ $)
 
      Proposition 133 of [Frege1879] p. 86. $)
   frege133 $p |- ( ph -> -. ph ) $= ? $.
+
+$(
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+     Corollaries from proofs of _Begriffschift_
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+$)
+
+  ${
+    a2dspfrege.1 $e |- ( ( ph -> ps ) -> ( ch -> ( ph -> ps ) ) ) $.
+    $( Deduction distributing an embedded antecedent. Special case of ~ a2d .
+
+       (Contributed by Richard Penner, 4-Oct-2019.) $)
+    a2dspfrege $p |- ( ( ph -> ps ) -> ( ( ch -> ph ) -> ( ch -> ps ) ) ) $=
+      wph wps wi wch wph wps wi wi wi wph wps wi wch wph wi wch wps wi wi wi
+      a2dspfrege.1 wph wps wch frege4 ax-mp $.
+  $}
+
+$(
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+     Additional proofs in the style of _Begriffschift_
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+$)
+
+  $( Simplification of triple conjunction. Compare with ~ simp2 .
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  simp2frege $p |- ( ph -> ( ps -> ( ch -> ps ) ) ) $=
+    wps wch wps wi wi wph wps wch wps wi wi wi wps wch ax-1 wps wch wps wi wi
+    wph ax-1 ax-mp $.
+
+  $( More general statement than ~ frege3 . Like ~ ax-2 , it is
+     essentially a closed form of ~ mpd , however it has an extra
+     antecedent.
+
+     It would be more natural to prove from ~ a1i and ~ ax-2 in Metamath.
+     (Contributed by Richard Penner, 1-Oct-2019.) $)
+  frege3gen $p |- ( ph
+                    -> ( ( ps -> ( ch -> th ) )
+                         -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
+    wps wch wth wi wi wps wch wi wps wth wi wi wi wph wps wch wth wi wi wps wch
+    wi wps wth wi wi wi wi wps wch wth ax-2 wps wch wth wi wi wps wch wi wps
+    wth wi wi wi wph ax-1 ax-mp $.
+
+  $( Specialized form of ~ idd .
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  iddspfrege $p |- ( ( ph -> ps ) -> ( ph -> ph ) ) $=
+    wph wps wph wi wi wph wps wi wph wph wi wi wph wps ax-1 wph wps wph ax-2
+    ax-mp $.
+
+  $( Double-use of ~ ax-2 .
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  misc1frege $p |- ( ( ( ph -> ( ps -> ch ) ) -> ( ph -> ps ) )
+                     -> ( ( ph -> ( ps -> ch ) ) -> ( ph -> ch ) ) ) $=
+    wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wph wps wi
+    wi wph wps wch wi wi wph wch wi wi wi wph wps wch ax-2 wph wps wch wi wi
+    wph wps wi wph wch wi ax-2 ax-mp $.
+
+  $( Simplify when consequent is also third antecedent.
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  simprlfrege $p |- ( ph -> ( ps -> ( ch -> ( th -> ch ) ) ) ) $=
+    wps wch wth wch wi wi wi wph wps wch wth wch wi wi wi wi wps wch wth
+    simp2frege wps wch wth wch wi wi wi wph ax-1 ax-mp $.
+
+  $( Distribution with two unnecessary antecendents.
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  misc3frege $p |- ( ph
+                     -> ( ps
+                          -> ( ( ch -> ( th -> ta ) )
+                               -> ( ( ch -> th ) -> ( ch -> ta ) ) ) ) ) $=
+    wps wch wth wta wi wi wch wth wi wch wta wi wi wi wi wph wps wch wth wta wi
+    wi wch wth wi wch wta wi wi wi wi wi wps wch wth wta frege3gen wps wch wth
+    wta wi wi wch wth wi wch wta wi wi wi wi wph ax-1 ax-mp $.
+
+  $( Introducing an embedded antecedent.  Alternate proof for
+     ~ frege24 .  Closed form for ~ a1d .
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  frege24ALT $p |- ( ( ph -> ps ) -> ( ph -> ( ch -> ps ) ) ) $=
+    wph wps wch wps wi wi wi wph wps wi wph wch wps wi wi wi wph
+    wps wch simp2frege wph wps wch wps wi ax-2 ax-mp $.
+
+  ${
+    a1dfrege.1 $e |- ( ph -> ps ) $.
+    $( Deduction introducing an embedded antecedent. Identical to ~ a1d .
+
+       (Contributed by Richard Penner, 4-Oct-2019.) $)
+    a1dfrege $p |- ( ph -> ( ch -> ps ) ) $=
+      wph wps wi wph wch wps wi wi a1dfrege.1 wph wps wch frege24ALT ax-mp $.
+  $}
+
+  $( Simplify when consequent is also the first antecedent.
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  simp1frege $p |- ( ph -> ( ps -> ( ch -> ph ) ) ) $=
+    wph wch wph wi wi wph wps wch wph wi wi wi wph wch ax-1 wph wch wph wi wps
+    frege24ALT ax-mp $.
+
+  $( Deduction relatied to distribution.
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  frege3gendist $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                        -> ( ph -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
+    wph wps wch wth wi wi wps wch wi wps wth wi wi wi wi wph wps wch wth wi wi
+    wi wph wps wch wi wps wth wi wi wi wi wph wps wch wth frege3gen wph wps wch
+    wth wi wi wps wch wi wps wth wi wi ax-2 ax-mp $.
+
+  $( Elimination of a nested antecedent of special form.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp4frege $p |- ( ( ph -> ( ( ps -> ph ) -> ch ) ) -> ( ph -> ch ) ) $=
+    wph wps wph wi wch wi wi wph wps wph wi wi wi wph wps wph wi wch wi wi wph
+    wch wi wi wph wps wph wi wch wi wi wph wps simp2frege wph wps wph wi wch
+    misc1frege ax-mp $.
+
+  ${
+    rp4fregei.1 $e |- ( ph -> ( ( ps -> ph ) -> ch ) ) $.
+    $( More naturally proved in Metamath from ~ ax-1 and ~ mpd .
+
+       (Contributed by RichardPenner, 5-Oct-2019.) $)
+    rp4fregei $p |- ( ph -> ch ) $=
+      wph wps wph wi wch wi wi wph wch wi rp4fregei.1 wph wps wch rp4frege
+      ax-mp $.
+  $}
+
+  $( Distribute antecedent and add another.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp7frege $p |- ( ( ph -> ( ps -> ch ) )
+              -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
+    wph wps wch wi wi wph wps wi wph wch wi wi wi wph wps wch wi wi wth wph wps
+    wi wph wch wi wi wi wi wph wps wch ax-2 wph wps wch wi wi wph wps wi wph
+    wch wi wi wth frege24ALT ax-mp $.
+
+  $( Elimination of a nested antecedent of special form.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp6frege $p |- ( ph
+                   -> ( ( ps -> ( ( ch -> ps ) -> th ) ) -> ( ps -> th ) ) ) $=
+    wps wch wps wi wth wi wi wps wth wi wi wph wps wch wps wi wth wi wi wps wth
+    wi wi wi wps wch wth rp4frege wps wch wps wi wth wi wi wps wth wi wi wph
+    ax-1 ax-mp $.
+
+  $( Eliminate antecedent when it is implied by previous antecedent.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp8frege $p |- ( ( ph -> ( ps -> ( ( ch -> ps ) -> th ) ) )
+                   -> ( ph -> ( ps -> th ) ) ) $=
+    wph wps wch wps wi wth wi wi wps wth wi wi wi wph wps wch wps wi wth wi wi
+    wi wph wps wth wi wi wi wph wps wch wth rp6frege wph wps wch wps wi wth wi
+    wi wps wth wi ax-2 ax-mp $.
+
+  $( Swap antecedents. Identical to ~ pm2.04 .
+
+     Proof follows closely proof of ~ pm2.04 in
+     ~ http://us.metamath.org/mmsolitaire/pmproofs.txt , but in the style of
+     [Frege1879] .
+
+     This demonstrates that Axiom 8 of [Frege1879] p. 35 is redundant.
+
+     (Contributed by Richard Penner, 1-Oct-2019.)  (New usage is discouraged.)
+     (Proof modification is discouraged.) $)
+  frege8ALT $p |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $=
+    wph wps wch wi wi wps wph wps wi wph wch wi wi wi wi wph wps wch wi wi wps
+    wph wch wi wi wi wph wps wch wps rp7frege wph wps wch wi wi wps wph wph wch
+    wi rp8frege ax-mp $.
