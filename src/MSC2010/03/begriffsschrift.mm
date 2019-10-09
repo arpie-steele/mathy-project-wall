@@ -595,8 +595,8 @@ $)
      Heijenoort's collection _From Frege to Goedel_, this proof has
      the minor clause and result swapped.
 
-     Proposition 53 of [Frege1879] p. 50. 
-     (Contributed by ?who?, 8-Oct-2019.) $)
+     Proposition 53 of [Frege1879] p. 50.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege53a $p |- ( ( ( ph <-> ps ) /\ ch )
                    -> ( ( ph <-> th ) -> ( ( th <-> ps ) /\ ch ) ) ) $=
     wph wth wb wph wps wb wch wa wth wps wb wch wa wi wi wph wps wb wch wa wph
@@ -611,11 +611,27 @@ $)
   frege54a $p |- ( ph <-> ph ) $=
     wph biid $.
 
+  $( Necessary deduction regarding subsitution of value in equality.
+
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
+  frege55lem1a $p |- ( ( ph -> ( ( ps <-> ch ) /\ ( ch <-> th ) ) )
+                       -> ( ph -> ( ps <-> th ) ) ) $=
+    wph wps wch wb wch wth wb wa wps wth wb wps wch wb wch wth wb wa wps wth wb
+    wi wph wps wch wth bitr a1i a2i $.
+
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 55 of [Frege1879] p. 50. $)
-  frege55a $p |- ( ( ph <-> ps ) -> ( ( ps <-> ch ) /\ ( ch <-> ph ) ) ) $=
+     Core of proof of Proposition 55 of [Frege1879] p. 50. $)
+  frege55lem2a $p |- ( ( ph <-> ps ) -> ( ( ps <-> ch ) /\ ( ch <-> ph ) ) ) $=
     ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 55 of [Frege1879] p. 50.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
+  frege55a $p |- ( ( ph <-> ps ) -> ( ps <-> ph ) ) $=
+    wph wps wb wps wch wb wch wph wb wa wi wph wps wb wps wph wb wi wph wps wch
+    frege55lem2a wph wps wb wps wch wph frege55lem1a ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -630,11 +646,14 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 57 of [Frege1879] p. 51. $)
+     Proposition 57 of [Frege1879] p. 51.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege57a $p |- ( ( ph <-> ps )
                    -> ( ( ( ps <-> ch ) /\ th )
                         -> ( ( ph <-> ch ) /\ th ) ) ) $=
-    ? $.
+    wps wph wb wps wch wb wth wa wph wch wb wth wa wi wi wph wps wb wps wch wb
+    wth wa wph wch wb wth wa wi wi wps wph wch wth frege52a wps wph wch wth
+    frege56a ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -664,11 +683,15 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 61 of [Frege1879] p. 52. $)
+     Proposition 61 of [Frege1879] p. 52.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege61a $p |- ( ( ( ( ph <-> ps ) /\ ch ) -> th )
                    -> ( ( ( ( T. <-> ps ) /\ ch )
                           /\ ( ( F. <-> ps ) /\ ch ) ) -> th ) ) $=
-    ? $.
+    wtru wps wb wch wa wfal wps wb wch wa wa wph wps wb wch wa wi wph wps wb
+    wch wa wth wi wtru wps wb wch wa wfal wps wb wch wa wa wth wi wi wps wch
+    wph frege58a wtru wps wb wch wa wfal wps wb wch wa wa wph wps wb wch wa wth
+    frege9 ax-mp $.
 
   $( A kind of Aristotelian inference. This judgement replaces the mode
      of inference ~ barbara when the minor premise has a particular context.
@@ -682,13 +705,18 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 63 of [Frege1879] p. 52. $)
+     Proposition 63 of [Frege1879] p. 52.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege63a $p |- ( ( ( ph <-> ps ) /\ ch )
                    -> ( th
                         -> ( ( ( ( T. <-> ps ) /\ ( ch -> th ) )
                                /\ ( ( F. <-> ps ) /\ ( ch -> th ) ) )
                              -> ( ( ph <-> ps ) /\ th ) ) ) ) $=
-    ? $.
+    wph wps wb wch wa wtru wps wb wch wth wi wa wfal wps wb wch wth wi wa wa
+    wph wps wb wth wa wi wi wph wps wb wch wa wth wtru wps wb wch wth wi wa
+    wfal wps wb wch wth wi wa wa wph wps wb wth wa wi wi wi wph wps wch wth
+    frege62a wph wps wb wch wa wtru wps wb wch wth wi wa wfal wps wb wch wth wi
+    wa wa wph wps wb wth wa wi wth frege24 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -715,18 +743,26 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 66 of [Frege1879] p. 54. $)
+     Proposition 66 of [Frege1879] p. 54.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege66a $p |- ( ( ( ( T. <-> ph ) /\ ( ps -> ch ) )
                      /\ ( ( F. <-> ph ) /\ ( ps -> ch ) ) )
                    -> ( ( ( ( T. <-> ph ) /\ ( th -> ps ) )
                           /\ ( ( F. <-> ph ) /\ ( th -> ps ) ) )
                         -> ( ( ( ta <-> ph ) /\ th )
                              -> ( ( ta <-> ph ) /\ ch ) ) ) ) $=
-    ? $.
+    wtru wph wb wth wps wi wa wfal wph wb wth wps wi wa wa wtru wph wb wps wch
+    wi wa wfal wph wb wps wch wi wa wa wta wph wb wth wa wta wph wb wch wa wi
+    wi wi wtru wph wb wps wch wi wa wfal wph wb wps wch wi wa wa wtru wph wb
+    wth wps wi wa wfal wph wb wth wps wi wa wa wta wph wb wth wa wta wph wb wch
+    wa wi wi wi wph wth wps wch wta frege65a wtru wph wb wth wps wi wa wfal wph
+    wb wth wps wi wa wa wtru wph wb wps wch wi wa wfal wph wb wps wch wi wa wa
+    wta wph wb wth wa wta wph wb wch wa wi frege8 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 67 of [Frege1879] p. 54. $)
+     Proposition 67 of [Frege1879] p. 54.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege67a $p |- ( ( ( ( ( ( T. <-> ph ) /\ ps )
                          /\ ( ( F. <-> ph ) /\ ps ) )
                        <-> ch )
@@ -738,7 +774,12 @@ $)
                           <-> ch )
                          -> ( ch
                               -> ( ( th <-> ph ) /\ ps ) ) ) ) $=
-    ? $.
+    wtru wph wb wps wa wfal wph wb wps wa wa wth wph wb wps wa wi wtru wph wb
+    wps wa wfal wph wb wps wa wa wch wb wch wtru wph wb wps wa wfal wph wb wps
+    wa wa wi wi wtru wph wb wps wa wfal wph wb wps wa wa wch wb wch wth wph wb
+    wps wa wi wi wi wph wps wth frege58a wtru wph wb wps wa wfal wph wb wps wa
+    wa wth wph wb wps wa wtru wph wb wps wa wfal wph wb wps wa wa wch wb wch
+    frege7 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -771,8 +812,8 @@ $)
      Heijenoort's collection _From Frege to Goedel_, this proof has
      the minor clause and result swapped.
 
-     Proposition 53 of [Frege1879] p. 50. 
-     (Contributed by ?who?, 8-Oct-2019.) $)
+     Proposition 53 of [Frege1879] p. 50.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege53b $p |- ( [ x / y ] ph -> ( x = z -> [ z / y ] ph ) ) $=
     vx vz weq wph vy vx wsb wph vy vz wsb wi wi wph vy vx wsb vx vz weq wph vy
     vz wsb wi wi wph vx vz vy frege52b vx vz weq wph vy vx wsb wph vy vz wsb
@@ -786,10 +827,27 @@ $)
   frege54b $p |- x = x $=
     vx cv eqid $.
 
+  ${
+    $d y z $.
+    $( Necessary deduction regarding subsitution of value in equality.
+
+       (Contributed by Richard Penner, 8-Oct-2019.) $)
+    frege55lem1b $p |- ( ( ph -> [ x / y ] y = z )
+                       -> ( ph -> x = z ) ) $=
+      wph vy vz weq vy vx wsb vx vz weq vy vz weq vy vx wsb vx vz weq wi wph vy
+      vz weq vy vx wsb vx vz weq vx vy vz cv eqsb3 biimpi a1i a2i $.
+  $}
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Core proof of Proposition 55 of [Frege1879] p. 50. $)
+  frege55lem2b $p |- ( x = y -> [ y / z ] z = x )  $=
+    ? $.
+
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 55 of [Frege1879] p. 50. $)
-  frege55b $p |- ( x = y -> [ y / z ] z = x )  $=
+  frege55b $p |- ( x = y -> y = x )  $=
     ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
@@ -801,9 +859,11 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 57 of [Frege1879] p. 51. $)
+     Proposition 57 of [Frege1879] p. 51.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege57b $p |- ( x = y -> ( [ y / z ] ph -> [ x / z ] ph ) ) $=
-    ? $.
+    vy vx weq wph vz vy wsb wph vz vx wsb wi wi vx vy weq wph vz vy wsb wph vz
+    vx wsb wi wi wph vy vx vz frege52b wph vy vx vz frege56b ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -828,9 +888,11 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 61 of [Frege1879] p. 52. $)
+     Proposition 61 of [Frege1879] p. 52.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege61b $p |- ( ( [ x / y ] ph -> ps ) -> ( A. y ph -> ps ) ) $=
-    ? $.
+    wph vy wal wph vy vx wsb wi wph vy vx wsb wps wi wph vy wal wps wi wi wph
+    vy vx frege58b wph vy wal wph vy vx wsb wps frege9 ax-mp $.
 
   $( A kind of Aristotelian inference. This judgement replaces the mode
      of inference ~ barbara when the minor premise has a particular context.
@@ -842,11 +904,14 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 63 of [Frege1879] p. 52. $)
+     Proposition 63 of [Frege1879] p. 52.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege63b $p |- ( [ x / y ] ph
                    -> ( ps
                         -> ( A. y ( ph -> ch ) -> [ x / y ] ch ) ) ) $=
-    ? $.
+    wph vy vx wsb wph wch wi vy wal wch vy vx wsb wi wi wph vy vx wsb wps wph
+    wch wi vy wal wch vy vx wsb wi wi wi wph wch vx vy frege62b wph vy vx wsb
+    wph wch wi vy wal wch vy vx wsb wi wps frege24 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -867,18 +932,25 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 66 of [Frege1879] p. 54. $)
+     Proposition 66 of [Frege1879] p. 54.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege66b $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ch -> ph )
                         -> ( [ y / x ] ch -> [ y / x ] ps ) ) ) $=
-    ? $.
+    wch wph wi vx wal wph wps wi vx wal wch vx vy wsb wps vx vy wsb wi wi wi
+    wph wps wi vx wal wch wph wi vx wal wch vx vy wsb wps vx vy wsb wi wi wi
+    wch wph wps vx vy frege65b wch wph wi vx wal wph wps wi vx wal wch vx vy
+    wsb wps vx vy wsb wi frege8 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 67 of [Frege1879] p. 54. $)
+     Proposition 67 of [Frege1879] p. 54.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege67b $p |- ( ( ( A. x ph <-> ps ) -> ( ps -> A. x ph ) )
                    -> ( ( A. x ph <-> ps ) -> ( ps -> [ y / x ] ph ) ) ) $=
-    ? $.
+    wph vx wal wph vx vy wsb wi wph vx wal wps wb wps wph vx wal wi wi wph vx
+    wal wps wb wps wph vx vy wsb wi wi wi wph vx vy frege58b wph vx wal wph vx
+    vy wsb wph vx wal wps wb wps frege7 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -907,8 +979,8 @@ $)
      Heijenoort's collection _From Frege to Goedel_, this proof has
      the minor clause and result swapped.
 
-     Proposition 53 of [Frege1879] p. 50. 
-     (Contributed by ?who?, 8-Oct-2019.) $)
+     Proposition 53 of [Frege1879] p. 50.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege53c $p |- ( [. A / x ]. ph -> ( A = B -> [. B / x ]. ph ) ) $=
     cA cB wceq wph vx cA wsbc wph vx cB wsbc wi wi wph vx cA wsbc cA cB wceq
     wph vx cB wsbc wi wi wph vx cA cB frege52c cA cB wceq wph vx cA wsbc wph vx
@@ -922,10 +994,22 @@ $)
   frege54c $p |- A = A $=
     cA eqid $.
 
+  $( Necessary deduction regarding subsitution of value in equality.
+     $)
+  frege55lem1c $p |- ( ( ph -> [. A / x ]. x = y )
+                       -> ( ph -> A = y ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Core proof of Proposition 55 of [Frege1879] p. 50. $)
+  frege55lem2c $p |- ( x = A -> [. A / z ]. z = x )  $=
+    ? $.
+
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 55 of [Frege1879] p. 50. $)
-  frege55c $p |- ( x = A -> [. A / z ]. z = x )  $=
+  frege55c $p |- ( x = A -> A = x )  $=
     ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
@@ -937,9 +1021,11 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 57 of [Frege1879] p. 51. $)
+     Proposition 57 of [Frege1879] p. 51.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege57c $p |- ( A = B -> ( [. B / x ]. ph -> [. A / x ]. ph ) ) $=
-    ? $.
+    cB cA wceq wph vx cB wsbc wph vx cA wsbc wi wi cA cB wceq wph vx cB wsbc
+    wph vx cA wsbc wi wi wph vx cB cA frege52c wph vx cB cA frege56c ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -964,9 +1050,11 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 61 of [Frege1879] p. 52. $)
+     Proposition 61 of [Frege1879] p. 52.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege61c $p |- ( ( [. A / x ]. ph -> ps ) -> ( A. x ph -> ps ) ) $=
-    ? $.
+    wph vx wal wph vx cA wsbc wi wph vx cA wsbc wps wi wph vx wal wps wi wi wph
+    vx cA frege58c wph vx wal wph vx cA wsbc wps frege9 ax-mp $.
 
   $( A kind of Aristotelian inference. This judgement replaces the mode
      of inference ~ barbara when the minor premise has a particular context.
@@ -978,11 +1066,14 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 63 of [Frege1879] p. 52. $)
+     Proposition 63 of [Frege1879] p. 52.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege63c $p |- ( [. A / x ]. ph
                    -> ( ps
                         -> ( A. x ( ph -> ch ) -> [. A / x ]. ch ) ) ) $=
-    ? $.
+    wph vx cA wsbc wph wch wi vx wal wch vx cA wsbc wi wi wph vx cA wsbc wps
+    wph wch wi vx wal wch vx cA wsbc wi wi wi wph wch vx cA frege62c wph vx cA
+    wsbc wph wch wi vx wal wch vx cA wsbc wi wps frege24 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1003,18 +1094,25 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 66 of [Frege1879] p. 54. $)
+     Proposition 66 of [Frege1879] p. 54.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege66c $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ch -> ph )
                         -> ( [. A / x ]. ch -> [. A / x ]. ps ) ) ) $=
-    ? $.
+    wch wph wi vx wal wph wps wi vx wal wch vx cA wsbc wps vx cA wsbc wi wi wi
+    wph wps wi vx wal wch wph wi vx wal wch vx cA wsbc wps vx cA wsbc wi wi wi
+    wch wph wps vx cA frege65c wch wph wi vx wal wph wps wi vx wal wch vx cA
+    wsbc wps vx cA wsbc wi frege8 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 67 of [Frege1879] p. 54. $)
+     Proposition 67 of [Frege1879] p. 54.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
   frege67c $p |- ( ( ( A. x ph <-> ps ) -> ( ps -> A. x ph ) )
                    -> ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) ) $=
-    ? $.
+    wph vx wal wph vx cA wsbc wi wph vx wal wps wb wps wph vx wal wi wi wph vx
+    wal wps wb wps wph vx cA wsbc wi wi wi wph vx cA frege58c wph vx wal wph vx
+    cA wsbc wph vx wal wps wb wps frege7 ax-mp $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
