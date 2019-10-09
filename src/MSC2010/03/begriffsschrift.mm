@@ -574,17 +574,20 @@ $)
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-     _Begriffschift_ Chapter II with equivalence of sets
+     _Begriffschift_ Chapter II with logical equivalence
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 $)
 
-  $( One side of ~ dfsbcq .
+  $( PLEASE PUT DESCRIPTION HERE.
 
      Part of Axiom 52 of [Frege1879] p. 50.
 
-     (Contributed by Richard Penner, 7-Oct-2019.) $)
-  frege52a $p |- ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) ) $=
-    ? $.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
+  frege52a $p |- ( ( ph <-> ps )
+                   -> ( ( ( ph <-> ch ) /\ th )
+                        -> ( ( ps <-> ch ) /\ th ) ) ) $=
+    wph wps wb wph wch wb wth wa wps wch wb wth wa wph wps wb wph wch wb wps
+    wch wb wth wph wps wch bibi1 anbi1d biimpd $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -592,54 +595,369 @@ $)
      Heijenoort's collection _From Frege to Goedel_, this proof has
      the minor clause and result swapped.
 
-     Proposition 53 of [Frege1879] p. 50. $)
-  frege53a $p |- ( [. A / x ]. ph -> ( A = B -> [. B / x ]. ph ) ) $=
-    ? $.
+     Proposition 53 of [Frege1879] p. 50. 
+     (Contributed by ?who?, 8-Oct-2019.) $)
+  frege53a $p |- ( ( ( ph <-> ps ) /\ ch )
+                   -> ( ( ph <-> th ) -> ( ( th <-> ps ) /\ ch ) ) ) $=
+    wph wth wb wph wps wb wch wa wth wps wb wch wa wi wi wph wps wb wch wa wph
+    wth wb wth wps wb wch wa wi wi wph wth wps wch frege52a wph wth wb wph wps
+    wb wch wa wth wps wb wch wa frege8 ax-mp $.
 
-  $( Reflexive equality of sets (as classes).
+  $( Reflexive logical equality.
 
-     Part of Axiom 54 of [Frege1879] p. 50.  Identical to ~ eqid .
+     Part of Axiom 54 of [Frege1879] p. 50.  Identical to ~ biid .
 
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege54a $p |- A = A $=
-    cA eqid $.
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
+  frege54a $p |- ( ph <-> ph ) $=
+    wph biid $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 55 of [Frege1879] p. 50. $)
-  frege55a $p |- ( x = A -> [. A / z ]. z = x )  $=
+  frege55a $p |- ( ( ph <-> ps ) -> ( ( ps <-> ch ) /\ ( ch <-> ph ) ) ) $=
     ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 56 of [Frege1879] p. 50. $)
-  frege56a $p |- ( ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) )
+  frege56a $p |- ( ( ( ph <-> ps )
+                     -> ( ( ( ph <-> ch ) /\ th )
+                          -> ( ( ps <-> ch ) /\ th ) ) )
+                   -> ( ( ps <-> ph )
+                        -> ( ( ( ph <-> ch ) /\ th )
+                             -> ( ( ps <-> ch ) /\ th ) ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 57 of [Frege1879] p. 51. $)
+  frege57a $p |- ( ( ph <-> ps )
+                   -> ( ( ( ps <-> ch ) /\ th )
+                        -> ( ( ph <-> ch ) /\ th ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 58 of [Frege1879] p. 51. $)
+  frege58a $p |- ( ( ( ( T. <-> ph ) /\ ps ) /\ ( ( F. <-> ph ) /\ ps ) )
+                   -> ( ( ch <-> ph ) /\ ps ) ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference.
+
+     Proposition 59 of [Frege1879] p. 51. $)
+  frege59a $p |- ( ( ( ph <-> ps ) /\ ch )
+                   -> ( -. ( ( ph <-> ps ) /\ th )
+                        -> -. ( ( ( T. <-> ps ) /\ ( ch -> th ) )
+                                /\ ( ( F. <-> ps ) /\ ( ch -> th ) ) ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 60 of [Frege1879] p. 52. $)
+  frege60a $p |- ( ( ( ( T. <-> ph ) /\ ( ps -> ( ch -> th ) ) )
+                     /\ ( ( F. <-> ph ) /\ ( ps -> ( ch -> th ) ) ) )
+                   -> ( ( ( ta <-> ph ) /\ ps )
+                        -> ( ( ( ta <-> ph ) /\ ch )
+                             -> ( ( ta <-> ph ) /\ th ) ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 61 of [Frege1879] p. 52. $)
+  frege61a $p |- ( ( ( ( ph <-> ps ) /\ ch ) -> th )
+                   -> ( ( ( ( T. <-> ps ) /\ ch )
+                          /\ ( ( F. <-> ps ) /\ ch ) ) -> th ) ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference. This judgement replaces the mode
+     of inference ~ barbara when the minor premise has a particular context.
+
+     Proposition 62 of [Frege1879] p. 52. $)
+  frege62a $p |- ( ( ( ph <-> ps ) /\ ch )
+                   -> ( ( ( ( T. <-> ps ) /\ ( ch -> th ) )
+                          /\ ( ( F. <-> ps ) /\ ( ch -> th ) ) )
+                        -> ( ( ph <-> ps ) /\ th ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 63 of [Frege1879] p. 52. $)
+  frege63a $p |- ( ( ( ph <-> ps ) /\ ch )
+                   -> ( th
+                        -> ( ( ( ( T. <-> ps ) /\ ( ch -> th ) )
+                               /\ ( ( F. <-> ps ) /\ ( ch -> th ) ) )
+                             -> ( ( ph <-> ps ) /\ th ) ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 64 of [Frege1879] p. 53. $)
+  frege64a $p |- ( ( ( ph <-> ps ) /\ ch )
+                   -> ( ( ( th <-> ps ) /\ ta )
+                        -> ( ( ( ( T. <-> ps ) /\ ( ta -> et ) )
+                               /\ ( ( F. <-> ps ) /\ ( ta -> et ) ) )
+                             -> ( ( ( ph <-> ps ) /\ ch )
+                                  -> ( ( th <-> ps ) /\ et ) ) ) ) ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference. This judgement replaces the mode
+     of inference ~ barbara when the minor premise has a general context.
+
+     Proposition 65 of [Frege1879] p. 53. $)
+  frege65a $p |- ( ( ( ( T. <-> ph ) /\ ( ps -> ch ) )
+                     /\ ( ( F. <-> ph ) /\ ( ps -> ch ) ) )
+                   -> ( ( ( ( T. <-> ph ) /\ ( ch -> th ) )
+                          /\ ( ( F. <-> ph ) /\ ( ch -> th ) ) )
+                        -> ( ( ( ta <-> ph ) /\ ps )
+                             -> ( ( ta <-> ph ) /\ th ) ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 66 of [Frege1879] p. 54. $)
+  frege66a $p |- ( ( ( ( T. <-> ph ) /\ ( ps -> ch ) )
+                     /\ ( ( F. <-> ph ) /\ ( ps -> ch ) ) )
+                   -> ( ( ( ( T. <-> ph ) /\ ( th -> ps ) )
+                          /\ ( ( F. <-> ph ) /\ ( th -> ps ) ) )
+                        -> ( ( ( ta <-> ph ) /\ th )
+                             -> ( ( ta <-> ph ) /\ ch ) ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 67 of [Frege1879] p. 54. $)
+  frege67a $p |- ( ( ( ( ( ( T. <-> ph ) /\ ps )
+                         /\ ( ( F. <-> ph ) /\ ps ) )
+                       <-> ch )
+                     -> ( ch
+                          -> ( ( ( T. <-> ph ) /\ ps )
+                               /\ ( ( F. <-> ph ) /\ ps ) ) ) )
+                   -> ( ( ( ( ( T. <-> ph ) /\ ps )
+                            /\ ( ( F. <-> ph ) /\ ps ) )
+                          <-> ch )
+                         -> ( ch
+                              -> ( ( th <-> ph ) /\ ps ) ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 68 of [Frege1879] p. 54. $)
+  frege68a $p |- ( ( ( ( ( T. <-> ph ) /\ ps )
+                       /\ ( ( F. <-> ph ) /\ ps ) )
+                     <-> ch )
+                    -> ( ch
+                         -> ( ( th <-> ph ) /\ ps ) ) ) $=
+    ? $.
+
+
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     _Begriffschift_ Chapter II with equivalence of sets
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+$)
+
+  $( PLEASE DESCRIBE ME.
+
+     Part of Axiom 52 of [Frege1879] p. 50.
+
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
+  frege52b $p |- ( x = y -> ( [ x / z ] ph -> [ y / z ] ph ) ) $=
+    vx vy weq wph vz vx wsb wph vz vy wsb wph vx vy vz sbequ biimpd $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     _Note:_ in the Bauer-Meenfelberg translation published in van
+     Heijenoort's collection _From Frege to Goedel_, this proof has
+     the minor clause and result swapped.
+
+     Proposition 53 of [Frege1879] p. 50. 
+     (Contributed by ?who?, 8-Oct-2019.) $)
+  frege53b $p |- ( [ x / y ] ph -> ( x = z -> [ z / y ] ph ) ) $=
+    vx vz weq wph vy vx wsb wph vy vz wsb wi wi wph vy vx wsb vx vz weq wph vy
+    vz wsb wi wi wph vx vz vy frege52b vx vz weq wph vy vx wsb wph vy vz wsb
+    frege8 ax-mp $.
+
+  $( Reflexive equality of sets.
+
+     Part of Axiom 54 of [Frege1879] p. 50.  Slightly specialized ~ eqid .
+
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
+  frege54b $p |- x = x $=
+    vx cv eqid $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 55 of [Frege1879] p. 50. $)
+  frege55b $p |- ( x = y -> [ y / z ] z = x )  $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 56 of [Frege1879] p. 50. $)
+  frege56b $p |- ( ( x = y -> ( [ x / z ] ph -> [ y / z ] ph ) )
+                   -> ( y = x -> ( [ x / z ] ph -> [ y / z ] ph ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 57 of [Frege1879] p. 51. $)
+  frege57b $p |- ( x = y -> ( [ y / z ] ph -> [ x / z ] ph ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 58 of [Frege1879] p. 51. $)
+  frege58b $p |- ( A. x ph -> [ y / x ] ph ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference.
+
+     Proposition 59 of [Frege1879] p. 51. $)
+  frege59b $p |- ( [ x / y ] ph
+                   -> ( -. [ x / y ] ps -> -. A y ( ph -> ps ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 60 of [Frege1879] p. 52. $)
+  frege60b $p |- ( A. x ( ph -> ( ps -> ch ) )
+                   -> ( [ y / x ] ph
+                        -> ( [ y / x ] ps -> [ y / x ] ch ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 61 of [Frege1879] p. 52. $)
+  frege61b $p |- ( ( [ x / y ] ph -> ps ) -> ( A. y ph -> ps ) ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference. This judgement replaces the mode
+     of inference ~ barbara when the minor premise has a particular context.
+
+     Proposition 62 of [Frege1879] p. 52. $)
+  frege62b $p |- ( [ x / y ] ph
+                   -> ( A. y ( ph -> ps ) -> [ x / y ] ps ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 63 of [Frege1879] p. 52. $)
+  frege63b $p |- ( [ x / y ] ph
+                   -> ( ps
+                        -> ( A. y ( ph -> ch ) -> [ x / y ] ch ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 64 of [Frege1879] p. 53. $)
+  frege64b $p |- ( ( [ x / y ] ph -> [ z / y ] ps )
+                   -> ( A. y ( ps -> ch )
+                        -> ( [ x / y ] ph -> [ z / y ] ch ) ) ) $=
+    ? $.
+
+  $( A kind of Aristotelian inference. This judgement replaces the mode
+     of inference ~ barbara when the minor premise has a general context.
+
+     Proposition 65 of [Frege1879] p. 53. $)
+  frege65b $p |- ( A. x ( ph -> ps )
+                   -> ( A. x ( ps -> ch )
+                        -> ( [ y / x ] ph -> [ y / x ] ch ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 66 of [Frege1879] p. 54. $)
+  frege66b $p |- ( A. x ( ph -> ps )
+                   -> ( A. x ( ch -> ph )
+                        -> ( [ y / x ] ch -> [ y / x ] ps ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 67 of [Frege1879] p. 54. $)
+  frege67b $p |- ( ( ( A. x ph <-> ps ) -> ( ps -> A. x ph ) )
+                   -> ( ( A. x ph <-> ps ) -> ( ps -> [ y / x ] ph ) ) ) $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 68 of [Frege1879] p. 54. $)
+  frege68b $p |- ( ( A. x ph <-> ps ) -> ( ps -> [ y / x ] ph ) ) $=
+    ? $.
+
+
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+   _Begriffschift_ Chapter II with equivalence of classes (where they are sets)
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+$)
+
+  $( One side of ~ dfsbcq .
+
+     Part of Axiom 52 of [Frege1879] p. 50.
+
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
+  frege52c $p |- ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) ) $=
+    cA cB wceq wph vx cA wsbc wph vx cB wsbc wph vx cA cB dfsbcq biimpd $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     _Note:_ in the Bauer-Meenfelberg translation published in van
+     Heijenoort's collection _From Frege to Goedel_, this proof has
+     the minor clause and result swapped.
+
+     Proposition 53 of [Frege1879] p. 50. 
+     (Contributed by ?who?, 8-Oct-2019.) $)
+  frege53c $p |- ( [. A / x ]. ph -> ( A = B -> [. B / x ]. ph ) ) $=
+    cA cB wceq wph vx cA wsbc wph vx cB wsbc wi wi wph vx cA wsbc cA cB wceq
+    wph vx cB wsbc wi wi wph vx cA cB frege52c cA cB wceq wph vx cA wsbc wph vx
+    cB wsbc frege8 ax-mp $.
+
+  $( Reflexive equality of sets (as classes).
+
+     Part of Axiom 54 of [Frege1879] p. 50.  Identical to ~ eqid .
+
+     (Contributed by Richard Penner, 8-Oct-2019.) $)
+  frege54c $p |- A = A $=
+    cA eqid $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 55 of [Frege1879] p. 50. $)
+  frege55c $p |- ( x = A -> [. A / z ]. z = x )  $=
+    ? $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 56 of [Frege1879] p. 50. $)
+  frege56c $p |- ( ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) )
                    -> ( B = A -> ( [. A / x ]. ph -> [. B / x ]. ph ) ) ) $=
     ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 57 of [Frege1879] p. 51. $)
-  frege57a $p |- ( A = B -> ( [. B / x ]. ph -> [. A / x ]. ph ) ) $=
+  frege57c $p |- ( A = B -> ( [. B / x ]. ph -> [. A / x ]. ph ) ) $=
     ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 58 of [Frege1879] p. 51. $)
-  frege58a $p |- ( A. x ph -> [. A / x ]. ph ) $=
+  frege58c $p |- ( A. x ph -> [. A / x ]. ph ) $=
     ? $.
 
   $( A kind of Aristotelian inference.
 
      Proposition 59 of [Frege1879] p. 51. $)
-  frege59a $p |- ( [. A / x ]. ph
+  frege59c $p |- ( [. A / x ]. ph
                    -> ( -. [. A / x ]. ps -> -. A x ( ph -> ps ) ) ) $=
     ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 60 of [Frege1879] p. 52. $)
-  frege60a $p |- ( A. x ( ph -> ( ps -> ch ) )
+  frege60c $p |- ( A. x ( ph -> ( ps -> ch ) )
                    -> ( [. A / x ]. ph
                         -> ( [. A / x ]. ps -> [. A / x ]. ch ) ) ) $=
     ? $.
@@ -647,21 +965,21 @@ $)
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 61 of [Frege1879] p. 52. $)
-  frege61a $p |- ( ( [. A / x ]. ph -> ps ) -> ( A. x ph -> ps ) ) $=
+  frege61c $p |- ( ( [. A / x ]. ph -> ps ) -> ( A. x ph -> ps ) ) $=
     ? $.
 
   $( A kind of Aristotelian inference. This judgement replaces the mode
      of inference ~ barbara when the minor premise has a particular context.
 
      Proposition 62 of [Frege1879] p. 52. $)
-  frege62a $p |- ( [. A / x ]. ph
+  frege62c $p |- ( [. A / x ]. ph
                    -> ( A. x ( ph -> ps ) -> [. A / x ]. ps ) ) $=
     ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 63 of [Frege1879] p. 52. $)
-  frege63a $p |- ( [. A / x ]. ph
+  frege63c $p |- ( [. A / x ]. ph
                    -> ( ps
                         -> ( A. x ( ph -> ch ) -> [. A / x ]. ch ) ) ) $=
     ? $.
@@ -669,7 +987,7 @@ $)
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 64 of [Frege1879] p. 53. $)
-  frege64a $p |- ( ( [. A / x ]. ph -> [. B / x ]. ps )
+  frege64c $p |- ( ( [. A / x ]. ph -> [. B / x ]. ps )
                    -> ( A. x ( ps -> ch )
                         -> ( [. A / x ]. ph -> [. B / x ]. ch ) ) ) $=
     ? $.
@@ -678,7 +996,7 @@ $)
      of inference ~ barbara when the minor premise has a general context.
 
      Proposition 65 of [Frege1879] p. 53. $)
-  frege65a $p |- ( A. x ( ph -> ps )
+  frege65c $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ps -> ch )
                         -> ( [. A / x ]. ph -> [. A / x ]. ch ) ) ) $=
     ? $.
@@ -686,7 +1004,7 @@ $)
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 66 of [Frege1879] p. 54. $)
-  frege66a $p |- ( A. x ( ph -> ps )
+  frege66c $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ch -> ph )
                         -> ( [. A / x ]. ch -> [. A / x ]. ps ) ) ) $=
     ? $.
@@ -694,14 +1012,14 @@ $)
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 67 of [Frege1879] p. 54. $)
-  frege67a $p |- ( ( ( A. x ph <-> ps ) -> ( ps -> A. x ph ) )
+  frege67c $p |- ( ( ( A. x ph <-> ps ) -> ( ps -> A. x ph ) )
                    -> ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) ) $=
     ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 68 of [Frege1879] p. 54. $)
-  frege68a $p |- ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) $=
+  frege68c $p |- ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) $=
     ? $.
 
 $(
@@ -710,20 +1028,12 @@ $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 $)
 
-  $( Identical to ~ fveq2 .
-
-     Part of Axiom 52 of [Frege1879] p. 50.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege52b $p |- ( A = B -> ( F ` A ) = ( F ` B ) ) $=
-    cA cB cF fveq2 $.
-
   $( PLEASE PUT DESCRIPTION HERE.
 
      Part of Axiom 52 of [Frege1879] p. 50.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege52c $p |- ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) )
+  frege52d $p |- ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) )
                      -> -. ( ( -. ( ( ph -> ch ) -> -. ( -. ph -> th ) )
                      -> -. ( ( ps -> ch ) -> -. ( -. ps -> th ) ) )
                      -> -. ( -. ( ( ps -> ch ) -> -. ( -. ps -> th ) )
@@ -758,7 +1068,7 @@ $)
      Part of Axiom 52 of [Frege1879] p. 50.
 
      (Contributed by Richard Penner, 3-Oct-2019.) $)
-  frege52cALT $p |- ( ( ph <-> ps )
+  frege52e $p |- ( ( ph <-> ps )
                         -> ( if- ( ph , ch , th )
                            <-> if- ( ps , ch , th ) ) ) $=
     wph wch wth wif wph wch wa wph wn wth wa wo wph wps wb wps wch wth wif wph
@@ -774,18 +1084,11 @@ $)
      Part of Axiom 54 of [Frege1879] p. 50.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege54b $p |- -. ( ( ph -> ph ) -> -. ( ph -> ph ) ) $=
+  frege54d $p |- -. ( ( ph -> ph ) -> -. ( ph -> ph ) ) $=
     wph wph wi wph wph wi wa wph wph wi wph wph wi wn wi wn wph wph wb wph wph
     wi wph wph wi wa wph biid wph wph wb wph wph wi wph wph wi wa wph wph dfbi2
     biimpi ax-mp wph wph wi wph wph wi wa wph wph wi wph wph wi wn wi wn wph
     wph wi wph wph wi df-an biimpi ax-mp $.
-
-  $( Reflexive equality of logical propositions.  Identical to ~ biid .
-
-     Part of Axiom 54 of [Frege1879] p. 50.
-
-     (Contributed by Richard Penner, 3-Oct-2019.) $)
-  frege54bALT $p |- ( ph <-> ph ) $= wph biid $.
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
