@@ -1,6 +1,16 @@
 $[ set.mm $]
 
 $(
+
+  Add to #bib section of mmset.raw.html :
+
+  <LI><A NAME="Dence1983"></A> [Dence1983] Thomas P. Dence, <I>Solving
+  Math Problems in B.A.S.I.C.</I>, TAB Books, Blue Ridge Summit,
+  PA. (1983) QA76.95 D46;</LI>
+
+$)
+
+$(
                              ~~ PUBLIC DOMAIN ~~
   This work is waived of all rights, including copyright, according to the CC0
   Public Domain Dedication.  http://creativecommons.org/publicdomain/zero/1.0/
@@ -106,6 +116,8 @@ $)
 
   $( "We all know that 9/12 is equivalent to 3/4". -Thomas P. Dence.
 
+     Statement of [Dence1983] p. 39.
+
      (Contributed by Richard Penner, 23-Oct-2019.) $)
   rp-propercanex1 $p |- ( 9 / ; 1 2 ) = ( 3 / 4 ) $=
     ( c9 c1 c2 cdc cdiv co c3 cmul c4 3t3e9 eqcomi 4t3e12 oveq12i cc cc0 wne wa
@@ -114,6 +126,8 @@ $)
     UQUTUOUOUPSSUCUDURUSUEUFTTGGIUGUHUI $.
 
   $( "We all know ... that 21/56 is equivalent to 3/8." -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 39.
 
      (Contributed by Richard Penner, 23-Oct-2019.) $)
   rp-propercanex2 $p |- ( ; 2 1 / ; 5 6 ) = ( 3 / 8 ) $=
@@ -124,6 +138,8 @@ $)
 
   $( "[I]t is somewhat interesting to note that 16/64 is equal to 1/4".
      -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 39.
 
      (Contributed by Richard Penner, 23-Oct-2019.) $)
   rp-propercanex3 $p |- ( ; 1 6 / ; 6 4 ) = ( 1 / 4 ) $=
@@ -138,6 +154,8 @@ $)
     SVBVTRVNVDLLQVTTVEZQVNTVEZGGSSVFVFVGWRWSVTVNQTKVHUELVIVJVKVKAVNCVLLO $.
 
   $( "The fraction 19/95 is equal to 1/5". -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 39.
 
      (Contributed by Richard Penner, 23-Oct-2019.) $)
   rp-propercanex4 $p |- ( ; 1 9 / ; 9 5 ) = ( 1 / 5 ) $=
@@ -158,11 +176,15 @@ $)
 
   $( "Also 26/65 equals to 2/5". -Thomas P. Dence.
 
+     Statement of [Dence1983] p. 40.
+
       $)
   rp-propercanex5 $p |- ( ; 2 6 / ; 6 5 ) = ( 2 / 5 ) $=
     ? $.
 
   $( "484/847 = 4/7". -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 40.
 
       $)
   rp-propercanex6 $p |- ( ; ; 4 8 4 / ; ; 8 4 7 ) = ( 4 / 7 ) $=
