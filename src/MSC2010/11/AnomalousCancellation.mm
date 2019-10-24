@@ -51,6 +51,14 @@ $(
   removing identical digits from numerator and denominator to in
   the event when the result in an equivalent fraction. Example:
   ` |- ( ; 1 6 / ; 6 4 ) = ( 1 / 4 ) ` .
+
+  In this subsection, the theorems work on the non-degenerate
+  two-digit case in arbitrary base, ` B ` . Thus ` T ` is reserved
+  for the "tens" digit and ` U ` is the "units" digit. ` W ` was
+  chosen to represent the common digit which is targetted by the
+  improper procedure. We always represent a two digit number as
+  ` ( ( B x. T ) + U ) ` so that we may easily leverage the decimal
+  operator for the ` B = 10 ` case.
 $)
 
   $( Proper cancellation when common factor multiplies from the front.
@@ -221,3 +229,47 @@ $)
   HXSRDWOFTYAUAULURUMPAVCVDZWIVCVDZDVCVDZVEWIVFVGZDVFVGZVOWLWMVHUUCUUDUUELWIWIX
   RUNXSWOFXTUHUPUQZQTVIUUFUUGWIUUHVFXRWIVJWOFXTUHIWHMXPVKVFXEWHVJXDGXLUOIFMUHVK
   VLVMVPVNXNVQVMVLVNXSVQVRDVSVTVRWAAWIDWBWCUR $.
+
+  $( Working in base ` B ` , if the fraction
+     ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to
+     the result of incorrectly cancelling the common digit ` W `
+     iff that common digit has a value determined only by ` B ` ,
+     ` T ` , and ` U ` . The condition ` U =/= ( B x. T ) ` is eliminated.
+
+     (Contributed by Richard Penner, 24-Oct-2019.) $)
+  rp-anomcanlem1 $p |- ( ( ( B e. CC /\ W e. CC ) /\ ( T e. CC /\ U e. CC )
+                           /\ ( U =/= 0 /\ U =/= ( B x. T )
+                                /\ ( ( B x. W ) + U ) =/= 0 ) )
+                         -> ( ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) )
+                              = ( T / U )
+                            <-> W = ( ( ( B - 1 ) x. ( T x. U ) )
+                                      / ( ( B x. T ) - U ) ) ) ) $=
+  ( cc wcel wa cc0 wne cmul co caddc w3a cdiv wceq c1 cmin mulcld addcld 3bitrd
+  simp1l simp2l simp1r simp2r simp33 simp31 divmuleqd adddird adddid addsubeq4d
+  eqeq12d addcomd eqeq1d mul12d mulcomd oveq2d 3eqtrd oveq1d eqcomd 1cnd eqtr4d
+  mulassd mulid2d oveq12d subdird wb eqcom a1i subdid subcld simp32 simp1 simp2
+  simp3 necomd subne0d syl3anc divmul3d 3bitr4d ) AEFZDEFZGZBEFZCEFZGZCHIZCABJK
+  ZIZADJKZCLKZHIZMZMZWGDLKZWJNKBCNKOWNCJKZBWJJKZOWGCJKZDCJKZLKZBWIJKZBCJKZLKZOZ
+  DAPQKZXAJKZWGCQKZNKZOZWMWNWJBCWMWGDWMABVTWAWEWLUAZWBWCWDWLUBZRZVTWAWEWLUCZSWM
+  WICWMADXIXLRZWBWCWDWLUDZSXJXNWBWEWFWHWKUEWBWEWFWHWKUFUGWMWOWSWPXBWMWGDCXKXLXN
+  UHWMBWICXJXMXNUIUKWMXCWRWQLKZXBOWTWRQKZWQXAQKZOZXHWMWSXOXBWMWQWRWMWGCXKXNRZWM
+  DCXLXNRZULUMWMWRWQWTXAXTXSWMBWIXJXMRWMBCXJXNRZUJWMXRDWGJKZWRQKZXEOZXGDOZXHWMX
+  PYCXQXEWMWTYBWRQWMWTABDJKZJKADBJKZJKYBWMBADXJXIXLUNWMYFYGAJWMBDXJXLUOUPWMADBX
+  IXLXJUNUQURWMXQAXAJKZPXAJKZQKXEWMWQYHXAYIQWMABCXIXJXNVBWMYIXAWMXAYAVCUSVDWMAP
+  XAXIWMUTZYAVEVAUKWMDXFJKZXEOZXEYKOZYDYEYLYMVFWMYKXEVGVHWMYCYKXEWMYKYCWMDWGCXL
+  XKXNVIUSUMWMXEDXFWMXDXAWMAPXIYJVJYARXLWMWGCXKXNVJWMWGEFZWDWHXFHIXKXNWBWEWFWHW
+  KVKYNWDWHMZWGCYNWDWHVLYNWDWHVMYOCWGYNWDWHVNVOVPVQVRVSYEXHVFWMXGDVGVHTTT $.
+
+  $( Working in base ` B ` , if the fraction
+     ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to
+     the result of incorrectly cancelling the common digit ` W ` ,
+     the additional condition, ` U = ( B x. T ) ` , results in a
+     sterile result.
+
+      $)
+  rp-anomcanlem2 $p |- ( ( ( B e. CC /\ W e. CC ) /\ ( T e. CC /\ U e. CC )
+                           /\ ( U =/= 0 /\ U = ( B x. T )
+                                /\ ( ( B x. W ) + U ) =/= 0 ) )
+                         -> ( ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) )
+                              = ( T / U ) -> ( B = 1 /\ T = U ) ) ) $=
+  ? $.
