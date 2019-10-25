@@ -301,21 +301,27 @@ $)
     rp-propercan.3 $e |- ( ph -> B =/= 0 ) $.
     rp-propercan.4 $e |- ( ph -> C e. CC ) $.
     rp-propercan.5 $e |- ( ph -> C =/= 0 ) $.
-    $( Proper cancellation when common factor multiplies from the front. $)
+    $( Proper cancellation when common factor multiplies from the front.
+       (Contributed by Richard Penner, 25-Oct-2019.) $)
     rp-propercan3ALT $p |- ( ph -> ( ( B x. A ) / ( B x. C ) ) = ( A / C ) ) $=
-      (  ) ? $.
+      ( divcan5d ) ABDCEHFIGJ $.
 
-    $( Proper cancellation when common factor is in the interior. $)
+    $( Proper cancellation when common factor is in the interior.
+       (Contributed by Richard Penner, 25-Oct-2019.) $)
     rp-propercan1ALT $p |- ( ph -> ( ( A x. B ) / ( B x. C ) ) = ( A / C ) ) $=
-      (  ) ? $.
+      ( cmul co cdiv wceq rp-propercan3ALT mulcomd oveq1d eqeq1d mpbid ) ACBJKZ
+      CDJKZLKZBDLKZMBCJKZTLKZUBMABCDEFGHINAUAUDUBASUCTLACBFEOPQR $.
 
-    $( Proper cancellation when common factor is last. $)
+    $( Proper cancellation when common factor is last.
+       (Contributed by Richard Penner, 25-Oct-2019.) $)
     rp-propercan2ALT $p |- ( ph -> ( ( A x. B ) / ( C x. B ) ) = ( A / C ) ) $=
-      (  ) ? $.
+      ( divcan5rd ) ABDCEHFIGJ $.
 
-    $( Proper cancellation when common factor is on exterior. $)
+    $( Proper cancellation when common factor is on exterior.
+       (Contributed by Richard Penner, 25-Oct-2019.) $)
     rp-propercan4ALT $p |- ( ph -> ( ( B x. A ) / ( C x. B ) ) = ( A / C ) ) $=
-      (  ) ? $.
+      ( cmul co cdiv wceq rp-propercan2ALT mulcomd oveq1d eqeq1d mpbid ) ABCJKZ
+      DCJKZLKZBDLKZMCBJKZTLKZUBMABCDEFGHINAUAUDUBASUCTLABCEFOPQR $.
   $}
 
   ${
@@ -323,18 +329,25 @@ $)
     rp-propercan.7 $e |- ( ph -> C e. CC ) $.
     rp-propercan.8 $e |- ( ph -> C =/= 0 ) $.
     $( Proper cancellation when common factor is 10 and we use the decimal
-       operator to represent two-digit terms. $)
+       operator to represent two-digit terms.
+       (Contributed by Richard Penner, 25-Oct-2019.) $)
     rp-propercan5ALT $p |- ( ph -> ( ; A 0 / ; C 0 ) = ( A / C ) ) $=
-      (  ) ? $.
+      ( c10 cmul cdiv wceq cc0 cdc 10nn a1i caddc df-dec mulcld addid1d eqtr2d
+      co cc wcel nncni wne nnne0i rp-propercan3ALT oveq12d eqeq1d mpbid ) AGBHT
+      ZGCHTZITZBCITZJBKLZCKLZITZUMJABGCDGUAUBAGMUCNZGKUDAGMUENEFUFAULUPUMAUJUNU
+      KUOIAUNUJKOTZUJUNURJABKPNAUJAGBUQDQRSAUOUKKOTZUKUOUSJACKPNAUKAGCUQEQRSUGU
+      HUI $.
   $}
 
   ${
     rp-propercan.9 $e |- ( ph -> A e. NN0 ) $.
     rp-propercan.10 $e |- ( ph -> C e. NN ) $.
     $( Proper cancellation when common factor is 10 and we use the decimal
-       operator to represent two-digit terms. $)
+       operator to represent two-digit terms.
+       (Contributed by Richard Penner, 25-Oct-2019.) $)
     rp-propercan6ALT $p |- ( ph -> ( ; A 0 / ; C 0 ) = ( A / C ) ) $=
-      (  ) ? $.
+      ( cn0 wcel cc nn0cn syl cn nncn cc0 wne nnne0 rp-propercan5ALT ) ABCABFGB
+      HGDBIJACKGZCHGECLJAQCMNECOJP $.
   $}
 
   $( "We all know that 9/12 is equivalent to 3/4". -Thomas P. Dence.
