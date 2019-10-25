@@ -296,11 +296,11 @@ $)
 
   ${
 
-    rp-propercan.1 $e |- ( ph -> A e. CC ) $.
-    rp-propercan.2 $e |- ( ph -> B e. CC ) $.
-    rp-propercan.3 $e |- ( ph -> B =/= 0 ) $.
-    rp-propercan.4 $e |- ( ph -> C e. CC ) $.
-    rp-propercan.5 $e |- ( ph -> C =/= 0 ) $.
+    rp-propercan.a $e |- ( ph -> A e. CC ) $.
+    rp-propercan.b $e |- ( ph -> B e. CC ) $.
+    rp-propercan.bne0 $e |- ( ph -> B =/= 0 ) $.
+    rp-propercan.c $e |- ( ph -> C e. CC ) $.
+    rp-propercan.cne0 $e |- ( ph -> C =/= 0 ) $.
     $( Proper cancellation when common factor multiplies from the front.
        (Contributed by Richard Penner, 25-Oct-2019.) $)
     rp-propercan3ALT $p |- ( ph -> ( ( B x. A ) / ( B x. C ) ) = ( A / C ) ) $=
@@ -325,9 +325,9 @@ $)
   $}
 
   ${
-    rp-propercan.6 $e |- ( ph -> A e. CC ) $.
-    rp-propercan.7 $e |- ( ph -> C e. CC ) $.
-    rp-propercan.8 $e |- ( ph -> C =/= 0 ) $.
+    rp-propercan.acn $e |- ( ph -> A e. CC ) $.
+    rp-propercan.ccn $e |- ( ph -> C e. CC ) $.
+    rp-propercan.cne $e |- ( ph -> C =/= 0 ) $.
     $( Proper cancellation when common factor is 10 and we use the decimal
        operator to represent two-digit terms.
        (Contributed by Richard Penner, 25-Oct-2019.) $)
@@ -340,8 +340,8 @@ $)
   $}
 
   ${
-    rp-propercan.9 $e |- ( ph -> A e. NN0 ) $.
-    rp-propercan.10 $e |- ( ph -> C e. NN ) $.
+    rp-propercan.ann0 $e |- ( ph -> A e. NN0 ) $.
+    rp-propercan.cnn $e |- ( ph -> C e. NN ) $.
     $( Proper cancellation when common factor is 10 and we use the decimal
        operator to represent two-digit terms.
        (Contributed by Richard Penner, 25-Oct-2019.) $)
@@ -352,22 +352,38 @@ $)
 
   $( "We all know that 9/12 is equivalent to 3/4". -Thomas P. Dence.
 
-     Statement of [Dence1983] p. 39. $)
+     Statement of [Dence1983] p. 39. 
+     (Contributed by Richard Penner, 25-Oct-2019.) $)
   rp-propercanex1ALT $p |- ( 9 / ; 1 2 ) = ( 3 / 4 ) $=
-    (  ) ? $.
+    ( c9 c1 c2 cdiv co c3 cmul c4 3t3e9 eqcomi 4t3e12 oveq12i wtru wceq cc wcel
+    cdc a1i cc0 wne tru 3cn 3ne0 4cn 4ne0 rp-propercan4ALT ax-mp eqtri ) ABCQZD
+    EFFGEZHFGEZDEZFHDEZAUJUIUKDUJAIJUKUIKJLMULUMNUAMFFHFOPMUBRZUNFSTMUCRHOPMUDR
+    HSTMUERUFUGUH $.
 
   $( "We all know ... that 21/56 is equivalent to 3/8." -Thomas P. Dence.
 
-     Statement of [Dence1983] p. 39. $)
+     Statement of [Dence1983] p. 39. 
+     (Contributed by Richard Penner, 25-Oct-2019.) $)
   rp-propercanex2ALT $p |- ( ; 2 1 / ; 5 6 ) = ( 3 / 8 ) $=
-    (  ) ? $.
+  ( c2 c1 cdc c5 c6 cdiv co c7 c3 cmul c8 7t3e21 eqcomi wtru cc wcel a1i nnne0i
+  cc0 wne 8t7e56 oveq12i wceq tru 3cn 7cn 7nn 8cn rp-propercan4ALT ax-mp eqtri
+  8nn ) ABCZDECZFGHIJGZKHJGZFGZIKFGZUMUOUNUPFUOUMLMUPUNUAMUBNUQURUCUDNIHKIOPNUE
+  QHOPNUFQHSTNHUGRQKOPNUHQKSTNKULRQUIUJUK $.
 
   $( "It is somewhat interesting to note that 16/64 is equal to 1/4". -Thomas
      P. Dence.
 
-     Statement of [Dence1983] p. 39. $)
+     Statement of [Dence1983] p. 39. 
+     (Contributed by Richard Penner, 25-Oct-2019.) $)
   rp-propercanex3ALT $p |- ( ; 1 6 / ; 6 4 ) = ( 1 / 4 ) $=
-    (  ) ? $.
+    ( c1 c6 c4 cdiv co cmul c8 cc 8p8e16 8cn eqcomi eqtri wtru wcel a1i cc0 8re
+    c2 cr ax-mp cdc caddc addcli eqeltrri mulid2i 2timesi 4cn 2cn mulassi 4t2e8
+    oveq2i oveq1i 3eqtri 8t8e64 oveq12i wceq tru ax-1cn wne readdcli eleq1a clt
+    wi 8pos addgt0ii breqtri gt0ne0ii 4ne0 rp-propercan2ALT ) ABUAZBCUAZDEAVJFE
+    ZCVJFEZDEZACDEZVJVLVKVMDVLVJVJGGUBEZVJHIGGJJUCUDZUEKVMVKVMGGFEZVKVMCRGFEZFE
+    ZCRFEZGFEZVRVJVSCFVSVJVSVPVJGJUFILKUKWBVTCRGUGUHJUIKWAGGFUJULUMUNLKUOMVNVOU
+    PUQMAVJCAHNMUROVJHNMVQOVJPUSMVJVJVPUPZVJSNZVPVJIKVPSNWCWDVCGGQQUTVPSVJVATTP
+    VPVJVBGGQQVDVDVEIVFVGOCHNMUGOCPUSMVHOVITL $.
 
   $( "The fraction 19/95 is equal to 1/5". -Thomas P. Dence.
 
@@ -415,9 +431,7 @@ $)
          ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to the result
          of incorrectly cancelling the common digit ` W ` , the additional
          condition, ` U = ( B x. T ) ` , results in a sterile result. $)
-      rp-anomcanlem2ALT $p |- ( ( ( B e. CC /\ W e. CC ) /\ ( T e. CC /\ U e. CC )
-                           /\ ( U =/= 0 /\ U = ( B x. T )
-                                /\ ( ( B x. W ) + U ) =/= 0 ) )
+      rp-anomcanlem2ALT $p |- ( ph
                          -> ( ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) )
                               = ( T / U ) -> ( B = 1 /\ T = U ) ) ) $=
         (  ) ? $.
