@@ -102,8 +102,8 @@ $)
     co oveq2d eqeq1d mpbid ) ADEZBDEZCDEZFBGHCGHIZIZBAJQZBCJQZKQZACKQZLUFCBJQZK
     QZUILABCMUEUHUKUIUEUGUJUFKUEBCUAUBUCUDNUAUBUCUDOPRST $.
 
-  $( Proper cancellation when common factor is 10 and we use the
-     decimal operator to represent two-digit terms.
+  $( Proper cancellation when common factor is 10 and we use the decimal
+     operator to represent two-digit terms.
 
      (Contributed by Richard Penner, 23-Oct-2019.) $)
   rp-propercan5 $p |- ( ( A e. CC /\ C e. CC /\ C =/= 0 )
@@ -116,8 +116,8 @@ $)
     GVHVMEPSZVMVHVPLVGAEQMVGVMVGHAUSVCUTVFUIZUSVCUTVFULRTUMVGVIVNEPSZVNVIVRLVGB
     EQMVGVNVGHBVQUSVCUTVFUNRTUMUOUPUQUR $.
 
-  $( Proper cancellation when common factor is 10 and we use the
-     decimal operator to represent two-digit terms.
+  $( Proper cancellation when common factor is 10 and we use the decimal
+     operator to represent two-digit terms.
 
      (Contributed by Richard Penner, 23-Oct-2019.) $)
   rp-propercan6 $p |- ( ( A e. NN0 /\ C e. NN )
@@ -148,8 +148,8 @@ $)
     8t7e56 eqtri ) ABCZDECZFGHIJGZKHJGZFGZIKFGZUNUPUOUQFUPUNLMUQUOULMUAINOZHNOZ
     KNOZUBZHPSZKPSZQZQURUSUCVCVFUTVAVBUDUEUFUGVDVEHUHRKUIRTTIHKUJUKUM $.
 
-  $( "It is somewhat interesting to note that 16/64 is equal to 1/4".
-     -Thomas P. Dence.
+  $( "It is somewhat interesting to note that 16/64 is equal to 1/4". -Thomas
+     P. Dence.
 
      Statement of [Dence1983] p. 39.
 
@@ -192,18 +192,19 @@ $)
 
      (Contributed by Richard Penner, 24-Oct-2019.) $)
   rp-propercanex5 $p |- ( ; 2 6 / ; 6 5 ) = ( 2 / 5 ) $=
-  ( c2 c6 cdc c5 cdiv co c1 c3 cmul c10 caddc 2cn mulcomi eqcomi oveq12i oveq2i
-  3cn 3eqtri 5cn ax-1cn df-dec 10nn0 nn0cni 3t2e6 adddii eqtr4i dec10p 6cn df-6
-  eqtri oveq1i adddiri mulid1i mulcli addassi mulid2i 5t2e10 2p1e3 wcel w3a cc0
-  cc wne wa wceq cr 10re 3re readdcli eqeltrri recni 3pm3.2i clt 10pos addgt0ii
-  3pos breqtri gt0ne0ii 5nn nnne0i pm3.2i rp-propercan2 mp2an ) ABCZBDCZEFAGHCZ
-  IFZDWFIFZEFZADEFZWDWGWEWHEWDJAIFZBKFZAJHKFZIFZWGABUAWLAJIFZAHIFZKFWNWKWOBWPKJ
-  AJUBUCZLMWPBWPHAIFBAHLQMUDUJNOAJHLWQQUEUFWMWFAIHUGZPRWEJBIFZDKFZDWMIFZWHBDUAW
-  TDJIFZDAGKFZIFZKFZXBDHIFZKFZXAWTXBGJIFZKFZDGIFZKFXBXHXJKFZKFXEWSXIDXJKWSBJIFD
-  GKFZJIFXIJBWQUHMBXLJIUIUKDGJSTWQULRXJDDSUMNOXBXHXJDJSWQUNGJTWQUNDGSTUNUOXKXDX
-  BKXKDAIFZXJKFXDXHXMXJKXHJXMJWQUPUQUFUKDAGSLTUEUFPRXDXFXBKXCHDIURPPXAXGDJHSWQQ
-  UENRWMWFDIWRPROAVBUSZWFVBUSZDVBUSZUTWFVAVCZDVAVCZVDWIWJVEXNXOXPLWFWMWFVFWRJHV
-  GVHVIVJZVKSVLXQXRWFXSVAWMWFVMJHVGVHVNVPVOWRVQVRDVSVTWAAWFDWBWCUJ $.
+    ( c2 c6 cdc c5 cdiv co c1 c3 cmul c10 2cn mulcomi 3cn eqcomi oveq12i oveq2i
+    caddc 3eqtri 5cn ax-1cn df-dec 10nn0 nn0cni 3t2e6 adddii eqtr4i dec10p df-6
+    eqtri 6cn oveq1i adddiri mulid1i mulcli addassi mulid2i 5t2e10 2p1e3 cc w3a
+    wcel cc0 wne wa wceq cr 10re 3re readdcli eqeltrri recni 3pm3.2i 10pos 3pos
+    clt addgt0ii breqtri gt0ne0ii 5nn nnne0i pm3.2i rp-propercan2 mp2an ) ABCZB
+    DCZEFAGHCZIFZDWFIFZEFZADEFZWDWGWEWHEWDJAIFZBQFZAJHQFZIFZWGABUAWLAJIFZAHIFZQ
+    FWNWKWOBWPQJAJUBUCZKLWPBWPHAIFBAHKMLUDUINOAJHKWQMUEUFWMWFAIHUGZPRWEJBIFZDQF
+    ZDWMIFZWHBDUAWTDJIFZDAGQFZIFZQFZXBDHIFZQFZXAWTXBGJIFZQFZDGIFZQFXBXHXJQFZQFX
+    EWSXIDXJQWSBJIFDGQFZJIFXIJBWQUJLBXLJIUHUKDGJSTWQULRXJDDSUMNOXBXHXJDJSWQUNGJ
+    TWQUNDGSTUNUOXKXDXBQXKDAIFZXJQFXDXHXMXJQXHJXMJWQUPUQUFUKDAGSKTUEUFPRXDXFXBQ
+    XCHDIURPPXAXGDJHSWQMUENRWMWFDIWRPROAUSVAZWFUSVAZDUSVAZUTWFVBVCZDVBVCZVDWIWJ
+    VEXNXOXPKWFWMWFVFWRJHVGVHVIVJZVKSVLXQXRWFXSVBWMWFVOJHVGVHVMVNVPWRVQVRDVSVTW
+    AAWFDWBWCUI $.
 
   $( "484/847 = 4/7". -Thomas P. Dence.
 
@@ -211,30 +212,31 @@ $)
 
      (Contributed by Richard Penner, 24-Oct-2019.) $)
   rp-propercanex6 $p |- ( ; ; 4 8 4 / ; ; 8 4 7 ) = ( 4 / 7 ) $=
-  ( c4 c8 cdc c7 co c1 c2 cmul c10 caddc df-dec 4cn 10re mulassi eqcomi oveq12i
-  recni oveq2i 3eqtri 7cn ax-1cn 4t2e8 mulcomi mulcli mulid1i eqtr4i oveq1i 1re
-  cdiv remulcli 2cn adddii 3eqtr4i cr 2re readdcli eqeltri eqtri 7t2e14 addassi
-  df-8 dec10p cc wcel w3a cc0 wne wceq 3pm3.2i clt 10pos 0lt1 mulgt0ii addgt0ii
-  wa 2pos breqtrri gt0ne0ii 7re 7pos pm3.2i rp-propercan2 mp2an ) ABCZACZBACZDC
-  ZUIEAFGCZFCZHEZDWIHEZUIEZADUIEZWEWJWGWKUIIWDHEZAJEAIWHHEZHEZAFHEZJEZWEWJWNWPA
-  WQJWNIAHEZWHHEZAIHEZWHHEWPWNIAWHHEZHEWTWDXBIHWDWSBJEZAIFHEZGJEZHEZXBABKXAFHEZ
-  BJEAXDHEZAGHEZJEXCXFXGXHBXIJAIFLIMQZUANXIBUBOPWSXGBJWSXAXGIAXJLUCZXAAILXJUDUE
-  UFUGAXDGLXDIFMUHUJZQZUKULUMXEWHAHWHXEFGKZOZRSRIAWHXJLWHWHXEUNXNXDGXLUOUPUQZQZ
-  NUFWSXAWHHXKUGAIWHLXJXQNSWQAALUEOPWDAKWJAWOFJEZHEWRWIXRAHWHFKZRAWOFLWOIWHMXPU
-  JZQZUAULURUMIWFHEZDJEDWOHEZDFHEZJEZWGWKYBYCDYDJYBIDHEZWHHEZDIHEZWHHEYCYBIDWHH
-  EZHEYGWFYIIHWFIBHEZAJEZDXEHEZYIBAKYHFHEZFACZJEZDXDHEZDGHEZJEYKYLYMYPYNYQJDIFT
-  XJUANYQYNUSOPYKYHIJEZAJEYHIAJEZJEYOYJYRAJYJIDFJEZHEYFXDJEYRBYTIHVARIDFXJTUAUL
-  YFYHXDIJIDXJTUCZIXJUEPSUGYHIADITXJUDZXJLUTYHYMYSYNJYMYHYHUUBUEOAVBPSDXDGTXMUK
-  ULUMXEWHDHXORSRIDWHXJTXQNUFYFYHWHHUUAUGDIWHTXJXQNSYDDDTUEOPWFDKWKDXRHEYEWIXRD
-  HXSRDWOFTYAUAULURUMPAVCVDZWIVCVDZDVCVDZVEWIVFVGZDVFVGZVOWLWMVHUUCUUDUUELWIWIX
-  RUNXSWOFXTUHUPUQZQTVIUUFUUGWIUUHVFXRWIVJWOFXTUHIWHMXPVKVFXEWHVJXDGXLUOIFMUHVK
-  VLVMVPVNXNVQVMVLVNXSVQVRDVSVTVRWAAWIDWBWCUR $.
+    ( c4 c8 cdc c7 co c1 c2 cmul c10 caddc df-dec 4cn 10re recni mulassi eqcomi
+    oveq12i oveq2i 3eqtri 7cn ax-1cn 4t2e8 mulcomi mulcli mulid1i eqtr4i oveq1i
+    cdiv 1re remulcli 2cn adddii 3eqtr4i 2re readdcli eqeltri eqtri 7t2e14 df-8
+    cr addassi dec10p cc wcel w3a cc0 wne wceq 3pm3.2i 10pos 0lt1 mulgt0ii 2pos
+    wa clt addgt0ii breqtrri gt0ne0ii 7re 7pos pm3.2i rp-propercan2 mp2an ) ABC
+    ZACZBACZDCZUHEAFGCZFCZHEZDWIHEZUHEZADUHEZWEWJWGWKUHIWDHEZAJEAIWHHEZHEZAFHEZ
+    JEZWEWJWNWPAWQJWNIAHEZWHHEZAIHEZWHHEWPWNIAWHHEZHEWTWDXBIHWDWSBJEZAIFHEZGJEZ
+    HEZXBABKXAFHEZBJEAXDHEZAGHEZJEXCXFXGXHBXIJAIFLIMNZUAOXIBUBPQWSXGBJWSXAXGIAX
+    JLUCZXAAILXJUDUEUFUGAXDGLXDIFMUIUJZNZUKULUMXEWHAHWHXEFGKZPZRSRIAWHXJLWHWHXE
+    UTXNXDGXLUNUOUPZNZOUFWSXAWHHXKUGAIWHLXJXQOSWQAALUEPQWDAKWJAWOFJEZHEWRWIXRAH
+    WHFKZRAWOFLWOIWHMXPUJZNZUAULUQUMIWFHEZDJEDWOHEZDFHEZJEZWGWKYBYCDYDJYBIDHEZW
+    HHEZDIHEZWHHEYCYBIDWHHEZHEYGWFYIIHWFIBHEZAJEZDXEHEZYIBAKYHFHEZFACZJEZDXDHEZ
+    DGHEZJEYKYLYMYPYNYQJDIFTXJUAOYQYNURPQYKYHIJEZAJEYHIAJEZJEYOYJYRAJYJIDFJEZHE
+    YFXDJEYRBYTIHUSRIDFXJTUAULYFYHXDIJIDXJTUCZIXJUEQSUGYHIADITXJUDZXJLVAYHYMYSY
+    NJYMYHYHUUBUEPAVBQSDXDGTXMUKULUMXEWHDHXORSRIDWHXJTXQOUFYFYHWHHUUAUGDIWHTXJX
+    QOSYDDDTUEPQWFDKWKDXRHEYEWIXRDHXSRDWOFTYAUAULUQUMQAVCVDZWIVCVDZDVCVDZVEWIVF
+    VGZDVFVGZVNWLWMVHUUCUUDUUELWIWIXRUTXSWOFXTUIUOUPZNTVIUUFUUGWIUUHVFXRWIVOWOF
+    XTUIIWHMXPVJVFXEWHVOXDGXLUNIFMUIVJVKVLVMVPXNVQVLVKVPXSVQVRDVSVTVRWAAWIDWBWC
+    UQ $.
 
   $( Working in base ` B ` , if the fraction
-     ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to
-     the result of incorrectly cancelling the common digit ` W `
-     iff that common digit has a value determined only by ` B ` ,
-     ` T ` , and ` U ` . The condition ` U =/= ( B x. T ) ` is eliminated.
+     ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to the result of
+     incorrectly cancelling the common digit ` W ` iff that common digit has a
+     value determined only by ` B ` , ` T ` , and ` U ` .  The condition
+     ` U =/= ( B x. T ) ` is eliminated.
 
      (Contributed by Richard Penner, 24-Oct-2019.) $)
   rp-anomcanlem1 $p |- ( ( ( B e. CC /\ W e. CC ) /\ ( T e. CC /\ U e. CC )
@@ -244,32 +246,167 @@ $)
                               = ( T / U )
                             <-> W = ( ( ( B - 1 ) x. ( T x. U ) )
                                       / ( ( B x. T ) - U ) ) ) ) $=
-  ( cc wcel wa cc0 wne cmul co caddc w3a cdiv wceq c1 cmin mulcld addcld 3bitrd
-  simp1l simp2l simp1r simp2r simp33 simp31 divmuleqd adddird adddid addsubeq4d
-  eqeq12d addcomd eqeq1d mul12d mulcomd oveq2d 3eqtrd oveq1d eqcomd 1cnd eqtr4d
-  mulassd mulid2d oveq12d subdird wb eqcom a1i subdid subcld simp32 simp1 simp2
-  simp3 necomd subne0d syl3anc divmul3d 3bitr4d ) AEFZDEFZGZBEFZCEFZGZCHIZCABJK
-  ZIZADJKZCLKZHIZMZMZWGDLKZWJNKBCNKOWNCJKZBWJJKZOWGCJKZDCJKZLKZBWIJKZBCJKZLKZOZ
-  DAPQKZXAJKZWGCQKZNKZOZWMWNWJBCWMWGDWMABVTWAWEWLUAZWBWCWDWLUBZRZVTWAWEWLUCZSWM
-  WICWMADXIXLRZWBWCWDWLUDZSXJXNWBWEWFWHWKUEWBWEWFWHWKUFUGWMWOWSWPXBWMWGDCXKXLXN
-  UHWMBWICXJXMXNUIUKWMXCWRWQLKZXBOWTWRQKZWQXAQKZOZXHWMWSXOXBWMWQWRWMWGCXKXNRZWM
-  DCXLXNRZULUMWMWRWQWTXAXTXSWMBWIXJXMRWMBCXJXNRZUJWMXRDWGJKZWRQKZXEOZXGDOZXHWMX
-  PYCXQXEWMWTYBWRQWMWTABDJKZJKADBJKZJKYBWMBADXJXIXLUNWMYFYGAJWMBDXJXLUOUPWMADBX
-  IXLXJUNUQURWMXQAXAJKZPXAJKZQKXEWMWQYHXAYIQWMABCXIXJXNVBWMYIXAWMXAYAVCUSVDWMAP
-  XAXIWMUTZYAVEVAUKWMDXFJKZXEOZXEYKOZYDYEYLYMVFWMYKXEVGVHWMYCYKXEWMYKYCWMDWGCXL
-  XKXNVIUSUMWMXEDXFWMXDXAWMAPXIYJVJYARXLWMWGCXKXNVJWMWGEFZWDWHXFHIXKXNWBWEWFWHW
-  KVKYNWDWHMZWGCYNWDWHVLYNWDWHVMYOCWGYNWDWHVNVOVPVQVRVSYEXHVFWMXGDVGVHTTT $.
+    ( cc wcel wa cc0 wne cmul co caddc w3a cdiv wceq cmin mulcld addcld 3bitrd
+    c1 simp1l simp2l simp1r simp2r simp33 simp31 adddird adddid eqeq12d addcomd
+    divmuleqd eqeq1d mul12d mulcomd oveq2d 3eqtrd oveq1d mulassd mulid2d eqcomd
+    addsubeq4d oveq12d 1cnd subdird eqtr4d eqcom a1i subdid subcld simp32 simp1
+    wb simp2 simp3 necomd subne0d syl3anc divmul3d 3bitr4d ) AEFZDEFZGZBEFZCEFZ
+    GZCHIZCABJKZIZADJKZCLKZHIZMZMZWGDLKZWJNKBCNKOWNCJKZBWJJKZOWGCJKZDCJKZLKZBWI
+    JKZBCJKZLKZOZDATPKZXAJKZWGCPKZNKZOZWMWNWJBCWMWGDWMABVTWAWEWLUAZWBWCWDWLUBZQ
+    ZVTWAWEWLUCZRWMWICWMADXIXLQZWBWCWDWLUDZRXJXNWBWEWFWHWKUEWBWEWFWHWKUFUKWMWOW
+    SWPXBWMWGDCXKXLXNUGWMBWICXJXMXNUHUIWMXCWRWQLKZXBOWTWRPKZWQXAPKZOZXHWMWSXOXB
+    WMWQWRWMWGCXKXNQZWMDCXLXNQZUJULWMWRWQWTXAXTXSWMBWIXJXMQWMBCXJXNQZVAWMXRDWGJ
+    KZWRPKZXEOZXGDOZXHWMXPYCXQXEWMWTYBWRPWMWTABDJKZJKADBJKZJKYBWMBADXJXIXLUMWMY
+    FYGAJWMBDXJXLUNUOWMADBXIXLXJUMUPUQWMXQAXAJKZTXAJKZPKXEWMWQYHXAYIPWMABCXIXJX
+    NURWMYIXAWMXAYAUSUTVBWMATXAXIWMVCZYAVDVEUIWMDXFJKZXEOZXEYKOZYDYEYLYMVLWMYKX
+    EVFVGWMYCYKXEWMYKYCWMDWGCXLXKXNVHUTULWMXEDXFWMXDXAWMATXIYJVIYAQXLWMWGCXKXNV
+    IWMWGEFZWDWHXFHIXKXNWBWEWFWHWKVJYNWDWHMZWGCYNWDWHVKYNWDWHVMYOCWGYNWDWHVNVOV
+    PVQVRVSYEXHVLWMXGDVFVGSSS $.
 
   $( Working in base ` B ` , if the fraction
-     ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to
-     the result of incorrectly cancelling the common digit ` W ` ,
-     the additional condition, ` U = ( B x. T ) ` , results in a
-     sterile result.
+     ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to the result of
+     incorrectly cancelling the common digit ` W ` , the additional condition,
+     ` U = ( B x. T ) ` , results in a sterile result.
 
-      $)
+     (Contributed by Richard Penner, 25-Oct-2019.) $)
   rp-anomcanlem2 $p |- ( ( ( B e. CC /\ W e. CC ) /\ ( T e. CC /\ U e. CC )
                            /\ ( U =/= 0 /\ U = ( B x. T )
                                 /\ ( ( B x. W ) + U ) =/= 0 ) )
                          -> ( ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) )
                               = ( T / U ) -> ( B = 1 /\ T = U ) ) ) $=
-  ? $.
+    ( cc wcel wa cc0 wne cmul co wceq caddc cdiv c1 eqcomd oveq2d addcld eqeq2d
+    w3a simpl1 simpl2l simpl32 simpl31 simpl33 eqnetrd jca simpr 3eqtrd simpl1l
+    eqnetrrd simpl2 mulcld simpl1r simpl3r simpl3l divmuleqd mpbid simp1l simp2
+    simp1r adddid mulassd mulcomd oveq1d simp3l mulcan2d 3bitrd addcomd addcand
+    eqeq1d bitrd mulid2d 1cnd mulne0bbd biimpd adantr mpd syl31anc simpll3 ax-1
+    wi syl imp 3eqtr2rd mpdan ex ) AEFZDEFZGZBEFZCEFZGZCHIZCABJKZLZADJKZCMKZHIZ
+    TZTZWODMKZWRNKZBCNKZLZAOLZBCLZGZXAXEGZXFXHXIWJWKWOHIZWQWOMKZHIZGZXBXKNKZBWO
+    NKZLZXFWJWMWTXEUAWKWLWJWTXEUBXIXJXLXICWOHWNWPWSWJWMXEUCZWNWPWSWJWMXEUDUKXIX
+    KWRHXIWOCWQMXICWOXQPQZWNWPWSWJWMXEUEUFUGXIXNXCXDXOXIXKWRXBNXRQXAXEUHXICWOBN
+    XQQUIWJWKXMTZXPGZXBWOJKZBXKJKZLZXFXTXPYCXSXPUHXTXBXKBWOXTWODXTABWHWIWKXMXPU
+    JZWJWKXMXPULZUMZWHWIWKXMXPUNZRXTWQWOXTADYDYGUMYFRYEYFXJXLWJWKXPUOXJXLWJWKXP
+    UPUQURXSYCXFWBXPXSYCXFXSYCXBDBMKZLZWOBLZXFXSYCYABAYHJKZJKZLYABAJKZYHJKZLZYI
+    XSYBYLYAXSXKYKBJXSYKXKXSADBWHWIWKXMUSZWHWIWKXMVAZWJWKXMUTZVBPQSXSYLYNYAXSYN
+    YLXSBAYHYRYPXSDBYQYRRZVCPSXSYOYAWOYHJKZLYAYHWOJKZLYIXSYNYTYAXSYMWOYHJXSBAYR
+    YPVDVESXSYTUUAYAXSWOYHXSABYPYRUMZYSVDSXSXBYHWOXSWODUUBYQRYSUUBWJWKXJXLVFZVG
+    VHVHXSYIDWOMKZYHLYJXSXBUUDYHXSWODUUBYQVIVKXSDWOBYQUUBYRVJVLXSYJWOOBJKZLXFXS
+    BUUEWOXSUUEBXSBYRVMPSXSAOBYPXSVNYRXSABYPYRUUCVOVGVLVHVPVQVRVSXIXFGZXFXGXIXF
+    UHZUUFCWOUUEBUUFWTWPWJWMWTXEXFVTWNWPWSUTWCUUFOABJUUFAOUUGPVEUUFBXIXFWKXIWMX
+    FWKWBZWJWMWTXEULWKUUHWLWKXFWAVQWCWDVMWEUGWFWG $.
+
+  ${
+
+    rp-propercan.1 $e |- ( ph -> A e. CC ) $.
+    rp-propercan.2 $e |- ( ph -> B e. CC ) $.
+    rp-propercan.3 $e |- ( ph -> B =/= 0 ) $.
+    rp-propercan.4 $e |- ( ph -> C e. CC ) $.
+    rp-propercan.5 $e |- ( ph -> C =/= 0 ) $.
+    $( Proper cancellation when common factor multiplies from the front. $)
+    rp-propercan3ALT $p |- ( ph -> ( ( B x. A ) / ( B x. C ) ) = ( A / C ) ) $=
+      (  ) ? $.
+
+    $( Proper cancellation when common factor is in the interior. $)
+    rp-propercan1ALT $p |- ( ph -> ( ( A x. B ) / ( B x. C ) ) = ( A / C ) ) $=
+      (  ) ? $.
+
+    $( Proper cancellation when common factor is last. $)
+    rp-propercan2ALT $p |- ( ph -> ( ( A x. B ) / ( C x. B ) ) = ( A / C ) ) $=
+      (  ) ? $.
+
+    $( Proper cancellation when common factor is on exterior. $)
+    rp-propercan4ALT $p |- ( ph -> ( ( B x. A ) / ( C x. B ) ) = ( A / C ) ) $=
+      (  ) ? $.
+  $}
+
+  ${
+    rp-propercan.6 $e |- ( ph -> A e. CC ) $.
+    rp-propercan.7 $e |- ( ph -> C e. CC ) $.
+    rp-propercan.8 $e |- ( ph -> C =/= 0 ) $.
+    $( Proper cancellation when common factor is 10 and we use the decimal
+       operator to represent two-digit terms. $)
+    rp-propercan5ALT $p |- ( ph -> ( ; A 0 / ; C 0 ) = ( A / C ) ) $=
+      (  ) ? $.
+  $}
+
+  ${
+    rp-propercan.9 $e |- ( ph -> A e. NN0 ) $.
+    rp-propercan.10 $e |- ( ph -> C e. NN ) $.
+    $( Proper cancellation when common factor is 10 and we use the decimal
+       operator to represent two-digit terms. $)
+    rp-propercan6ALT $p |- ( ph -> ( ; A 0 / ; C 0 ) = ( A / C ) ) $=
+      (  ) ? $.
+  $}
+
+  $( "We all know that 9/12 is equivalent to 3/4". -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 39. $)
+  rp-propercanex1ALT $p |- ( 9 / ; 1 2 ) = ( 3 / 4 ) $=
+    (  ) ? $.
+
+  $( "We all know ... that 21/56 is equivalent to 3/8." -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 39. $)
+  rp-propercanex2ALT $p |- ( ; 2 1 / ; 5 6 ) = ( 3 / 8 ) $=
+    (  ) ? $.
+
+  $( "It is somewhat interesting to note that 16/64 is equal to 1/4". -Thomas
+     P. Dence.
+
+     Statement of [Dence1983] p. 39. $)
+  rp-propercanex3ALT $p |- ( ; 1 6 / ; 6 4 ) = ( 1 / 4 ) $=
+    (  ) ? $.
+
+  $( "The fraction 19/95 is equal to 1/5". -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 39. $)
+  rp-propercanex4ALT $p |- ( ; 1 9 / ; 9 5 ) = ( 1 / 5 ) $=
+    (  ) ? $.
+
+  $( "Also 26/65 equals to 2/5". -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 40. $)
+  rp-propercanex5ALT $p |- ( ; 2 6 / ; 6 5 ) = ( 2 / 5 ) $=
+    (  ) ? $.
+
+  $( "484/847 = 4/7". -Thomas P. Dence.
+
+     Statement of [Dence1983] p. 40. $)
+  rp-propercanex6ALT $p |- ( ; ; 4 8 4 / ; ; 8 4 7 ) = ( 4 / 7 ) $=
+    (  ) ? $.
+
+  ${
+    rp-anomcanlem.b $e |- ( ph -> B e. CC ) $.
+    rp-anomcanlem.w $e |- ( ph -> W e. CC ) $.
+    rp-anomcanlem.t $e |- ( ph -> T e. CC ) $.
+    rp-anomcanlem.u $e |- ( ph -> U e. CC ) $.
+    rp-anomcanlem.une0 $e |- ( ph -> U =/= 0 ) $.
+    rp-anomcanlem.demne0 $e |- ( ph -> ( ( B x. W ) + U ) =/= 0 ) $.
+    ${
+      rp-anomcanlem.canw $e |- ( ph -> U =/= ( B x. T ) ) $.
+      $( Working in base ` B ` , if the fraction
+         ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to the result
+         of incorrectly cancelling the common digit ` W ` iff that common digit
+         has a value determined only by ` B ` , ` T ` , and ` U ` .  The
+         condition ` U =/= ( B x. T ) ` is eliminated. $)
+      rp-anomcanlem1ALT $p |- ( ph
+                         -> ( ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) )
+                              = ( T / U )
+                            <-> W = ( ( ( B - 1 ) x. ( T x. U ) )
+                                      / ( ( B x. T ) - U ) ) ) ) $=
+        (  ) ? $.
+    $}
+
+    ${
+      rp-anomcanlem.cantw $e |- ( ph -> U = ( B x. T ) ) $.
+      $( Working in base ` B ` , if the fraction
+         ` ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) ) ` is equal to the result
+         of incorrectly cancelling the common digit ` W ` , the additional
+         condition, ` U = ( B x. T ) ` , results in a sterile result. $)
+      rp-anomcanlem2ALT $p |- ( ( ( B e. CC /\ W e. CC ) /\ ( T e. CC /\ U e. CC )
+                           /\ ( U =/= 0 /\ U = ( B x. T )
+                                /\ ( ( B x. W ) + U ) =/= 0 ) )
+                         -> ( ( ( ( B x. T ) + W ) / ( ( B x. W ) + U ) )
+                              = ( T / U ) -> ( B = 1 /\ T = U ) ) ) $=
+        (  ) ? $.
+    $}
+  $}
