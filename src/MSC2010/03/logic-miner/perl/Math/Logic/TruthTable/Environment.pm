@@ -3,12 +3,27 @@ package Math::Logic::TruthTable::Environment;
 use strict;
 use warnings;
 use Carp;
+use Config;
 
-our $VERSION = 1;
+our $VERSION = '1.1';
+
+sub all_ones {
+    my $max_octet = ( 1 << $Config{'charbits'} ) - 1;
+    return chr $max_octet;
+}
+
+sub all_zeroes { return chr 0; }
 
 sub new {
     my ($class_or_ref) = @_;
-    return bless {}, ( ref $class_or_ref || $class_or_ref );
+    my $bits           = 0;
+    my $test           = 1;
+    while ( $test < $Config{'charbits'} ) { $bits++; $test <<= 1; }
+    if ( 2**$bits != $Config{'charbits'} || ( $bits & ( $bits + 1 ) ) ) {
+        croak "Unsupported number of bits per char: $Config{'charbits'}";
+    }
+    return bless { 'charpower' => $test, },
+      ( ref $class_or_ref || $class_or_ref );
 }
 
 sub add_variable {
@@ -35,10 +50,10 @@ sub initialize_representations {
     my $max_bit;
     my $all_vars_true;
 
-    if ( $nvars > 2 ) {
-        $width                               = 2**( $nvars - 3 );
-        $all_vars_true                       = "\xff" x $width;
-        $max_bit                             = 7;
+    if ( $nvars >= $self->{'charpower'} ) {
+        $width         = 2**( $nvars - $self->{'charpower'} );
+        $all_vars_true = all_ones() x $width;
+        $max_bit       = 2**$self->{'charpower'} - 1;
         $self->{'is_numeric_representation'} = undef;
     }
     else {
@@ -52,15 +67,15 @@ sub initialize_representations {
     foreach my $index ( 0 .. $max_index ) {
         my $representation;
         if ( $index > 2 ) {
-            my $half_width = 2**( $index - 3 );
+            my $half_width = 2**( $index - $self->{'charpower'} );
             $representation =
-              ( "\x00" x $half_width ) . ( "\xff" x $half_width );
+              ( all_zeroes() x $half_width ) . ( all_ones() x $half_width );
             my $factor = ( length $all_vars_true ) / ( length $representation );
             if ( $factor > 1 ) {
                 $representation = $representation x $factor;
             }
         }
-        elsif ( $max_bit == 7 ) {
+        elsif ( $max_bit == 2**$self->{'charpower'} - 1 ) {
             $representation = q();
             my $test_bit = 1 << $index;
             foreach my $bit ( 0 .. $max_bit ) {
