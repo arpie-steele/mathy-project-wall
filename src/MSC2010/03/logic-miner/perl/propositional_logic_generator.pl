@@ -6,20 +6,22 @@
 
 use strict;
 use warnings;
-use Math::Logic::TruthTable;
-use Encode qw(encode);
-
 use Carp;
-
+use Data::Dumper;
+use Encode qw(encode);
+use English qw(-no_match_vars);
+use Math::Logic::TruthTable;
+use Math::OperatorTreeNode;
 use warnings FATAL => qw(all);
 
-use Data::Dumper;
 $Data::Dumper::Useqq = 1;
 
 our $VERSION = '1.0';
-our $shucks;
+my $shucks;
 
+## no critic (ProhibitMagicNumbers)
 my $length_limit = 10;
+## use critic (ProhibitMagicNumbers)
 
 my $label_prefix = 'rpenner';
 
@@ -51,11 +53,13 @@ initialize_representations();
 
 # print Dumper([$all_vars_true, @logical_vars]);
 
+## no critic (ProhibitMagicNumbers)
+
 add_logical_op( 2, 'iff', "\N{LEFT RIGHT ARROW}",
     '<->', sub { return ( ~( $_[0] ^ $_[1] ) & $all_vars_true ); } );
 add_logical_op( 2, 'implies', "\N{RIGHTWARDS ARROW}",
     '->', sub { return ( ( ( ~$_[0] ) & $all_vars_true ) | $_[1] ); } );
-add_logical_op( 1, 'not', "\N{NOT SIGN}", '-.',
+add_logical_op( 1, 'not', "\N{NOT SIGN}", q(-.),
     sub { return ( ( ~$_[0] ) & $all_vars_true ); } );
 if (0) {
     add_logical_op( 2, 'or', "\N{LOGICAL OR}",
@@ -85,19 +89,22 @@ if (0) {
     add_logical_op( 0, 'FALSE', "\N{UP TACK}", 'F.',
         sub { return ( ( ~$all_vars_true ) & $all_vars_true ); } );
 }
+## use critic (ProhibitMagicNumbers)
 
 {
     my $n = scalar @logical_vars;
     foreach my $i ( 0 .. ( $n - 1 ) ) {
         print
-"$logical_vars[$i]{'nam'} is $logical_vars[$i]{'asc'} or $logical_vars[$i]{'utf'} in UNICODE.\n";
+"$logical_vars[$i]{'nam'} is $logical_vars[$i]{'asc'} or $logical_vars[$i]{'utf'} in UNICODE.\n"
+          or croak "print: STDERR: $OS_ERROR";
 
         # print Dumper($logical_vars[$i]);
     }
     my $m = scalar @logical_ops;
     foreach my $i ( 1 .. $m ) {
         print
-"$logical_ops[-$i]{'nam'} is $logical_ops[-$i]{'asc'} or $logical_ops[-$i]{'utf'} in UNICODE.\n";
+"$logical_ops[-$i]{'nam'} is $logical_ops[-$i]{'asc'} or $logical_ops[-$i]{'utf'} in UNICODE.\n"
+          or croak "print: STDERR: $OS_ERROR";
 
         # print Dumper($logical_ops[-$i]);
     }
@@ -111,7 +118,7 @@ if ( !scalar @wip ) {
     push @wip, [undef];
 }
 
-$SIG{INT} = \&catch_zap;
+local $SIG{INT} = \&catch_zap;
 
 while ( scalar @wip ) {
     last if $shucks;
@@ -125,6 +132,7 @@ while ( scalar @wip ) {
         next;
     }
     else {
+        ## no critic (ProhibitDeepNests, ProhibitMagicNumbers)
         my $polish = infix_std($tree);
         my $proofs;
 
@@ -137,7 +145,8 @@ while ( scalar @wip ) {
                     foreach my $ri ( @{ $row->[3] } ) { $database[$ri]->[5]++; }
                 }
                 print
-"WEEDING slots: @{[scalar @slots]}, FROM: $row->[4] : $row->[1]\n";
+"WEEDING slots: @{[scalar @slots]}, FROM: $row->[4] : $row->[1]\n"
+                  or croak "print: STDERR: $OS_ERROR";
                 $proofs = 1;
             }
             last;
@@ -145,6 +154,7 @@ while ( scalar @wip ) {
         if ($proofs) {
             next;
         }
+        ## use critic (ProhibitDeepNests, ProhibitMagicNumbers)
     }
 
     my $highest_var = 0;
@@ -176,11 +186,14 @@ while ( scalar @wip ) {
     }
 }
 
+## no critic (ProhibitMagicNumbers)
 foreach
   my $row ( sort { $a->[5] <=> $b->[5] || $a->[4] cmp $b->[4] } @database )
 {
-    print $row->[5], " : ", $row->[4], " : ", $row->[1], "\n";
+    print $row->[5], q( : ), $row->[4], q( : ), $row->[1], "\n"
+      or croak "print: STDERR: $OS_ERROR";
 }
+## use critic (ProhibitMagicNumbers)
 
 exit 0;
 
@@ -188,6 +201,7 @@ sub catch_zap {
     my $signame = shift;
     $shucks++;
     carp "Somebody sent me a SIG$signame";
+    return;
 }
 
 sub load_data {
@@ -227,7 +241,8 @@ sub load_data {
         }
         if ( !$error ) {
             my $infix = infix( \@tree, 'utf' );
-            print "LOADING: $label: ", infix( \@tree, 'utf' ), "\n";
+            print "LOADING: $label: ", infix( \@tree, 'utf' ), "\n"
+              or croak "print: STDERR: $OS_ERROR";
             my $representaion_value = eval_tree( \@tree );
             if (   $is_numeric_representation
                 && $representaion_value == $all_vars_true
@@ -240,7 +255,8 @@ sub load_data {
 
             }
             else {
-                print "OOPS -- that's not true.\n";
+                print "OOPS -- that's not true.\n"
+                  or croak "print: STDERR: $OS_ERROR";
             }
         }
     }
@@ -251,7 +267,7 @@ sub eval_tree {
     my ($tree) = @_;
     my $length = scalar @{$tree};
     my @slots = grep { !defined $tree->[$_] } ( 0 .. ( $length - 1 ) );
-    if ( scalar @slots ) { die "tree has slots free: @slots\n"; }
+    if ( scalar @slots ) { croak "tree has slots free: @slots\n"; }
     my @infix_stack;
     my @representation_stack;
     foreach my $k ( 1 .. $length ) {
@@ -284,7 +300,7 @@ sub infix {
     my $length = scalar @{$tree};
 
     my @slots = grep { !defined $tree->[$_] } ( 0 .. ( $length - 1 ) );
-    if ( scalar @slots ) { die "tree has slots free: @slots\n"; }
+    if ( scalar @slots ) { croak "tree has slots free: @slots\n"; }
     my @infix_stack;
     foreach my $k ( 1 .. $length ) {
         my $node = $tree->[ -$k ];
@@ -298,7 +314,7 @@ sub infix {
             }
             if ($is_func) {
                 unshift @infix_stack,
-                  $display . ' ( ' . ( join " , ", @params ) . ' )';
+                  $display . ' ( ' . ( join q( , ), @params ) . ' )';
             }
             elsif ( $arity == 0 ) {
                 unshift @infix_stack, $display;
@@ -346,7 +362,7 @@ sub infix_std {
             if ($arity) {
                 push @params, splice @infix_stack, 0, $arity;
             }
-            unshift @infix_stack, '{' . ( join ',', $node, @params ) . '}';
+            unshift @infix_stack, '{' . ( join q(,), $node, @params ) . '}';
 
         }
         else {
@@ -372,7 +388,7 @@ sub infix_pat {
             my $arity = $logical_ops[$node]{'nsl'};
             my @params;
             if ($arity) {
-                push @params, map { ( ',', @{$_} ); } splice @infix_stack, 0,
+                push @params, map { ( q(,), @{$_} ); } splice @infix_stack, 0,
                   $arity;
             }
             unshift @infix_stack, [ '{', $node, @params, '}' ];
@@ -396,7 +412,7 @@ sub replace_vars {
             else {
                 my $k = 2 * ( 1 + scalar @{$standins} );
                 push @result, '(\w+|({(?:(?:(?>[^{}]+)|(?' . $k . '))*)}))';
-                push @{$standins}, '\\' . ( 1 + 2 * scalar @{$standins} );
+                push @{$standins}, q(\\) . ( 1 + 2 * scalar @{$standins} );
             }
         }
         else {
@@ -454,6 +470,7 @@ sub add_logical_variable {
     return;
 }
 
+## no critic (ProhibitEscapedCharacters, ProhibitMagicNumbers)
 sub initialize_representations {
     my $nvars     = scalar @logical_vars;
     my $max_index = $nvars - 1;
@@ -501,7 +518,9 @@ sub initialize_representations {
     }
     return;
 }
+## use critic (ProhibitEscapedCharacters, ProhibitMagicNumbers)
 
+## no critic (ProhibitExcessComplexity, ProhibitManyArgs, ProhibitMagicNumbers)
 sub prove_and_add {
     my ( $tree, $label, $pattern, $infix, $polish, $old_proofs ) = @_;
     my $representaion_value = eval_tree($tree);
@@ -530,15 +549,16 @@ sub prove_and_add {
         }
 
         if ( $proofs && 1 < scalar @{$proofs} ) {
-            print "\n\nINFIX: $infix\n";
+            print "\n\nINFIX: $infix\n" or croak "print: STDERR: $OS_ERROR";
             foreach my $ri ( @{$proofs} ) {
-                print "PROVE FROM: ", $database[$ri][4], ": ",
-                  $database[$ri][1], "\n";
+                print 'PROVE FROM: ', $database[$ri][4], q(: ),
+                  $database[$ri][1], "\n"
+                  or croak "print: STDERR: $OS_ERROR";
             }
         }
 
         if ( !defined $proofs ) {
-            print "\n\nINFIX: $infix\n";
+            print "\n\nINFIX: $infix\n" or croak "print: STDERR: $OS_ERROR";
             if ( defined $old_proofs ) { $proofs = $old_proofs; }
             add_to_database( $tree, $label, $pattern, $infix, $polish,
                 $proofs );
@@ -546,7 +566,9 @@ sub prove_and_add {
     }
     return;
 }
+## use critic (ProhibitExcessComplexity, ProhibitManyArgs, ProhibitMagicNumbers)
 
+## no critic (ProhibitExcessComplexity, ProhibitManyArgs, ProhibitMagicNumbers)
 sub add_to_database {
     my ( $tree, $label, $pattern, $infix, $polish, $proofs ) = @_;
     $label   ||= $label_prefix . scalar @database;
@@ -601,7 +623,7 @@ sub add_to_database {
             {
                 my @extra =
                   map { $_ >= 0 ? $_ + 1 + $max_var : $_ } @{ $row->[6] };
-                my @extra_proofs = ( @$new_proofs, $ri );
+                my @extra_proofs = ( @{$new_proofs}, $ri );
                 if ( $row->[3] ) { push @extra_proofs, @{ $row->[3] }; }
 
                 if ( exists $lookup{'iff'} ) {
@@ -733,7 +755,7 @@ sub add_to_database {
                     (
                         map {
                             ( $_ == $index ) ? $lookup{'implies'} : $tree->[$_];
-                          } ( 0 .. ( ( scalar @{$tree} - 1 ) ) )
+                        } ( 0 .. ( ( scalar @{$tree} - 1 ) ) )
                     )
                 ],
                 $label . 'B2',
@@ -955,6 +977,7 @@ sub add_to_database {
 
     return;
 }
+## use critic (ProhibitExcessComplexity, ProhibitManyArgs, ProhibitMagicNumbers)
 
 __DATA__
 
