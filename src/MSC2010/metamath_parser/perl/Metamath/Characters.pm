@@ -3,6 +3,10 @@ package Metamath::Characters;
 use strict;
 use warnings;
 use charnames ();
+use Carp;
+use English qw(-no_match_vars);
+
+our $VERSION = '0.1';
 
 # The only characters that are allowed to appear in a Metamath
 # source file are the 94 non-whitespace printable ASCII characters,
@@ -11,7 +15,7 @@ use charnames ();
 
 # !"#$%&'()*+,-./: ;<=>?@[\]^_`{|}~
 
-# plus the following characters which are the “white space” characters:
+# plus the following characters which are the "white space" characters:
 # space (a printable character), tab, carriage return, line feed, and
 # form feed. We will use typewriter font to display the printable
 # characters.
@@ -22,49 +26,88 @@ use charnames ();
 # \r  = \015 = chr(13) = \x0D = \cM # CR, CARRIAGE RETURN
 # ' ' = \040 = chr(32) = \x20 = ' ' # SP, SPACE
 
+my $highest_ascii_mark;
+my %regex;
+my %display_form;
+my @easy_flags;
+my @easy_flags2;
+my %easy_flag;
+
+sub lazy_package_init {
+    if ($highest_ascii_mark) { return; }
+    $highest_ascii_mark                = 1 + ord q(~);
+    $regex{'digits'}                   = qr/[[:digit:]]/xms;
+    $regex{'upper'}                    = qr/[[:upper:]]/xms;
+    $regex{'lower'}                    = qr/[[:lower:]]/xms;
+    $regex{'special'}                  = qr/[[:punct:]]/xms;
+    $regex{'non_whitespace_printable'} = qr/[[:graph:]]/xms;
+    $regex{'printable'}                = qr/[[:graph:] ]/xms;
+    $regex{'math'}                     = qr/[^[:^graph:]\$]/xms;
+    $regex{'label'}                    = qr/[\w.-]/xms;
+    ## no critic (ProhibitEnumeratedClasses)
+    $regex{'whitespace'}  = qr/[\t\n\f\r ]/xms;
+    $regex{'legal_chars'} = qr/[\t\n\f\r [:graph:]]/xms;
+    ## use critic (ProhibitEnumeratedClasses)
+
+    foreach my $code ( 0 .. $highest_ascii_mark ) {
+        my $char = chr $code;
+        if ( $char !~ $regex{'non_whitespace_printable'} ) {
+            $display_form{$char} = sprintf '\\%03o', $code;
+        }
+    }
+    $display_form{"\N{HT}"} = '\\N{HT}';
+    $display_form{"\N{LF}"} = '\\N{LF}';
+    $display_form{"\N{FF}"} = '\\N{FF}';
+    $display_form{"\N{CR}"} = '\\N{CR}';
+    $display_form{"\N{SP}"} = '\\N{SP}';
+    push @easy_flags, 'DIGITS';
+    $easy_flag{ $easy_flags[-1] } = $regex{'digits'};
+    push @easy_flags, 'UPPER';
+    $easy_flag{ $easy_flags[-1] } = $regex{'upper'};
+    push @easy_flags, 'LOWER';
+    $easy_flag{ $easy_flags[-1] } = $regex{'lower'};
+    push @easy_flags, 'SPECIAL';
+    $easy_flag{ $easy_flags[-1] } = $regex{'special'};
+    push @easy_flags, 'NWP';
+    $easy_flag{ $easy_flags[-1] } = $regex{'non_whitespace_printable'};
+    push @easy_flags, 'PRINT';
+    $easy_flag{ $easy_flags[-1] } = $regex{'printable'};
+    push @easy_flags, 'WS';
+    $easy_flag{ $easy_flags[-1] } = $regex{'whitespace'};
+    push @easy_flags2, 'MATH';
+    $easy_flag{ $easy_flags2[-1] } = $regex{'math'};
+    push @easy_flags2, 'LABEL';
+    $easy_flag{ $easy_flags2[-1] } = $regex{'label'};
+    return;
+}
+
 sub display_statistics {
-
-    my $digits                   = qr/[[:digit:]]/xms;
-    my $upper                    = qr/[[:upper:]]/xms;
-    my $lower                    = qr/[[:lower:]]/xms;
-    my $special                  = qr/[[:punct:]]/xms;
-    my $non_whitespace_printable = qr/[[:graph:]]/xms;
-    my $printable                = qr/[[:graph:] ]/xms;
-    my $math                     = qr/[^[:^graph:]\$]/xms;
-    my $label                    = qr/[\w.-]/xms;
-    my $whitespace               = qr/[\t\n\f\r ]/xms;
-    my $legal_chars              = qr/[\t\n\f\r [:graph:]]/xms;
-
     my %counts;
     my %code;
-    foreach my $code ( 0 .. 127 ) {
+
+    lazy_package_init();
+
+    foreach my $code ( 0 .. $highest_ascii_mark ) {
         my $char = chr $code;
 
-        my $display = sprintf '\\%03o', $code;
-        if ( $char =~ $non_whitespace_printable ) {
-            $display = $char;
-        }
-        elsif ( $char eq "\N{HT}" ) { $display = '\\N{HT}' }
-        elsif ( $char eq "\N{LF}" ) { $display = '\\N{LF}' }
-        elsif ( $char eq "\N{FF}" ) { $display = '\\N{FF}' }
-        elsif ( $char eq "\N{CR}" ) { $display = '\\N{CR}' }
-        elsif ( $char eq "\N{SP}" ) { $display = '\\N{SP}' }
-        my @flags;
-        if ( $char =~ $digits )                   { push @flags, 'DIGITS'; }
-        if ( $char =~ $upper )                    { push @flags, 'UPPER'; }
-        if ( $char =~ $lower )                    { push @flags, 'LOWER'; }
-        if ( $char =~ $special )                  { push @flags, 'SPECIAL'; }
-        if ( $char =~ $non_whitespace_printable ) { push @flags, 'NWP'; }
-        if ( $char =~ $printable )                { push @flags, 'PRINT'; }
-        if ( $char =~ $whitespace )               { push @flags, 'WS'; }
+        my $display =
+          ( exists $display_form{$char} ) ? $display_form{$char} : $char;
 
-        if ( $char =~ $legal_chars ) {
+        my @flags;
+
+        foreach my $easy_flag (@easy_flags) {
+            if ( $char =~ $easy_flag{$easy_flag} ) { push @flags, $easy_flag; }
+        }
+
+        if ( $char =~ $regex{'legal_chars'} ) {
             $counts{'LEGAL'}++;
             push @{ $code{'LEGAL'} }, $display;
         }
         else { push @flags, 'ILLEGAL'; }
-        if ( $char =~ $math )  { push @flags, 'MATH'; }
-        if ( $char =~ $label ) { push @flags, 'LABEL'; }
+
+        foreach my $easy_flag (@easy_flags2) {
+            if ( $char =~ $easy_flag{$easy_flag} ) { push @flags, $easy_flag; }
+        }
 
         foreach my $flag (@flags) {
             $counts{$flag}++;
@@ -73,13 +116,14 @@ sub display_statistics {
 
         my $name = charnames::viacode($code);
 
-        print "chr($code) = $name\t(@flags)\n";
+        print "chr($code) = $name\t(@flags)\n"
+          or croak "print: STDOUT: $OS_ERROR";
 
     }
 
     foreach my $flag ( sort keys %counts ) {
-        print "$flag\t$counts{$flag}\t";
-        print @{ $code{$flag} }, "\n";
+        print "$flag\t$counts{$flag}\t", @{ $code{$flag} }, "\n"
+          or croak "print: STDOUT: $OS_ERROR";
     }
 
     return;
