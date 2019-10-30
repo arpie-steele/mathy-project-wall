@@ -1054,20 +1054,40 @@ $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
    ` ( R " A ) C_ A ` means membership in ` A ` is hereditary in the
-   sequence dictatted by relation ` R ` .
+   sequence dictated by relation ` R ` .
 
 $)
 
   ${
+    $d a b x y $.
+    $d a b c p R $.
+    $d a b c p A $.
     frege69.a $e |- A = { y | ph } $.
     frege69.r $e |- R = { <. x , y >. | ps } $.
-    $( PLEASE PUT DESCRIPTION HERE.
+    $( What Frege means when he stays the property ` ph ` is dictated
+       by the relation ` ps ` can be stated more compactly: the ` R `
+       -image of ` A ` is a subset of ` A ` .
 
-       Definition 69 of [Frege1879] p. 55. $)
+       Definition 69 of [Frege1879] p. 55. 
+       (Contributed by Richard Penner, 29-Oct-2019.) $)
     frege69 $p |- ( A. b ( [ b / y ] ph -> A. a ( [ b / x ] [ a / y ] ps
                                                   -> [ a / y ] ph ) )
                     <-> ( R " A ) C_ A ) $=
-      (  ) ? $.
+      ( vp wsb wi wal cv wcel wa wex weq albii vc cop wss eleq2i df-clab bitr2i
+      cima cab copab wceq excom opth equcom anbi12ci bitri anbi1i 2exbii elopab
+      2sb5 3bitr4i sbcom2 3bitri bicomi imbi12i 19.21v alcom impexp 19.23v abid
+      vex imbi1i dfss2 eleq1 eleq1d anbi12d cbvexvw anbi2d exbidv syl5bb cbvabv
+      opeq1 opeq2 dfima3 eqcomi sseq1i ) ADHLZBDGLCHLZADGLZMZGNZMZHNHOZEPZWLGOZ
+      UBZFPZWNEPZMZGNZMZHNZWMWPQZHRZWQMZGNZFEUGZEUCZWKWTHWFWMWJWSWMWLADUHZPWFEX
+      HWLIUDAHDUEUFWIWRGWGWPWHWQWPWGWPWOBCDUIZPZBCHLDGLZWGFXIWOJUDWOCOZDOZUBUJZ
+      BQZDRCRZDGSZCHSZQZBQZCRDRZXJXKXPXOCRDRYAXOCDUKXOXTDCXNXSBXNHCSZGDSZQXSWLW
+      NXLXMHVJGVJULYBXRYCXQHCUMGDUMUNUOUPUQUOBCDWOURBDCGHUSUTBCHDGVAVBVCWQWNXHP
+      WHEXHWNIUDAGDUEUFVDTVDTXAWMWRMZGNZHNYDHNZGNXEWTYEHYEWTWMWRGVEVCTYDHGVFYFX
+      DGYFXBWQMZHNXDYDYGHYGYDWMWPWQVGVCTXBWQHVHUOTVBXEWNXCGUHZPZWQMZGNZKOZEPZYL
+      UAOZUBZFPZQZKRZUAUHZEUCZXGXDYJGXCYIWQYIXCXCGVIVCVKTYTWNYSPZWQMZGNYKGYSEVL
+      UUBYJGUUAYIWQYSYHWNYRXCUAGYRWMWLYNUBZFPZQZHRUAGSZXCYQUUEKHKHSZYMWMYPUUDYL
+      WLEVMUUGYOUUCFYLWLYNWAVNVOVPUUFUUEXBHUUFUUDWPWMUUFUUCWOFYNWNWLWBVNVQVRVSV
+      TUDVKTUFYSXFEXFYSKUAFEWCWDWEVBVB $.
   $}
 
   $( PLEASE PUT DESCRIPTION HERE.
