@@ -120,82 +120,96 @@ if ( !scalar @wip ) {
 
 local $SIG{INT} = \&catch_zap;
 
-while ( scalar @wip ) {
-    last if $shucks;
-    my $tree   = shift @wip;
-    my $length = scalar @{$tree};
-    my @slots  = grep { !defined $tree->[$_] } ( 0 .. ( $length - 1 ) );
+main_loop();
 
-    # print Dumper([$tree, @slots]);
-    if ( !scalar @slots ) {
-        prove_and_add($tree);
-        next;
-    }
-    else {
-        ## no critic (ProhibitDeepNests, ProhibitMagicNumbers)
-        my $polish = infix_std($tree);
-        my $proofs;
-
-        my $db_last = ( scalar @database ) - 1;
-        foreach my $row_index ( 0 .. $db_last ) {
-            my $row = $database[$row_index];
-            if ( $polish =~ $row->[0] ) {
-                $row->[5]++;
-                if ( $row->[3] ) {
-                    foreach my $ri ( @{ $row->[3] } ) { $database[$ri]->[5]++; }
-                }
-                print
-"WEEDING slots: @{[scalar @slots]}, FROM: $row->[4] : $row->[1]\n"
-                  or croak "print: STDERR: $OS_ERROR";
-                $proofs = 1;
-            }
-            last;
-        }
-        if ($proofs) {
-            next;
-        }
-        ## use critic (ProhibitDeepNests, ProhibitMagicNumbers)
-    }
-
-    my $highest_var = 0;
-    foreach my $i ( 0 .. ( $length - 1 ) ) {
-        if ( defined $tree->[$i] && $highest_var <= $tree->[$i] ) {
-            $highest_var = 1 + $tree->[$i];
-        }
-    }
-
-    my $n = scalar @logical_vars;
-    if ( $n <= $highest_var ) { $highest_var = $n - 1; }
-    foreach my $i ( reverse 0 .. $highest_var ) {
-        my @copy = @{$tree};
-        $copy[ $slots[0] ] = $i;
-        push @wip, \@copy;
-
-        # print "\n\nTREE: @{$tree}\nCOPY: @copy\n";
-    }
-
-    my $m = scalar @logical_ops;
-    foreach my $i ( 1 .. $m ) {
-        my $arity = $logical_ops[ -$i ]{'nsl'};
-        if ( $length_limit < $arity + $length ) { next; }
-        my @copy = @{$tree};
-        splice @copy, $slots[0], 1, map { $_ ? undef : -$i } ( 0 .. $arity );
-        push @wip, \@copy;
-
-        # print "\n\nTREE: @{$tree}\nCOPY: @copy\n";
-    }
-}
-
-## no critic (ProhibitMagicNumbers)
-foreach
-  my $row ( sort { $a->[5] <=> $b->[5] || $a->[4] cmp $b->[4] } @database )
-{
-    print $row->[5], q( : ), $row->[4], q( : ), $row->[1], "\n"
-      or croak "print: STDERR: $OS_ERROR";
-}
-## use critic (ProhibitMagicNumbers)
+print_loop();
 
 exit 0;
+
+sub main_loop {
+
+    while ( scalar @wip ) {
+        last if $shucks;
+        my $tree   = shift @wip;
+        my $length = scalar @{$tree};
+        my @slots  = grep { !defined $tree->[$_] } ( 0 .. ( $length - 1 ) );
+
+        # print Dumper([$tree, @slots]);
+        if ( !scalar @slots ) {
+            prove_and_add($tree);
+            next;
+        }
+        else {
+            ## no critic (ProhibitDeepNests, ProhibitMagicNumbers)
+            my $polish = infix_std($tree);
+            my $proofs;
+
+            my $db_last = ( scalar @database ) - 1;
+            foreach my $row_index ( 0 .. $db_last ) {
+                my $row = $database[$row_index];
+                if ( $polish =~ $row->[0] ) {
+                    $row->[5]++;
+                    if ( $row->[3] ) {
+                        foreach my $ri ( @{ $row->[3] } ) {
+                            $database[$ri]->[5]++;
+                        }
+                    }
+                    print
+"WEEDING slots: @{[scalar @slots]}, FROM: $row->[4] : $row->[1]\n"
+                      or croak "print: STDERR: $OS_ERROR";
+                    $proofs = 1;
+                }
+                last;
+            }
+            if ($proofs) {
+                next;
+            }
+            ## use critic (ProhibitDeepNests, ProhibitMagicNumbers)
+        }
+
+        my $highest_var = 0;
+        foreach my $i ( 0 .. ( $length - 1 ) ) {
+            if ( defined $tree->[$i] && $highest_var <= $tree->[$i] ) {
+                $highest_var = 1 + $tree->[$i];
+            }
+        }
+
+        my $n = scalar @logical_vars;
+        if ( $n <= $highest_var ) { $highest_var = $n - 1; }
+        foreach my $i ( reverse 0 .. $highest_var ) {
+            my @copy = @{$tree};
+            $copy[ $slots[0] ] = $i;
+            push @wip, \@copy;
+
+            # print "\n\nTREE: @{$tree}\nCOPY: @copy\n";
+        }
+
+        my $m = scalar @logical_ops;
+        foreach my $i ( 1 .. $m ) {
+            my $arity = $logical_ops[ -$i ]{'nsl'};
+            if ( $length_limit < $arity + $length ) { next; }
+            my @copy = @{$tree};
+            splice @copy, $slots[0], 1,
+              map { $_ ? undef : -$i } ( 0 .. $arity );
+            push @wip, \@copy;
+
+            # print "\n\nTREE: @{$tree}\nCOPY: @copy\n";
+        }
+    }
+    return;
+}
+
+sub print_loop {
+## no critic (ProhibitMagicNumbers)
+    foreach
+      my $row ( sort { $a->[5] <=> $b->[5] || $a->[4] cmp $b->[4] } @database )
+    {
+        print $row->[5], q( : ), $row->[4], q( : ), $row->[1], "\n"
+          or croak "print: STDERR: $OS_ERROR";
+    }
+## use critic (ProhibitMagicNumbers)
+    return;
+}
 
 sub catch_zap {
     my $signame = shift;
