@@ -5,5 +5,7 @@
 	path = submodules/metamath-book
 	url = https://github.com/metamath/metamath-book.git
 [submodule "submodules/set.mm"]
+	branch = develop
 	path = submodules/set.mm
+	shallow = true
 	url = https://github.com/metamath/set.mm.git
