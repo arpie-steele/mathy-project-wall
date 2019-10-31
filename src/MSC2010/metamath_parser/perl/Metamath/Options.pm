@@ -3,6 +3,8 @@ package Metamath::Options;
 use strict;
 use warnings;
 
+our $VERSION = '0.1';
+
 # strict options are options more restrictive than the spec.
 # loose options are options less restrictive than the spec.
 
