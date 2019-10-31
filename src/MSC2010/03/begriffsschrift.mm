@@ -504,34 +504,33 @@ $(
      _Begriffschift_ Chapter II with logical equivalence
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
- For statements ending in c, we use class substitution for sets,
- ` [. A / x ]. ph ` , and universal qualification over sets, ` A. x ph ` .
+ Here we leverage Benoit Jubin's ~ df-bj-if to partition a wff into
+ two that are disjoint with the selector wff.
 
- For statements ending in b, we use set substitution,
- ` [ y / x ] ph ` , and universal qualification over sets, ` A. x ph ` .
-
- For statements ending in a, we use leverage logical equivalence
- to make a truth function that can only be true when both wffs are
- the same, ` ( ( ph <-> ps ) /\ ch ) ` , and universal qualification
- over all possible values of the wff,
- ` ( ( ps -> ch ) /\ ( -. ps -> ch ) ) ` .
-
+ Thus if we are given ` |- ( ph <-> if- ( ps , ch , th ) ) ` then
+ we replace the concept (illegal in our notation ) ` ( ph `` ps ) `
+ with ` if- ( ps , ch , th ) ` to reason about the values of the
+ "function." Likewise, we replace the similarly illegal conept
+ ` A. ps ph ` with ` ( ch /\ th ) ` .
 
 $)
 
   ${
-    $d ph th $.  $d ph ch $.  $d ps ch $.  $d ps ch $.
+    $d ph ch $.  $d ph th $.  $d ps ch $.  $d ps th $.
     $( PLEASE DESCRIBE ME.
 
-       Part of Axiom 52 of [Frege1879] p. 50. $)
-    frege52a $p |- ( ( ph <-> ps ) -> ( if- ( ph , th , ch )
+       Part of Axiom 52 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
+    bj-frege52a $p |- ( ( ph <-> ps ) -> ( if- ( ph , th , ch )
                                         -> if- ( ps , th , ch ) ) ) $=
-    ( ) ? $.
+      ( wif wi wn wa wb df-bj-if biimpi bi2 imim1d bi1 con3 syl anim12d biimpri
+      syl56 ) ADCEZADFZAGZCFZHZABIZBDFZBGZCFZHZBDCEZTUDADCJKUEUAUFUCUHUEBADABLM
+      UEUGUBCUEABFUGUBFABNABOPMQUJUIBDCJRS $.
     $( PLEASE DESCRIBE ME.
 
        Part of Axiom 52 of [Frege1879] p. 50. $)
     frege52acor1 $p |- ( ( ph <-> ps ) -> ( ph -> ps ) ) $=
-    ( ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -539,10 +538,11 @@ $)
        Heijenoort's collection _From Frege to Goedel_, this proof has the minor
        clause and result swapped.
 
-       Proposition 53 of [Frege1879] p. 50. $)
-    frege53a $p |- ( if- ( ph , th , ch ) -> ( ( ph <-> ps )
+       Proposition 53 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
+    bj-frege53a $p |- ( if- ( ph , th , ch ) -> ( ( ph <-> ps )
                                                -> if- ( ps , th , ch ) ) ) $=
-    ( ) ? $.
+      ( wb wif wi bj-frege52a frege8 ax-mp ) ABEZADCFZBDCFZGGLKMGGABCDHKLMIJ $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -552,61 +552,65 @@ $)
 
        Proposition 53 of [Frege1879] p. 50. $)
     frege53acor1 $p |- ( ph -> ( ( ph <-> ps ) -> ps ) ) $=
-    ( ) ? $.
+      (  ) ? $.
 
     $( Reflexive equality of wffs.
 
        Part of Axiom 54 of [Frege1879] p. 50.  Slightly specialized ~ eqid . $)
     frege54a $p |- ( ph <-> ph ) $=
-    ( ) ? $.
+      (  ) ? $.
 
     $( Reflexive equality. $)
-    frege54cor1a $p |- ( if- ( ph , T. , F. ) <-> ph ) $=
-    ( ) ? $.
+    bj-frege54cor1a $p |- ( if- ( ph , T. , F. ) <-> ph ) $=
+      (  ) ? $.
 
     ${
       $( Necessary deduction regarding subsitution of value in equality. $)
-      frege55lem1a $p |- ( ( ta -> ( if- ( ph , T. , F. ) <-> ps ) )
+      bj-frege55lem1a $p |- ( ( ta -> ( if- ( ph , T. , F. ) <-> ps ) )
                          -> ( ta -> ( ph <-> ps ) ) ) $=
-      ( ) ? $.
+        (  ) ? $.
     $}
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Core proof of Proposition 55 of [Frege1879] p. 50. $)
-    frege55lem2a $p |- ( ( ph <-> ps ) -> ( if- ( ps , T. , F. ) <-> ph ) ) $=
-    ( ) ? $.
+    bj-frege55lem2a $p |- ( ( ph <-> ps )
+                            -> ( if- ( ps , T. , F. ) <-> ph ) ) $=
+      (  ) ? $.
 
     ${
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 55 of [Frege1879] p. 50. $)
       frege55a $p |- ( ( ph <-> ps ) -> ( ps <-> ph ) ) $=
-      ( ) ? $.
+        (  ) ? $.
     $}
 
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 56 of [Frege1879] p. 50. $)
-    frege56a $p |- ( ( ( ph <-> ps ) -> ( if- ( ph , ch , th )
+       Proposition 56 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
+    bj-frege56a $p |- ( ( ( ph <-> ps ) -> ( if- ( ph , ch , th )
                                         -> if- ( ps , ch , th ) ) )
                    -> ( ( ps <-> ph ) -> ( if- ( ph , ch , th )
                                            -> if- ( ps , ch , th ) ) ) ) $=
-    ( ) ? $.
+      ( wb wi wif frege55a frege9 ax-mp ) BAEZABEZFLACDGBCDGFZFKMFFBAHKLMIJ $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 57 of [Frege1879] p. 51. $)
-    frege57a $p |- ( ( ph <-> ps ) -> ( if- ( ps , ch , th )
+       Proposition 57 of [Frege1879] p. 51.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
+    bj-frege57a $p |- ( ( ph <-> ps ) -> ( if- ( ps , ch , th )
                                       -> if- ( ph , ch , th ) ) ) $=
-    ( ) ? $.
+      ( wb wif wi bj-frege52a bj-frege56a ax-mp ) BAEBCDFACDFGZGABEKGBADCHBACDI
+      J $.
   $}
 
   $( PLEASE DESCRIBE ME.
 
      Part of Axiom 52 of [Frege1879] p. 50. $)
   frege52aALT $p |- ( ( ph <-> ps ) -> ( ph -> ps ) ) $=
-    ( ) ? $.
+    (  ) ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -616,14 +620,14 @@ $)
 
      Proposition 53 of [Frege1879] p. 50. $)
   frege53aALT $p |- ( ph -> ( ( ph <-> ps ) -> ps ) ) $=
-    ( ) ? $.
+    (  ) ? $.
 
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Core proof of Proposition 55 of [Frege1879] p. 50. $)
   frege55aALT $p |- ( ( ph <-> ps ) -> ( ps <-> ph ) ) $=
-    ( ) ? $.
+    (  ) ? $.
 
 
   $( PLEASE PUT DESCRIPTION HERE.
@@ -631,13 +635,13 @@ $)
      Proposition 56 of [Frege1879] p. 50. $)
   frege56aALT $p |- ( ( ( ph <-> ps ) -> ( ph -> ps ) )
                    -> ( ( ps <-> ph ) -> ( ph -> ps ) ) ) $=
-    ( ) ? $.
+    (  ) ? $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
      Proposition 57 of [Frege1879] p. 51. $)
   frege57aALT $p |- ( ( ph <-> ps ) -> ( ps -> ph ) ) $=
-    ( ) ? $.
+    (  ) ? $.
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
@@ -761,8 +765,8 @@ $)
        27-Oct-2019.) $)
     frege59b $p |- ( [ x / y ] ph
                    -> ( -. [ x / y ] ps -> -. A. y ( ph -> ps ) ) ) $=
-    ( wi wal wsb wn frege58bcor frege30 ax-mp ) ABEDFZADCGZBDCGZEEMNHLHEEABDCIL
-    MNJK $.
+      ( wi wal wsb wn frege58bcor frege30 ax-mp ) ABEDFZADCGZBDCGZEEMNHLHEEABDC
+      ILMNJK $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -773,8 +777,7 @@ $)
                           -> ( [ y / x ] ph -> [ y / x ] ch ) ) ) $=
       ( wi wal wsb frege58b sbim imbi2i bitri sylib frege12 ax-mp ) ABCFZFZDGZA
       DEHZBDEHZCDEHZFZFZFRTSUAFFFRQDEHZUCQDEIUDSPDEHZFUCAPDEJUEUBSBCDEJKLMRSTUA
-      NO
-      $.
+      NO $.
   $}
 
   ${
@@ -809,7 +812,7 @@ $)
     frege63b $p |- ( [ x / y ] ph
                    -> ( ps
                         -> ( A. y ( ph -> ch ) -> [ x / y ] ch ) ) ) $=
-    ( wsb wi wal frege62b frege24 ax-mp ) AEDFZACGEHCEDFGZGLBMGGACDEILMBJK $.
+      ( wsb wi wal frege62b frege24 ax-mp ) AEDFZACGEHCEDFGZGLBMGGACDEILMBJK $.
   $}
 
   ${
@@ -821,8 +824,8 @@ $)
     frege64b $p |- ( ( [ x / y ] ph -> [ z / y ] ps )
                    -> ( A. y ( ps -> ch )
                         -> ( [ x / y ] ph -> [ z / y ] ch ) ) ) $=
-    ( wsb wi wal frege62b frege18 ax-mp ) BEFGZBCHEIZCEFGZHHAEDGZMHNPOHHHBCFEJM
-    NOPKL $.
+      ( wsb wi wal frege62b frege18 ax-mp ) BEFGZBCHEIZCEFGZHHAEDGZMHNPOHHHBCFE
+      JMNOPKL $.
   $}
 
   ${
@@ -835,8 +838,8 @@ $)
     frege65b $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ps -> ch )
                         -> ( [ y / x ] ph -> [ y / x ] ch ) ) ) $=
-    ( wi wsb wal sbim frege64b sylbi frege61b ax-mp ) ABFZDEGZBCFDHADEGZCDEGFFZ
-    FNDHQFOPBDEGFQABDEIABCEDEJKNQEDLM $.
+      ( wi wsb wal sbim frege64b sylbi frege61b ax-mp ) ABFZDEGZBCFDHADEGZCDEGF
+      FZFNDHQFOPBDEGFQABDEIABCEDEJKNQEDLM $.
   $}
 
   ${
@@ -848,8 +851,8 @@ $)
     frege66b $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ch -> ph )
                         -> ( [ y / x ] ch -> [ y / x ] ps ) ) ) $=
-    ( wi wal wsb frege65b frege8 ax-mp ) CAFDGZABFDGZCDEHBDEHFZFFMLNFFCABDEILMN
-    JK $.
+      ( wi wal wsb frege65b frege8 ax-mp ) CAFDGZABFDGZCDEHBDEHFZFFMLNFFCABDEIL
+      MNJK $.
   $}
 
   ${
@@ -870,7 +873,7 @@ $)
 
        Proposition 68 of [Frege1879] p. 54. $)
     frege68b $p |- ( ( A. x ph <-> ps ) -> ( ps -> [ y / x ] ph ) ) $=
-    (  ) ? $.
+      (  ) ? $.
   $}
 
 
@@ -1054,20 +1057,38 @@ $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
    ` ( R " A ) C_ A ` means membership in ` A ` is hereditary in the
-   sequence dictatted by relation ` R ` .
+   sequence dictated by relation ` R ` .
 
 $)
 
   ${
+    $d a b x y $.  $d a b c p R $.  $d a b c p A $.
     frege69.a $e |- A = { y | ph } $.
     frege69.r $e |- R = { <. x , y >. | ps } $.
-    $( PLEASE PUT DESCRIPTION HERE.
+    $( What Frege means when he stays the property ` ph ` is dictated by the
+       relation ` ps ` can be stated more compactly: the ` R ` -image of ` A `
+       is a subset of ` A ` .
 
-       Definition 69 of [Frege1879] p. 55. $)
+       Definition 69 of [Frege1879] p. 55.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
     frege69 $p |- ( A. b ( [ b / y ] ph -> A. a ( [ b / x ] [ a / y ] ps
                                                   -> [ a / y ] ph ) )
                     <-> ( R " A ) C_ A ) $=
-      (  ) ? $.
+      ( vp wsb wi wal cv wcel wa wex weq albii vc cop wss eleq2i df-clab bitr2i
+      cima cab copab wceq excom opth equcom anbi12ci bitri anbi1i 2exbii elopab
+      2sb5 3bitr4i sbcom2 3bitri bicomi imbi12i 19.21v alcom impexp 19.23v abid
+      vex imbi1i dfss2 eleq1 eleq1d anbi12d cbvexvw anbi2d exbidv syl5bb cbvabv
+      opeq1 opeq2 dfima3 eqcomi sseq1i ) ADHLZBDGLCHLZADGLZMZGNZMZHNHOZEPZWLGOZ
+      UBZFPZWNEPZMZGNZMZHNZWMWPQZHRZWQMZGNZFEUGZEUCZWKWTHWFWMWJWSWMWLADUHZPWFEX
+      HWLIUDAHDUEUFWIWRGWGWPWHWQWPWGWPWOBCDUIZPZBCHLDGLZWGFXIWOJUDWOCOZDOZUBUJZ
+      BQZDRCRZDGSZCHSZQZBQZCRDRZXJXKXPXOCRDRYAXOCDUKXOXTDCXNXSBXNHCSZGDSZQXSWLW
+      NXLXMHVJGVJULYBXRYCXQHCUMGDUMUNUOUPUQUOBCDWOURBDCGHUSUTBCHDGVAVBVCWQWNXHP
+      WHEXHWNIUDAGDUEUFVDTVDTXAWMWRMZGNZHNYDHNZGNXEWTYEHYEWTWMWRGVEVCTYDHGVFYFX
+      DGYFXBWQMZHNXDYDYGHYGYDWMWPWQVGVCTXBWQHVHUOTVBXEWNXCGUHZPZWQMZGNZKOZEPZYL
+      UAOZUBZFPZQZKRZUAUHZEUCZXGXDYJGXCYIWQYIXCXCGVIVCVKTYTWNYSPZWQMZGNYKGYSEVL
+      UUBYJGUUAYIWQYSYHWNYRXCUAGYRWMWLYNUBZFPZQZHRUAGSZXCYQUUEKHKHSZYMWMYPUUDYL
+      WLEVMUUGYOUUCFYLWLYNWAVNVOVPUUFUUEXBHUUFUUDWPWMUUFUUCWOFYNWNWLWBVNVQVRVSV
+      TUDVKTUFYSXFEXFYSKUAFEWCWDWEVBVB $.
   $}
 
   $( PLEASE PUT DESCRIPTION HERE.
@@ -1091,17 +1112,28 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 71 of [Frege1879] p. 59. $)
+     Proposition 71 of [Frege1879] p. 59.  (Contributed by Richard Penner,
+     29-Oct-2019.) $)
   frege71 $p |- ( ( A. z ( x R z -> z e. A ) -> ( x R y -> y e. A ) )
                   -> ( ( R " A ) C_ A
                        -> ( x e. A -> ( x R y -> y e. A ) ) ) ) $=
-    (  ) ? $.
+    ( cima wss cv wcel wbr wi wal frege70 frege19 ax-mp ) EDFDGZAHZDIZQCHZEJSDI
+    KCLZKKTQBHZEJUADIKZKPRUBKKKACDEMPRTUBNO $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  ${
+    $d c A $.  $d c R $.  $d c x $.  $d c y $.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 72 of [Frege1879] p. 59. $)
-  frege72 $p |- ( ( R " A ) C_ A -> ( x e. A -> ( x R y -> y e. A ) ) ) $=
-    (  ) ? $.
+       Proposition 72 of [Frege1879] p. 59.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
+    frege72 $p |- ( ( R " A ) C_ A -> ( x e. A -> ( x R y -> y e. A ) ) ) $=
+      ( vc cv wbr wcel wi wal cima wss frege58c sbcim1 csb cvv ax-mp biimpi syl
+      wsbc wb vex sbcbr2g weq wceq id ax-gen nfcv csbieb breq2i biimpri sbcel1v
+      bitri imim12i frege71 ) AFZEFZDGZUQCHZIZEJZUPBFZDGZVBCHZIZIDCKCLUPCHVEIIV
+      AUTEVBTZVEUTEVBMVFUREVBTZUSEVBTZIVEURUSEVBNVCVGVHVDVGVCVGUPEVBUQOZDGZVCVB
+      PHVGVJUABUBZEVBUPUQDPUCQVIVBUPDEBUDZVLIZEJZVIVBUEZVMEVLUFUGVNVOEVBUQVBVKE
+      VBUHUIRQUJUMUKVHVDEVBCULRUNSSABECDUOQ $.
+  $}
 
   $( PLEASE PUT DESCRIPTION HERE.
 
