@@ -101,6 +101,7 @@ sub dump_ws {
     return;
 }
 
+## no critic (ProhibitExcessComplexity)
 sub get_types {
     my ($self) = @_;
     my %types;
@@ -108,7 +109,7 @@ sub get_types {
         %types = %{ $self->{'types'} };
     }
     elsif ( $self->is_ws() ) {
-        $types{'*'} = 'WS';
+        $types{q(*)} = 'WS';
         $self->{'types'} = \%types;
     }
     else {
@@ -126,10 +127,11 @@ sub get_types {
             $types{'COMMENT'}  = 'COMMENT';
             $types{'MATH'}     = 'SYMBOL';
         }
+        ## no critic (ProhibitFixedStringMatches, ProhibitComplexRegexes)
         if (
-            $str =~ /\A(?:theorem|lemma|definition|compare|proposition
+            $str =~ m{\A(?:theorem|lemma|definition|compare|proposition
 	    |corollary|axiom|rule|remark|exercise|problem|notation|example
-	    |property|figure|postulate|equation|scheme|chapter)\z/xms
+	    |property|figure|postulate|equation|scheme|chapter)\z}xms
           )
         {
             $types{'COMMENT'} = 'BIB_KEYWORD';
@@ -137,29 +139,30 @@ sub get_types {
         if ( $str =~ /\A(?:of|in|from|on)\z/xms ) {
             $types{'COMMENT'} = 'BIB_NOISE';
         }
+        ## use critic (ProhibitFixedStringMatches)
         if ( $str =~ /\A\[[\w.-]+\]\z/xms ) {
             $types{'COMMENT'} = 'BIB_REF';
         }
-        if ( $str eq q{$(} ) {
+        if ( $str eq q{$(} ) {    ## no critic (RequireInterpolationOfMetachars)
             $types{'TOP'}  = 'BEGIN_COMMENT';
             $types{'BODY'} = 'BEGIN_COMMENT';
-            $types{'*'}    = 'BEGIN_COMMENT';
+            $types{q(*)}   = 'BEGIN_COMMENT';
         }
-        if ( $str eq q(${) ) {
+        if ( $str eq q(${) ) {    ## no critic (RequireInterpolationOfMetachars)
             $types{'TOP'}  = 'BEGIN_BLOCK';
             $types{'BODY'} = 'BEGIN_BLOCK';
         }
-        if ( $str eq q($}) ) {
+        if ( $str eq q($}) ) {    ## no critic (RequireInterpolationOfMetachars)
             $types{'TOP'}  = 'END_BLOCK';
             $types{'BODY'} = 'END_BLOCK';
         }
-        if ( $str eq q{$[} ) {
+        if ( $str eq q{$[} ) {    ## no critic (RequireInterpolationOfMetachars)
             $types{'TOP'} = 'BEGIN_FILE_INCLUDE';
         }
-        if ( $str eq q{$]} ) {
+        if ( $str eq q{$]} ) {    ## no critic (RequireInterpolationOfMetachars)
             $types{'TOP'} = 'END_FILE_INCLUDE';
         }
-        if ( $str eq q{$t} ) {
+        if ( $str eq q{$t} ) {    ## no critic (RequireInterpolationOfMetachars)
             $types{'COMMENT'} = 'TYPESETTING';
         }
         if ( $str eq q{``} ) {
@@ -176,25 +179,25 @@ sub get_types {
         if ( $str eq q{~} ) {
             $types{'COMMENT'} = 'LABEL_REFERENCE';
         }
-        if ( $str =~ /\A[\#]{4,}\z/ ) {
+        if ( $str =~ /\A[\#]{4,}\z/xms ) {
             $types{'COMMENT'} = 'H1_MARKER';
         }
-        if ( $str =~ /\A(:?[\#][*]){2,}[\#]?\z/ ) {
+        if ( $str =~ /\A(:?[\#][*]){2,}[\#]?\z/xms ) {
             $types{'COMMENT'} = 'H2_MARKER';
         }
-        if ( $str =~ /\A(:?[=][-]){2,}[=]?\z/ ) {
+        if ( $str =~ /\A(:?[=][-]){2,}[=]?\z/xms ) {
             $types{'COMMENT'} = 'H3_MARKER';
         }
-        if ( $str =~ /\A(:?[-][.]){2,}[-]?\z/ ) {
+        if ( $str =~ /\A(:?[-][.]){2,}[-]?\z/xms ) {
             $types{'COMMENT'} = 'H4_MARKER';
         }
-        if ( $str eq q{$)} ) {
+        if ( $str eq q{$)} ) {    ## no critic (RequireInterpolationOfMetachars)
             %types            = ();
             $types{'COMMENT'} = 'END_COMMENT';
-            $types{'*'}       = 'ERROR';
+            $types{q(*)}      = 'ERROR';
         }
-        if ( !exists $types{'*'} ) {
-            $types{'*'} = 'UNKNOWN';
+        if ( !exists $types{q(*)} ) {
+            $types{q(*)} = 'UNKNOWN';
         }
     }
     if (wantarray) {
@@ -208,5 +211,6 @@ sub get_types {
       map { "$_ => $types{$_}" } reverse sort keys %types;
     return "($strval)";
 }
+## use critic (ProhibitExcessComplexity)
 
 1;
