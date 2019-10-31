@@ -514,103 +514,22 @@ $(
  ` A. ps ph ` with ` ( ch /\ th ) ` .
 
 $)
+  $( PLEASE DESCRIBE ME. Identical to ~ bi1 .
 
-  ${
-    $d ph ch $.  $d ph th $.  $d ps ch $.  $d ps th $.
-    $( PLEASE DESCRIBE ME.
-
-       Part of Axiom 52 of [Frege1879] p. 50.  (Contributed by Richard Penner,
-       29-Oct-2019.) $)
-    bj-frege52a $p |- ( ( ph <-> ps ) -> ( if- ( ph , th , ch )
-                                        -> if- ( ps , th , ch ) ) ) $=
-      ( wif wi wn wa wb df-bj-if biimpi bi2 imim1d bi1 con3 syl anim12d biimpri
-      syl56 ) ADCEZADFZAGZCFZHZABIZBDFZBGZCFZHZBDCEZTUDADCJKUEUAUFUCUHUEBADABLM
-      UEUGUBCUEABFUGUBFABNABOPMQUJUIBDCJRS $.
-    $( PLEASE DESCRIBE ME.
-
-       Part of Axiom 52 of [Frege1879] p. 50. $)
-    frege52acor1 $p |- ( ( ph <-> ps ) -> ( ph -> ps ) ) $=
-      (  ) ? $.
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       _Note:_ in the Bauer-Meenfelberg translation published in van
-       Heijenoort's collection _From Frege to Goedel_, this proof has the minor
-       clause and result swapped.
-
-       Proposition 53 of [Frege1879] p. 50.  (Contributed by Richard Penner,
-       29-Oct-2019.) $)
-    bj-frege53a $p |- ( if- ( ph , th , ch ) -> ( ( ph <-> ps )
-                                               -> if- ( ps , th , ch ) ) ) $=
-      ( wb wif wi bj-frege52a frege8 ax-mp ) ABEZADCFZBDCFZGGLKMGGABCDHKLMIJ $.
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       _Note:_ in the Bauer-Meenfelberg translation published in van
-       Heijenoort's collection _From Frege to Goedel_, this proof has the minor
-       clause and result swapped.
-
-       Proposition 53 of [Frege1879] p. 50. $)
-    frege53acor1 $p |- ( ph -> ( ( ph <-> ps ) -> ps ) ) $=
-      (  ) ? $.
-
-    $( Reflexive equality of wffs.
-
-       Part of Axiom 54 of [Frege1879] p. 50.  Slightly specialized ~ eqid . $)
-    frege54a $p |- ( ph <-> ph ) $=
-      (  ) ? $.
-
-    $( Reflexive equality. $)
-    bj-frege54cor1a $p |- ( if- ( ph , T. , F. ) <-> ph ) $=
-      (  ) ? $.
-
-    ${
-      $( Necessary deduction regarding subsitution of value in equality. $)
-      bj-frege55lem1a $p |- ( ( ta -> ( if- ( ph , T. , F. ) <-> ps ) )
-                         -> ( ta -> ( ph <-> ps ) ) ) $=
-        (  ) ? $.
-    $}
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       Core proof of Proposition 55 of [Frege1879] p. 50. $)
-    bj-frege55lem2a $p |- ( ( ph <-> ps )
-                            -> ( if- ( ps , T. , F. ) <-> ph ) ) $=
-      (  ) ? $.
-
-    ${
-      $( PLEASE PUT DESCRIPTION HERE.
-
-         Proposition 55 of [Frege1879] p. 50. $)
-      frege55a $p |- ( ( ph <-> ps ) -> ( ps <-> ph ) ) $=
-        (  ) ? $.
-    $}
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       Proposition 56 of [Frege1879] p. 50.  (Contributed by Richard Penner,
-       29-Oct-2019.) $)
-    bj-frege56a $p |- ( ( ( ph <-> ps ) -> ( if- ( ph , ch , th )
-                                        -> if- ( ps , ch , th ) ) )
-                   -> ( ( ps <-> ph ) -> ( if- ( ph , ch , th )
-                                           -> if- ( ps , ch , th ) ) ) ) $=
-      ( wb wi wif frege55a frege9 ax-mp ) BAEZABEZFLACDGBCDGFZFKMFFBAHKLMIJ $.
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       Proposition 57 of [Frege1879] p. 51.  (Contributed by Richard Penner,
-       29-Oct-2019.) $)
-    bj-frege57a $p |- ( ( ph <-> ps ) -> ( if- ( ps , ch , th )
-                                      -> if- ( ph , ch , th ) ) ) $=
-      ( wb wif wi bj-frege52a bj-frege56a ax-mp ) BAEBCDFACDFGZGABEKGBADCHBACDI
-      J $.
-  $}
+     Part of Axiom 52 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+     31-Oct-2019.) $)
+  frege52aALT $p |- ( ( ph <-> ps ) -> ( ph -> ps ) ) $=
+    ( bi1 ) ABC $.
 
   $( PLEASE DESCRIBE ME.
 
-     Part of Axiom 52 of [Frege1879] p. 50. $)
-  frege52aALT $p |- ( ( ph <-> ps ) -> ( ph -> ps ) ) $=
-    (  ) ? $.
+     Part of Axiom 52 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+     29-Oct-2019.) $)
+  bj-frege52a $p |- ( ( ph <-> ps ) -> ( if- ( ph , th , ch )
+                                        -> if- ( ps , th , ch ) ) ) $=
+    ( wif wi wn wa wb df-bj-if biimpi bi2 imim1d bi1 con3 anim12d biimpri syl56
+    syl ) ADCEZADFZAGZCFZHZABIZBDFZBGZCFZHZBDCEZTUDADCJKUEUAUFUCUHUEBADABLMUEUG
+    UBCUEABFUGUBFABNABOSMPUJUIBDCJQR $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -618,30 +537,113 @@ $)
      collection _From Frege to Goedel_, this proof has the minor clause and
      result swapped.
 
-     Proposition 53 of [Frege1879] p. 50. $)
+     Proposition 53 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+     31-Oct-2019.) $)
   frege53aALT $p |- ( ph -> ( ( ph <-> ps ) -> ps ) ) $=
-    (  ) ? $.
-
+    ( wb wi frege52aALT frege8 ax-mp ) ABCZABDDAHBDDABEHABFG $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Core proof of Proposition 55 of [Frege1879] p. 50. $)
+     _Note:_ in the Bauer-Meenfelberg translation published in van Heijenoort's
+     collection _From Frege to Goedel_, this proof has the minor clause and
+     result swapped.
+
+     Proposition 53 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+     29-Oct-2019.) $)
+  bj-frege53a $p |- ( if- ( ph , th , ch ) -> ( ( ph <-> ps )
+                                               -> if- ( ps , th , ch ) ) ) $=
+    ( wb wif wi bj-frege52a frege8 ax-mp ) ABEZADCFZBDCFZGGLKMGGABCDHKLMIJ $.
+
+  $( Reflexive equality of wffs.
+
+     Part of Axiom 54 of [Frege1879] p. 50.  Identical to ~ biid .
+     (Contributed by Richard Penner, 30-Oct-2019.) $)
+  frege54a $p |- ( ph <-> ph ) $=
+    ( biid ) AB $.
+
+  $( Synonym for logical equivalence.  (Contributed by Richard Penner,
+     30-Oct-2019.) $)
+  bj-frege54cor0a $p |- ( ( ps <-> ph ) <-> if- ( ps , ph , -. ph ) ) $=
+    ( wb wi wa wn wif dfbi2 frege28 anim2i ax3h impbii df-bj-if bicomi 3bitri )
+    BACBADZABDZEZPBFAFZDZEZBASGZBAHRUAQTPABIJTQPBAKJLUBUABASMNO $.
+
+  $( Reflexive equality.  (Contributed by Richard Penner, 31-Oct-2019.) $)
+  bj-frege54cor1a $p |- if- ( ph , ph , -. ph ) $=
+    ( wb wn wif frege54a bj-frege54cor0a biimpi ax-mp ) AABZAAACDZAEIJAAFGH $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Core proof of Proposition 55 of [Frege1879] p. 50.  (Contributed by
+     Richard Penner, 31-Oct-2019.) $)
   frege55aALT $p |- ( ( ph <-> ps ) -> ( ps <-> ph ) ) $=
-    (  ) ? $.
+    ( wb bicom biimpi ) ABCBACABDE $.
 
+  $( Necessary deduction regarding subsitution of value in equality.
+     (Contributed by Richard Penner, 31-Oct-2019.) $)
+  bj-frege55lem1a $p |- ( ( ta -> if- ( ps , ph , -. ph ) )
+                              -> ( ta -> ( ps <-> ph ) ) ) $=
+    ( wn wif wb wi bj-frege54cor0a biimpri a1i a2i ) CBAADEZBAFZLMGCMLABHIJK $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 56 of [Frege1879] p. 50. $)
+     Core proof of Proposition 55 of [Frege1879] p. 50.  (Contributed by
+     Richard Penner, 31-Oct-2019.) $)
+  bj-frege55lem2a $p |- ( ( ph <-> ps )
+                            -> if- ( ps , ph , -. ph ) ) $=
+    ( wb wn wif wi bicom1 bj-frege54cor0a sylib idi ) ABCZBAADEZFKBACLABGABHIJ
+    $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 55 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+     31-Oct-2019.) $)
+  bf-frege55a $p |- ( ( ph <-> ps ) -> if- ( ps , ph , -. ph ) ) $=
+    ( wn wif wb wi bj-frege54cor1a bj-frege53a ax-mp ) AAACZDABEBAJDFAGABJAHI
+    $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 55 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+     31-Oct-2019.) $)
+  bf-frege55cor1a $p |- ( ( ph <-> ps ) -> ( ps <-> ph ) ) $=
+    ( wb wn wif wi bf-frege55a bj-frege55lem1a ax-mp ) ABCZBAADEFJBACFABGABJHI
+    $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 56 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+     31-Oct-2019.) $)
   frege56aALT $p |- ( ( ( ph <-> ps ) -> ( ph -> ps ) )
                    -> ( ( ps <-> ph ) -> ( ph -> ps ) ) ) $=
-    (  ) ? $.
+    ( wb wi frege55aALT frege9 ax-mp ) BACZABCZDIABDZDHJDDBAEHIJFG $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 57 of [Frege1879] p. 51. $)
+     Proposition 56 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+     29-Oct-2019.) $)
+  bj-frege56a $p |- ( ( ( ph <-> ps ) -> ( if- ( ph , ch , th )
+                                              -> if- ( ps , ch , th ) ) )
+                        -> ( ( ps <-> ph ) -> ( if- ( ph , ch , th )
+                                                -> if- ( ps , ch , th ) ) )
+                      ) $=
+    ( wb wi wif bf-frege55cor1a frege9 ax-mp ) BAEZABEZFLACDGBCDGFZFKMFFBAHKLMI
+    J $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 57 of [Frege1879] p. 51.  (Contributed by Richard Penner,
+     31-Oct-2019.) $)
   frege57aALT $p |- ( ( ph <-> ps ) -> ( ps -> ph ) ) $=
-    (  ) ? $.
+    ( wb wi frege52aALT frege56aALT ax-mp ) BACBADZDABCHDBAEBAFG $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 57 of [Frege1879] p. 51.  (Contributed by Richard Penner,
+     29-Oct-2019.) $)
+  bj-frege57a $p |- ( ( ph <-> ps ) -> ( if- ( ps , ch , th )
+                                           -> if- ( ph , ch , th ) ) ) $=
+    ( wb wif wi bj-frege52a bj-frege56a ax-mp ) BAEBCDFACDFGZGABEKGBADCHBACDIJ
+    $.
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
@@ -875,7 +877,6 @@ $)
     frege68b $p |- ( ( A. x ph <-> ps ) -> ( ps -> [ y / x ] ph ) ) $=
       (  ) ? $.
   $}
-
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
