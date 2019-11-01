@@ -1151,7 +1151,7 @@ $)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 75 of [Frege1879] p. 60. $)
+     Definition 75 of [Frege1879] p. 60. $)
   frege75 $p |- ( A. x ( x e. A -> A. y ( x R y -> y e. A ) )
                   -> ( R " A ) C_ A ) $=
     (  ) ? $.
