@@ -5,6 +5,8 @@ use warnings;
 use Carp;
 use Data::Dumper;
 
+our $VERSION = '0.1';
+
 # A Metamath database consists of a sequence of three kinds of
 # tokens separated by white space (which is any sequence of one or
 # more white space characters). The set of keyword tokens is ${, $},
@@ -15,20 +17,20 @@ use Data::Dumper;
 # any combination of the 93 printable standard ascii characters other
 # than space or $ . All tokens are case-sensitive.
 
+## no critic (ProhibitExcessComplexity)
 sub tokenize_stream {
     my ( $fh, $fn ) = @_;
 
-    my @main_keyword_tokens =
-      map { '$' . $_ }
-      ( '{', '}', 'c', 'v', 'f', 'e', 'd', 'a', 'p', '.', '=' );
-    my @auxiliary_keyword_tokens = map { '$' . $_ } ( '(', ')', '[', ']' );
+    my @main_keyword_tokens = map { q($) . $_ } qw( { } c v f e d a p . = );
+    my @auxiliary_keyword_tokens = map { q($) . $_ } qw{ ( ) [ ] };
 
     my $keyword_token_pattern = qr/\$[{}cvfedap.=()\[\]]/xms;
 
     my $label_token_pattern       = qr/[\w.-]+/xms;
     my $math_symbol_token_pattern = qr/[^[:^graph:]\$]+/xms;
 
-    my $token_separator = qr/[\t\n\f\r ]+/xms;
+    my $token_separator =
+      qr/[\t\n\f\r ]+/xms;    ## no critic (ProhibitEnumeratedClasses)
 
     my $comment_word_pattern =
       qr/(?:(?:[^[:^graph:]\$]+|[\$]+[^[:^graph:]\$()])+[\$]*|[\$]+)/xms;
@@ -38,19 +40,21 @@ sub tokenize_stream {
     my $in_comment = 0;
     while ( defined( my $line = <$fh> ) ) {
         $ln++;
-        my @potential_tokens = split /($token_separator)/xms, $line, -1;
+        my @potential_tokens = split /($token_separator)/xms, $line,
+          -1;                 ## no critic (ProhibitMagicNumbers)
         my @tokens;
         foreach my $pot (@potential_tokens) {
             if ( !length $pot ) { next; }
-            if ( $pot =~ /\A($token_separator)\z/ ) {
+            if ( $pot =~ /\A($token_separator)\z/xms ) {
                 push @tokens, [ 'WS', $1 ];
                 next;
             }
-            my $kw = ( $pot =~ /\A($keyword_token_pattern)\z/ );
-            my $lb = ( $pot =~ /\A($label_token_pattern)\z/ );
-            my $ma = ( $pot =~ /\A($math_symbol_token_pattern)\z/ );
-            my $co = ( $pot =~ /\A($comment_word_pattern)\z/ );
-            if ( $in_comment && $kw && $co && $pot ne '$(' && $pot ne '$)' ) {
+            my $kw = ( $pot =~ /\A($keyword_token_pattern)\z/xms );
+            my $lb = ( $pot =~ /\A($label_token_pattern)\z/xms );
+            my $ma = ( $pot =~ /\A($math_symbol_token_pattern)\z/xms );
+            my $co = ( $pot =~ /\A($comment_word_pattern)\z/xms );
+            if ( $in_comment && $kw && $co && $pot ne '$(' && $pot ne '$)' )
+            {    ## no critic (RequireInterpolationOfMetachars)
                 $kw = undef;
             }
             if ($kw) {
@@ -58,14 +62,16 @@ sub tokenize_stream {
                     croak
 "Debug file $fn, line $ln : $pot is both keyword and label or math symbol\n";
                 }
-                if ( $pot eq '$(' ) {
+                if ( $pot eq '$(' )
+                {    ## no critic (RequireInterpolationOfMetachars)
                     if ($in_comment) {
                         croak
 "Debug file $fn, line $ln : $pot is not allowed in comment.";
                     }
                     $in_comment = 1;
                 }
-                if ( $pot eq '$)' ) {
+                if ( $pot eq '$)' )
+                {    ## no critic (RequireInterpolationOfMetachars)
                     if ( !$in_comment ) {
                         croak
 "Debug file $fn, line $ln : $pot is not allowed outside of comment.";

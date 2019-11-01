@@ -177,7 +177,6 @@ while ( scalar @incomplete ) {
         my $theorems_size = $theorem_list->count();
         if ( $theorems_size > $old_theorems_size ) {
             $theorem_list->incremental_store();
-            ## no critic (RequireUseOfExceptions)
             print "$old_incomplete_size => $incomplete_size",
               "\t$old_theorems_size => $theorems_size\n"
               or croak;
@@ -190,7 +189,6 @@ while ( scalar @incomplete ) {
 
 $theorem_list->incremental_store();
 
-## no critic (RequireUseOfExceptions)
 # print Dumper( \%mask2strings ) or croak;
 print Dumper($theorem_list) or croak;
 ## use critic (RequireUseOfExceptions)
@@ -264,7 +262,6 @@ sub store {
     if ( -f $filename ) {
         rename $filename, $filename . q(~);
     }
-    ## no critic (RequireUseOfExceptions)
     open my $fh, '>', $filename
       or croak "Cannot write $filename: $OS_ERROR";
     print {$fh} map { ( $_, qq(\n) ) }
@@ -281,7 +278,6 @@ sub incremental_store {
     my $threshold = $self->{'next_threshold'};
     my $filename  = $self->{'filename'};
     my $theorems  = $self->{'set'};
-    ## no critic (RequireUseOfExceptions)
     open my $fh, '>>', $filename
       or croak "Cannot write $filename: $OS_ERROR";
     print {$fh} map { ( $_, qq(\n) ) }
@@ -300,7 +296,6 @@ sub load {
     if ( !-f $filename ) {
         return;
     }
-    ## no critic (RequireUseOfExceptions)
     open my $fh, '<', $filename
       or croak "Cannot load $filename: $OS_ERROR";
     $self->add_unique_theorems(<$fh>);

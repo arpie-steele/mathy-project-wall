@@ -2,7 +2,11 @@
 
 use strict;
 use warnings;
+use Carp;
+use English qw(-no_match_vars);
 use Math::BigInt;
+
+our $VERSION = '1.1';
 
 # Search for small integer solutions to
 # n ( (s-2) n + (4-s) ) / 2 = m (m + 1) ( (s-2) m + (5 - s) ) / 6 , s >= 3, n >= 2, m >= 2
@@ -14,6 +18,7 @@ use Math::BigInt;
 
 my $start_time = time;
 
+## no critic (ProhibitMagicNumbers)
 my $one    = Math::BigInt->bone();
 my $two    = Math::BigInt->new(2);
 my $three  = Math::BigInt->new(3);
@@ -23,8 +28,14 @@ my $six    = Math::BigInt->new(6);
 my $nine   = Math::BigInt->new(9);
 my $twelve = Math::BigInt->new(12);
 
-my $record;
-for ( my $height = 1 ; $height <= 1_000_000_000 ; $height++ ) {
+my $top_height = 1_000_000_000;
+
+## use critic (ProhibitMagicNumbers)
+
+my $highest_total;
+
+## no critic (ProhibitCStyleForLoops)
+for ( my $height = 1 ; $height <= $top_height ; $height++ ) {
 
     my $m   = Math::BigInt->new($height);
     my $mm1 = $m->copy()->bsub($one);
@@ -34,6 +45,7 @@ for ( my $height = 1 ; $height <= 1_000_000_000 ; $height++ ) {
     # SM0 = (2 m - 5)(m)(m + 1)/6
     # SM1 = (m - 1)(m)(m + 1)/6
 
+    ## no critic (ProhibitLongChainsOfMethodCalls)
     my $sm0 =
       $m->copy()->bmul($two)->bsub($five)->bmul($m)->bmul($mp1)->bdiv($six);
     my $sm1 = $mm1->copy()->bmul($m)->bmul($mp1)->bdiv($six);
@@ -48,7 +60,7 @@ for ( my $height = 1 ; $height <= 1_000_000_000 ; $height++ ) {
       $m->copy()->bmul($mp1)->bmul($mp2)->bmul($twelve)->badd($nine)->bsqrt()
       ->bsub($three)->bdiv($six);
 
-    # print "$m, $nlb, $nub\n";
+    # print "$m, $nlb, $nub\n" or croak "print: STDOUT: $OS_ERROR";
 
     my $trivial_n;    # initial to undefined
 
@@ -61,12 +73,12 @@ for ( my $height = 1 ; $height <= 1_000_000_000 ; $height++ ) {
         $trivial_n =
           $k->copy()->bmul($k)->bmul($k)->bsub($k)->bmul($three)->badd($one);
 
-        # print "$m, $nlb, $nub, skip $trivial_n\n";
+# print "$m, $nlb, $nub, skip $trivial_n\n" or croak "print: STDOUT: $OS_ERROR";
     }
 
     for ( my $n = $nlb->copy() ; $n->bcmp($nub) <= 0 ; $n->binc() ) {
 
-        # print "m = $m, n = $n\n";
+        # print "m = $m, n = $n\n" or croak "print: STDOUT: $OS_ERROR";
 
         # s = ( (n - 2) n - SM0 ) / ( (n - 1) n / 2 - SM1 )
 
@@ -87,20 +99,22 @@ for ( my $height = 1 ; $height <= 1_000_000_000 ; $height++ ) {
               ->bdiv($two);
 
             my $new_record = q();
-            if ( !defined $record || $record->bcmp($total) < 0 ) {
-                $record     = $total;
-                $new_record = q( *NEW RECORD*);
+            if ( !defined $highest_total || $highest_total->bcmp($total) < 0 ) {
+                $highest_total = $total;
+                $new_record    = q( *NEW RECORD*);
             }
 
             my $now     = scalar localtime time;
             my $seconds = time - $start_time;
 
             print
-"m = $m, n = $n, s = $s, total = $total$is_trivial$new_record\n$seconds : $now\n";
+"m = $m, n = $n, s = $s, total = $total$is_trivial$new_record\n$seconds : $now\n"
+              or croak "print: STDOUT: $OS_ERROR";
 
         }
         elsif ( defined $trivial_n && $trivial_n->bcmp($n) == 0 ) {
-            print "ERROR m = $m, n = $n, s = $s + $rem/$s1\n";
+            print "ERROR m = $m, n = $n, s = $s + $rem/$s1\n"
+              or croak "print: STDOUT: $OS_ERROR";
         }
 
     }
