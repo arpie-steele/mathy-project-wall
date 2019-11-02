@@ -1,9 +1,43 @@
-REQUIREDPACKAGES = perl-Data-Dumper perl-Perl-Critic
+TOP=.
+REQUIREDPACKAGES = perl-Data-Dumper perl-Perl-Critic automake autoconf
+
+MMMISSING = Makefile.in aclocal.m4 autom4te.cache config.h.in configure depcomp install-sh missing 
 
 all: metamath perlcritic
 
 metamath : submodules/metamath-exe/*.c submodules/metamath-exe/*.h
-	gcc -I submodules/metamath-exe -O3 -funroll-loops -finline-functions -fomit-frame-pointer -Wall -pedantic -o $@ submodules/metamath-exe/m*.c
+	@if [ "`uname -s`" = Darwin ] ; then \
+		echo gcc -I submodules/metamath-exe -O3 -funroll-loops \
+			-finline-functions -fomit-frame-pointer -Wall \
+			-pedantic -o $@ submodules/metamath-exe/m*.c ; \
+		gcc -I submodules/metamath-exe -O3 -funroll-loops \
+			-finline-functions -fomit-frame-pointer -Wall \
+			-pedantic -o $@ submodules/metamath-exe/m*.c ; \
+	elif [ "`uname -s`" = Linux ] ; then \
+		echo cd submodules/metamath-exe ; \
+		cd submodules/metamath-exe \
+			&& echo aclocal \
+			&& aclocal \
+			&& echo autoheader \
+			&& autoheader \
+			&& echo automake --add-missing \
+			&& automake --add-missing \
+			&& echo autoconf \
+			&& autoconf \
+			&& echo ./configure \
+			&& ./configure \
+			&& echo make metamath \
+			&& make metamath \
+			&& echo mv metamath ../.. \
+			&& mv metamath ../.. \
+			&& echo make distclean \
+			&& make distclean \
+			&& echo rm -rf $(MMMISSING) \
+			&& rm -rf $(MMMISSING) ; \
+	else \
+		echo "I'm not sure how to build $@ for your system." ; \
+		exit 1; \
+	fi
 
 dev-install:
 	@if [ -x /usr/bin/yum ] ; then \
@@ -14,4 +48,4 @@ dev-install:
 		exit 1; \
 	fi
 
-include dev-perl.mk
+include $(TOP)/dev-perl.mk
