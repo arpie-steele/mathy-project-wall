@@ -949,7 +949,7 @@ $)
     $d x y $.  $d A y $.
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 55 of [Frege1879] p. 50. 
+       Proposition 55 of [Frege1879] p. 50.
        (Contributed by Richard Penner, 2-Nov-2019.) $)
     frege55c $p |- ( x = A -> A = x ) $=
       ( vy cv wceq weq wsbc vex frege54cor1c frege53c ax-mp wex cab wcel df-sbc
@@ -1024,29 +1024,26 @@ $)
                         -> ( [. A / x ]. ph -> [. B / x ]. ch ) ) ) $=
     (  ) ? $.
 
-  ${
-    frege65c.a $e |- A e. B $.
-    $( A kind of Aristotelian inference.  This judgement replaces the mode of
-       inference ~ barbara when the minor premise has a general context.
+  $( A kind of Aristotelian inference.  This judgement replaces the mode of
+     inference ~ barbara when the minor premise has a general context.
 
-       Proposition 65 of [Frege1879] p. 53. 
-       (Contributed by Richard Penner, 2-Nov-2019.) $)
-    frege65c $p |- ( A. x ( ph -> ps )
-                     -> ( A. x ( ps -> ch )
-                          -> ( [. A / x ]. ph -> [. A / x ]. ch ) ) ) $=
-      ( wi wsbc wal wcel wb sbcimg ax-mp frege64c sylbi frege61c ) ABHZDEIZBCHD
-      JADEIZCDEIHHZHRDJUAHSTBDEIHZUAEFKSUBLGABDEFMNABCDEEOPRUADEQN $.
+     Proposition 65 of [Frege1879] p. 53.
+     (Contributed by Richard Penner, 2-Nov-2019.) $)
+  frege65c $p |- ( A. x ( ph -> ps )
+                   -> ( A. x ( ps -> ch )
+                        -> ( [. A / x ]. ph -> [. A / x ]. ch ) ) ) $=
+    ( wi wsbc wal sbcim1 frege64c syl frege61c ax-mp ) ABFZDEGZBCFDHADEGZCDEGFF
+    ZFNDHQFOPBDEGFQABDEIABCDEEJKNQDELM $.
 
-    $( PLEASE PUT DESCRIPTION HERE.
+  $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 66 of [Frege1879] p. 54.  (Contributed by Richard Penner,
-       8-Oct-2019.) $)
-    frege66c $p |- ( A. x ( ph -> ps )
-                   -> ( A. x ( ch -> ph )
-                        -> ( [. A / x ]. ch -> [. A / x ]. ps ) ) ) $=
-      ( wi wal wsbc frege65c frege8 ax-mp ) CAHDIZABHDIZCDEJBDEJHZHHONPHHCABDEF
-      GKNOPLM $.
-  $}
+     Proposition 66 of [Frege1879] p. 54.  (Contributed by Richard Penner,
+     8-Oct-2019.) $)
+  frege66c $p |- ( A. x ( ph -> ps )
+                 -> ( A. x ( ch -> ph )
+                      -> ( [. A / x ]. ch -> [. A / x ]. ps ) ) ) $=
+    ( wi wal wsbc frege65c frege8 ax-mp ) CAFDGZABFDGZCDEHBDEHFZFFMLNFFCABDEILM
+    NJK $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
