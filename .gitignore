@@ -1,5 +1,7 @@
 ## Operating system madness
 .DS_Store
+## Build system madness
+mmdef.mk
 ## C/C++
 
 # Prerequisites

@@ -1,3 +1,4 @@
+TOP=../../../..
 all: perlcritic
 
-include ../../../../dev-perl.mk
+include $(TOP)/dev-perl.mk
