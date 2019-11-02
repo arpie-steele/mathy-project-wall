@@ -1,5 +1,8 @@
-REQUIREDPACKAGES = perl-Data-Dumper perl-Perl-Critic
 PERL = /usr/bin/perl
+PERLCRITIC = /usr/bin/perlcritic
+PERLCRITICFLAGS = --verbose=9 -1
+REQUIREDPACKAGES = perl-Data-Dumper perl-Perl-Critic
+
 PERLCHECKFLAGS = -c -w -T $(shell perl -MFile::Find -MFile::Spec -e ' \
 find( \
     sub { \
@@ -37,14 +40,12 @@ FINDSKIPNOTPERL = $(shell perl -e ' \
 'phpunit' '*.png' '*.py' '*.rb' '*README' '*.sh' '*.sso' '*.sty' '*.svg' \
 '*.tex' '*.tgz' 'theorems' 'theorems?' 'TODO' '*.txt' 'Vagrantfile' '*.yicf' \
 )
+
 FINDNOTSRCDIR = $(shell perl -e ' \
     print map {"-name \x27$$_\x27 -prune -o\n";} sort { (lc $$a) cmp (lc $$b ) } @ARGV; \
 ' \
 .git .vagrant docs output \
 )
-
-PERLCRITIC = /usr/bin/perlcritic
-PERLCRITICFLAGS = --verbose=9 -1
 
 .PHONY: perlcritic
 

@@ -1,6 +1,8 @@
-TOP=../..
-MMHTML= magma.html
+TOP = ../..
+MMHTML = magma.html
+SUBDIRS = 03 11 metamath_parser/perl
 
-all: $(MMHTML)
+all: all-subdirs $(MMHTML)
 
 include $(TOP)/dev-mm.mk
+include $(TOP)/dev-subdirs.mk

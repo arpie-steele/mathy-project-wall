@@ -1,9 +1,10 @@
 include mmdef.mk
 
+METAMATH = $(TOP)/metamath
+METAMATHCMDS = 'verify proof *' 'write theorem_list/show_lemmas/alt_html/no_versioning/theorems_per_page 1000000' 'quit'
+MMMARKUPOK = '^MM|^Checking|^Comparing|^Metamath|^Reading|^No errors were found|^if you want to check them|^The source has \d+ statements;|^\d+ bytes were read'
 PERL = /usr/bin/perl
-METAMATH=$(TOP)/metamath
-METAMATHCMDS='verify proof *' 'write theorem_list/show_lemmas/alt_html/no_versioning/theorems_per_page 1000000' 'quit'
-SUBMODULES=$(TOP)/submodules
+SUBMODULES = $(TOP)/submodules
 
 clean-mm :
 	rm -f iset.mm nf.mm set.mm mmtheorems.html mmtheorems1.html
@@ -17,6 +18,13 @@ mmdef.mk : $(MMHTML:.html=.mm)
 	@if [ ! -x $(METAMATH) ] ; then \
 		echo Please cd to $TOP and type make metamath ; \
 		exit 1 ; \
+	fi
+	@echo Checking markup of $< ...
+	@if $(METAMATH) "read $<" 'verify markup */file/date/verbose' 'quit' \
+		| egrep -v $(MMMARKUPOK) ; then \
+		echo "Too bad!" ; \
+	else \
+		echo "Looks good." ; \
 	fi
 	@firststatement="`$(PERL) -ne ' \
 	if ( /\\s*(\\S+)\s+\\$$[pa]\\s+/ ) { print qq($$1\\n); last; } \

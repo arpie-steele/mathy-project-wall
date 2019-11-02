@@ -1,6 +1,7 @@
-TOP=../../..
-MMHTML= AnomalousCancellation.html
+TOP = ../../..
+MMHTML = AnomalousCancellation.html
 
-all: $(MMHTML)
+all: $(MMHTML) perlcritic
 
 include $(TOP)/dev-mm.mk
+include $(TOP)/dev-perl.mk

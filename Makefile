@@ -1,18 +1,17 @@
-TOP=.
+TOP = .
+MACCC = /usr/bin/gcc
+MACCFLAGS = -O3 -funroll-loops -finline-functions -fomit-frame-pointer -Wall -pedantic
+MMDIR = submodules/metamath-exe
+MMMISSING = Makefile.in aclocal.m4 autom4te.cache config.h.in configure depcomp install-sh missing
 REQUIREDPACKAGES = perl-Data-Dumper perl-Perl-Critic automake autoconf
+SUBDIRS = src/MSC2010
 
-MMMISSING = Makefile.in aclocal.m4 autom4te.cache config.h.in configure depcomp install-sh missing 
+all: metamath all-subdirs
 
-all: metamath perlcritic
-
-metamath : submodules/metamath-exe/*.c submodules/metamath-exe/*.h
+metamath : $(MMDIR)/*.c $(MMDIR)/*.h
 	@if [ "`uname -s`" = Darwin ] ; then \
-		echo gcc -I submodules/metamath-exe -O3 -funroll-loops \
-			-finline-functions -fomit-frame-pointer -Wall \
-			-pedantic -o $@ submodules/metamath-exe/m*.c ; \
-		gcc -I submodules/metamath-exe -O3 -funroll-loops \
-			-finline-functions -fomit-frame-pointer -Wall \
-			-pedantic -o $@ submodules/metamath-exe/m*.c ; \
+		echo $(MACCC) -I $(MMDIR) $(MACCFLAGS) -o $@ $(MMDIR)/m*.c ; \
+		$(MACCC) -I $(MMDIR) $(MACCFLAGS) -o $@ $(MMDIR)/m*.c ; \
 	elif [ "`uname -s`" = Linux ] ; then \
 		echo cd submodules/metamath-exe ; \
 		cd submodules/metamath-exe \
@@ -48,4 +47,4 @@ dev-install:
 		exit 1; \
 	fi
 
-include $(TOP)/dev-perl.mk
+include $(TOP)/dev-subdirs.mk

@@ -1,6 +1,8 @@
-TOP=../../..
-MMHTML= begriffsschrift.html
+TOP = ../../..
+MMHTML = begriffsschrift.html
+SUBDIRS = logic-miner/perl
 
-all: $(MMHTML)
+all: all-subdirs $(MMHTML)
 
 include $(TOP)/dev-mm.mk
+include $(TOP)/dev-subdirs.mk

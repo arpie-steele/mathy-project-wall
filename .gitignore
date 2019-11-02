@@ -1,5 +1,7 @@
 ## Operating system madness
 .DS_Store
+## Work in Progress
+wip.mm
 ## Build system madness
 mmdef.mk
 ## C/C++
