@@ -923,15 +923,15 @@ $)
   $}
 
   ${
-    $d x A $.  $d x y $.
+    $d x A $.  $d x B $.
     $( Necessary deduction regarding subsitution of value in equality.
 
        (Contributed by Richard Penner, 16-Oct-2019.) $)
-    frege55lem1c $p |- ( ( ph -> [. A / x ]. x = y )
-                         -> ( ph -> A = y ) ) $=
-      ( weq wsbc cv wceq cab wcel df-sbc wi wb ax-1 eqeq1 elab3g syl ibi imim2i
-      sylbi ) BCEZBDFZDCGZHZAUBDUABIZJZUDUABDKUFUDUFUDUFLUFUDMUFUDNUAUDBDUEBGDU
-      COPQRTS $.
+    frege55lem1c $p |- ( ( ph -> [. A / x ]. x = B )
+                         -> ( ph -> A = B ) ) $=
+      ( cv wceq wsbc cab wcel df-sbc wi ax-1 eqeq1 elab3g syl ibi sylbi imim2i
+      wb ) BEZDFZBCGZCDFZAUBCUABHZIZUCUABCJUEUCUEUCUEKUEUCSUEUCLUAUCBCUDTCDMNOP
+      QR $.
   $}
 
   ${
@@ -957,19 +957,31 @@ $)
       GPCUDAHIUFCUDBJKUGCDZBEUFQZCLZUHUGBUFCMNUKUFCBOUFCBRSUJUHCUIBUDTUAUBUC $.
   $}
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  ${
+    $d x A $.  $d x B $.
+    frege56c.b $e |- B e. C $.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 56 of [Frege1879] p. 50. $)
-  frege56c $p |- ( ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) )
-                   -> ( B = A -> ( [. A / x ]. ph -> [. B / x ]. ph ) ) ) $=
-    (  ) ? $.
+       Proposition 56 of [Frege1879] p. 50. 
+       (Contributed by Richard Penner, 2-Nov-2019.) $)
+    frege56c $p |- ( ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) )
+                     -> ( B = A -> ( [. A / x ]. ph -> [. B / x ]. ph ) ) ) $=
+      ( wceq wi wsbc cv elexi frege54cor1c frege53c ax-mp frege55lem1c frege9 )
+      DCGZCDGZHZRABCIABDIHZHQTHHQBJDGZBCIHZSUABDIUBBDDEFKLUABDCMNQBCDONQRTPN $.
+  $}
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  ${
+    $d x A $.  $d x B $.
+    frege57c.a $e |- A e. C $.
 
-     Proposition 57 of [Frege1879] p. 51.  (Contributed by Richard Penner,
-     8-Oct-2019.) $)
-  frege57c $p |- ( A = B -> ( [. B / x ]. ph -> [. A / x ]. ph ) ) $=
-    ( wceq wsbc wi frege52c frege56c ax-mp ) DCEABDFABCFGZGCDEKGABDCHABDCIJ $.
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 57 of [Frege1879] p. 51.  (Contributed by Richard Penner,
+       8-Oct-2019.) $)
+    frege57c $p |- ( A = B -> ( [. B / x ]. ph -> [. A / x ]. ph ) ) $=
+      ( wceq wsbc wi frege52c frege56c ax-mp ) DCGABDHABCHIZICDGMIABDCJABDCEFKL
+      $.
+  $}
 
   $( PLEASE PUT DESCRIPTION HERE.
 
