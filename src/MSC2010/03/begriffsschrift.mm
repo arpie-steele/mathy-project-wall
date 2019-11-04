@@ -949,8 +949,8 @@ $)
     $d x y $.  $d A y $.
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 55 of [Frege1879] p. 50.
-       (Contributed by Richard Penner, 2-Nov-2019.) $)
+       Proposition 55 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+       2-Nov-2019.) $)
     frege55c $p |- ( x = A -> A = x ) $=
       ( vy cv wceq weq wsbc vex frege54cor1c frege53c ax-mp wex cab wcel df-sbc
       wi wa clelab bitri eqtr2 exlimiv sylbi syl ) ADZBEZCAFZCBGZBUDEZUFCUDGUEU
@@ -962,8 +962,8 @@ $)
     frege56c.b $e |- B e. C $.
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 56 of [Frege1879] p. 50. 
-       (Contributed by Richard Penner, 2-Nov-2019.) $)
+       Proposition 56 of [Frege1879] p. 50.  (Contributed by Richard Penner,
+       2-Nov-2019.) $)
     frege56c $p |- ( ( A = B -> ( [. A / x ]. ph -> [. B / x ]. ph ) )
                      -> ( B = A -> ( [. A / x ]. ph -> [. B / x ]. ph ) ) ) $=
       ( wceq wi wsbc cv elexi frege54cor1c frege53c ax-mp frege55lem1c frege9 )
@@ -973,7 +973,6 @@ $)
   ${
     $d x A $.  $d x B $.
     frege57c.a $e |- A e. C $.
-
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 57 of [Frege1879] p. 51.  (Contributed by Richard Penner,
@@ -1039,8 +1038,8 @@ $)
   $( A kind of Aristotelian inference.  This judgement replaces the mode of
      inference ~ barbara when the minor premise has a general context.
 
-     Proposition 65 of [Frege1879] p. 53.
-     (Contributed by Richard Penner, 2-Nov-2019.) $)
+     Proposition 65 of [Frege1879] p. 53.  (Contributed by Richard Penner,
+     2-Nov-2019.) $)
   frege65c $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ps -> ch )
                         -> ( [. A / x ]. ph -> [. A / x ]. ch ) ) ) $=
@@ -1143,7 +1142,9 @@ $)
 
   ${
     $d c A $.  $d c R $.  $d c x $.  $d c y $.
-    $( PLEASE PUT DESCRIPTION HERE.
+    $( If property ` A ` is hereditary in the ` R ` -sequence, if ` x ` has
+       property ` A ` , and if ` y ` is a result of an application of the
+       procedure ` R ` to ` x ` , then ` y ` has property ` A ` .
 
        Proposition 72 of [Frege1879] p. 59.  (Contributed by Richard Penner,
        29-Oct-2019.) $)
@@ -1163,32 +1164,56 @@ $)
                   -> ( ( R " A ) C_ A -> ( x R y -> y e. A ) ) ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( If ` x ` has a property ` A ` that is hereditary in the ` R ` -sequence,
+     then every result of a application of the procedure ` R ` to ` x ` has the
+     property ` A ` .
 
      Proposition 74 of [Frege1879] p. 60. $)
   frege74 $p |- ( x e. A -> ( ( R " A ) C_ A -> ( x R y -> y e. A ) ) ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $( If from the proposition that ` x ` has property ` A ` , whatever ` x ` may
+     be, it can be inferred that every result of an application of the
+     procedure ` R ` to ` x ` has property ` A ` , then property ` A ` is
+     hereditary in the ` R ` -sequence.
 
-     Definition 75 of [Frege1879] p. 60. $)
+     Proposition 75 of [Frege1879] p. 60. $)
   frege75 $p |- ( A. x ( x e. A -> A. y ( x R y -> y e. A ) )
                   -> ( R " A ) C_ A ) $=
     (  ) ? $.
+
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     _Begriffschift_ Chapter III
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+    ` p F c ` means ` c ` follows ` p ` in the ` R ` -sequence.
+$)
 
   ${
     frege76.f $e |- F = { <. p , c >. | c e. |^| { f | ( ( R " { p } ) C_ f
                                                           /\ ( R " f ) C_ f )
                                                   }
                          } $.
-    ${
-      frege76.r $e |- R = { <. x , y >. | ps } $.
-      $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-         Proposition 76 of [Frege1879] p. 60. $)
+       Definition 76 of [Frege1879] p. 60. $)
+    frege76lem $p |- ( A. f ( ( R " f ) C_ f -> ( ( R " { p } ) C_ f
+                                                  -> c e. f ) ) <-> b F c ) $=
+      (  ) ? $.
+
+    ${
+      $( frege76.r $e |- R = { <. x , y >. | ps } $. $)
+      $( If from the two propositions that every result of an application of
+         the procedure ` R ` to ` b ` has property ` f ` and that property
+         ` f ` is hereditary in the ` R ` -sequence, it can be inferred,
+         whatever ` f ` may be, that ` e ` has property ` f ` , then we say
+         ` e ` follows ` b ` in the ` R ` -sequence.
+
+         Definition 76 of [Frege1879] p. 60. $)
       frege76 $p |- ( A. f ( ( R " f ) C_ f
-                      -> ( A. a ( [ b / x ] [ a / y ] ps -> a e. f )
-                           -> e e. f ) ) <-> b F e ) $=
+                      -> ( A. a ( b R a -> a e. f ) -> e e. f ) )
+                      <-> b F e ) $=
         (  ) ? $.
     $}
 
@@ -1199,235 +1224,301 @@ $)
                                   A. f ( ( R " { B } ) C_ f /\ ( R " f ) C_ f
                                          /\ E e. f ) ) ) $=
       (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE. Might have to replace A with f.
+
+       Proposition 77 of [Frege1879] p. 62. $)
+    frege77 $p |- ( x F y -> ( ( R " A ) C_ A -> ( A. a ( b R a -> a e. A )
+                                                 -> y e. A ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 78 of [Frege1879] p. 63. $)
+    frege78 $p |- ( ( R " A ) C_ A -> ( A. a ( b R a -> a e. A )
+                                      -> ( x F y -> y e. A ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 79 of [Frege1879] p. 63. $)
+    frege79 $p |- ( ( ( R " A ) C_ A -> A. a ( b R a -> a e. A ) )
+                  -> ( ( R " A ) C_ A -> ( x F y -> y e. A ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 80 of [Frege1879] p. 63. $)
+    frege80 $p |- ( ( x e. A
+                      -> ( ( R " A ) C_ A -> A. a ( x R a -> a e. A ) ) )
+                  -> ( x e. A
+                       -> ( ( R " A ) C_ A -> ( x F y -> y e. A ) ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 81 of [Frege1879] p. 63. $)
+    frege81 $p |- ( x e. A -> ( ( R " A ) C_ A -> ( x F y -> y e. A ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 81 of [Frege1879] p. 63. $)
+    frege81cor1 $p |- ( x e. A -> ( ( R " A ) C_ A
+                                    -> A. y ( x F y -> y e. A ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 81 of [Frege1879] p. 63. $)
+    frege81cor2 $p |- ( x e. A -> ( ( R " A ) C_ A -> ( F " { x } ) C_ A ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 82 of [Frege1879] p. 64. $)
+    frege82 $p |- ( ( ph -> x e. A )
+                    -> ( ( R " A ) C_ A -> ( ph -> ( x F y -> y e. A ) ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 83 of [Frege1879] p. 65. $)
+    frege83 $p |- ( ( R " ( B u. C ) ) C_ ( B u. C )
+                    -> ( x e. B -> ( x F y -> y e. ( B u. C ) ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 84 of [Frege1879] p. 65. $)
+    frege84 $p |- ( ( R " A ) C_ A -> ( x e. A -> ( x F y -> y e. A ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 85 of [Frege1879] p. 66. $)
+    frege85 $p |- ( x F y -> ( A. z ( x R z -> z e. A )
+                               -> ( ( R " A ) C_ A -> y e. A ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 86 of [Frege1879] p. 66. $)
+    frege86 $p |- ( ( ( ( R " A ) C_ A -> y e. A )
+                      -> ( ( R " A ) C_ A -> ( y R z -> z e. A ) ) )
+                    -> ( x F y -> ( A. w ( x R w -> w e. A )
+                                    -> ( ( R " A ) C_ A
+                                         -> ( y R z -> z e. A ) ) ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 87 of [Frege1879] p. 66. $)
+    frege87 $p |- ( x F y -> ( A. w ( x R w -> w e. A )
+                               -> ( ( R " A ) C_ A
+                                    -> ( y R z -> z e. A ) ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 88 of [Frege1879] p. 67. $)
+    frege88 $p |- ( y R z -> ( x F y
+                               -> ( A. w ( x R w -> w e. A )
+                                    -> ( ( R " A ) C_ A -> z e. A ) ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 89 of [Frege1879] p. 68. $)
+    frege89 $p |- ( A. f ( ( R " f ) C_ f -> ( A. w ( x R w -> w e. f )
+                                               -> y e. f ) )
+                    -> x F y ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 90 of [Frege1879] p. 68. $)
+    frege90 $p |- ( ( ph
+                      -> A. f ( ( R " f ) C_ f
+                                -> ( A. w ( x R w -> w e. f ) -> y e. f ) ) )
+                    -> ( ph -> x F y ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 91 of [Frege1879] p. 68. $)
+    frege91 $p |- ( x R y -> x F y ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 92 of [Frege1879] p. 69. $)
+    frege92 $p |- ( x = z -> ( x R y -> z F y ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 93 of [Frege1879] p. 70. $)
+    frege93 $p |- ( A. f ( A. z ( x R z -> z e. f )
+                           -> ( ( R " f ) C_ f -> y e. f ) ) -> x F y ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 94 of [Frege1879] p. 70. $)
+    frege94 $p |- ( ( y R z
+                      -> ( x F y
+                           -> ( A. f ( A. w ( x R w -> w e. f )
+                                       -> ( ( R " f ) C_ f -> z e. f ) ) ) ) )
+                    -> ( y R z -> ( x F y -> x F z ) ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 95 of [Frege1879] p. 70. $)
+    frege95 $p |- ( y R z -> ( x F y -> x F z ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 96 of [Frege1879] p. 71. $)
+    frege96 $p |- ( x F y -> ( y R z -> x F z ) ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 97 of [Frege1879] p. 71. $)
+    frege97 $p |- ( R " ( F " { x } ) ) C_ ( F " { x } ) $=
+    (  ) ? $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 98 of [Frege1879] p. 71. $)
+    frege98 $p |- ( x F y -> ( x F z -> x F z ) ) $=
+    (  ) ? $.
   $}
 
-  $( PLEASE PUT DESCRIPTION HERE.
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     _Begriffschift_ Chapter III
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
-     Proposition 77 of [Frege1879] p. 62. $)
-  frege77 $p |- ( ph -> -. ph ) $=
+    ` p ( F u. _I ) c ` means ` c ` is a member of the ` R ` -seqeunce
+    begining with ` p ` and ` p ` is a member of the  ` R ` -seqeunce
+    ending with ` c ` .
+$)
+
+  ${
+    frege99.f $e |- F = { <. p , c >. | c e. |^| { f | ( ( R " { p } ) C_ f
+                                                          /\ ( R " f ) C_ f )
+                                                  }
+                         } $.
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Definition 99 of [Frege1879] p. 71. $)
+    frege99 $p |- ( ( -. x F z -> z = x ) <-> x ( F u. _I ) z ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 78 of [Frege1879] p. 63. $)
-  frege78 $p |- ( ph -> -. ph ) $=
+       Proposition 100 of [Frege1879] p. 72. $)
+    frege100 $p |- ( x ( F u. _I ) z -> ( -. x F z -> z = x ) ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 79 of [Frege1879] p. 63. $)
-  frege79 $p |- ( ph -> -. ph ) $=
+       Proposition 101 of [Frege1879] p. 72. $)
+    frege101 $p |- ( ( z = x -> ( z R v -> x F v ) )
+                     -> ( ( x F z -> ( z R v -> x F v ) )
+                          -> ( x ( F u. _I ) z -> ( z R v -> x F v ) ) ) ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 80 of [Frege1879] p. 63. $)
-  frege80 $p |- ( ph -> -. ph ) $=
+       Proposition 102 of [Frege1879] p. 72. $)
+    frege102 $p |- ( x ( F u. _I ) z -> ( z R v -> x F v ) ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 81 of [Frege1879] p. 63. $)
-  frege81 $p |- ( ph -> -. ph ) $=
+       Proposition 103 of [Frege1879] p. 73. $)
+    frege103 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 82 of [Frege1879] p. 64. $)
-  frege82 $p |- ( ph -> -. ph ) $=
+       Proposition 104 of [Frege1879] p. 73. $)
+    frege104 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 83 of [Frege1879] p. 65. $)
-  frege83 $p |- ( ph -> -. ph ) $=
+       Proposition 105 of [Frege1879] p. 73. $)
+    frege105 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 84 of [Frege1879] p. 65. $)
-  frege84 $p |- ( ph -> -. ph ) $=
+       Proposition 106 of [Frege1879] p. 73. $)
+    frege106 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 85 of [Frege1879] p. 66. $)
-  frege85 $p |- ( ph -> -. ph ) $=
+       Proposition 107 of [Frege1879] p. 74. $)
+    frege107 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 86 of [Frege1879] p. 66. $)
-  frege86 $p |- ( ph -> -. ph ) $=
+       Proposition 108 of [Frege1879] p. 74. $)
+    frege108 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 87 of [Frege1879] p. 66. $)
-  frege87 $p |- ( ph -> -. ph ) $=
+       Proposition 109 of [Frege1879] p. 74. $)
+    frege109 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 88 of [Frege1879] p. 67. $)
-  frege88 $p |- ( ph -> -. ph ) $=
+       Proposition 110 of [Frege1879] p. 75. $)
+    frege110 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 89 of [Frege1879] p. 68. $)
-  frege89 $p |- ( ph -> -. ph ) $=
+       Proposition 111 of [Frege1879] p. 75. $)
+    frege111 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 90 of [Frege1879] p. 68. $)
-  frege90 $p |- ( ph -> -. ph ) $=
+       Proposition 112 of [Frege1879] p. 76. $)
+    frege112 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 91 of [Frege1879] p. 68. $)
-  frege91 $p |- ( ph -> -. ph ) $=
+       Proposition 113 of [Frege1879] p. 76. $)
+    frege113 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 92 of [Frege1879] p. 69. $)
-  frege92 $p |- ( ph -> -. ph ) $=
+       Proposition 114 of [Frege1879] p. 76. $)
+    frege114 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  $}
 
-     Proposition 93 of [Frege1879] p. 70. $)
-  frege93 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     _Begriffschift_ Chapter III
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 94 of [Frege1879] p. 70. $)
-  frege94 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 95 of [Frege1879] p. 70. $)
-  frege95 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 96 of [Frege1879] p. 71. $)
-  frege96 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 97 of [Frege1879] p. 71. $)
-  frege97 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 98 of [Frege1879] p. 71. $)
-  frege98 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 99 of [Frege1879] p. 71. $)
-  frege99 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 100 of [Frege1879] p. 72. $)
-  frege100 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 101 of [Frege1879] p. 72. $)
-  frege101 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 102 of [Frege1879] p. 72. $)
-  frege102 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 103 of [Frege1879] p. 73. $)
-  frege103 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 104 of [Frege1879] p. 73. $)
-  frege104 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 105 of [Frege1879] p. 73. $)
-  frege105 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 106 of [Frege1879] p. 73. $)
-  frege106 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 107 of [Frege1879] p. 74. $)
-  frege107 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 108 of [Frege1879] p. 74. $)
-  frege108 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 109 of [Frege1879] p. 74. $)
-  frege109 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 110 of [Frege1879] p. 75. $)
-  frege110 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 111 of [Frege1879] p. 75. $)
-  frege111 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 112 of [Frege1879] p. 76. $)
-  frege112 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 113 of [Frege1879] p. 76. $)
-  frege113 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 114 of [Frege1879] p. 76. $)
-  frege114 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+$)
 
   $( PLEASE PUT DESCRIPTION HERE.
 
