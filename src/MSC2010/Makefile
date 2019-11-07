@@ -1,5 +1,5 @@
 TOP=../..
-MMHTML= magma.html
+MMHTML= taocp.html magma.html
 
 all: $(MMHTML)
 
