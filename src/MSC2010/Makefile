@@ -1,5 +1,5 @@
 TOP = ../..
-MMHTML = magma.html
+MMHTML = taocp.html magma.html
 SUBDIRS = 03 11 metamath_parser/perl
 
 all: all-subdirs $(MMHTML)
