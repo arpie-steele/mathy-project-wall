@@ -17,20 +17,20 @@ $(
         Propositions from _Begriffschift_
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-   Numbered propositions from [Frege1879] . ~ frege1 , ~ frege2 ,
-   ~ frege8 , ~ frege28 , ~ frege31 , ~ frege41 , frege52 ( see
+   Numbered propositions from [Frege1879] . ~ ax-frege1 , ~ ax-frege2 ,
+   ~ ax-frege8 , ~ ax-frege28 , ~ ax-frege31 , ~ ax-frege41 , frege52 ( see
    ~ frege52b and ~ frege52c for translations), and
    frege54 ( see ~ frege54b and ~ frege54c for
    translations) are considered "core" or axioms. However, at least
-   ~ frege8 can be derived from ~ frege1 and ~ frege2 , see ~
-   frege8ALT .
+   ~ ax-frege8 can be derived from ~ ax-frege1 and ~ ax-frege2 , see ~
+   axfrege8 .
 
    ~ frege58b is a new principle.
 $)
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-     _Begriffschift_ Chapter II
+     _Begriffschift_ Chapter II Implication
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 $)
 
@@ -42,47 +42,7 @@ $)
 
      (Contributed by Richard Penner, 1-Oct-2019.)
      (New usage is discouraged.) $)
-  frege1 $p |- ( ph -> ( ps -> ph ) ) $=
-    ( ax-1 ) ABC $.
-  $( $j restatement 'frege1' of 'ax-1'; $)
-
-  ${
-    frege1just1.1 $e |- ph $.
-    frege1just1.2 $e |- ps $.
-    frege1just1.3 $e |- -. ch $.
-    $( Partial justification for ~ frege1 .
-
-       (Contributed by Richard Penner, 1-Oct-2019.) $)
-    frege1just1 $p |- -. ( ph -> ( ps -> ch ) ) $=
-      ( wi wn mth8 ax-mp ) BCGZHZAKGHZCHZLFBNLGEBCIJJALMGDAKIJJ $.
-  $}
-
-  ${
-    frege1just2.1 $e |- ch $.
-    $( Partial justification for ~ frege1 .
-
-       (Contributed by Richard Penner, 1-Oct-2019.) $)
-    frege1just2 $p |- ( ph -> ( ps -> ch ) ) $=
-      ( wi a1i ) BCEACBDFF $.
-  $}
-
-  ${
-    frege1just3.1 $e |- -. ps $.
-    $( Partial justification for ~ frege1 .
-
-       (Contributed by Richard Penner, 1-Oct-2019.) $)
-    frege1just3 $p |- ( ph -> ( ps -> ch ) ) $=
-      ( wi pm2.21i a1i ) BCEABCDFG $.
-  $}
-
-  ${
-    frege1just4.1 $e |- -. ph $.
-    $( Partial justification for ~ frege1 .
-
-       (Contributed by Richard Penner, 1-Oct-2019.) $)
-    frege1just4 $p |- ( ph -> ( ps -> ch ) ) $=
-      ( wi pm2.21i ) ABCEDF $.
-  $}
+  ax-frege1 $a |- ( ph -> ( ps -> ph ) ) $.
 
   $( If a proposition ` ch ` is a neccessary consequence of two propostions
      ` ps ` and ` ph ` and on of those, ` ps ` , is in turn a necessary
@@ -93,12 +53,26 @@ $)
 
      (Contributed by Richard Penner, 1-Oct-2019.)
      (New usage is discouraged.) $)
-  frege2 $p |- ( ( ph -> ( ps -> ch ) )
-                 -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) $=
-    ( ax-2 ) ABCD $.
-  $( $j restatement 'frege2' of 'ax-2'; $)
+  ax-frege2 $a |- ( ( ph -> ( ps -> ch ) )
+                 -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) $.
 
-  $( Add antecedent to ~ ax-2 .  Special case of ~ frege3gen .
+  $( Simplification of triple conjunction.  Compare with ~ simp2 .
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp-simp2-frege $p |- ( ph -> ( ps -> ( ch -> ps ) ) ) $=
+    ( wi ax-frege1 ax-mp ) BCBDDZAGDBCEGAEF $.
+
+  $( More general statement than ~ frege3 .  Like ~ ax-frege2 , it is
+     essentially a closed form of ~ mpd , however it has an extra antecedent.
+
+     It would be more natural to prove from ~ a1i and ~ ax-frege2 in Metamath.
+     (Contributed by Richard Penner, 1-Oct-2019.) $)
+  rp-frege3g $p |- ( ph
+                    -> ( ( ps -> ( ch -> th ) )
+                         -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
+    ( wi ax-frege2 ax-frege1 ax-mp ) BCDEEBCEBDEEEZAIEBCDFIAGH $.
+
+  $( Add antecedent to ~ ax-frege2 .  Special case of ~ rp-frege3g .
 
      Proposition 3 of [Frege1879] p. 29.
 
@@ -107,9 +81,30 @@ $)
   frege3 $p |- ( ( ph -> ps )
                  -> ( ( ch -> ( ph -> ps ) )
                       -> ( ( ch -> ph ) -> ( ch -> ps ) ) ) ) $=
-    ( wi ax-2 ax-1 ax-mp ) CABDZDCADCBDDDZHIDCABEIHFG $.
+    ( wi ax-frege2 ax-frege1 ax-mp ) CABDZDCADCBDDDZHIDCABEIHFG $.
 
-  $( Special case of closed form of ~ a2d .
+  $( Double-use of ~ ax-frege2 .
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp-misc1-frege $p |- ( ( ( ph -> ( ps -> ch ) ) -> ( ph -> ps ) )
+                     -> ( ( ph -> ( ps -> ch ) ) -> ( ph -> ch ) ) ) $=
+    ( wi ax-frege2 ax-mp ) ABCDDZABDZACDZDDGHDGIDDABCEGHIEF $.
+
+  $( Introducing an embedded antecedent.  Alternate proof for ~ frege24 .
+     Closed form for ~ a1d .
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp-frege24 $p |- ( ( ph -> ps ) -> ( ph -> ( ch -> ps ) ) ) $=
+    ( wi rp-simp2-frege ax-frege2 ax-mp ) ABCBDZDDABDAHDDABCEABHFG $.
+
+  $( Deduction relatied to distribution.
+
+     (Contributed by Richard Penner, 6-Oct-2019.) $)
+  rp-frege4g $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                        -> ( ph -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
+    ( wi rp-frege3g ax-frege2 ax-mp ) ABCDEEZBCEBDEEZEEAIEAJEEABCDFAIJGH $.
+
+  $( Special case of closed form of ~ a2d .  Special case of ~ rp-frege4g .
 
      Proposition 4 of [Frege1879] p. 31.
 
@@ -117,7 +112,7 @@ $)
      (Proof modification is discouraged.) $)
   frege4 $p |- ( ( ( ph -> ps ) -> ( ch -> ( ph -> ps ) ) )
                  -> ( ( ph -> ps ) -> ( ( ch -> ph ) -> ( ch -> ps ) ) ) ) $=
-    ( wi frege3 ax-2 ax-mp ) ABDZCHDZCADCBDDZDDHIDHJDDABCEHIJFG $.
+    ( wi frege3 ax-frege2 ax-mp ) ABDZCHDZCADCBDDZDDHIDHJDDABCEHIJFG $.
 
   $( A closed form of ~ syl .  Identical to ~ imim2 .
 
@@ -128,7 +123,42 @@ $)
      (Contributed by Richard Penner, 1-Oct-2019.)
      (Proof modification is discouraged.) $)
   frege5 $p |- ( ( ph -> ps ) -> ( ( ch -> ph ) -> ( ch -> ps ) ) ) $=
-    ( wi ax-1 frege4 ax-mp ) ABDZCHDDHCADCBDDDHCEABCFG $.
+    ( wi ax-frege1 frege4 ax-mp ) ABDZCHDDHCADCBDDDHCEABCFG $.
+
+  $( Distribute antecedent and add another.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp-7frege $p |- ( ( ph -> ( ps -> ch ) )
+              -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
+    ( wi ax-frege2 rp-frege24 ax-mp ) ABCEEZABEACEEZEIDJEEABCFIJDGH $.
+
+  $( Elimination of a nested antecedent of special form.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp-4frege $p |- ( ( ph -> ( ( ps -> ph ) -> ch ) ) -> ( ph -> ch ) ) $=
+    ( wi rp-simp2-frege rp-misc1-frege ax-mp ) ABADZCDDZAHDDIACDDIABEAHCFG $.
+
+  $( Elimination of a nested antecedent of special form.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp-6frege $p |- ( ph
+                   -> ( ( ps -> ( ( ch -> ps ) -> th ) ) -> ( ps -> th ) ) ) $=
+    ( wi rp-4frege ax-frege1 ax-mp ) BCBEDEEBDEEZAIEBCDFIAGH $.
+
+  $( Eliminate antecedent when it is implied by previous antecedent.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  rp-8frege $p |- ( ( ph -> ( ps -> ( ( ch -> ps ) -> th ) ) )
+                   -> ( ph -> ( ps -> th ) ) ) $=
+    ( wi rp-6frege ax-frege2 ax-mp ) ABCBEDEEZBDEZEEAIEAJEEABCDFAIJGH $.
+
+  $( Closed form for ~ a1dd .
+
+     Alternate route to Proposition 25 of [Frege1879] p. 42.  (Contributed by
+     Richard Penner, 4-Oct-2019.) $)
+  rp-frege25 $p |- ( ( ph -> ( ps -> ch ) )
+                  -> ( ph -> ( ps -> ( th -> ch ) ) ) ) $=
+    ( wi rp-frege24 frege5 ax-mp ) BCEZBDCEEZEAIEAJEEBCDFIJAGH $.
 
   $( A closed form of ~ imim2d which is a deduction adding nested antecedents.
 
@@ -139,6 +169,19 @@ $)
   frege6 $p |- ( ( ph -> ( ps -> ch ) )
                  -> ( ph -> ( ( th -> ps ) -> ( th -> ch ) ) ) ) $=
     ( wi frege5 ax-mp ) BCEZDBEDCEEZEAHEAIEEBCDFHIAFG $.
+
+  $( Swap antecedents.  Identical to ~ pm2.04 .
+
+     Proof follows closely proof of ~ pm2.04 in
+     ~ http://us.metamath.org/mmsolitaire/pmproofs.txt , but in the style of
+     [Frege1879] .
+
+     This demonstrates that Axiom 8 of [Frege1879] p. 35 is redundant.
+
+     (Contributed by Richard Penner, 1-Oct-2019.)  (New usage is discouraged.)
+     (Proof modification is discouraged.) $)
+  axfrege8 $p |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $=
+    ( wi rp-7frege rp-8frege ax-mp ) ABCDDZBABDACDZDDDHBIDDABCBEHBAIFG $.
 
   $( A closed form of ~ syl6 .  The first antecedent is used to replace the
      consequent of the second antecedent.
@@ -152,13 +195,26 @@ $)
     ( wi frege5 frege6 ax-mp ) ABEZDAEZDBEZEEICJECKEEEABDFIJKCGH $.
 
   $( Swap antecedents.  Third axiom of [Frege1879] but identical to ~ pm2.04
-     which can be proved from only ~ ax-mp , ~ ax-1 , and ~ ax-2 .
+     which can be proved from only ~ ax-mp , ~ ax-frege1 , and ~ ax-frege2 .
 
      (Redundant) Axiom 8 of [Frege1879] p. 35.
 
      (Contributed by Richard Penner, 1-Oct-2019.) $)
-  frege8 $p |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $=
-    ( pm2.04 ) ABCD $.
+  ax-frege8 $a |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $.
+
+  $( Identical to ~ idd .
+
+     Proposition 26 of [Frege1879] p. 42.  (Contributed by Richard Penner,
+     4-Oct-2019.) $)
+  frege26 $p |- ( ph -> ( ps -> ps ) ) $=
+    ( wi ax-frege1 ax-frege8 ax-mp ) BABCCABBCCBADBABEF $.
+
+  $( Identical to ~ id .
+
+     Proposition 27 of [Frege1879] p. 43.  (Contributed by Richard Penner,
+     4-Oct-2019.) $)
+  frege27 $p |- ( ph -> ph ) $=
+    ( wps wi ax-frege1 frege26 ax-mp ) ABACCZAACABDGAEF $.
 
   $( Closed form of ~ syl with swapped antecedents.  This proposition differs
      from ~ frege5 only in an unessential way.  Identical to ~ imim1 .
@@ -168,17 +224,15 @@ $)
      (Contributed by Richard Penner, 1-Oct-2019.)
      (Proof modification is discouraged.) $)
   frege9 $p |- ( ( ph -> ps ) -> ( ( ps -> ch ) -> ( ph -> ch ) ) ) $=
-    ( wi frege5 frege8 ax-mp ) BCDZABDZACDZDDIHJDDBCAEHIJFG $.
+    ( wi frege5 ax-frege8 ax-mp ) BCDZABDZACDZDDIHJDDBCAEHIJFG $.
 
-  $( Result commuting antecedents within an antecedent.
+  $( A closed form of ~ com23 .
 
-     Proposition 10 of [Frege1879] p. 36.
-
-     (Contributed by Richard Penner, 1-Oct-2019.)
-     (Proof modification is discouraged.) $)
-  frege10 $p |- ( ( ( ph -> ( ps -> ch ) ) -> th )
-                -> ( ( ps -> ( ph -> ch ) ) -> th ) ) $=
-    ( wi frege8 frege9 ax-mp ) BACEEZABCEEZEJDEIDEEBACFIJDGH $.
+     Proposition 12 of [Frege1879] p. 37.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege12 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                  -> ( ph -> ( ch -> ( ps -> th ) ) ) ) $=
+    ( wi ax-frege8 frege5 ax-mp ) BCDEEZCBDEEZEAIEAJEEBCDFIJAGH $.
 
   $( Elimination of a nested antecedent as a kind of reversal of inference
      ~ ja .  Identical to ~ jarr .
@@ -188,15 +242,66 @@ $)
      (Contributed by Richard Penner, 1-Oct-2019.)
      (Proof modification is discouraged.) $)
   frege11 $p |- ( ( ( ph -> ps ) -> ch ) -> ( ps -> ch ) ) $=
-    ( wi ax-1 frege9 ax-mp ) BABDZDHCDBCDDBAEBHCFG $.
+    ( wi ax-frege1 frege9 ax-mp ) BABDZDHCDBCDDBAEBHCFG $.
 
-  $( A closed form of ~ com23 .
+  $( Closed form for ~ a1d .  Deduction introducing an embedded antecedent.
+     Identical to ~ rp-frege24 which was proved without relying on
+     ~ ax-frege8 .
 
-     Proposition 12 of [Frege1879] p. 37.  (Contributed by Richard Penner,
+     Proposition 24 of [Frege1879] p. 42.  (Contributed by Richard Penner,
+     4-Oct-2019.) $)
+  frege24 $p |- ( ( ph -> ps ) -> ( ph -> ( ch -> ps ) ) ) $=
+    ( wi ax-frege1 frege12 ax-mp ) ABDZCHDDHACBDDDHCEHCABFG $.
+
+  $( A closed form of ~ com34 .
+
+     Proposition 16 of [Frege1879] p. 38.  (Contributed by Richard Penner,
      3-Oct-2019.) $)
-  frege12 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
-                  -> ( ph -> ( ch -> ( ps -> th ) ) ) ) $=
-    ( wi frege8 frege5 ax-mp ) BCDEEZCBDEEZEAIEAJEEBCDFIJAGH $.
+  frege16 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )
+                  -> ( ph -> ( ps -> ( th -> ( ch -> ta ) ) ) ) ) $=
+    ( wi frege12 frege5 ax-mp ) BCDEFFFZBDCEFFFZFAJFAKFFBCDEGJKAHI $.
+
+  $( Closed form for ~ a1dd .
+
+     Proposition 25 of [Frege1879] p. 42.  (Contributed by Richard Penner,
+     4-Oct-2019.) $)
+  frege25 $p |- ( ( ph -> ( ps -> ch ) )
+                  -> ( ph -> ( ps -> ( th -> ch ) ) ) ) $=
+    ( wi frege24 frege5 ax-mp ) BCEZBDCEEZEAIEAJEEBCDFIJAGH $.
+
+  $( Closed form of a syllogism followed by a swap of antecedents.
+
+     Proposition 18 of [Frege1879] p. 39.  (Contributed by Richard Penner,
+     4-Oct-2019.) $)
+  frege18 $p |- ( ( ph -> ( ps -> ch ) )
+                  -> ( ( th -> ph ) -> ( ps -> ( th -> ch ) ) ) ) $=
+    ( wi frege5 frege16 ax-mp ) ABCEZEZDAEZDIEEEJKBDCEEEEAIDFJKDBCGH $.
+
+  $( A closed form of ~ com45 .
+
+     Proposition 22 of [Frege1879] p. 41.  (Contributed by Richard Penner,
+     4-Oct-2019.) $)
+  frege22 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ( ta -> et ) ) ) ) )
+                  -> ( ph -> ( ps -> ( ch -> ( ta -> ( th -> et ) ) ) ) ) ) $=
+    ( wi frege16 frege5 ax-mp ) BCDEFGGGGZBCEDFGGGGZGAKGALGGBCDEFHKLAIJ $.
+
+  $( Result commuting antecedents within an antecedent.
+
+     Proposition 10 of [Frege1879] p. 36.
+
+     (Contributed by Richard Penner, 1-Oct-2019.)
+     (Proof modification is discouraged.) $)
+  frege10 $p |- ( ( ( ph -> ( ps -> ch ) ) -> th )
+                -> ( ( ps -> ( ph -> ch ) ) -> th ) ) $=
+    ( wi ax-frege8 frege9 ax-mp ) BACEEZABCEEZEJDEIDEEBACFIJDGH $.
+
+  $( A closed form of ~ com3l .
+
+     Proposition 17 of [Frege1879] p. 39.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege17 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                  -> ( ps -> ( ch -> ( ph -> th ) ) ) ) $=
+    ( wi ax-frege8 frege16 ax-mp ) ABCDEZEEZBAIEEEJBCADEEEEABIFJBACDGH $.
 
   $( A closed form of ~ com3r .
 
@@ -214,38 +319,6 @@ $)
                   -> ( ph -> ( th -> ( ps -> ( ch -> ta ) ) ) ) ) $=
     ( wi frege13 frege5 ax-mp ) BCDEFFFZDBCEFFFZFAJFAKFFBCDEGJKAHI $.
 
-  $( A closed form of ~ com4r .
-
-     Proposition 15 of [Frege1879] p. 38.  (Contributed by Richard Penner,
-     3-Oct-2019.) $)
-  frege15 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )
-                  -> ( th -> ( ph -> ( ps -> ( ch -> ta ) ) ) ) ) $=
-    ( wi frege14 frege12 ax-mp ) ABCDEFFFFZADBCEFFZFFFJDAKFFFABCDEGJADKHI $.
-
-  $( A closed form of ~ com34 .
-
-     Proposition 16 of [Frege1879] p. 38.  (Contributed by Richard Penner,
-     3-Oct-2019.) $)
-  frege16 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )
-                  -> ( ph -> ( ps -> ( th -> ( ch -> ta ) ) ) ) ) $=
-    ( wi frege12 frege5 ax-mp ) BCDEFFFZBDCEFFFZFAJFAKFFBCDEGJKAHI $.
-
-  $( A closed form of ~ com3l .
-
-     Proposition 17 of [Frege1879] p. 39.  (Contributed by Richard Penner,
-     3-Oct-2019.) $)
-  frege17 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
-                  -> ( ps -> ( ch -> ( ph -> th ) ) ) ) $=
-    ( wi frege8 frege16 ax-mp ) ABCDEZEEZBAIEEEJBCADEEEEABIFJBACDGH $.
-
-  $( Closed form of a syllogism followed by a swap of antecedents.
-
-     Proposition 18 of [Frege1879] p. 39.  (Contributed by Richard Penner,
-     4-Oct-2019.) $)
-  frege18 $p |- ( ( ph -> ( ps -> ch ) )
-                  -> ( ( th -> ph ) -> ( ps -> ( th -> ch ) ) ) ) $=
-    ( wi frege5 frege16 ax-mp ) ABCEZEZDAEZDIEEEJKBDCEEEEAIDFJKDBCGH $.
-
   $( A closed form of ~ syl6 .
 
      Proposition 19 of [Frege1879] p. 39.  (Contributed by Richard Penner,
@@ -253,30 +326,6 @@ $)
   frege19 $p |- ( ( ph -> ( ps -> ch ) )
                   -> ( ( ch -> th ) -> ( ph -> ( ps -> th ) ) ) ) $=
     ( wi frege9 frege18 ax-mp ) BCEZCDEZBDEZEEAIEJAKEEEBCDFIJKAGH $.
-
-  $( A closed form of ~ syl8 .
-
-     Proposition 20 of [Frege1879] p. 40.  (Contributed by Richard Penner,
-     4-Oct-2019.) $)
-  frege20 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
-                  -> ( ( th -> ta ) -> ( ph -> ( ps -> ( ch -> ta ) ) ) ) ) $=
-    ( wi frege19 frege18 ax-mp ) BCDFFZDEFZBCEFFZFFAJFKALFFFBCDEGJKLAHI $.
-
-  $( Replace antecedent in antecedent.
-
-     Proposition 21 of [Frege1879] p. 40.  (Contributed by Richard Penner,
-     4-Oct-2019.) $)
-  frege21 $p |- ( ( ( ph -> ps ) -> ch )
-                  -> ( ( ph -> th ) -> ( ( th -> ps ) -> ch ) ) ) $=
-    ( wi frege9 frege19 ax-mp ) ADEZDBEZABEZEEKCEIJCEEEADBFIJKCGH $.
-
-  $( A closed form of ~ com45 .
-
-     Proposition 22 of [Frege1879] p. 41.  (Contributed by Richard Penner,
-     4-Oct-2019.) $)
-  frege22 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ( ta -> et ) ) ) ) )
-                  -> ( ph -> ( ps -> ( ch -> ( ta -> ( th -> et ) ) ) ) ) ) $=
-    ( wi frege16 frege5 ax-mp ) BCDEFGGGGZBCEDFGGGGZGAKGALGGBCDEFHKLAIJ $.
 
   $( Syllogism followed by rotation of three antecedents.
 
@@ -288,35 +337,43 @@ $)
     ( wi frege18 frege22 ax-mp ) ABCDFZFFZEAFZBEJFFFFKLBCEDFFFFFABJEGKLBECDHI
     $.
 
-  $( Closed form for ~ a1d .  Deduction introducing an embedded antecedent.
-     Identical to ~ frege24ALT which was proved without relying on ~ frege8 .
+  $( A closed form of ~ com4r .
 
-     Proposition 24 of [Frege1879] p. 42.  (Contributed by Richard Penner,
+     Proposition 15 of [Frege1879] p. 38.  (Contributed by Richard Penner,
+     3-Oct-2019.) $)
+  frege15 $p |- ( ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )
+                  -> ( th -> ( ph -> ( ps -> ( ch -> ta ) ) ) ) ) $=
+    ( wi frege14 frege12 ax-mp ) ABCDEFFFFZADBCEFFZFFFJDAKFFFABCDEGJADKHI $.
+
+  $( Replace antecedent in antecedent.
+
+     Proposition 21 of [Frege1879] p. 40.  (Contributed by Richard Penner,
      4-Oct-2019.) $)
-  frege24 $p |- ( ( ph -> ps ) -> ( ph -> ( ch -> ps ) ) ) $=
-    ( wi ax-1 frege12 ax-mp ) ABDZCHDDHACBDDDHCEHCABFG $.
+  frege21 $p |- ( ( ( ph -> ps ) -> ch )
+                  -> ( ( ph -> th ) -> ( ( th -> ps ) -> ch ) ) ) $=
+    ( wi frege9 frege19 ax-mp ) ADEZDBEZABEZEEKCEIJCEEEADBFIJKCGH $.
 
-  $( Closed form for ~ a1dd .
+  $( A closed form of ~ syl8 .
 
-     Proposition 25 of [Frege1879] p. 42.  (Contributed by Richard Penner,
+     Proposition 20 of [Frege1879] p. 40.  (Contributed by Richard Penner,
      4-Oct-2019.) $)
-  frege25 $p |- ( ( ph -> ( ps -> ch ) )
-                  -> ( ph -> ( ps -> ( th -> ch ) ) ) ) $=
-    ( wi frege24 frege5 ax-mp ) BCEZBDCEEZEAIEAJEEBCDFIJAGH $.
+  frege20 $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
+                  -> ( ( th -> ta ) -> ( ph -> ( ps -> ( ch -> ta ) ) ) ) ) $=
+    ( wi frege19 frege18 ax-mp ) BCDFFZDEFZBCEFFZFFAJFKALFFFBCDEGJKLAHI $.
 
-  $( Identical to ~ idd .
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     _Begriffschift_ Chapter II Implication and Negation
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+$)
 
-     Proposition 26 of [Frege1879] p. 42.  (Contributed by Richard Penner,
-     4-Oct-2019.) $)
-  frege26 $p |- ( ph -> ( ps -> ps ) ) $=
-    ( wi ax-1 frege8 ax-mp ) BABCCABBCCBADBABEF $.
+  $( Contraposition.  Identical to ~ con3 .
 
-  $( Identical to ~ id .
+     Theorem *2.16 of [WhiteheadRussell] p. 103.
 
-     Proposition 27 of [Frege1879] p. 43.  (Contributed by Richard Penner,
-     4-Oct-2019.) $)
-  frege27 $p |- ( ph -> ph ) $=
-    ( wps wi ax-1 frege26 ax-mp ) ABACCZAACABDGAEF $.
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  axfrege28 $p |- ( ( ph -> ps ) -> ( -. ps -> -. ph ) ) $=
+    ( con3 ) ABC $.
 
   $( Contraposition.  Identical to ~ con3 .
 
@@ -325,15 +382,14 @@ $)
      Axiom 28 of [Frege1879] p. 43.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege28 $p |- ( ( ph -> ps ) -> ( -. ps -> -. ph ) ) $=
-    ( con3 ) ABC $.
+  ax-frege28 $a |- ( ( ph -> ps ) -> ( -. ps -> -. ph ) ) $.
 
   $( Closed form of ~ con3d .
 
      Proposition 29 of [Frege1879] p. 43.  (Contributed by Richard Penner,
      5-Oct-2019.) $)
   frege29 $p |- ( ( ph -> ( ps -> ch ) ) -> ( ph -> ( -. ch -> -. ps ) ) ) $=
-    ( wi wn frege28 frege5 ax-mp ) BCDZCEBEDZDAIDAJDDBCFIJAGH $.
+    ( wi wn ax-frege28 frege5 ax-mp ) BCDZCEBEDZDAIDAJDDBCFIJAGH $.
 
   $( Commuted, closed form of ~ con3d .
 
@@ -347,8 +403,15 @@ $)
      Axiom 31 of [Frege1879] p. 44.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege31 $p |- ( -. -. ph -> ph ) $=
+  axfrege31 $p |- ( -. -. ph -> ph ) $=
     ( notnot2 ) AB $.
+
+  $( Identical to ~ notnot2 .
+
+     Axiom 31 of [Frege1879] p. 44.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  ax-frege31 $a |- ( -. -. ph -> ph ) $.
 
   $( Deduce ~ con1 from ~ con3 .
 
@@ -356,14 +419,14 @@ $)
      5-Oct-2019.) $)
   frege32 $p |- ( ( ( -. ph -> ps ) -> ( -. ps -> -. -. ph ) )
                   -> ( ( -. ph -> ps ) -> ( -. ps -> ph ) ) ) $=
-    ( wn wi frege31 frege7 ax-mp ) ACZCZADHBDZBCZIDDJKADDDAEIAJKFG $.
+    ( wn wi ax-frege31 frege7 ax-mp ) ACZCZADHBDZBCZIDDJKADDDAEIAJKFG $.
 
   $( Identical to ~ con1 .
 
      Proposition 33 of [Frege1879] p. 44.  (Contributed by Richard Penner,
      6-Oct-2019.) $)
   frege33 $p |- ( ( -. ph -> ps ) -> ( -. ps -> ph ) ) $=
-    ( wn wi frege28 frege32 ax-mp ) ACZBDZBCZHCDDIJADDHBEABFG $.
+    ( wn wi ax-frege28 frege32 ax-mp ) ACZBDZBCZHCDDIJADDHBEABFG $.
 
   $( Closed form of ~ con1d .
 
@@ -384,7 +447,7 @@ $)
      Proposition 36 of [Frege1879] p. 45.  (Contributed by Richard Penner,
      5-Oct-2019.) $)
   frege36 $p |- ( ph -> ( -. ph -> ps ) ) $=
-    ( wn wi ax-1 frege34 ax-mp ) ABCZADDAACBDDAHEABAFG $.
+    ( wn wi ax-frege1 frege34 ax-mp ) ABCZADDAACBDDAHEABAFG $.
 
   $( Similar to a closed form of ~ orcs .
 
@@ -398,14 +461,14 @@ $)
      Proposition 38 of [Frege1879] p. 46.  (Contributed by Richard Penner,
      5-Oct-2019.) $)
   frege38 $p |- ( -. ph -> ( ph -> ps ) ) $=
-    ( wn wi frege36 frege8 ax-mp ) AACZBDDHABDDABEAHBFG $.
+    ( wn wi frege36 ax-frege8 ax-mp ) AACZBDDHABDDABEAHBFG $.
 
   $( Syllogism between ~ pm2.18 and ~ pm2.24 .
 
      Proposition 39 of [Frege1879] p. 46.  (Contributed by Richard Penner,
      5-Oct-2019.) $)
   frege39 $p |- ( ( -. ph -> ph ) -> ( -. ph -> ps ) ) $=
-    ( wn wi frege38 ax-2 ax-mp ) ACZABDDHADHBDDABEHABFG $.
+    ( wn wi frege38 ax-frege2 ax-mp ) ACZABDDHADHBDDABEHABFG $.
 
   $( Anything implies ~ pm2.18 .
 
@@ -419,15 +482,22 @@ $)
      Axiom 41 of [Frege1879] p. 47.
 
      (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege41 $p |- ( ph -> -. -. ph ) $=
+  axfrege41 $p |- ( ph -> -. -. ph ) $=
     ( notnot1 ) AB $.
+
+  $( Identical to ~ notnot1 .
+
+     Axiom 41 of [Frege1879] p. 47.
+
+     (Contributed by Richard Penner, 2-Oct-2019.) $)
+  ax-frege41 $a |- ( ph -> -. -. ph ) $.
 
   $( Not not ~ id .
 
      Proposition 42 of [Frege1879] p. 47.  (Contributed by Richard Penner,
      5-Oct-2019.) $)
   frege42 $p |- -. -. ( ph -> ph ) $=
-    ( wi wn frege27 frege41 ax-mp ) AABZGCCADGEF $.
+    ( wi wn frege27 ax-frege41 ax-mp ) AABZGCCADGEF $.
 
   $( Identical to ~ pm2.18 .
 
@@ -540,7 +610,7 @@ $)
      Proposition 53 of [Frege1879] p. 50.  (Contributed by Richard Penner,
      31-Oct-2019.) $)
   frege53aALT $p |- ( ph -> ( ( ph <-> ps ) -> ps ) ) $=
-    ( wb wi frege52aALT frege8 ax-mp ) ABCZABDDAHBDDABEHABFG $.
+    ( wb wi frege52aALT ax-frege8 ax-mp ) ABCZABDDAHBDDABEHABFG $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -552,7 +622,8 @@ $)
      29-Oct-2019.) $)
   bj-frege53a $p |- ( if- ( ph , th , ch ) -> ( ( ph <-> ps )
                                                -> if- ( ps , th , ch ) ) ) $=
-    ( wb wif wi bj-frege52a frege8 ax-mp ) ABEZADCFZBDCFZGGLKMGGABCDHKLMIJ $.
+    ( wb wif wi bj-frege52a ax-frege8 ax-mp ) ABEZADCFZBDCFZGGLKMGGABCDHKLMIJ
+    $.
 
   $( Reflexive equality of wffs.
 
@@ -564,8 +635,8 @@ $)
   $( Synonym for logical equivalence.  (Contributed by Richard Penner,
      30-Oct-2019.) $)
   bj-frege54cor0a $p |- ( ( ps <-> ph ) <-> if- ( ps , ph , -. ph ) ) $=
-    ( wb wi wa wn wif dfbi2 frege28 anim2i ax3h impbii df-bj-if bicomi 3bitri )
-    BACBADZABDZEZPBFAFZDZEZBASGZBAHRUAQTPABIJTQPBAKJLUBUABASMNO $.
+    ( wb wi wa wif dfbi2 ax-frege28 anim2i ax3h impbii df-bj-if bicomi 3bitri
+    wn ) BACBADZABDZEZPBOAOZDZEZBASFZBAGRUAQTPABHITQPBAJIKUBUABASLMN $.
 
   $( Reflexive equality.  (Contributed by Richard Penner, 31-Oct-2019.) $)
   bj-frege54cor1a $p |- if- ( ph , ph , -. ph ) $=
@@ -668,7 +739,7 @@ $)
      Proposition 53 of [Frege1879] p. 50.  (Contributed by Richard Penner,
      8-Oct-2019.) $)
   frege53b $p |- ( [ x / y ] ph -> ( x = z -> [ z / y ] ph ) ) $=
-    ( weq wsb wi frege52b frege8 ax-mp ) BDEZACBFZACDFZGGLKMGGABDCHKLMIJ $.
+    ( weq wsb wi frege52b ax-frege8 ax-mp ) BDEZACBFZACDFZGGLKMGGABDCHKLMIJ $.
 
   $( Reflexive equality of sets.
 
@@ -801,8 +872,8 @@ $)
        27-Oct-2019.) $)
     frege62b $p |- ( [ x / y ] ph
                      -> ( A. y ( ph -> ps ) -> [ x / y ] ps ) ) $=
-      ( wi wal wsb frege58bcor frege8 ax-mp ) ABEDFZADCGZBDCGZEELKMEEABDCHKLMIJ
-      $.
+      ( wi wal wsb frege58bcor ax-frege8 ax-mp ) ABEDFZADCGZBDCGZEELKMEEABDCHKL
+      MIJ $.
   $}
 
   ${
@@ -853,8 +924,8 @@ $)
     frege66b $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ch -> ph )
                         -> ( [ y / x ] ch -> [ y / x ] ps ) ) ) $=
-      ( wi wal wsb frege65b frege8 ax-mp ) CAFDGZABFDGZCDEHBDEHFZFFMLNFFCABDEIL
-      MNJK $.
+      ( wi wal wsb frege65b ax-frege8 ax-mp ) CAFDGZABFDGZCDEHBDEHFZFFMLNFFCABD
+      EILMNJK $.
   $}
 
   ${
@@ -901,7 +972,8 @@ $)
      Proposition 53 of [Frege1879] p. 50.  (Contributed by Richard Penner,
      8-Oct-2019.) $)
   frege53c $p |- ( [. A / x ]. ph -> ( A = B -> [. B / x ]. ph ) ) $=
-    ( wceq wsbc wi frege52c frege8 ax-mp ) CDEZABCFZABDFZGGLKMGGABCDHKLMIJ $.
+    ( wceq wsbc wi frege52c ax-frege8 ax-mp ) CDEZABCFZABDFZGGLKMGGABCDHKLMIJ
+    $.
 
   $( Reflexive equality of sets (as classes).
 
@@ -929,9 +1001,9 @@ $)
        (Contributed by Richard Penner, 16-Oct-2019.) $)
     frege55lem1c $p |- ( ( ph -> [. A / x ]. x = B )
                          -> ( ph -> A = B ) ) $=
-      ( cv wceq wsbc cab wcel df-sbc wi ax-1 eqeq1 elab3g syl ibi sylbi imim2i
-      wb ) BEZDFZBCGZCDFZAUBCUABHZIZUCUABCJUEUCUEUCUEKUEUCSUEUCLUAUCBCUDTCDMNOP
-      QR $.
+      ( cv wceq wsbc cab wcel df-sbc wi wb ax-frege1 eqeq1 elab3g syl ibi sylbi
+      imim2i ) BEZDFZBCGZCDFZAUBCUABHZIZUCUABCJUEUCUEUCUEKUEUCLUEUCMUAUCBCUDTCD
+      NOPQRS $.
   $}
 
   ${
@@ -1053,8 +1125,8 @@ $)
   frege66c $p |- ( A. x ( ph -> ps )
                  -> ( A. x ( ch -> ph )
                       -> ( [. A / x ]. ch -> [. A / x ]. ps ) ) ) $=
-    ( wi wal wsbc frege65c frege8 ax-mp ) CAFDGZABFDGZCDEHBDEHFZFFMLNFFCABDEILM
-    NJK $.
+    ( wi wal wsbc frege65c ax-frege8 ax-mp ) CAFDGZABFDGZCDEHBDEHFZFFMLNFFCABDE
+    ILMNJK $.
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1230,21 +1302,21 @@ $)
        Proposition 77 of [Frege1879] p. 62. $)
     frege77 $p |- ( x F y -> ( ( R " A ) C_ A -> ( A. a ( b R a -> a e. A )
                                                  -> y e. A ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 78 of [Frege1879] p. 63. $)
     frege78 $p |- ( ( R " A ) C_ A -> ( A. a ( b R a -> a e. A )
                                       -> ( x F y -> y e. A ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 79 of [Frege1879] p. 63. $)
     frege79 $p |- ( ( ( R " A ) C_ A -> A. a ( b R a -> a e. A ) )
                   -> ( ( R " A ) C_ A -> ( x F y -> y e. A ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1253,53 +1325,53 @@ $)
                       -> ( ( R " A ) C_ A -> A. a ( x R a -> a e. A ) ) )
                   -> ( x e. A
                        -> ( ( R " A ) C_ A -> ( x F y -> y e. A ) ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 81 of [Frege1879] p. 63. $)
     frege81 $p |- ( x e. A -> ( ( R " A ) C_ A -> ( x F y -> y e. A ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 81 of [Frege1879] p. 63. $)
     frege81cor1 $p |- ( x e. A -> ( ( R " A ) C_ A
                                     -> A. y ( x F y -> y e. A ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 81 of [Frege1879] p. 63. $)
     frege81cor2 $p |- ( x e. A -> ( ( R " A ) C_ A -> ( F " { x } ) C_ A ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 82 of [Frege1879] p. 64. $)
     frege82 $p |- ( ( ph -> x e. A )
                     -> ( ( R " A ) C_ A -> ( ph -> ( x F y -> y e. A ) ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 83 of [Frege1879] p. 65. $)
     frege83 $p |- ( ( R " ( B u. C ) ) C_ ( B u. C )
                     -> ( x e. B -> ( x F y -> y e. ( B u. C ) ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 84 of [Frege1879] p. 65. $)
     frege84 $p |- ( ( R " A ) C_ A -> ( x e. A -> ( x F y -> y e. A ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 85 of [Frege1879] p. 66. $)
     frege85 $p |- ( x F y -> ( A. z ( x R z -> z e. A )
                                -> ( ( R " A ) C_ A -> y e. A ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1309,7 +1381,7 @@ $)
                     -> ( x F y -> ( A. w ( x R w -> w e. A )
                                     -> ( ( R " A ) C_ A
                                          -> ( y R z -> z e. A ) ) ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1317,7 +1389,7 @@ $)
     frege87 $p |- ( x F y -> ( A. w ( x R w -> w e. A )
                                -> ( ( R " A ) C_ A
                                     -> ( y R z -> z e. A ) ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1325,7 +1397,7 @@ $)
     frege88 $p |- ( y R z -> ( x F y
                                -> ( A. w ( x R w -> w e. A )
                                     -> ( ( R " A ) C_ A -> z e. A ) ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1333,7 +1405,7 @@ $)
     frege89 $p |- ( A. f ( ( R " f ) C_ f -> ( A. w ( x R w -> w e. f )
                                                -> y e. f ) )
                     -> x F y ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1342,26 +1414,26 @@ $)
                       -> A. f ( ( R " f ) C_ f
                                 -> ( A. w ( x R w -> w e. f ) -> y e. f ) ) )
                     -> ( ph -> x F y ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 91 of [Frege1879] p. 68. $)
     frege91 $p |- ( x R y -> x F y ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 92 of [Frege1879] p. 69. $)
     frege92 $p |- ( x = z -> ( x R y -> z F y ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 93 of [Frege1879] p. 70. $)
     frege93 $p |- ( A. f ( A. z ( x R z -> z e. f )
                            -> ( ( R " f ) C_ f -> y e. f ) ) -> x F y ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1371,31 +1443,31 @@ $)
                            -> ( A. f ( A. w ( x R w -> w e. f )
                                        -> ( ( R " f ) C_ f -> z e. f ) ) ) ) )
                     -> ( y R z -> ( x F y -> x F z ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 95 of [Frege1879] p. 70. $)
     frege95 $p |- ( y R z -> ( x F y -> x F z ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 96 of [Frege1879] p. 71. $)
     frege96 $p |- ( x F y -> ( y R z -> x F z ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 97 of [Frege1879] p. 71. $)
     frege97 $p |- ( R " ( F " { x } ) ) C_ ( F " { x } ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 98 of [Frege1879] p. 71. $)
     frege98 $p |- ( x F y -> ( x F z -> x F z ) ) $=
-    (  ) ? $.
+      (  ) ? $.
   $}
 
 $(
@@ -1417,13 +1489,13 @@ $)
 
        Definition 99 of [Frege1879] p. 71. $)
     frege99 $p |- ( ( -. x F z -> z = x ) <-> x ( F u. _I ) z ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 100 of [Frege1879] p. 72. $)
     frege100 $p |- ( x ( F u. _I ) z -> ( -. x F z -> z = x ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1431,85 +1503,85 @@ $)
     frege101 $p |- ( ( z = x -> ( z R v -> x F v ) )
                      -> ( ( x F z -> ( z R v -> x F v ) )
                           -> ( x ( F u. _I ) z -> ( z R v -> x F v ) ) ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 102 of [Frege1879] p. 72. $)
     frege102 $p |- ( x ( F u. _I ) z -> ( z R v -> x F v ) ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 103 of [Frege1879] p. 73. $)
     frege103 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 104 of [Frege1879] p. 73. $)
     frege104 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 105 of [Frege1879] p. 73. $)
     frege105 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 106 of [Frege1879] p. 73. $)
     frege106 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 107 of [Frege1879] p. 74. $)
     frege107 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 108 of [Frege1879] p. 74. $)
     frege108 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 109 of [Frege1879] p. 74. $)
     frege109 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 110 of [Frege1879] p. 75. $)
     frege110 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 111 of [Frege1879] p. 75. $)
     frege111 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 112 of [Frege1879] p. 76. $)
     frege112 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 113 of [Frege1879] p. 76. $)
     frege113 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 114 of [Frege1879] p. 76. $)
     frege114 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+      (  ) ? $.
 
   $}
 
@@ -1518,13 +1590,28 @@ $(
      _Begriffschift_ Chapter III
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
+  ` Fun R ` means the procedure ` R ` is single-valued.
 $)
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  ${
+    $d a b c $.  $d a R $.  $d b R $.  $d c R $.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 115 of [Frege1879] p. 77. $)
-  frege115 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Definition 115 of [Frege1879] p. 77. $)
+    frege115 $p |- ( A. c A. b ( b R c -> A. a ( b R a -> a = c ) )
+                   <-> Fun ( R |` _V ) ) $=
+      ( cv wbr wi wal cvv wex wa cop df-br eleq2i vex ax-mp bicomi 3bitri albii
+      wcel weq cres wrel wfun cxp cin df-res elin pm3.2 opelxpi biantru imbi12i
+      imbi1i alcom eximi syl 19.35ri 19.35i impbii bitri relres biantrur dffun3
+      19.2 ) CEZDEZAFZVEBEZAFZBDUAZGZBHZGZCHZDHVEVFAIUBZFZVEVHVOFZVJGZBHZGZCHZD
+      HZVOUCZVSDJZCHZKZVOUDZVNWADVMVTCVGVPVLVSVGVEVFLZATZWHVOTZVPVEVFAMWJWIWJWH
+      AIIUEZUFZTWIWHWKTZKZWIVOWLWHAIUGZNWHAWKUHWIWNWMWIVEITZVFITZKZWMWQWRDOWPWQ
+      WRGCOZWPWQUIPPVEVFIIUJPUKQRQVPWJVEVFVOMQRVKVRBVIVQVJVIVEVHLZATZWTVOTZVQVE
+      VHAMXBXAXBWTWLTXAWTWKTZKZXAVOWLWTWONWTAWKUHXAXDXCXAWPVHITZKZXCXEXFBOWPXEX
+      FGWSWPXEUIPPVEVHIIUJPUKQRQVQXBVEVHVOMQRUMSULSSWBWEWFWBVTDHZCHWEVTDCUNXGWD
+      CXGWDVTVSDVTVSDXGVTDJWDVTDVDVTVSD?UOUPUQUR?USSUTWCWEAIVAVBUTWGWFCBDVOVCQR
+      $.
+  $}
 
   $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1556,83 +1643,89 @@ $)
   frege120 $p |- ( ph -> -. ph ) $=
     (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  ${
+    frege121.f $e |- F = { <. p , c >. | c e. |^| { f | ( ( R " { p } ) C_ f
+                                                          /\ ( R " f ) C_ f )
+                                                  }
+                         } $.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 121 of [Frege1879] p. 79. $)
-  frege121 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 121 of [Frege1879] p. 79. $)
+    frege121 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 122 of [Frege1879] p. 79. $)
-  frege122 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 122 of [Frege1879] p. 79. $)
+    frege122 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 123 of [Frege1879] p. 79. $)
-  frege123 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 123 of [Frege1879] p. 79. $)
+    frege123 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 124 of [Frege1879] p. 80. $)
-  frege124 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 124 of [Frege1879] p. 80. $)
+    frege124 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 125 of [Frege1879] p. 81. $)
-  frege125 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 125 of [Frege1879] p. 81. $)
+    frege125 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 126 of [Frege1879] p. 81. $)
-  frege126 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 126 of [Frege1879] p. 81. $)
+    frege126 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 127 of [Frege1879] p. 82. $)
-  frege127 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 127 of [Frege1879] p. 82. $)
+    frege127 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 128 of [Frege1879] p. 83. $)
-  frege128 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 128 of [Frege1879] p. 83. $)
+    frege128 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 129 of [Frege1879] p. 83. $)
-  frege129 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 129 of [Frege1879] p. 83. $)
+    frege129 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 130 of [Frege1879] p. 84. $)
-  frege130 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 130 of [Frege1879] p. 84. $)
+    frege130 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 131 of [Frege1879] p. 85. $)
-  frege131 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 131 of [Frege1879] p. 85. $)
+    frege131 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 132 of [Frege1879] p. 86. $)
-  frege132 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 132 of [Frege1879] p. 86. $)
+    frege132 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 133 of [Frege1879] p. 86. $)
-  frege133 $p |- ( ph -> -. ph ) $=
-    (  ) ? $.
+       Proposition 133 of [Frege1879] p. 86. $)
+    frege133 $p |- ( ph -> -. ph ) $=
+      (  ) ? $.
+  $}
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -1655,40 +1748,18 @@ $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 $)
 
-  $( Simplification of triple conjunction.  Compare with ~ simp2 .
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  simp2frege $p |- ( ph -> ( ps -> ( ch -> ps ) ) ) $=
-    ( wi ax-1 ax-mp ) BCBDDZAGDBCEGAEF $.
-
-  $( More general statement than ~ frege3 .  Like ~ ax-2 , it is essentially a
-     closed form of ~ mpd , however it has an extra antecedent.
-
-     It would be more natural to prove from ~ a1i and ~ ax-2 in Metamath.
-     (Contributed by Richard Penner, 1-Oct-2019.) $)
-  frege3gen $p |- ( ph
-                    -> ( ( ps -> ( ch -> th ) )
-                         -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
-    ( wi ax-2 ax-1 ax-mp ) BCDEEBCEBDEEEZAIEBCDFIAGH $.
 
   $( Specialized form of ~ idd .
 
      (Contributed by Richard Penner, 6-Oct-2019.) $)
   iddspfrege $p |- ( ( ph -> ps ) -> ( ph -> ph ) ) $=
-    ( wi ax-1 ax-2 ax-mp ) ABACCABCAACCABDABAEF $.
-
-  $( Double-use of ~ ax-2 .
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  misc1frege $p |- ( ( ( ph -> ( ps -> ch ) ) -> ( ph -> ps ) )
-                     -> ( ( ph -> ( ps -> ch ) ) -> ( ph -> ch ) ) ) $=
-    ( wi ax-2 ax-mp ) ABCDDZABDZACDZDDGHDGIDDABCEGHIEF $.
+    ( wi ax-frege1 ax-frege2 ax-mp ) ABACCABCAACCABDABAEF $.
 
   $( Simplify when consequent is also third antecedent.
 
      (Contributed by Richard Penner, 6-Oct-2019.) $)
   simprlfrege $p |- ( ph -> ( ps -> ( ch -> ( th -> ch ) ) ) ) $=
-    ( wi simp2frege ax-1 ax-mp ) BCDCEEEZAIEBCDFIAGH $.
+    ( wi rp-simp2-frege ax-frege1 ax-mp ) BCDCEEEZAIEBCDFIAGH $.
 
   $( Distribution with two unnecessary antecendents.
 
@@ -1697,14 +1768,7 @@ $)
                      -> ( ps
                           -> ( ( ch -> ( th -> ta ) )
                                -> ( ( ch -> th ) -> ( ch -> ta ) ) ) ) ) $=
-    ( wi frege3gen ax-1 ax-mp ) BCDEFFCDFCEFFFFZAJFBCDEGJAHI $.
-
-  $( Introducing an embedded antecedent.  Alternate proof for ~ frege24 .
-     Closed form for ~ a1d .
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  frege24ALT $p |- ( ( ph -> ps ) -> ( ph -> ( ch -> ps ) ) ) $=
-    ( wi simp2frege ax-2 ax-mp ) ABCBDZDDABDAHDDABCEABHFG $.
+    ( wi rp-frege3g ax-frege1 ax-mp ) BCDEFFCDFCEFFFFZAJFBCDEGJAHI $.
 
   ${
     a1dfrege.1 $e |- ( ph -> ps ) $.
@@ -1712,67 +1776,20 @@ $)
 
        (Contributed by Richard Penner, 4-Oct-2019.) $)
     a1dfrege $p |- ( ph -> ( ch -> ps ) ) $=
-      ( wi frege24ALT ax-mp ) ABEACBEEDABCFG $.
+      ( wi rp-frege24 ax-mp ) ABEACBEEDABCFG $.
   $}
 
   $( Simplify when consequent is also the first antecedent.
 
      (Contributed by Richard Penner, 6-Oct-2019.) $)
   simp1frege $p |- ( ph -> ( ps -> ( ch -> ph ) ) ) $=
-    ( wi ax-1 frege24ALT ax-mp ) ACADZDABHDDACEAHBFG $.
-
-  $( Deduction relatied to distribution.
-
-     (Contributed by Richard Penner, 6-Oct-2019.) $)
-  frege3gendist $p |- ( ( ph -> ( ps -> ( ch -> th ) ) )
-                        -> ( ph -> ( ( ps -> ch ) -> ( ps -> th ) ) ) ) $=
-    ( wi frege3gen ax-2 ax-mp ) ABCDEEZBCEBDEEZEEAIEAJEEABCDFAIJGH $.
-
-  $( Elimination of a nested antecedent of special form.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  rp4frege $p |- ( ( ph -> ( ( ps -> ph ) -> ch ) ) -> ( ph -> ch ) ) $=
-    ( wi simp2frege misc1frege ax-mp ) ABADZCDDZAHDDIACDDIABEAHCFG $.
+    ( wi ax-frege1 rp-frege24 ax-mp ) ACADZDABHDDACEAHBFG $.
 
   ${
     rp4fregei.1 $e |- ( ph -> ( ( ps -> ph ) -> ch ) ) $.
-    $( More naturally proved in Metamath from ~ ax-1 and ~ mpd .
+    $( More naturally proved in Metamath from ~ ax-frege1 and ~ mpd .
 
        (Contributed by RichardPenner, 5-Oct-2019.) $)
     rp4fregei $p |- ( ph -> ch ) $=
-      ( wi rp4frege ax-mp ) ABAECEEACEDABCFG $.
+      ( wi rp-4frege ax-mp ) ABAECEEACEDABCFG $.
   $}
-
-  $( Distribute antecedent and add another.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  rp7frege $p |- ( ( ph -> ( ps -> ch ) )
-              -> ( th -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) ) $=
-    ( wi ax-2 frege24ALT ax-mp ) ABCEEZABEACEEZEIDJEEABCFIJDGH $.
-
-  $( Elimination of a nested antecedent of special form.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  rp6frege $p |- ( ph
-                   -> ( ( ps -> ( ( ch -> ps ) -> th ) ) -> ( ps -> th ) ) ) $=
-    ( wi rp4frege ax-1 ax-mp ) BCBEDEEBDEEZAIEBCDFIAGH $.
-
-  $( Eliminate antecedent when it is implied by previous antecedent.
-
-     (Contributed by Richard Penner, 2-Oct-2019.) $)
-  rp8frege $p |- ( ( ph -> ( ps -> ( ( ch -> ps ) -> th ) ) )
-                   -> ( ph -> ( ps -> th ) ) ) $=
-    ( wi rp6frege ax-2 ax-mp ) ABCBEDEEZBDEZEEAIEAJEEABCDFAIJGH $.
-
-  $( Swap antecedents.  Identical to ~ pm2.04 .
-
-     Proof follows closely proof of ~ pm2.04 in
-     ~ http://us.metamath.org/mmsolitaire/pmproofs.txt , but in the style of
-     [Frege1879] .
-
-     This demonstrates that Axiom 8 of [Frege1879] p. 35 is redundant.
-
-     (Contributed by Richard Penner, 1-Oct-2019.)  (New usage is discouraged.)
-     (Proof modification is discouraged.) $)
-  frege8ALT $p |- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) ) $=
-    ( wi rp7frege rp8frege ax-mp ) ABCDDZBABDACDZDDDHBIDDABCBEHBAIFG $.

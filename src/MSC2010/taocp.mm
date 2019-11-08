@@ -100,6 +100,22 @@ $)
       URCKUPMABKLZNLURDUSMNUSDHTUCMABUNEFUDSUEUIUJCUOMBUNFRGUFSSTS $.
   $}
 
+  $(
+    This statement isn't used enough to shorten total proofs.
+  ${
+    rp-ex3lem1.a $e |- A e. CC $.
+    rp-ex3lem1.b $e |- B e. CC $.
+    rp-ex3lem1 $p |-  ( k e. ( 0 ... N )
+                        -> ( ( N _C k )
+                             x. ( ( ( 10 ^ ( N - k ) ) x. ( A ^ ( N - k ) ) )
+                                  x. ( B ^ k ) ) ) e. CC ) $=
+      ( cv cc0 cfz co wcel cbc c10 cmin cexp cmul cc a1i expcld mulcld fznn0sub
+      bccl2 nncnd 10nn nncni elfznn0 ) CGZHDIJKZDUGLJZMDUGNJZOJZAUJOJZPJZBUGOJZ
+      PJUHUIUGDUBUCUHUMUNUHUKULUHMUJMQKUHMUDUERUGHDUAZSUHAUJAQKUHERUOSTUHBUGBQK
+      UHFRUGDUFSTT $.
+  $}
+  $)
+
   $( Prove that 13^3 = 2197.
      (Contributed by Richard Penner, 6-Nov-2019.) $)
   rp-ex3 $p |- ( ; 1 3 ^ 3 ) = ; ; ; 2 1 9 7 $=
