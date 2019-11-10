@@ -1145,7 +1145,7 @@ $)
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-     _Begriffschift_ Chapter III
+     _Begriffschift_ Chapter III Properties hereditary in a sequence
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
    ` ( R " A ) C_ A ` means membership in ` A ` is hereditary in the
@@ -1256,7 +1256,7 @@ $)
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-     _Begriffschift_ Chapter III
+     _Begriffschift_ Chapter III Following in a sequence
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
     ` p F c ` means ` c ` follows ` p ` in the ` R ` -sequence.
@@ -1472,13 +1472,40 @@ $)
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-     _Begriffschift_ Chapter III
+     _Begriffschift_ Chapter III Member of sequence
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
     ` p ( F u. _I ) c ` means ` c ` is a member of the ` R ` -seqeunce
     begining with ` p ` and ` p ` is a member of the  ` R ` -seqeunce
     ending with ` c ` .
 $)
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Definition 99 of [Frege1879] p. 71.  (Contributed by Richard Penner,
+     9-Nov-2019.) $)
+  frege99 $p |- ( ( -. x F z -> z = x ) <-> x ( F u. _I ) z ) $=
+    ( cv cid cun wbr wn weq wi cop wcel df-br elun bicomi vex ideq eqcom 3bitri
+    wo orbi12i df-or bitri ) ADZBDZCEFZGZUDUECGZHBAIZJZUGUDUEKZUFLUKCLZUKELZTZU
+    JUDUEUFMUKCENUNUHUITUJULUHUMUIUHULUDUECMOUMUDUEEGZABIUIUOUMUDUEEMOUDUEBPQUD
+    UERSUAUHUIUBUCSO $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 100 of [Frege1879] p. 72.  (Contributed by Richard Penner,
+     9-Nov-2019.) $)
+  frege100 $p |- ( x ( F u. _I ) z -> ( -. x F z -> z = x ) ) $=
+    ( cv wbr wn weq wi cid cun wb frege99 frege57aALT ax-mp ) ADZBDZCEFBAGHZOPC
+    IJEZKRQHABCLQRMN $.
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 101 of [Frege1879] p. 72.  (Contributed by Richard Penner,
+     9-Nov-2019.) $)
+  frege101 $p |- ( ( z = x -> ( z R v -> x F v ) )
+                     -> ( ( x F z -> ( z R v -> x F v ) )
+                          -> ( x ( F u. _I ) z -> ( z R v -> x F v ) ) ) ) $=
+    ( cv cid cun wbr wn weq wi frege100 frege48 ax-mp ) AFZBFZEGHIZPQEIZJBAKZLL
+    TQCFZDIPUAEILZLSUBLRUBLLLABEMRSTUBNO $.
 
   ${
     frege99.f $e |- F = { <. p , c >. | c e. |^| { f | ( ( R " { p } ) C_ f
@@ -1487,29 +1514,11 @@ $)
                          } $.
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Definition 99 of [Frege1879] p. 71. $)
-    frege99 $p |- ( ( -. x F z -> z = x ) <-> x ( F u. _I ) z ) $=
-      (  ) ? $.
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       Proposition 100 of [Frege1879] p. 72. $)
-    frege100 $p |- ( x ( F u. _I ) z -> ( -. x F z -> z = x ) ) $=
-      (  ) ? $.
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       Proposition 101 of [Frege1879] p. 72. $)
-    frege101 $p |- ( ( z = x -> ( z R v -> x F v ) )
-                     -> ( ( x F z -> ( z R v -> x F v ) )
-                          -> ( x ( F u. _I ) z -> ( z R v -> x F v ) ) ) ) $=
-      (  ) ? $.
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       Proposition 102 of [Frege1879] p. 72. $)
+       Proposition 102 of [Frege1879] p. 72.  (Contributed by Richard Penner,
+       9-Nov-2019.) $)
     frege102 $p |- ( x ( F u. _I ) z -> ( z R v -> x F v ) ) $=
-      (  ) ? $.
+      ( weq cv wbr wi cid cun frege92 frege96 frege101 mp2 ) BAJBKZCKZDLAKZUAFL
+      MZMUBTFLUCMUBTFNOLUCMBCADEFGHIPABCDEFGHIQABCDFRS $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1587,10 +1596,10 @@ $)
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-     _Begriffschift_ Chapter III
+     _Begriffschift_ Chapter III Single-valued procedure
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
-  ` Fun R ` means the procedure ` R ` is single-valued.
+  ` Fun ``' ``' R ` means the procedure ` R ` is single-valued.
 $)
 
   ${
