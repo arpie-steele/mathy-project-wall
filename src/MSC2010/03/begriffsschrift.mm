@@ -1597,20 +1597,25 @@ $)
     $d a b c $.  $d a R $.  $d b R $.  $d c R $.
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Definition 115 of [Frege1879] p. 77. $)
+       Definition 115 of [Frege1879] p. 77.  (Contributed by Richard Penner,
+       9-Nov-2019.) $)
     frege115 $p |- ( A. c A. b ( b R c -> A. a ( b R a -> a = c ) )
-                   <-> Fun ( R |` _V ) ) $=
-      ( cv wbr wi wal cvv wex wa cop df-br eleq2i vex ax-mp bicomi 3bitri albii
-      wcel weq cres wrel wfun cxp cin df-res elin pm3.2 opelxpi biantru imbi12i
-      imbi1i alcom eximi syl 19.35ri 19.35i impbii bitri relres biantrur dffun3
-      19.2 ) CEZDEZAFZVEBEZAFZBDUAZGZBHZGZCHZDHVEVFAIUBZFZVEVHVOFZVJGZBHZGZCHZD
-      HZVOUCZVSDJZCHZKZVOUDZVNWADVMVTCVGVPVLVSVGVEVFLZATZWHVOTZVPVEVFAMWJWIWJWH
-      AIIUEZUFZTWIWHWKTZKZWIVOWLWHAIUGZNWHAWKUHWIWNWMWIVEITZVFITZKZWMWQWRDOWPWQ
-      WRGCOZWPWQUIPPVEVFIIUJPUKQRQVPWJVEVFVOMQRVKVRBVIVQVJVIVEVHLZATZWTVOTZVQVE
-      VHAMXBXAXBWTWLTXAWTWKTZKZXAVOWLWTWONWTAWKUHXAXDXCXAWPVHITZKZXCXEXFBOWPXEX
-      FGWSWPXEUIPPVEVHIIUJPUKQRQVQXBVEVHVOMQRUMSULSSWBWEWFWBVTDHZCHWEVTDCUNXGWD
-      CXGWDVTVSDVTVSDXGVTDJWDVTDVDVTVSD?UOUPUQUR?USSUTWCWEAIVAVBUTWGWFCBDVOVCQR
-      $.
+                   <-> Fun `' `' R ) $=
+      ( cv wbr wi wal ccnv vex brcnv bitri imbi1i albii bicomi wrel wex wa nfcv
+      alcom weq wfun imbi12i cop wcel wsb nfv 19.21 wo id biimprd com12 alrimiv
+      breq2d olcd biimpd imp alimi ax-5 biidd equsalhw sylib jaoi impbii impexp
+      a2i dfsb2 ancom nfcnv nfbr mo df-br exbii cvv cres relres cnvcnv2 biimpri
+      releqi ax-mp biantrur dffun5 ) CEZDEZAFZWCBEZAFZBDUAZGZBHZGZCHZDHWCWDAIZI
+      ZFZWCWFWNFZWHGZBHZGZCHZDHZWNUBZWLWTDWKWSCWSWKWOWEWRWJWOWDWCWMFWEWCWDWMCJZ
+      DJZKWDWCAXDXCKLWQWIBWPWGWHWPWFWCWMFWGWCWFWMXCBJZKWFWCAXEXCKLMNUCONNXAWNPZ
+      WCWFUDWNUEZWHGZBHZDQZCHZRZXBXAXKXLXAWSDHZCHXKWSDCTXMXJCXMWRDQZXJXMWPWPBDU
+      FZRZWHGZDHBHZXNXMXQBHZDHXRWSXSDWSXOWPRZWHGZBHZXSWSXOWQGZBHZYBWSWOWQGZBHZY
+      DYFWSWOWQBWOBUGUHOYEYCBWOXOWQWOWHWPRZWHWPGZBHZUIZXOWOYJWOYIYGWOYHBWHWOWPW
+      HWPWOWHWFWDWCWNWHUJUNZUKULUMUOYGWOYIWHWPWOWHWPWOYKUPZUQYIWHWOGZBHWOYHYMBW
+      HWPWOYLVFURWOWOBDWOBUSWHWOUTVAVBVCVDXOYJWPBDVGOLMNLYCYABYAYCXOWPWHVEONLYA
+      XQBXTXPWHXOWPVHMNLNXQDBTLXNXRWPBDDWCWFWNDWCSDWMDADASVIVIDWFSVJVKOLWRXIDWQ
+      XHBWPXGWHWCWFWNVLMNVMLNLXFXKAVNVOZPZXFAVNVPXFYOWNYNAVQVSVRVTWALXBXLCBDWNW
+      BOLL $.
   $}
 
   $( PLEASE PUT DESCRIPTION HERE.
@@ -1681,50 +1686,158 @@ $)
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 126 of [Frege1879] p. 81. $)
-    frege126 $p |- ( ph -> -. ph ) $=
+    frege126 $p |- ( Fun `' `' R
+                     -> ( b R a
+                          -> ( b e. ( { w | w F y }
+                                      u. { w | y ( F u. _I ) w } )
+                               -> a e. ( { w | w F y }
+                                         u. { w | y ( F u. _I ) w } ) ) ) ) $=
       (  ) ? $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 127 of [Frege1879] p. 82. $)
-    frege127 $p |- ( ph -> -. ph ) $=
-      (  ) ? $.
+       Proposition 127 of [Frege1879] p. 82.  (Contributed by Richard Penner,
+       9-Nov-2019.) $)
+    frege127 $p |- ( Fun `' `' R
+                     -> ( b e. ( { w | w F y }
+                                 u. { w | y ( F u. _I ) w } )
+                           -> ( b R a
+                                 -> a e. ( { w | w F y }
+                                           u. { w | y ( F u. _I ) w } ) ) ) )
+      $=
+      ( ccnv wfun cv wbr cab cid cun wcel wi frege126 frege12 ax-mp ) CKKLZHMZG
+      MZCNZUDBMZAMZENBOUHUGEPQNBOQZRZUEUIRZSSSUCUJUFUKSSSABCDEFGHIJTUCUFUJUKUAU
+      B $.
 
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 128 of [Frege1879] p. 83. $)
-    frege128 $p |- ( ph -> -. ph ) $=
-      (  ) ? $.
+       Proposition 128 of [Frege1879] p. 83.  (Contributed by Richard Penner,
+       9-Nov-2019.) $)
+    frege128 $p |- ( ( b e. { w | y ( F u. _I ) w }
+                       -> ( b R a -> a e. ( { w | w F y }
+                                            u. { w | y ( F u. _I ) w } ) ) )
+                     -> ( Fun `' `' R
+                          -> ( b e. ( { w | w F y }
+                                      u. { w | y ( F u. _I ) w } )
+                                -> ( b R a
+                                      -> a e. ( { w | w F y }
+                                                u. { w | y ( F u. _I ) w } ) )
+     ) ) ) $=
+      ( cv cun wbr cab wcel wi wn wo bicomi bitri ccnv wfun frege127 ax-mp elun
+      cid frege51 df-or pm4.25 orbi2i orass notbii imbi1i 3bitri imbi2i biimpi
+      ) HKZAKZBKZEUFLMBNZOZUQGKZCMVBUSUREMBNZUTLZOPZPZCUAUAUBZUQVDOZQZVAPZVEPZP
+      ZPZVFVGVHVEPZPZPZVOVMABCDEFGHIJUCVGVHVEVAUGUDVMVPVLVOVFVKVNVGVJVHVEVHVJVH
+      UQVCOZVARZVQQVAPZVJUQVCUTUEZVQVAUHZVSVRQZVAPZVJVSVRWCVRVSWASVRVRVARZWCVRV
+      QVAVARZRZWDVAWEVQVAUIUJWDWFVQVAVAUKSTVRVAUHTTWBVIVAVRVHVHVRVTSULUMTUNSUMU
+      OUOUPUD $.
 
-    $( PLEASE PUT DESCRIPTION HERE.
+    $( If the procedure ` R ` is single-valued and ` b ` belongs to the ` R `
+       -sequence begining with ` y ` or precedes ` y ` in the ` R ` -sequence,
+       then every result of an application of the procedure ` R ` to ` b `
+       belongs to the ` R ` -sequence begining with ` y ` or precedes ` y ` in
+       the ` R ` -sequence.
 
        Proposition 129 of [Frege1879] p. 83. $)
-    frege129 $p |- ( ph -> -. ph ) $=
+    frege129 $p |- ( Fun `' `' R
+                     -> ( b e. ( { w | w F y } u. { w | y ( F u. _I ) w } )
+                           -> ( b R a
+                                 -> a e. ( { w | w F y }
+                                           u. { w | y ( F u. _I ) w } ) ) ) )
+      $=
       (  ) ? $.
+
+    ${
+      $d a b R $.  $d a w $.  $d a y $.  $d a F $.
+      $( PLEASE DESCRIBE ME.
+
+
+         (Contributed by Richard Penner, 9-Nov-2019.) $)
+      frege129cor $p |- ( Fun `' `' R
+                     -> A. b ( b e. ( { w | w F y }
+                                      u. { w | y ( F u. _I ) w } )
+                               -> A. a ( b R a
+                                         -> a e. ( { w | w F y }
+                                                   u. { w | y ( F u. _I ) w }
+                                                 ) ) ) ) $=
+        ( ccnv wfun cv wbr cab cid cun wcel wi alrimiv wal wa frege129 imp ex )
+        CKKLZHMZBMZAMZENBOUIUHEPQNBOQZRZUGGMZCNULUJRSZGUAZSHUFUKUNUFUKUBUMGUFUK
+        UMABCDEFGHIJUCUDTUET $.
+
+      $( PLEASE PUT DESCRIPTION HERE.
+
+         Proposition 130 of [Frege1879] p. 84.  (Contributed by Richard Penner,
+         9-Nov-2019.) $)
+      frege130 $p |- ( ( A. b ( b e. ( { w | w F y }
+                                       u. { w | y ( F u. _I ) w } )
+                              -> A. a ( b R a
+                                        -> a e. ( { w | w F y }
+                                                  u. { w | y ( F u. _I ) w } )
+                                      )
+                            )
+                       -> ( R " ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
+                          C_ ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
+                     -> ( Fun `' `' R
+                          -> ( R " ( { w | w F y }
+                                     u. { w | y ( F u. _I ) w } ) )
+                             C_ ( { w | w F y }
+                                  u. { w | y ( F u. _I ) w } ) ) ) $=
+        ( ccnv wfun cv wbr cab cid cun wcel wi wal wss frege129cor frege9 ax-mp
+        cima ) CKKLZHMZBMZAMZENBOUIUHEPQNBOQZRUGGMZCNUKUJRSGTSHTZSULCUJUEUJUAZS
+        UFUMSSABCDEFGHIJUBUFULUMUCUD $.
+
+      $( If the procedure ` R ` is single-valued, then the property of
+         belonging to the ` R ` -sequence begining with ` y ` or preceeding
+         ` y ` in the ` R ` -sequence is hereditary in the ` R ` -sequence.
+
+         Proposition 131 of [Frege1879] p. 85.  (Contributed by Richard Penner,
+         9-Nov-2019.) $)
+      frege131 $p |- ( Fun `' `' R
+                     -> ( R " ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
+                        C_ ( { w | w F y } u. { w | y ( F u. _I ) w } ) ) $=
+        ( vb va cv wbr cab cid cun wcel wi wal cima ccnv wss wfun frege75 ax-mp
+        frege130 ) IKZBKZAKZELBMUHUGENOLBMOZPUFJKZCLUJUIPQJRQIRCUISUIUAZQCTTUBU
+        KQIJUICUCABCDEFJIGHUEUD $.
+    $}
 
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 130 of [Frege1879] p. 84. $)
-    frege130 $p |- ( ph -> -. ph ) $=
-      (  ) ? $.
+       Proposition 132 of [Frege1879] p. 86.  (Contributed by Richard Penner,
+       9-Nov-2019.) $)
+    frege132 $p |- ( ( ( R " ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
+                     C_ ( { w | w F y } u. { w | y ( F u. _I ) w } )
+                     -> ( x F y -> ( x F z
+                                     -> ( -. z F y
+                                                -> y ( F u. _I ) z ) ) ) )
+                     -> ( Fun `' `' R
+                          -> ( x F y
+                               -> ( x F z
+                                    -> ( -. z F y
+                                         -> y ( F u. _I ) z ) ) ) ) ) $=
+      ( ccnv wfun cv wbr cab cid cun cima wss wi wn frege131 frege9 ax-mp ) EKK
+      LZEDMZBMZGNDOUGUFGPQZNDOQZRUISZTUJAMZUGGNUKCMZGNULUGGNUAUGULUHNTTTZTUEUMT
+      TBDEFGHIJUBUEUJUMUCUD $.
 
-    $( PLEASE PUT DESCRIPTION HERE.
+    ${
+      $d w x $.  $d w y $.  $d w F $.  $d x y $.  $d x z $.  $d x F $.
+      $( If ` y ` and ` z ` both follow in the ` R ` -sequence determined by
+         single-valued procedure ` R ` and ` y ` does not follow ` z ` then
+         ` z ` belongs to the ` R ` -sequence begining with ` y ` .
 
-       Proposition 131 of [Frege1879] p. 85. $)
-    frege131 $p |- ( ph -> -. ph ) $=
-      (  ) ? $.
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       Proposition 132 of [Frege1879] p. 86. $)
-    frege132 $p |- ( ph -> -. ph ) $=
-      (  ) ? $.
-
-    $( PLEASE PUT DESCRIPTION HERE.
-
-       Proposition 133 of [Frege1879] p. 86. $)
-    frege133 $p |- ( ph -> -. ph ) $=
-      (  ) ? $.
+         Proposition 133 of [Frege1879] p. 86.  (Contributed by Richard Penner,
+         9-Nov-2019.) $)
+      frege133 $p |- ( Fun `' `' R
+                     -> ( x F y
+                          -> ( x F z
+                               -> ( -. z F y -> y ( F u. _I ) z ) ) ) ) $=
+        ( vw cv wbr cab cun wn wi ccnv wcel bicomi bitri cid cima frege83 brab1
+        wss wfun wo elun df-or notbii wsbc df-sbc cvv vex breq2 sbcie2g imbi12i
+        wb ax-mp imbi2i biimpi syl frege132 ) DJKZBKZFLJMZVEVDFUANZLZJMZNZUBVJU
+        EZAKZVEFLZVLCKZFLZVNVEFLZOZVEVNVGLZPZPZPZPDQQUFWAPVKVLVFRZVOVNVJRZPZPZW
+        AACVFVIDEFGHIUCWEWAWBVMWDVTVMWBAJVEFUDSWCVSVOWCVNVFRZVNVIRZUGZVSVNVFVIU
+        HWHWFOZWGPVSWFWGUIWIVQWGVRWFVPVPWFCJVEFUDSUJWGVHJVNUKZVRWJWGVHJVNULSVNU
+        MRWJVRURCUNVHVEVLVGLVRJAVNUMVDVLVEVGUOVLVNVEVGUOUPUSTUQTTUTUQVAVBABCJDE
+        FGHIVCUS $.
+    $}
   $}
 
 $(
