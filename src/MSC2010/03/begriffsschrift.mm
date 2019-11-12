@@ -944,9 +944,11 @@ $)
     $d x y $.
     $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 68 of [Frege1879] p. 54. $)
+       Proposition 68 of [Frege1879] p. 54.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
     frege68b $p |- ( ( A. x ph <-> ps ) -> ( ps -> [ y / x ] ph ) ) $=
-      (  ) ? $.
+      ( wal wb wi wsb frege57aALT frege67b ax-mp ) ACEZBFZBLGGMBACDHGGLBIABCDJK
+      $.
   $}
 
 $(
@@ -1054,94 +1056,111 @@ $)
       $.
   $}
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  ${
+    frege58c.a $e |- A e. B $.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 58 of [Frege1879] p. 51. $)
-  frege58c $p |- ( A. x ph -> [. A / x ]. ph ) $=
-    (  ) ? $.
+       Proposition 58 of [Frege1879] p. 51.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege58newc $p |- ( A. x ph -> [. A / x ]. ph ) $=
+      ( wal cab wcel wsbc wi spsbc ax-mp df-sbc biimpi syl biimpri ) ABFZCABGHZ
+      ABCIZQSRCDHQSJEABCDKLSRABCMZNOSRTPO $.
 
-  $( A kind of Aristotelian inference.
+    $( A kind of Aristotelian inference.
 
-     Proposition 59 of [Frege1879] p. 51. $)
-  frege59c $p |- ( [. A / x ]. ph
+       Proposition 59 of [Frege1879] p. 51.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege59newc $p |- ( [. A / x ]. ph
                    -> ( -. [. A / x ]. ps -> -. A. x ( ph -> ps ) ) ) $=
-    (  ) ? $.
+      ( wi wal wsbc wn frege58newc sbcim1 syl frege30 ax-mp ) ABGZCHZACDIZBCDIZ
+      GZGRSJQJGGQPCDITPCDEFKABCDLMQRSNO $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 60 of [Frege1879] p. 52. $)
-  frege60c $p |- ( A. x ( ph -> ( ps -> ch ) )
-                   -> ( [. A / x ]. ph
-                        -> ( [. A / x ]. ps -> [. A / x ]. ch ) ) ) $=
-    (  ) ? $.
+       Proposition 60 of [Frege1879] p. 52.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege60newc $p |- ( A. x ( ph -> ( ps -> ch ) )
+                   -> ( [. A / x ]. ps
+                        -> ( [. A / x ]. ph -> [. A / x ]. ch ) ) ) $=
+      ( wi wal wsbc frege58newc sbcim1 syl6 syl frege12 ax-mp ) ABCHZHZDIZADEJZ
+      BDEJZCDEJZHZHZHSUATUBHHHSRDEJZUDRDEFGKUETQDEJUCAQDELBCDELMNSTUAUBOP $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 61 of [Frege1879] p. 52.  (Contributed by Richard Penner,
-     8-Oct-2019.) $)
-  frege61c $p |- ( ( [. A / x ]. ph -> ps ) -> ( A. x ph -> ps ) ) $=
-    ( wal wsbc wi frege58c frege9 ax-mp ) ACEZACDFZGLBGKBGGACDHKLBIJ $.
+       Proposition 61 of [Frege1879] p. 52.  (Contributed by Richard Penner,
+       8-Oct-2019.) $)
+    frege61newc $p |- ( ( [. A / x ]. ph -> ps ) -> ( A. x ph -> ps ) ) $=
+      ( wal wsbc wi frege58newc frege9 ax-mp ) ACGZACDHZINBIMBIIACDEFJMNBKL $.
 
-  $( A kind of Aristotelian inference.  This judgement replaces the mode of
-     inference ~ barbara when the minor premise has a particular context.
+    $( A kind of Aristotelian inference.  This judgement replaces the mode of
+       inference ~ barbara when the minor premise has a particular context.
 
-     Proposition 62 of [Frege1879] p. 52. $)
-  frege62c $p |- ( [. A / x ]. ph
+       Proposition 62 of [Frege1879] p. 52.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege62newc $p |- ( [. A / x ]. ph
                    -> ( A. x ( ph -> ps ) -> [. A / x ]. ps ) ) $=
-    (  ) ? $.
+      ( wi wal wsbc frege58newc sbcim1 syl ax-frege8 ax-mp ) ABGZCHZACDIZBCDIZG
+      ZGQPRGGPOCDISOCDEFJABCDKLPQRMN $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 63 of [Frege1879] p. 52.  (Contributed by Richard Penner,
-     8-Oct-2019.) $)
-  frege63c $p |- ( [. A / x ]. ph
+       Proposition 63 of [Frege1879] p. 52.  (Contributed by Richard Penner,
+       8-Oct-2019.) $)
+    frege63newc $p |- ( [. A / x ]. ph
                    -> ( ps
                         -> ( A. x ( ph -> ch ) -> [. A / x ]. ch ) ) ) $=
-    ( wsbc wi wal frege62c frege24 ax-mp ) ADEFZACGDHCDEFGZGLBMGGACDEILMBJK $.
+      ( wsbc wi wal frege62newc frege24 ax-mp ) ADEHZACIDJCDEHIZINBOIIACDEFGKNO
+      BLM $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 64 of [Frege1879] p. 53. $)
-  frege64c $p |- ( ( [. A / x ]. ph -> [. B / x ]. ps )
+       Proposition 64 of [Frege1879] p. 53.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege64newc $p |- ( ( [. C / x ]. ph -> [. A / x ]. ps )
                    -> ( A. x ( ps -> ch )
-                        -> ( [. A / x ]. ph -> [. B / x ]. ch ) ) ) $=
-    (  ) ? $.
+                        -> ( [. C / x ]. ph -> [. A / x ]. ch ) ) ) $=
+      ( wsbc wi wal frege62newc frege18 ax-mp ) BDEIZBCJDKZCDEIZJJADGIZOJPRQJJJ
+      BCDEFHLOPQRMN $.
 
-  $( A kind of Aristotelian inference.  This judgement replaces the mode of
-     inference ~ barbara when the minor premise has a general context.
+    $( A kind of Aristotelian inference.  This judgement replaces the mode of
+       inference ~ barbara when the minor premise has a general context.
 
-     Proposition 65 of [Frege1879] p. 53.  (Contributed by Richard Penner,
-     2-Nov-2019.) $)
-  frege65c $p |- ( A. x ( ph -> ps )
+       Proposition 65 of [Frege1879] p. 53.  (Contributed by Richard Penner,
+       2-Nov-2019.) $)
+    frege65newc $p |- ( A. x ( ph -> ps )
                    -> ( A. x ( ps -> ch )
                         -> ( [. A / x ]. ph -> [. A / x ]. ch ) ) ) $=
-    ( wi wsbc wal sbcim1 frege64c syl frege61c ax-mp ) ABFZDEGZBCFDHADEGZCDEGFF
-    ZFNDHQFOPBDEGFQABDEIABCDEEJKNQDELM $.
+      ( wi wsbc wal sbcim1 frege64newc syl frege61newc ax-mp ) ABHZDEIZBCHDJADE
+      IZCDEIHHZHPDJSHQRBDEIHSABDEKABCDEFEGLMPSDEFGNO $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 66 of [Frege1879] p. 54.  (Contributed by Richard Penner,
-     8-Oct-2019.) $)
-  frege66c $p |- ( A. x ( ph -> ps )
+       Proposition 66 of [Frege1879] p. 54.  (Contributed by Richard Penner,
+       8-Oct-2019.) $)
+    frege66newc $p |- ( A. x ( ph -> ps )
                  -> ( A. x ( ch -> ph )
                       -> ( [. A / x ]. ch -> [. A / x ]. ps ) ) ) $=
-    ( wi wal wsbc frege65c ax-frege8 ax-mp ) CAFDGZABFDGZCDEHBDEHFZFFMLNFFCABDE
-    ILMNJK $.
+      ( wi wal wsbc frege65newc ax-frege8 ax-mp ) CAHDIZABHDIZCDEJBDEJHZHHONPHH
+      CABDEFGKNOPLM $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 67 of [Frege1879] p. 54.  (Contributed by Richard Penner,
-     8-Oct-2019.) $)
-  frege67c $p |- ( ( ( A. x ph <-> ps ) -> ( ps -> A. x ph ) )
+       Proposition 67 of [Frege1879] p. 54.  (Contributed by Richard Penner,
+       8-Oct-2019.) $)
+    frege67c $p |- ( ( ( A. x ph <-> ps ) -> ( ps -> A. x ph ) )
                    -> ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) ) $=
-    ( wal wsbc wi wb frege58c frege7 ax-mp ) ACEZACDFZGLBHZBLGGNBMGGGACDILMNBJK
-    $.
+      ( wal wsbc wi wb frege58newc frege7 ax-mp ) ACGZACDHZINBJZBNIIPBOIIIACDEF
+      KNOPBLM $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 68 of [Frege1879] p. 54. $)
-  frege68c $p |- ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) $=
-    (  ) ? $.
+       Proposition 68 of [Frege1879] p. 54.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege68c $p |- ( ( A. x ph <-> ps ) -> ( ps -> [. A / x ]. ph ) ) $=
+      ( wal wb wi wsbc frege57aALT frege67c ax-mp ) ACGZBHZBNIIOBACDJIINBKABCDE
+      FLM $.
+
+  $}
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
@@ -1152,6 +1171,24 @@ $(
    sequence dictated by relation ` R ` .
 
 $)
+
+  ${
+    $d x y z A $.  $d x y z R $.
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Definition 69 of [Frege1879] p. 55.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege69c $p |- ( A. x ( x e. A -> A. y ( x R y -> y e. A ) )
+                  <-> ( R " A ) C_ A ) $=
+      ( vz cv wcel wbr wi wal wex cima wss 19.21v bicomi albii alcom bitri cop
+      wa impexp 19.23v 3bitri cab dfss2 vex weq opeq2 eleq1d wb df-br a1i bitrd
+      anbi2d exbidv elab imbi1i dfima3 eqcomi sseq1i ) AFZCGZVABFZDHZVCCGZIZBJI
+      ZAJZVBVDTZAKZVEIZBJZDCLZCMZVHVBVFIZBJZAJVOAJZBJVLVGVPAVPVGVBVFBNOPVOABQVQ
+      VKBVQVIVEIZAJVKVOVRAVRVOVBVDVEUAOPVIVEAUBRPUCVLVBVAEFZSZDGZTZAKZEUDZCMZVN
+      WEVLWEVCWDGZVEIZBJVLBWDCUEWGVKBWFVJVEWCVJEVCBUFEBUGZWBVIAWHWAVDVBWHWAVAVC
+      SZDGZVDWHVTWIDVSVCVAUHUIWJVDUJWHVDWJVAVCDUKOULUMUNUOUPUQPROWDVMCVMWDAEDCU
+      RUSUTRR $.
+  $}
 
   ${
     $d a b x y $.  $d a b c p R $.  $d a b c p A $.
@@ -1181,36 +1218,39 @@ $)
       UUBYJGUUAYIWQYSYHWNYRXCUAGYRWMWLYNUBZFPZQZHRUAGSZXCYQUUEKHKHSZYMWMYPUUDYL
       WLEVMUUGYOUUCFYLWLYNWAVNVOVPUUFUUEXBHUUFUUDWPWMUUFUUCWOFYNWNWLWBVNVQVRVSV
       TUDVKTUFYSXFEXFYSKUAFEWCWDWEVBVB $.
+
   $}
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  ${
+    $d u v A $.  $d u v R $.  $d y A $.  $d y R $.  $d u x $.  $d x y v $.
 
-     Definition 69 of [Frege1879] p. 55. $)
-  frege69c $p |- ( A. x ( x e. A -> A. y ( x R y -> y e. A ) )
-                  <-> ( R " A ) C_ A ) $=
-    (  ) ? $.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-  $( Equivalent to ~ frege69 .
+       Proposition 70 of [Frege1879] p. 58.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege70 $p |- ( ( R " A ) C_ A -> ( x e. A -> A. y ( x R y -> y e. A ) ) ) $=
+      ( vu vv cv wcel wbr wi wal cima wss wsb sbim nfv eleq1 sbie imbi12i bitri
+      wb frege69c frege68b breq1 sbf sbalv weq breq2 imbi12d cbvalvw sylbb mp2b
+      imim2i ) EGZCHZUNFGZDIZUPCHZJZFKZJZEKDCLCMZUAVBVAEANZJVBAGZCHZVDBGZDIZVFC
+      HZJZBKZJZJEFCDUBVAVBEAUCVCVKVBVCUOEANZUTEANZJVKUOUTEAOVLVEVMVJUOVEEAVEEPU
+      NVDCQRVMVDUPDIZURJZFKVJUSVOEAFUSEANUQEANZUREANZJVOUQUREAOVPVNVQURUQVNEAVN
+      EPUNVDUPDUDRUREAUREPUESTUFVOVIFBFBUGVNVGURVHUPVFVDDUHUPVFCQUIUJTSUKUMUL
+      $.
+  $}
 
-     Definition 69 of [Frege1879] p. 55. $)
-  frege69eq $p |- ( ( R " A ) C_ A <-> ( R |` A ) C_ ( A X. A ) ) $=
-    (  ) ? $.
 
-  $( PLEASE PUT DESCRIPTION HERE.
+  ${
+    $d z x $.  $d z A $.  $d z R $.
+    $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 70 of [Frege1879] p. 58. $)
-  frege70 $p |- ( ( R " A ) C_ A -> ( x e. A -> A. y ( x R y -> y e. A ) ) ) $=
-    (  ) ? $.
-
-  $( PLEASE PUT DESCRIPTION HERE.
-
-     Proposition 71 of [Frege1879] p. 59.  (Contributed by Richard Penner,
-     29-Oct-2019.) $)
-  frege71 $p |- ( ( A. z ( x R z -> z e. A ) -> ( x R y -> y e. A ) )
+       Proposition 71 of [Frege1879] p. 59.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
+    frege71 $p |- ( ( A. z ( x R z -> z e. A ) -> ( x R y -> y e. A ) )
                   -> ( ( R " A ) C_ A
                        -> ( x e. A -> ( x R y -> y e. A ) ) ) ) $=
-    ( cima wss cv wcel wbr wi wal frege70 frege19 ax-mp ) EDFDGZAHZDIZQCHZEJSDI
-    KCLZKKTQBHZEJUADIKZKPRUBKKKACDEMPRTUBNO $.
+      ( cima wss cv wcel wbr wi wal frege70 frege19 ax-mp ) EDFDGZAHZDIZQCHZEJS
+      DIKCLZKKTQBHZEJUADIKZKPRUBKKKACDEMPRTUBNO $.
+  $}
 
   ${
     $d c A $.  $d c R $.  $d c x $.  $d c y $.
@@ -1221,38 +1261,47 @@ $)
        Proposition 72 of [Frege1879] p. 59.  (Contributed by Richard Penner,
        29-Oct-2019.) $)
     frege72 $p |- ( ( R " A ) C_ A -> ( x e. A -> ( x R y -> y e. A ) ) ) $=
-      ( vc cv wbr wcel wi wal cima wss frege58c sbcim1 csb cvv ax-mp biimpi syl
-      wsbc wb vex sbcbr2g weq wceq id ax-gen nfcv csbieb breq2i biimpri sbcel1v
-      bitri imim12i frege71 ) AFZEFZDGZUQCHZIZEJZUPBFZDGZVBCHZIZIDCKCLUPCHVEIIV
-      AUTEVBTZVEUTEVBMVFUREVBTZUSEVBTZIVEURUSEVBNVCVGVHVDVGVCVGUPEVBUQOZDGZVCVB
-      PHVGVJUABUBZEVBUPUQDPUCQVIVBUPDEBUDZVLIZEJZVIVBUEZVMEVLUFUGVNVOEVBUQVBVKE
-      VBUHUIRQUJUMUKVHVDEVBCULRUNSSABECDUOQ $.
+      ( vc cv wbr wcel wi wal cima wss wsbc cvv frege58newc sbcim1 ax-mp biimpi
+      vex syl csb wb sbcbr2g weq wceq ax-gen nfcv csbieb breq2i biimpri sbcel1v
+      id bitri imim12i frege71 ) AFZEFZDGZUQCHZIZEJZUPBFZDGZVBCHZIZIDCKCLUPCHVE
+      IIVAUTEVBMZVEUTEVBNBSZOVFUREVBMZUSEVBMZIVEURUSEVBPVCVHVIVDVHVCVHUPEVBUQUA
+      ZDGZVCVBNHVHVKUBVGEVBUPUQDNUCQVJVBUPDEBUDZVLIZEJZVJVBUEZVMEVLULUFVNVOEVBU
+      QVBVGEVBUGUHRQUIUMUJVIVDEVBCUKRUNTTABECDUOQ $.
   $}
 
   $( PLEASE PUT DESCRIPTION HERE.
 
-     Proposition 73 of [Frege1879] p. 59. $)
+     Proposition 73 of [Frege1879] p. 59.  (Contributed by Richard Penner,
+     11-Nov-2019.) $)
   frege73 $p |- ( ( ( R " A ) C_ A -> x e. A )
                   -> ( ( R " A ) C_ A -> ( x R y -> y e. A ) ) ) $=
-    (  ) ? $.
+    ( cima wss cv wcel wbr wi frege72 ax-frege2 ax-mp ) DCECFZAGZCHZOBGZDIQCHJZ
+    JJNPJNRJJABCDKNPRLM $.
 
   $( If ` x ` has a property ` A ` that is hereditary in the ` R ` -sequence,
      then every result of a application of the procedure ` R ` to ` x ` has the
      property ` A ` .
 
-     Proposition 74 of [Frege1879] p. 60. $)
+     Proposition 74 of [Frege1879] p. 60.  (Contributed by Richard Penner,
+     11-Nov-2019.) $)
   frege74 $p |- ( x e. A -> ( ( R " A ) C_ A -> ( x R y -> y e. A ) ) ) $=
-    (  ) ? $.
+    ( cima wss cv wcel wbr wi frege72 ax-frege8 ax-mp ) DCECFZAGZCHZOBGZDIQCHJZ
+    JJPNRJJABCDKNPRLM $.
 
-  $( If from the proposition that ` x ` has property ` A ` , whatever ` x ` may
-     be, it can be inferred that every result of an application of the
-     procedure ` R ` to ` x ` has property ` A ` , then property ` A ` is
-     hereditary in the ` R ` -sequence.
+  ${
+    $d x y A $.  $d x y R $.
+    $( If from the proposition that ` x ` has property ` A ` , whatever ` x `
+       may be, it can be inferred that every result of an application of the
+       procedure ` R ` to ` x ` has property ` A ` , then property ` A ` is
+       hereditary in the ` R ` -sequence.
 
-     Proposition 75 of [Frege1879] p. 60. $)
-  frege75 $p |- ( A. x ( x e. A -> A. y ( x R y -> y e. A ) )
+       Proposition 75 of [Frege1879] p. 60.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege75 $p |- ( A. x ( x e. A -> A. y ( x R y -> y e. A ) )
                   -> ( R " A ) C_ A ) $=
-    (  ) ? $.
+      ( cv wcel wbr wi wal cima wss wb frege69c frege52aALT ax-mp ) AEZCFPBEZDG
+      QCFHBIHAIZDCJCKZLRSHABCDMRSNO $.
+  $}
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
@@ -1267,35 +1316,63 @@ $)
                                                           /\ ( R " f ) C_ f )
                                                   }
                          } $.
-    $( PLEASE PUT DESCRIPTION HERE.
+    ${
+      $d c p f x $.  $d c p f y $.  $d c p f R $.  $d f g x $.  $d f g y $.
+      $d f g R $.
+      $( PLEASE PUT DESCRIPTION HERE.
 
-       Definition 76 of [Frege1879] p. 60. $)
-    frege76lem $p |- ( A. f ( ( R " f ) C_ f -> ( ( R " { p } ) C_ f
-                                                  -> c e. f ) ) <-> b F c ) $=
-      (  ) ? $.
+         Definition 76 of [Frege1879] p. 60.  (Contributed by Richard Penner,
+         11-Nov-2019.) $)
+      frege76lem $p |- ( A. g ( ( R " g ) C_ g -> ( ( R " { x } ) C_ g
+                                                  -> y e. g ) ) <-> x F y ) $=
+        ( cv wcel csn cima wss wa cab cint wel wi bitri wbr cop copab wal df-br
+        eleq2i vex weq nfv sneq imaeq2d sseq1d anbi1d abbid inteqd eleq2d eleq1
+        opelopab elintab ancomst impexp imaeq2 id sseq12d elequ2 imbi12d syl5bb
+        sseq2 cbvalv 3bitrri ) AJZBJZFUAVKVLUBZFKVMHJZCGJZLZMZDJZNZCVRMZVRNZOZD
+        PZQZKZGHUCZKZCEJZMZWHNZCVKLZMZWHNZBERZSZSZEUDZVKVLFUEFWFVMIUFWGVLWLVRNZ
+        WAOZDPZQZKZWQWEVNXAKXBGHVKVLAUGBUGZGAUHZWDXAVNXDWCWTXDWBWSDXDDUIXDVSWRW
+        AXDVQWLVRXDVPWKCVOVKUJUKULUMUNUOUPVNVLXAUQURXBWSBDRZSZDUDWQWSDVLXCUSXFW
+        PDEXFWAWRXESZSZDEUHZWPXFWAWROXESXHWRWAXEUTWAWRXEVATXIWAWJXGWOXIVTWIVRWH
+        VRWHCVBXIVCVDXIWRWMXEWNVRWHWLVHDEBVEVFVFVGVITTVJ $.
+    $}
 
     ${
-      $( frege76.r $e |- R = { <. x , y >. | ps } $. $)
+      $d c p b f $.  $d c p e $.  $d c p R $.  $d f g R $.  $d f g e $.
+      $d f a R $.  $d a b $.  $d b g $.
       $( If from the two propositions that every result of an application of
          the procedure ` R ` to ` b ` has property ` f ` and that property
          ` f ` is hereditary in the ` R ` -sequence, it can be inferred,
          whatever ` f ` may be, that ` e ` has property ` f ` , then we say
          ` e ` follows ` b ` in the ` R ` -sequence.
 
-         Definition 76 of [Frege1879] p. 60. $)
+         Definition 76 of [Frege1879] p. 60.  (Contributed by Richard Penner,
+         11-Nov-2019.) $)
       frege76 $p |- ( A. f ( ( R " f ) C_ f
                       -> ( A. a ( b R a -> a e. f ) -> e e. f ) )
                       <-> b F e ) $=
-        (  ) ? $.
+        ( vg cv cima wss wbr wel wi wal wcel vex bitr4i csn df-br elimasn albii
+        cop imbi1i dfss2 imbi2i weq imaeq2 id sseq12d sseq2 eleq2 imbi12d bitri
+        cbvalv frege76lem ) ACKZLZUSMZGKZFKZANZFCOZPZFQZBCOZPZPZCQZAJKZLZVLMZAV
+        BUALZVLMZBJOZPZPZJQZVBBKZDNVKVAVOUSMZVHPZPZCQVTVJWDCVIWCVAVGWBVHVGVCVOR
+        ZVEPZFQWBVFWFFVDWEVEVDVBVCUEARWEVBVCAUBAVBVCGSFSUCTUFUDFVOUSUGTUFUHUDWD
+        VSCJCJUIZVAVNWCVRWGUTVMUSVLUSVLAUJWGUKULWGWBVPVHVQUSVLVOUMUSVLWAUNUOUOU
+        QUPGBACJDEHIURUP $.
     $}
 
-    $( PLEASE PUT DESCRIPTION HERE.
+    ${
+      frege77.a $e |- A e. C $.
+      $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 76 of [Frege1879] p. 60. $)
-    frege76eq $p |- ( B F E <-> ( B e. _V /\
-                                  A. f ( ( R " { B } ) C_ f /\ ( R " f ) C_ f
-                                         /\ E e. f ) ) ) $=
-      (  ) ? $.
+         Proposition 77 of [Frege1879] p. 62. $)
+      frege77new $p |- ( x F y -> ( ( R " A ) C_ A -> ( A. a ( b R a -> a e. A )
+                                                 -> y e. A ) ) ) $=
+        ( cv cima wss wcel wi csb ax-mp wbr wal frege76 frege68c sbcim1 wsbc wb
+        sbcssg csbima12 wceq imaeq12d eqtri elexi nfcv id sseq12i bitri biimpri
+        csbief imim12i syl imim2i ) ?ANBNZGUAZECOZCPZJNINZEUAVGCQRIUBVCCQRZRZRZ
+        EBFGH?AKLUC??VJ?VDFCDMUD?VIVD??VIEFNZOZVKPZ?FCUEVFVMFCUFZ?VHVNVFVNFCVLS
+        ZFCVKSZPZVFCDQVNVQUGMFCVLVKDUHTVOVEVPCVOFCESZVPOZVEFCVKEUI?VSVEUJ??VREV
+        PC??UKTULFCVKCCDMUMFCUNVKCUJUOUSUPUQUR?UTVAVBVAT $.
+    $}
 
     $( PLEASE PUT DESCRIPTION HERE. Might have to replace A with f.
 
@@ -1345,18 +1422,31 @@ $)
         FUGUJABCDSTUAUDABCDEFGBHIUBUC $.
     $}
 
-    $( PLEASE PUT DESCRIPTION HERE.
+    ${
+      $d y x $.  $d y A $.  $d y R $.
+      $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 81 of [Frege1879] p. 63. $)
-    frege81cor1 $p |- ( x e. A -> ( ( R " A ) C_ A
+         Proposition 81 of [Frege1879] p. 63.  (Contributed by Richard Penner,
+         11-Nov-2019.) $)
+      frege81cor1 $p |- ( x e. A -> ( ( R " A ) C_ A
                                     -> A. y ( x F y -> y e. A ) ) ) $=
-      (  ) ? $.
+        ( cv wcel cima wss wbr wi wal wa nfv frege81 imp alrimi ex ) AJZCKZDCLC
+        MZUCBJZFNUFCKOZBPUDUEQZUGBUHBRUDUEUGABCDEFGHISTUAUB $.
+    $}
 
-    $( PLEASE PUT DESCRIPTION HERE.
+    ${
+      $d y x $.  $d y A $.  $d y F $.  $d y R $.
+      $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 81 of [Frege1879] p. 63. $)
-    frege81cor2 $p |- ( x e. A -> ( ( R " A ) C_ A -> ( F " { x } ) C_ A ) ) $=
-      (  ) ? $.
+         Proposition 81 of [Frege1879] p. 63.  (Contributed by Richard Penner,
+         11-Nov-2019.) $)
+      frege81cor2 $p |- ( x e. A -> ( ( R " A ) C_ A -> ( F " { x } ) C_ A ) ) $=
+        ( vy cv wcel cima wss wbr wi wal vex bicomi bitri imbi2i csn cop imbi1i
+        frege81cor1 dfss2 elimasn df-br albii biimpi ax-mp ) AJZBKZCBLBMZUKIJZE
+        NZUNBKZOZIPZOZOZULUMEUKUALZBMZOZOZAIBCDEFGHUDUTVDUSVCULURVBUMVBURVBUNVA
+        KZUPOZIPURIVABUEVFUQIVEUOUPVEUKUNUBEKZUOEUKUNAQIQUFUOVGUKUNEUGRSUCUHSRT
+        TUIUJ $.
+    $}
 
     ${
       $d x y $.  $d y A $.  $d y R $.
@@ -1435,30 +1525,38 @@ $)
       ( cv wbr wcel wi wal cima wss frege87 frege15 ax-mp ) ALZBLZHMZUBDLZFMUEE
       NODPZFEQERZUCCLZFMZUHENZOOOOUIUDUFUGUJOOOOABCDEFGHIJKSUDUFUGUIUJTUA $.
 
-    $( PLEASE PUT DESCRIPTION HERE.
+    ${
+      $d c p f x $.  $d c p y $.  $d c p R $.  $d f w R $.  $d f w x $.
+      $d f y $.
+      $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 89 of [Frege1879] p. 68.  (Contributed by Richard Penner,
-       10-Nov-2019.) $)
-    frege89 $p |- ( A. f ( ( R " f ) C_ f -> ( A. w ( x R w -> w e. f )
+         Proposition 89 of [Frege1879] p. 68.  (Contributed by Richard Penner,
+         10-Nov-2019.) $)
+      frege89 $p |- ( A. f ( ( R " f ) C_ f -> ( A. w ( x R w -> w e. f )
                                                -> y e. f ) )
                     -> x F y ) $=
-      ( cv cima wss wbr wel wi wal wb frege76 frege52aALT ax-mp ) DEJZKUALAJZCJ
-      DMCENOCPBENOOEPZUBBJFMZQUCUDODBEFGCAHIRUCUDST $.
+        ( cv cima wss wbr wel wi wal wb frege76 frege52aALT ax-mp ) DEJZKUALAJZ
+        CJDMCENOCPBENOOEPZUBBJFMZQUCUDODBEFGCAHIRUCUDST $.
+    $}
 
-    $( PLEASE PUT DESCRIPTION HERE.
+    ${
+      $d c p f x $.  $d c p y $.  $d c p R $.  $d f w R $.  $d f w x $.
+      $d f y $.
+      $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 90 of [Frege1879] p. 68.  (Contributed by Richard Penner,
-       10-Nov-2019.) $)
-    frege90 $p |- ( ( ph
+         Proposition 90 of [Frege1879] p. 68.  (Contributed by Richard Penner,
+         10-Nov-2019.) $)
+      frege90 $p |- ( ( ph
                       -> A. f ( ( R " f ) C_ f
                                 -> ( A. w ( x R w -> w e. f ) -> y e. f ) ) )
                     -> ( ph -> x F y ) ) $=
-      ( cv cima wss wbr wel wi wal frege89 frege5 ax-mp ) EFKZLUAMBKZDKENDFOPDQ
-      CFOPPFQZUBCKGNZPAUCPAUDPPBCDEFGHIJRUCUDAST $.
+        ( cv cima wss wbr wel wi wal frege89 frege5 ax-mp ) EFKZLUAMBKZDKENDFOP
+        DQCFOPPFQZUBCKGNZPAUCPAUDPPBCDEFGHIJRUCUDAST $.
+    $}
 
     ${
       $d f x $.  $d f y $.  $d f R $.  $d f w $.  $d w x $.  $d w y $.
-      $d w R $.
+      $d w R $.  $d c p x $.  $d c p y $.  $d c p R $.  $d c p f $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 91 of [Frege1879] p. 68.  (Contributed by Richard Penner,
@@ -1474,7 +1572,7 @@ $)
 
     ${
       $d f x $.  $d f y $.  $d f R $.  $d w x $.  $d w y $.  $d w z $.
-      $d w F $.  $d w R $.
+      $d w F $.  $d w R $.  $d c p x $.  $d c p y $.  $d c p R $.  $d c p f $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 92 of [Frege1879] p. 69.  (Contributed by Richard Penner,
@@ -1487,30 +1585,39 @@ $)
         EURUSUMJCNUOJCNUMVDUMUOJCUGUMJCVIQUOVDJCVDJPUNVCULFRSUHUITUJ $.
     $}
 
-    $( PLEASE PUT DESCRIPTION HERE. Expected to need ~ frege60b but ran into
-       incompatible distinct varible requirements.
+    ${
+      $d c f p R $.  $d c f p x $.  $d c f p y $.  $d f z $.  $d R z $.
+      $d x z $.
+      $( PLEASE PUT DESCRIPTION HERE. Expected to need ~ frege60b but ran into
+         incompatible distinct varible requirements.
 
-       Proposition 93 of [Frege1879] p. 70.  (Contributed by Richard Penner,
-       10-Nov-2019.) $)
-    frege93 $p |- ( A. f ( A. z ( x R z -> z e. f )
+         Proposition 93 of [Frege1879] p. 70.  (Contributed by Richard Penner,
+         10-Nov-2019.) $)
+      frege93 $p |- ( A. f ( A. z ( x R z -> z e. f )
                            -> ( ( R " f ) C_ f -> y e. f ) ) -> x F y ) $=
-      ( cv wbr wel wi wal cima wss ax-frege8 alimi frege90 ax-mp ) AJZCJDKCELMC
-      NZDEJZOUCPZBELZMMZENZUDUBUEMMZENMUGUABJFKMUFUHEUBUDUEQRUGABCDEFGHIST $.
+        ( cv wbr wel wi wal cima wss ax-frege8 alimi frege90 ax-mp ) AJZCJDKCEL
+        MCNZDEJZOUCPZBELZMMZENZUDUBUEMMZENMUGUABJFKMUFUHEUBUDUEQRUGABCDEFGHIST
+        $.
+    $}
 
-    $( PLEASE PUT DESCRIPTION HERE.
+    ${
+      $d c f p R $.  $d c f p x $.  $d c f p z $.  $d f R w $.  $d f x w $.
+      $( PLEASE PUT DESCRIPTION HERE.
 
-       Proposition 94 of [Frege1879] p. 70.  (Contributed by Richard Penner,
-       10-Nov-2019.) $)
-    frege94 $p |- ( ( y R z
+         Proposition 94 of [Frege1879] p. 70.  (Contributed by Richard Penner,
+         10-Nov-2019.) $)
+      frege94 $p |- ( ( y R z
                       -> ( x F y
                            -> A. f ( A. w ( x R w -> w e. f )
                                      -> ( ( R " f ) C_ f -> z e. f ) ) ) )
                     -> ( y R z -> ( x F y -> x F z ) ) ) $=
-      ( cv wbr wel wi wal cima wss frege93 frege7 ax-mp ) AKZDKELDFMNDOEFKZPUBQ
-      CFMNNFOZUACKZGLZNBKZUDELZUAUFGLZUCNNUGUHUENNNACDEFGHIJRUCUEUGUHST $.
+        ( cv wbr wel wi wal cima wss frege93 frege7 ax-mp ) AKZDKELDFMNDOEFKZPU
+        BQCFMNNFOZUACKZGLZNBKZUDELZUAUFGLZUCNNUGUHUENNNACDEFGHIJRUCUEUGUHST $.
+    $}
 
     ${
-      $d x f $.  $d y f $.  $d z f $.  $d F f $.  $d R f $.
+      $d x f $.  $d y f $.  $d z f $.  $d F f $.  $d c p R $.  $d c p x $.
+      $d c p z $.  $d c p f $.  $d w x $.  $d w f R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 95 of [Frege1879] p. 70.  (Contributed by Richard Penner,
@@ -1520,7 +1627,10 @@ $)
         stdpc5 ex ) BKZCKZDLZAKZUGFLZUJJKDLJEMNJODEKZPULQCEMNNZEOZNNUIUKUJUHFLN
         NUIUKUNUIUKRZUMNZEOUOUNNUPEUIUKUMABCJULDEFGHISUAUBUOUMEUOEUCUETUFABCJDE
         FGHIUDT $.
+    $}
 
+    ${
+      $d c p f R $.  $d c p f x $.  $d c p f z $.  $d f y $.  $d f F $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 96 of [Frege1879] p. 71.  (Contributed by Richard Penner,
@@ -1531,7 +1641,9 @@ $)
     $}
 
     ${
-      $d a b f $.  $d a x f $.  $d a f F $.  $d f R $.
+      $d a b f $.  $d a b f x $.  $d a b f F $.  $d a b f R $.  $d c p R $.
+      $d c p f $.  $d c p a $.  $d c p x $.
+
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 97 of [Frege1879] p. 71.  (Contributed by Richard Penner,
@@ -1545,7 +1657,7 @@ $)
 
     ${
       $d f x $.  $d f F $.  $d f R $.  $d y z $.  $d x z $.  $d F z $.
-      $d R z $.
+      $d R z $.  $d c p R $.  $d c p f $.  $d c p x $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 98 of [Frege1879] p. 71.  (Contributed by Richard Penner,
@@ -1601,7 +1713,8 @@ $)
                                                   }
                          } $.
     ${
-      $d f v $.  $d f x $.  $d f z $.  $d f F $.  $d f R $.
+      $d f v $.  $d f x $.  $d f z $.  $d f F $.  $d f R $.  $d c p R $.
+      $d c p f $.  $d c p v $.  $d c p x $.  $d c p z $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 102 of [Frege1879] p. 72.  (Contributed by Richard Penner,
@@ -1885,18 +1998,22 @@ $)
         cima ) CKKLZHMZBMZAMZENBOUIUHEPQNBOQZRUGGMZCNUKUJRSGTSHTZSULCUJUEUJUAZS
         UFUMSSABCDEFGHIJUBUFULUMUCUD $.
 
-      $( If the procedure ` R ` is single-valued, then the property of
-         belonging to the ` R ` -sequence begining with ` y ` or preceeding
-         ` y ` in the ` R ` -sequence is hereditary in the ` R ` -sequence.
+      ${
+        $d b w $.  $d b y $.  $d b F $.
 
-         Proposition 131 of [Frege1879] p. 85.  (Contributed by Richard Penner,
-         9-Nov-2019.) $)
-      frege131 $p |- ( Fun `' `' R
+        $( If the procedure ` R ` is single-valued, then the property of
+           belonging to the ` R ` -sequence begining with ` y ` or preceeding
+           ` y ` in the ` R ` -sequence is hereditary in the ` R ` -sequence.
+
+           Proposition 131 of [Frege1879] p. 85.  (Contributed by Richard
+           Penner, 9-Nov-2019.) $)
+        frege131 $p |- ( Fun `' `' R
                      -> ( R " ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
                         C_ ( { w | w F y } u. { w | y ( F u. _I ) w } ) ) $=
-        ( vb va cv wbr cab cid cun wcel wi wal cima ccnv wss wfun frege75 ax-mp
-        frege130 ) IKZBKZAKZELBMUHUGENOLBMOZPUFJKZCLUJUIPQJRQIRCUISUIUAZQCTTUBU
-        KQIJUICUCABCDEFJIGHUEUD $.
+          ( vb va cv wbr cab cid cun wcel wi wal cima ccnv wss frege75 frege130
+          wfun ax-mp ) IKZBKZAKZELBMUHUGENOLBMOZPUFJKZCLUJUIPQJRQIRCUISUIUAZQCT
+          TUDUKQIJUICUBABCDEFJIGHUCUE $.
+      $}
     $}
 
     $( PLEASE PUT DESCRIPTION HERE.
