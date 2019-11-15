@@ -36,6 +36,23 @@ $)
 
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     _Begriffschift_ Notation hints
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+$)
+
+$( If the ` R ` -image of a class ` A ` is a subclass of ` B ` , then the
+   restriction of ` R ` to ` A ` is a subset of the Cartesian product of ` A `
+   and ` B ` .  (Contributed by Richard Penner, 15-Nov-2019.) $)
+
+  rp-imass $p |- ( ( R " A ) C_ B <-> ( R |` A ) C_ ( A X. B ) ) $=
+    ( cima wss cres crn cdm cxp df-ima sseq1i dmres inss1 eqsstri biantrur wrel
+    wa cin relres syl6ss relssdmrn xpss12 syl5ss dmss dmxpss rnss rnxpss impbii
+    ax-mp jca 3bitri ) CADZBECAFZGZBEZUMHZAEZUOQZUMABIZEZULUNBCAJKUQUOUPACHZRAC
+    ALAVAMNOURUTURUMUPUNIZUSUMPUMVBECASUMUAUIUPAUNBUBUCUTUQUOUTUPUSHAUMUSUDABUE
+    TUTUNUSGBUMUSUFABUGTUJUHUK $.
+
+$(
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
      _Begriffschift_ Chapter II Implication
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 $)
