@@ -51,6 +51,53 @@ $( If the ` R ` -image of a class ` A ` is a subclass of ` B ` , then the
     ALAVAMNOURUTURUMUPUNIZUSUMPUMVBECASUMUAUIUPAUNBUBUCUTUQUOUTUPUSHAUMUSUDABUE
     TUTUNUSGBUMUSUFABUGTUJUHUK $.
 
+$c he $.
+$( The property of relation ` R ` being hereditary in class ` A ` . $)
+rp-whe $a wff R he A $.
+$( The property of relation ` R ` being hereditary in class ` A ` . $)
+rp-df-he $a |- ( R he A <-> ( R " A ) C_ A ) $.
+$( The property of relation ` R ` being hereditary in class ` A ` . 
+   (Contributed by Richard Penner, 17-Nov-2019.) $)
+rp-dfhe2 $p |- ( R he A <-> ( R |` A ) C_ ( A X. A ) ) $=
+  ( whe cima wss cres cxp rp-df-he rp-imass bitri ) ABCBADAEBAFAAGEABHAABIJ $.
+${
+  $d x y z A $.  $d x y z R $.
+  $( The property of relation ` R ` being hereditary in class ` A ` . 
+     (Contributed by Richard Penner, 17-Nov-2019.) $)
+  rp-dfhe3 $p |- ( R he A <-> A. x ( x e. A -> A. y ( x R y -> y e. A ) ) ) $=
+  ( vz whe cima wss cv wcel wbr wi wal rp-df-he wa wex bicomi albii bitri cop elab
+  19.21v alcom impexp 19.23v 3bitri cab dfss2 vex weq opeq2 eleq1d wb df-br a1i
+  bitrd anbi2d exbidv imbi1i dfima3 eqcomi sseq1i ) CDFDCGZCHZAIZCJZVEBIZDKZVGC
+  JZLZBMLZAMZCDNVLVDVLVFVHOZAPZVILZBMZVDVLVFVJLZBMZAMVQAMZBMVPVKVRAVRVKVFVJBUBQ
+  RVQABUCVSVOBVSVMVILZAMVOVQVTAVTVQVFVHVIUDQRVMVIAUESRUFVPVFVEEIZTZDJZOZAPZEUGZ
+  CHZVDWGVPWGVGWFJZVILZBMVPBWFCUHWIVOBWHVNVIWEVNEVGBUIEBUJZWDVMAWJWCVHVFWJWCVEV
+  GTZDJZVHWJWBWKDWAVGVEUKULWLVHUMWJVHWLVEVGDUNQUOUPUQURUAUSRSQWFVCCVCWFAEDCUTVA
+  VBSSQS $.
+$}
+
+$( Equality law for relations being herditary over a class. 
+   (Contributed by Richard Penner, 17-Nov-2019.) $)
+rp-heeq12 $p |- ( ( R = S /\ A = B ) -> ( R he A <-> S he B ) ) $=
+  ( wceq wa rp-whe cima wss wb rp-df-he a1i simpl simpr imaeq12d sseq12d bicomi
+  3bitrd ) CDEZABEZFZACGZCAHZAIZDBHZBIZBDGZUBUDJUAACKLUAUCUEABUACDABSTMSTNZOUHP
+  UFUGJUAUGUFBDKQLR $.
+
+$( Equality law for relations being herditary over a class. 
+   (Contributed by Richard Penner, 17-Nov-2019.) $)
+rp-heeq1 $p |- ( R = S -> ( R he A <-> S he A ) ) $=
+  ( wceq rp-whe wb eqid rp-heeq12 mpan2 ) BCDAADABEACEFAGAABCHI $.
+
+$( Equality law for relations being herditary over a class. 
+   (Contributed by Richard Penner, 17-Nov-2019.) $)
+rp-heeq2 $p |- ( A = B -> ( R he A <-> R he B ) ) $=
+  ( wceq rp-whe wb eqid rp-heeq12 mpan ) CCDABDACEBCEFCGABCCHI $.
+
+$( Subclass law for relations being herditary over a class. 
+   (Contributed by Richard Penner, 17-Nov-2019.) $)
+rp-hess $p |- ( S C_ R -> ( R he A -> S he A ) ) $=
+  ( wss cima rp-whe wi imass1 sstr2 syl wb rp-df-he a1i 3imtr4d ) CBDZBAEZADZCA
+  EZADZABFZACFZORPDQSGCBAHRPAIJTQKOABLMUASKOACLMN $.
+
 $(
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
      _Begriffschift_ Chapter II Implication
@@ -66,6 +113,13 @@ $)
      (Contributed by Richard Penner, 1-Oct-2019.)
      (New usage is discouraged.) $)
   ax-frege1 $a |- ( ph -> ( ps -> ph ) ) $.
+  ${
+    rp-a1i.1 $e |- ps $.
+    $( Identical to ~ a1i .
+       (Contributed by Richard Penner, 15-Nov-2019.) $)
+    rp-a1i $p |- ( ph -> ps ) $=
+      ( wi ax-frege1 ax-mp ) BABDCBAEF $.
+  $}
 
   $( If a proposition ` ch ` is a neccessary consequence of two propostions
      ` ps ` and ` ph ` and on of those, ` ps ` , is in turn a necessary
@@ -78,6 +132,32 @@ $)
      (New usage is discouraged.) $)
   ax-frege2 $a |- ( ( ph -> ( ps -> ch ) )
                  -> ( ( ph -> ps ) -> ( ph -> ch ) ) ) $.
+  ${
+    rp-a2i.1 $e |- ( ph -> ( ps -> ch ) ) $.
+    $( Identical to ~ a2i .
+       (Contributed by Richard Penner, 15-Nov-2019.) $)
+    rp-frege2i $p |- ( ( ph -> ps ) -> ( ph -> ch ) ) $=
+      ( wi ax-frege2 ax-mp ) ABCEEABEACEEDABCFG $.
+  $}
+
+  ${
+    rp-mpd.1 $e |- ( ph -> ch ) $.
+    rp-mpd.2 $e |- ( ph -> ( ch -> ps ) ) $.
+    $( Identical to ~ mpd .
+       (Contributed by Richard Penner, 15-Nov-2019.) $)
+    rp-frege2ii $p |- ( ph -> ps ) $=
+      ( wi ax-frege2 ax-mp ) ACFZABFZDACBFFIJFEACBGHH $.
+  $}
+
+  ${
+    rp-a2iii.1 $e |- ps $.
+    rp-a2iii.2 $e |- ( ps -> ch ) $.
+    rp-a2iii.3 $e |- ( ps -> ( ch -> ph ) ) $.
+    $( PLEASE DESCRIBE ME.
+       (Contributed by Richard Penner, 15-Nov-2019.) $)
+    rp-frege2iii $p |- ph $=
+      ( wi ax-frege2 ax-mp ) BADBCGZBAGZEBCAGGJKGFBCAHIII $.
+  $}
 
   $( Simplification of triple conjunction.  Compare with ~ simp2 .
 
@@ -85,8 +165,15 @@ $)
   rp-simp2-frege $p |- ( ph -> ( ps -> ( ch -> ps ) ) ) $=
     ( wi ax-frege1 ax-mp ) BCBDDZAGDBCEGAEF $.
 
-  $( More general statement than ~ frege3 .  Like ~ ax-frege2 , it is
-     essentially a closed form of ~ mpd , however it has an extra antecedent.
+  $( Simplification of triple conjunction.  Identical to ~ simp2 .
+
+     (Contributed by Richard Penner, 15-Nov-2019.) $)
+  rp-simp2 $p |- ( ( ph /\ ps /\ ch ) -> ps ) $=
+    ( rp-simp2-frege 3imp ) ABCBABCDE $.
+
+  $( Add antecedent to ~ ax-frege2 .  More general statement than ~ frege3 .
+     Like ~ ax-frege2 , it is essentially a closed form of ~ mpd , however it
+     has an extra antecedent.
 
      It would be more natural to prove from ~ a1i and ~ ax-frege2 in Metamath.
      (Contributed by Richard Penner, 1-Oct-2019.) $)
@@ -890,7 +977,6 @@ $)
 
   ${
     $d x y $.
-
     $( A kind of Aristotelian inference.  Namely Felapton or Fesapo .
 
        _Note:_ in the Bauer-Meenfelberg translation published in van
@@ -952,7 +1038,7 @@ $)
   $}
 
   ${
-    $d x y $.  $d y z $.
+    $d y z $.
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 64 of [Frege1879] p. 53.  (Contributed by Richard Penner,
@@ -965,7 +1051,7 @@ $)
   $}
 
   ${
-    $d x y $.
+    $d x y $.  $d x z $.
     $( A kind of Aristotelian inference.  This judgement replaces the mode of
        inference ~ barbara when the minor premise has a general context.
 
@@ -1066,7 +1152,8 @@ $)
   $}
 
   ${
-    $d x A $.  $d x B $.
+    $d x A $.
+    $d x B $.
     $( Necessary deduction regarding subsitution of value in equality.
 
        (Contributed by Richard Penner, 16-Oct-2019.) $)
@@ -1089,7 +1176,7 @@ $)
   $}
 
   ${
-    $d x y $.  $d A y $.
+    $d x y $.  $d y A $.
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 55 of [Frege1879] p. 50.  (Contributed by Richard Penner,
@@ -1242,6 +1329,102 @@ $(
 $)
 
   ${
+    $d x y A $.  $d x y R $.
+    $( If from the propostion that ` x ` has property ` A ` it can be inferred
+       generally, whatever ` x ` may be, that every result of an application of
+       the procedure ` R ` to ` x ` has property ` A ` , then we say " Property
+       ` A ` is hereditary in the ` R ` -sequence.
+
+       Definition 69 of [Frege1879] p. 55.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege69redo $p |- ( A. x ( x e. A -> A. y ( x R y -> y e. A ) )
+                  <-> R he A ) $=
+      ( rp-whe cv wcel wbr wi wal rp-dfhe3 bicomi ) CDEAFZCGMBFZDHNCGIBJIAJABCD
+      KL $.
+  $}
+
+  ${
+    $d u v A $.  $d u v R $.  $d u v x $.  $d v x y $.  $d y A $.  $d y R $.
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 70 of [Frege1879] p. 58.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege70redo $p |- ( R he A -> ( x e. A -> A. y ( x R y -> y e. A ) ) ) $=
+      ( vu vv cv wcel wbr wi wal rp-whe wsb sbim nfv eleq1 sbie imbi12i bitri
+      wb frege69redo frege68b breq1 sbf sbalv breq2 imbi12d cbvalvw imim2i mp2b
+      weq sylbb ) EGZCHZUMFGZDIZUOCHZJZFKZJZEKCDLZTVAUTEAMZJVAAGZCHZVCBGZDIZVEC
+      HZJZBKZJZJEFCDUAUTVAEAUBVBVJVAVBUNEAMZUSEAMZJVJUNUSEANVKVDVLVIUNVDEAVDEOU
+      MVCCPQVLVCUODIZUQJZFKVIURVNEAFUREAMUPEAMZUQEAMZJVNUPUQEANVOVMVPUQUPVMEAVM
+      EOUMVCUODUCQUQEAUQEOUDRSUEVNVHFBFBUKVMVFUQVGUOVEVCDUFUOVECPUGUHSRULUIUJ
+      $.
+  $}
+
+  ${
+    $d x z $.  $d z A $.  $d z R $.
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 71 of [Frege1879] p. 59.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
+    frege71redo $p |- ( ( A. z ( x R z -> z e. A ) -> ( x R y -> y e. A ) )
+                  -> ( R he A
+                       -> ( x e. A -> ( x R y -> y e. A ) ) ) ) $=
+      ( rp-whe cv wcel wbr wi wal frege70redo frege19 ax-mp ) DEFZAGZDHZPCGZEIR
+      DHJCKZJJSPBGZEITDHJZJOQUAJJJACDELOQSUAMN $.
+  $}
+
+  ${
+    $d x z $.  $d y z $.  $d z A $.  $d z R $.
+    $( If property ` A ` is hereditary in the ` R ` -sequence, if ` x ` has
+       property ` A ` , and if ` y ` is a result of an application of the
+       procedure ` R ` to ` x ` , then ` y ` has property ` A ` .
+
+       Proposition 72 of [Frege1879] p. 59.  (Contributed by Richard Penner,
+       29-Oct-2019.) $)
+    frege72redo $p |- ( R he A -> ( x e. A -> ( x R y -> y e. A ) ) ) $=
+      ( vz cv wbr wcel wi wal rp-whe wsbc cvv vex frege58newc sbcim1 csb biimpi
+      ax-mp syl wb sbcbr2g weq wceq id ax-gen nfcv csbieb bitri biimpri sbcel1v
+      breq2i imim12i frege71redo ) AFZEFZDGZUPCHZIZEJZUOBFZDGZVACHZIZICDKUOCHVD
+      IIUTUSEVALZVDUSEVAMBNZOVEUQEVALZUREVALZIVDUQUREVAPVBVGVHVCVGVBVGUOEVAUPQZ
+      DGZVBVAMHVGVJUAVFEVAUOUPDMUBSVIVAUODEBUCZVKIZEJZVIVAUDZVLEVKUEUFVMVNEVAUP
+      VAVFEVAUGUHRSULUIUJVHVCEVACUKRUMTTABECDUNS $.
+  $}
+
+  $( PLEASE PUT DESCRIPTION HERE.
+
+     Proposition 73 of [Frege1879] p. 59.  (Contributed by Richard Penner,
+     11-Nov-2019.) $)
+  frege73redo $p |- ( ( R he A -> x e. A )
+                  -> ( R he A -> ( x R y -> y e. A ) ) ) $=
+    ( rp-whe cv wcel wbr wi frege72redo ax-frege2 ax-mp ) CDEZAFZCGZNBFZDHPCGIZ
+    IIMOIMQIIABCDJMOQKL $.
+
+  $( If ` x ` has a property ` A ` that is hereditary in the ` R ` -sequence,
+     then every result of a application of the procedure ` R ` to ` x ` has the
+     property ` A ` .
+
+     Proposition 74 of [Frege1879] p. 60.  (Contributed by Richard Penner,
+     11-Nov-2019.) $)
+  frege74redo $p |- ( x e. A -> ( R he A -> ( x R y -> y e. A ) ) ) $=
+    ( rp-whe cv wcel wbr wi frege72redo ax-frege8 ax-mp ) CDEZAFZCGZNBFZDHPCGIZ
+    IIOMQIIABCDJMOQKL $.
+
+  ${
+    $d x y A $.  $d x y R $.
+    $( If from the proposition that ` x ` has property ` A ` , whatever ` x `
+       may be, it can be inferred that every result of an application of the
+       procedure ` R ` to ` x ` has property ` A ` , then property ` A ` is
+       hereditary in the ` R ` -sequence.
+
+       Proposition 75 of [Frege1879] p. 60.  (Contributed by Richard Penner,
+       11-Nov-2019.) $)
+    frege75redo $p |- ( A. x ( x e. A -> A. y ( x R y -> y e. A ) )
+                  -> R he A ) $=
+      ( cv wcel wbr wi wal rp-whe wb frege69redo frege52aid ax-mp ) AEZCFOBEZDG
+      PCFHBIHAIZCDJZKQRHABCDLQRMN $.
+  $}
+
+
+  ${
     $d x y z A $.  $d x y z R $.
     $( If from the propostion that ` x ` has property ` A ` it can be inferred
        generally, whatever ` x ` may be, that every result of an application of
@@ -1263,7 +1446,7 @@ $)
   $}
 
   ${
-    $d a b x y $.  $d a b c p R $.  $d a b c p A $.
+    $d a b c p A $.  $d a b c p R $.  $d a x y $.  $d b x y $.
     frege69.a $e |- A = { y | ph } $.
     frege69.r $e |- R = { <. x , y >. | ps } $.
     $( What Frege means when he stays the property ` ph ` is dictated by the
@@ -1294,8 +1477,7 @@ $)
   $}
 
   ${
-    $d u v A $.  $d u v R $.  $d y A $.  $d y R $.  $d u x $.  $d x y v $.
-
+    $d u v x $.  $d u v A $.  $d u v R $.  $d v y A $.  $d v y R $.  $d x y $.
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 70 of [Frege1879] p. 58.  (Contributed by Richard Penner,
@@ -1312,7 +1494,7 @@ $)
 
 
   ${
-    $d z x $.  $d z A $.  $d z R $.
+    $d x z $.  $d z A $.  $d z R $.
     $( PLEASE PUT DESCRIPTION HERE.
 
        Proposition 71 of [Frege1879] p. 59.  (Contributed by Richard Penner,
@@ -1325,7 +1507,7 @@ $)
   $}
 
   ${
-    $d c A $.  $d c R $.  $d c x $.  $d c y $.
+    $d c x $.  $d c y $.  $d c A $.  $d c R $.
     $( If property ` A ` is hereditary in the ` R ` -sequence, if ` x ` has
        property ` A ` , and if ` y ` is a result of an application of the
        procedure ` R ` to ` x ` , then ` y ` has property ` A ` .
@@ -1389,7 +1571,7 @@ $)
                                                   }
                          } $.
     ${
-      $d c p f x $.  $d c p f y $.  $d c p f R $.  $d f g x $.  $d f g y $.
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f g x $.  $d f g y $.
       $d f g R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
@@ -1409,8 +1591,8 @@ $)
     $}
 
     ${
-      $d c p b f $.  $d c p e $.  $d c p R $.  $d f g R $.  $d f g e $.
-      $d f a R $.  $d a b $.  $d b g $.
+      $d a b f $.  $d a f R $.  $d b c f p $.  $d b f g $.  $d c e p $.
+      $d c f p R $.  $d f g e $.  $d g R $.
       $( If from the two propositions that every result of an application of
          the procedure ` R ` to ` b ` has property ` f ` and that property
          ` f ` is hereditary in the ` R ` -sequence, it can be inferred,
@@ -1434,9 +1616,8 @@ $)
     ${
       frege77.a $e |- A e. C $.
       ${
-        $d p c R $.  $d p c f $.  $d p c x $.  $d p c y $.  $d a d A $.
-        $d a d R $.  $d a f d $.  $d a f x $.  $d c f y $.  $d d x $.
-        $d f A $.  $d f R $.
+        $d a d f A $.  $d a d x $.  $d a d R $.  $d c f p x $.  $d c f p y $.
+        $d c f p R $.
         $( If ` y ` follows ` x ` in the ` R ` -sequence, if property ` A ` is
            hereditary in the ` R ` -sequence, and if every result of an
            application of the procedure ` R ` to ` x ` has the property ` A ` ,
@@ -1460,9 +1641,8 @@ $)
       $}
 
       ${
-        $d x f c p $.  $d y f c p $.  $d R f c p $.  $d R a $.  $d x a $.
-        $d A a f $.
-
+        $d a f x $.  $d a f A $.  $d a f R $.  $d c f p x $.  $d c f p y $.
+        $d c f p R $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 78 of [Frege1879] p. 63.  (Contributed by Richard
@@ -1471,7 +1651,11 @@ $)
                                       -> ( x F y -> y e. A ) ) ) $=
           ( cv wbr cima wss wcel wi wal frege77new frege17 ax-mp ) AMZBMZGNZECO
           CPZUCIMZENUGCQRISZUDCQZRRRUFUHUEUIRRRABCDEFGHIJKLTUEUFUHUIUAUB $.
+     $}
 
+     ${
+       $d a f x $.  $d a f A $.  $d a f R $.  $d c f p x $.  $d c f p y $.
+       $d c f p R $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 79 of [Frege1879] p. 63.  (Contributed by Richard
@@ -1480,7 +1664,11 @@ $)
                   -> ( ( R " A ) C_ A -> ( x F y -> y e. A ) ) ) $=
           ( cima wss cv wbr wcel wi wal frege78new ax-frege2 ax-mp ) ECMCNZAOZI
           OZEPUECQRISZUDBOZGPUGCQRZRRUCUFRUCUHRRABCDEFGHIJKLTUCUFUHUAUB $.
+     $}
 
+     ${
+       $d a f x $.  $d a f A $.  $d a f R $.  $d c f p x $.  $d c f p y $.
+       $d c f p R $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 80 of [Frege1879] p. 63.  (Contributed by Richard
@@ -1494,9 +1682,7 @@ $)
       $}
 
       ${
-        $d c p f R $.  $d c p f x $.  $d c p f y $.  $d x y $.  $d A f $.
-        $d A y $.  $d R y $.
-
+        $d c f p x y $.  $d c f p y R $.  $d f y A $.
         $( If ` x ` has a property ` A ` that is hereditary in the ` R `
            -sequence, and if ` y ` follows ` x ` in the ` R ` -sequence, then
            ` y ` has property ` A ` .
@@ -1510,9 +1696,7 @@ $)
       $}
 
       ${
-        $d c p f R $.  $d c p f x $.  $d c p f y $.  $d x y $.  $d A f $.
-        $d A y $.  $d R y $.
-
+        $d c f p x y $.  $d c f p y R $.  $d f y A $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 81 of [Frege1879] p. 63.  (Contributed by Richard
@@ -1524,9 +1708,7 @@ $)
       $}
 
       ${
-        $d c p f R $.  $d c p f x $.  $d c p f y $.  $d x y $.  $d A f $.
-        $d A y $.  $d R y $.  $d F y $.
-
+        $d c f p x y $.  $d c f p y R $.  $d f y A $.  $d y F $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 81 of [Frege1879] p. 63.  (Contributed by Richard
@@ -1540,8 +1722,7 @@ $)
       $}
 
       ${
-        $d c p f R y $.  $d c p f x y $.  $d f y A $.
-
+        $d c f p x y $.  $d c f p y R $.  $d f y A $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 82 of [Frege1879] p. 64.  (Contributed by Richard
@@ -1558,6 +1739,7 @@ $)
       frege83.c $e |- C e. E $.
 
       ${
+        $d c f p x y $.  $d c f p y R $.  $d f y B $.  $d f y C $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 83 of [Frege1879] p. 65.  (Contributed by Richard
@@ -1572,8 +1754,9 @@ $)
     $}
 
     ${
-      frege83.a $e |- A e. C $.
+      frege84.a $e |- A e. C $.
       ${
+        $d c f p x y $.  $d c f p y R $.  $d f y A $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 84 of [Frege1879] p. 65.  (Contributed by Richard
@@ -1584,6 +1767,8 @@ $)
       $}
 
       ${
+        $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f z A $.  $d x z $.
+        $d z R $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 85 of [Frege1879] p. 66.  (Contributed by Richard
@@ -1595,6 +1780,8 @@ $)
       $}
 
       ${
+        $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w A $.  $d w x $.
+        $d w R $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 86 of [Frege1879] p. 66.  (Contributed by Richard
@@ -1610,6 +1797,8 @@ $)
       $}
 
       ${
+        $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w A $.  $d w x $.
+        $d w R $.
         $( If ` z ` is a result of an application of the procedure ` R ` to an
            object ` y ` that follows ` x ` in the ` R ` -sequence and if every
            result of an application of the procedure ` R ` to ` x ` has a
@@ -1626,6 +1815,8 @@ $)
       $}
 
       ${
+        $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w A $.  $d w x $.
+        $d w R $.
         $( PLEASE PUT DESCRIPTION HERE.
 
            Proposition 88 of [Frege1879] p. 67.  (Contributed by Richard
@@ -1640,8 +1831,8 @@ $)
     $}
 
     ${
-      $d c p f R $.  $d c p f x $.  $d c p f y $.  $d w f R $.  $d w f x $.
-
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w $.  $d w x $.
+      $d w R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 89 of [Frege1879] p. 68.  (Contributed by Richard Penner,
@@ -1654,6 +1845,8 @@ $)
     $}
 
     ${
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w $.  $d w x $.
+      $d w R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 90 of [Frege1879] p. 68.  (Contributed by Richard Penner,
@@ -1668,7 +1861,8 @@ $)
 
 
     ${
-    ${
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w $.  $d w x $.
+      $d w y $.  $d w R $.
       $( Every result of an application of a procedure ` R ` to an object ` x `
          follows that ` x ` in the ` R ` -sequence.
 
@@ -1683,8 +1877,9 @@ $)
         KULUMUNVHVFVIBIUOVPVLVFVOVKVJVOVKBIDUPURTTUSUTVDABICDEFGHVAS $.
     $}
 
-
     ${
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d w x $.  $d w y $.
+      $d w z $.  $d w F $.  $d w R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 92 of [Frege1879] p. 69.  (Contributed by Richard Penner,
@@ -1698,6 +1893,8 @@ $)
     $}
 
     ${
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f z $.  $d x z $.
+      $d z R $.
       $( PLEASE PUT DESCRIPTION HERE. Expected to need ~ frege60b but ran into
          incompatible distinct varible requirements.
 
@@ -1708,7 +1905,6 @@ $)
         ( cv wbr wel wi wal cima wss ax-frege8 alimi frege90new ax-mp ) AJZCJDK
         CELMCNZDEJZOUCPZBELZMMZENZUDUBUEMMZENMUGUABJFKMUFUHEUBUDUEQRUGABCDEFGHI
         ST $.
-    $}
     $}
 
     $( PLEASE PUT DESCRIPTION HERE. Might have to replace A with f.
@@ -1748,7 +1944,7 @@ $)
       QPZUAUBBMZFNUECOPPZPUBCOZUDPUGUFPPABCDEFGHAIJRUDUFUGST $.
 
     ${
-      $d x y $.  $d y A $.  $d y R $.
+      $d c f p x y $.  $d c f p y R $.  $d f y A $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 81 of [Frege1879] p. 63.  (Contributed by Richard Penner,
@@ -1760,7 +1956,7 @@ $)
     $}
 
     ${
-      $d y x $.  $d y A $.  $d y R $.
+      $d c f p x y $.  $d c f p y R $.  $d f y A $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 81 of [Frege1879] p. 63.  (Contributed by Richard Penner,
@@ -1772,7 +1968,7 @@ $)
     $}
 
     ${
-      $d y x $.  $d y A $.  $d y F $.  $d y R $.
+      $d c f p x y $.  $d c f p y R $.  $d f y A $.  $d y F $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 81 of [Frege1879] p. 63.  (Contributed by Richard Penner,
@@ -1786,7 +1982,7 @@ $)
     $}
 
     ${
-      $d x y $.  $d y A $.  $d y R $.
+      $d c f p x y $.  $d c f p y R $.  $d f y A $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 82 of [Frege1879] p. 64.  (Contributed by Richard Penner,
@@ -1798,7 +1994,7 @@ $)
     $}
 
     ${
-      $d x y $.  $d y B $.  $d y C $.  $d y R $.
+      $d c f p x y $.  $d c f p y R $.  $d f y B $.  $d f y C $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 83 of [Frege1879] p. 65.  (Contributed by Richard Penner,
@@ -1811,7 +2007,7 @@ $)
     $}
 
     ${
-      $d x y $.  $d y A $.  $d y R $.
+      $d c f p x y $.  $d c f p y R $.  $d f y A $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 84 of [Frege1879] p. 65.  (Contributed by Richard Penner,
@@ -1863,8 +2059,8 @@ $)
       NODPZFEQERZUCCLZFMZUHENZOOOOUIUDUFUGUJOOOOABCDEFGHIJKSUDUFUGUIUJTUA $.
 
     ${
-      $d c p f x $.  $d c p y $.  $d c p R $.  $d f w R $.  $d f w x $.
-      $d f y $.
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w $.  $d w x $.
+      $d w R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 89 of [Frege1879] p. 68.  (Contributed by Richard Penner,
@@ -1877,8 +2073,8 @@ $)
     $}
 
     ${
-      $d c p f x $.  $d c p y $.  $d c p R $.  $d f w R $.  $d f w x $.
-      $d f y $.
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w $.  $d w x $.
+      $d w R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 90 of [Frege1879] p. 68.  (Contributed by Richard Penner,
@@ -1892,8 +2088,8 @@ $)
     $}
 
     ${
-      $d f x $.  $d f y $.  $d f R $.  $d f w $.  $d w x $.  $d w y $.
-      $d w R $.  $d c p x $.  $d c p y $.  $d c p R $.  $d c p f $.
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w $.  $d w x $.
+      $d w y $.  $d w R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 91 of [Frege1879] p. 68.  (Contributed by Richard Penner,
@@ -1908,8 +2104,8 @@ $)
     $}
 
     ${
-      $d f x $.  $d f y $.  $d f R $.  $d w x $.  $d w y $.  $d w z $.
-      $d w F $.  $d w R $.  $d c p x $.  $d c p y $.  $d c p R $.  $d c p f $.
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d w x $.  $d w y $.
+      $d w z $.  $d w F $.  $d w R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 92 of [Frege1879] p. 69.  (Contributed by Richard Penner,
@@ -1923,8 +2119,8 @@ $)
     $}
 
     ${
-      $d c f p R $.  $d c f p x $.  $d c f p y $.  $d f z $.  $d R z $.
-      $d x z $.
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f z $.  $d x z $.
+      $d z R $.
       $( PLEASE PUT DESCRIPTION HERE. Expected to need ~ frege60b but ran into
          incompatible distinct varible requirements.
 
@@ -1938,7 +2134,6 @@ $)
     $}
 
     ${
-      $d c f p R $.  $d c f p x $.  $d c f p z $.  $d f R w $.  $d f x w $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 94 of [Frege1879] p. 70.  (Contributed by Richard Penner,
@@ -1953,21 +2148,20 @@ $)
     $}
 
     ${
-      $d x f $.  $d y f $.  $d z f $.  $d F f $.  $d c p R $.  $d c p x $.
-      $d c p z $.  $d c p f $.  $d w x $.  $d w f R $.
+      $d c f p x $.  $d c f p y $.  $d c f p R $.  $d f w $.  $d f z $.
+      $d f F $.  $d w x $.  $d w R $.
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 95 of [Frege1879] p. 70.  (Contributed by Richard Penner,
          10-Nov-2019.) $)
       frege95 $p |- ( y R z -> ( x F y -> x F z ) ) $=
-        ( vw cv wbr wel wi wal cima wss wa frege88 ax-mp imp ax-gen nfv frege94
-        stdpc5 ex ) BKZCKZDLZAKZUGFLZUJJKDLJEMNJODEKZPULQCEMNNZEOZNNUIUKUJUHFLN
-        NUIUKUNUIUKRZUMNZEOUOUNNUPEUIUKUMABCJULDEFGHISUAUBUOUMEUOEUCUETUFABCJDE
-        FGHIUDT $.
+        ( vw cv wbr wel wi wal cima wss wa cvv ax-mp vex frege88new imp frege94
+        ax-gen nfv stdpc5 ex ) BKZCKZDLZAKZUIFLZULJKDLJEMNJODEKZPUNQCEMNNZEOZNN
+        UKUMULUJFLNNUKUMUPUKUMRZUONZEOUQUPNUREUKUMUOABCJUNSDEFGHIEUAUBUCUEUQUOE
+        UQEUFUGTUHABCJDEFGHIUDT $.
     $}
 
     ${
-      $d c p f R $.  $d c p f x $.  $d c p f z $.  $d f y $.  $d f F $.
       $( Every result of an application of the procedure ` R ` to an object
          that follows ` x ` in the ` R ` -sequence follows ` x ` in the ` R `
          -sequence.
@@ -1980,9 +2174,6 @@ $)
     $}
 
     ${
-      $d a b f $.  $d a b f x $.  $d a b f F $.  $d a b f R $.  $d c p R $.
-      $d c p f $.  $d c p a $.  $d c p x $.
-
       $( The property of following ` x ` in the ` R ` -sequence is hereditary
          in the ` R ` -sequence.
 
@@ -1996,8 +2187,35 @@ $)
     $}
 
     ${
-      $d f x $.  $d f F $.  $d f R $.  $d y z $.  $d x z $.  $d F z $.
-      $d R z $.  $d c p R $.  $d c p f $.  $d c p x $.
+
+    ${
+      $( The property of following ` x ` in the ` R ` -sequence is hereditary
+         in the ` R ` -sequence.
+
+         Proposition 97 of [Frege1879] p. 71.  (Contributed by Richard Penner,
+         9-Nov-2019.) $)
+      frege97new $p |- ( R " ( F " { x } ) ) C_ ( F " { x } ) $=
+        ( vb va cv csn cima wcel wbr wi cop df-br vex elimasn bitr4i wal imbi2i
+        wss frege75 frege96 3imtr3i alrimiv mpg ) HJZDAJZKLZMZUIIJZBNZUMUKMZOZI
+        UAOBUKLUKUCHHIUKBUDULUPIUJUIDNZUNUJUMDNZOULUPAHIBCDEFGUEUQUJUIPDMULUJUI
+        DQDUJUIARZHRSTURUOUNURUJUMPDMUOUJUMDQDUJUMUSIRSTUBUFUGUH $.
+    $}
+
+      frege98.a $e |- A e. C $.
+    ${
+      $( PLEASE PUT DESCRIPTION HERE.
+
+         Proposition 98 of [Frege1879] p. 71.  (Contributed by Richard Penner,
+         9-Nov-2019.) $)
+      frege98new $p |- ( x F y -> ( y F z -> x F z ) ) $=
+        ( cv csn cima wcel wbr wi cop vex elimasn df-br bitr4i wss ax-mp imbi2i
+        frege97 frege84 3imtr3i ) BJZFAJZKLZMZUGCJZFNZUKUIMZOZUHUGFNZULUHUKFNZO
+        DUILUIUAUJUNOADEFGHIUDBCUIDEFGHIUEUBUJUHUGPFMUOFUHUGAQZBQRUHUGFSTUMUPUL
+        UMUHUKPFMUPFUHUKUQCQRUHUKFSTUCUF $.
+    $}
+    $}
+
+    ${
       $( PLEASE PUT DESCRIPTION HERE.
 
          Proposition 98 of [Frege1879] p. 71.  (Contributed by Richard Penner,
@@ -2055,8 +2273,19 @@ $)
                                                   }
                          } $.
     ${
-      $d f v $.  $d f x $.  $d f z $.  $d f F $.  $d f R $.  $d c p R $.
-      $d c p f $.  $d c p v $.  $d c p x $.  $d c p z $.
+      frege102.a $e |- A e. C $.
+      $( If ` z ` belongs to the ` R ` -sequence beginning with ` x ` , then
+         every result of an application of the procedure ` R ` to ` z ` follows
+         ` x ` in the ` R ` -sequence.
+
+         Proposition 102 of [Frege1879] p. 72.  (Contributed by Richard Penner,
+         9-Nov-2019.) $)
+      frege102new $p |- ( x ( F u. _I ) z -> ( z R v -> x F v ) ) $=
+        ( weq cv wbr wi cid cun frege92 frege96 frege101 mp2 ) BAJBKZCKZDLAKZUA
+        FLMZMUBTFLUCMUBTFNOLUCMBCADEFGHIPABCDEFGHIQABCDFRS $.
+    $}
+
+    ${
       $( If ` z ` belongs to the ` R ` -sequence beginning with ` x ` , then
          every result of an application of the procedure ` R ` to ` z ` follows
          ` x ` in the ` R ` -sequence.
@@ -2098,6 +2327,39 @@ $)
        Proposition 107 of [Frege1879] p. 74. $)
     frege107 $p |- ( ( z ( F u. _I ) y -> ( y R v -> z F v ) ) -> ( z ( F u. _I ) y -> ( y R v -> z ( F u. _I ) v ) ) ) $=
       ( frege106 frege7 ax-mp ) ??????????J????KL $.
+    ${
+      frege108.a $e |- A e. C $.
+
+    $( If ` y ` belongs to the ` R ` -sequence beginning with ` z ` , then
+       every result of an application of the procedure ` R ` to ` y ` belongs
+       to the ` R ` -sequence beginning with ` z ` .
+
+       Proposition 108 of [Frege1879] p. 74. $)
+    frege108new $p |- ( z ( F u. _I ) y -> ( y R v -> z ( F u. _I ) v ) $=
+      ( frege102 frege107 ax-mp ) ???????????J?????????KL $.
+
+    $( The property of belonging to the ` R ` -sequence beginning with ` x ` is
+       hereditary in the ` R ` -sequence.
+
+       Proposition 109 of [Frege1879] p. 74. $)
+    frege109new $p |- ( R " { a | x ( F u. _I ) a } ) C_ { a | x ( F u. _I ) a } $=
+      ( frege108 frege75 ax-mp ) ???????????I????JK $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 110 of [Frege1879] p. 75. $)
+    frege110new $p |- ( A. a ( y R a -> x ( F u. _I ) a ) -> ( y F m -> x ( F u. _I ) m ) ) $=
+      ( frege109 frege78 ax-mp ) ??????????K???????????LM $.
+
+    $( If ` y ` belongs to the ` R ` -sequence beginning with ` z ` , then
+       every result of an application of the procedure ` R ` to ` y ` belongs
+       to the ` R ` -sequence beginning with ` z ` or precedes ` z ` in the
+       ` R ` -sequence.
+
+       Proposition 111 of [Frege1879] p. 75. $)
+    frege111new $p |- ( z ( F u. _I ) y -> ( y R v -> ( -. v R z -> z ( F u. _I ) v ) ) ) $=
+      ( frege110 frege25 ax-mp ) ????????????J????KL $.
+    $}
 
     $( If ` y ` belongs to the ` R ` -sequence beginning with ` z ` , then
        every result of an application of the procedure ` R ` to ` y ` belongs
@@ -2160,7 +2422,6 @@ $(
 $)
 
   ${
-    $d a b c $.  $d a R $.  $d b R $.  $d c R $.
     $( If from the the circumstance that ` c ` is a result of an application of
        the procedure ` R ` to ` b ` , whatever ` b ` may be, it can be inferred
        that every result of an application of the procedure ` R ` to ` b ` is
@@ -2242,6 +2503,190 @@ $)
        Proposition 123 of [Frege1879] p. 79. $)
     frege123 $p |- ( ( A. a ( y F a -> x ( F u. _I ) a ) -> ( y F m -> x ( F u. _I ) m ) ) -> ( Fun `' `' R -> ( y R x -> ( y F m -> x ( F u. _I ) m ) ) ) ) $=
       ( frege122 frege19 ax-mp ) ???????????K????LM $.
+  ${
+      frege124.a $e |- A e. C $.
+    $( If ` x ` is a result of an application of the single-valued procedure
+       ` R ` to ` y ` and if ` m ` follows ` y ` in the ` R ` -sequence, then
+       ` m ` belongs to the ` R ` -sequence beginning with ` x ` .
+
+       Proposition 124 of [Frege1879] p. 80. $)
+    frege124new $p |- ( Fun `' `' R -> ( y R x -> ( y F m -> x ( F u. _I ) m ) ) ) $=
+      ( frege110 frege123 ax-mp ) ????????????J??????????KL $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 125 of [Frege1879] p. 81. $)
+    frege125new $p |- ( ( x ( F u. _I ) m -> ( -. x F m -> m ( F u. _I ) x ) ) -> ( Fun `' `' R -> ( y R x -> ( y F m -> ( -. x F m -> m ( F u. _I ) x ) ) ) ) ) $=
+      ( frege124 frege20 ax-mp ) ???????????J?????KL $.
+
+    $( If ` m ` follows ` y ` in the ` R ` -sequence and if the procedure ` R `
+       is single-valued, then every result of an application of the procedure
+       ` R ` to ` y ` belongs to the ` R ` -sequence beginning with ` m ` or
+       precedes ` m ` in the ` R ` -sequence.
+
+       Proposition 126 of [Frege1879] p. 81. $)
+    frege126neworig $p |- ( Fun `' `' R
+                     -> ( y R x
+                          -> ( y F m
+                               -> ( -. x F m -> m ( F u. _I ) x ) ) ) ) $=
+      ( frege114 frege125 ax-mp ) ??????????J?????????KL $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 126 of [Frege1879] p. 81. $)
+    frege126new $p |- ( Fun `' `' R
+                     -> ( b R a
+                          -> ( b e. ( { w | w F y }
+                                      u. { w | y ( F u. _I ) w } )
+                               -> a e. ( { w | w F y }
+                                         u. { w | y ( F u. _I ) w } ) ) ) ) $=
+      ( frege126orig ) ?????????K $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 127 of [Frege1879] p. 82.  (Contributed by Richard Penner,
+       9-Nov-2019.) $)
+    frege127new $p |- ( Fun `' `' R
+                     -> ( b e. ( { w | w F y }
+                                 u. { w | y ( F u. _I ) w } )
+                           -> ( b R a
+                                 -> a e. ( { w | w F y }
+                                           u. { w | y ( F u. _I ) w } ) ) ) )
+      $=
+      ( ccnv wfun cv wbr cab cid cun wcel wi frege126 frege12 ax-mp ) CKKLZHMZG
+      MZCNZUDBMZAMZENBOUHUGEPQNBOQZRZUEUIRZSSSUCUJUFUKSSSABCDEFGHIJTUCUFUJUKUAU
+      B $.
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 128 of [Frege1879] p. 83.  (Contributed by Richard Penner,
+       9-Nov-2019.) $)
+    frege128new $p |- ( ( b e. { w | y ( F u. _I ) w }
+                       -> ( b R a -> a e. ( { w | w F y }
+                                            u. { w | y ( F u. _I ) w } ) ) )
+                     -> ( Fun `' `' R
+                          -> ( b e. ( { w | w F y }
+                                      u. { w | y ( F u. _I ) w } )
+                                -> ( b R a
+                                      -> a e. ( { w | w F y }
+                                                u. { w | y ( F u. _I ) w } ) )
+     ) ) ) $=
+      ( cv cun wbr cab wcel wi wn wo bicomi bitri ccnv wfun frege127 ax-mp elun
+      cid frege51 df-or pm4.25 orbi2i orass notbii imbi1i 3bitri imbi2i biimpi
+      ) HKZAKZBKZEUFLMBNZOZUQGKZCMVBUSUREMBNZUTLZOPZPZCUAUAUBZUQVDOZQZVAPZVEPZP
+      ZPZVFVGVHVEPZPZPZVOVMABCDEFGHIJUCVGVHVEVAUGUDVMVPVLVOVFVKVNVGVJVHVEVHVJVH
+      UQVCOZVARZVQQVAPZVJUQVCUTUEZVQVAUHZVSVRQZVAPZVJVSVRWCVRVSWASVRVRVARZWCVRV
+      QVAVARZRZWDVAWEVQVAUIUJWDWFVQVAVAUKSTVRVAUHTTWBVIVAVRVHVHVRVTSULUMTUNSUMU
+      OUOUPUD $.
+
+    $( If the procedure ` R ` is single-valued and ` b ` belongs to the ` R `
+       -sequence begining with ` y ` or precedes ` y ` in the ` R ` -sequence,
+       then every result of an application of the procedure ` R ` to ` b `
+       belongs to the ` R ` -sequence begining with ` y ` or precedes ` y ` in
+       the ` R ` -sequence.
+
+       Proposition 129 of [Frege1879] p. 83. $)
+    frege129new $p |- ( Fun `' `' R
+                     -> ( b e. ( { w | w F y } u. { w | y ( F u. _I ) w } )
+                           -> ( b R a
+                                 -> a e. ( { w | w F y }
+                                           u. { w | y ( F u. _I ) w } ) ) ) )
+      $=
+      ( frege111 frege128 ax-mp ) ???????????K??????????LM $.
+
+    ${
+      $( PLEASE DESCRIBE ME.
+
+
+         (Contributed by Richard Penner, 9-Nov-2019.) $)
+      frege129newcor $p |- ( Fun `' `' R
+                     -> A. b ( b e. ( { w | w F y }
+                                      u. { w | y ( F u. _I ) w } )
+                               -> A. a ( b R a
+                                         -> a e. ( { w | w F y }
+                                                   u. { w | y ( F u. _I ) w }
+                                                 ) ) ) ) $=
+        ( ccnv wfun cv wbr cab cid cun wcel wi alrimiv wal wa frege129 imp ex )
+        CKKLZHMZBMZAMZENBOUIUHEPQNBOQZRZUGGMZCNULUJRSZGUAZSHUFUKUNUFUKUBUMGUFUK
+        UMABCDEFGHIJUCUDTUET $.
+
+      $( PLEASE PUT DESCRIPTION HERE.
+
+         Proposition 130 of [Frege1879] p. 84.  (Contributed by Richard Penner,
+         9-Nov-2019.) $)
+      frege130new $p |- ( ( A. b ( b e. ( { w | w F y }
+                                       u. { w | y ( F u. _I ) w } )
+                              -> A. a ( b R a
+                                        -> a e. ( { w | w F y }
+                                                  u. { w | y ( F u. _I ) w } )
+                                      )
+                            )
+                       -> ( R " ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
+                          C_ ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
+                     -> ( Fun `' `' R
+                          -> ( R " ( { w | w F y }
+                                     u. { w | y ( F u. _I ) w } ) )
+                             C_ ( { w | w F y }
+                                  u. { w | y ( F u. _I ) w } ) ) ) $=
+        ( ccnv wfun cv wbr cab cid cun wcel wi wal wss frege129cor frege9 ax-mp
+        cima ) CKKLZHMZBMZAMZENBOUIUHEPQNBOQZRUGGMZCNUKUJRSGTSHTZSULCUJUEUJUAZS
+        UFUMSSABCDEFGHIJUBUFULUMUCUD $.
+
+      ${
+        $( If the procedure ` R ` is single-valued, then the property of
+           belonging to the ` R ` -sequence begining with ` y ` or preceeding
+           ` y ` in the ` R ` -sequence is hereditary in the ` R ` -sequence.
+
+           Proposition 131 of [Frege1879] p. 85.  (Contributed by Richard
+           Penner, 9-Nov-2019.) $)
+        frege131new $p |- ( Fun `' `' R
+                     -> ( R " ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
+                        C_ ( { w | w F y } u. { w | y ( F u. _I ) w } ) ) $=
+          ( vb va cv wbr cab cid cun wcel wi wal cima ccnv wss frege75 frege130
+          wfun ax-mp ) IKZBKZAKZELBMUHUGENOLBMOZPUFJKZCLUJUIPQJRQIRCUISUIUAZQCT
+          TUDUKQIJUICUBABCDEFJIGHUCUE $.
+      $}
+    $}
+
+    $( PLEASE PUT DESCRIPTION HERE.
+
+       Proposition 132 of [Frege1879] p. 86.  (Contributed by Richard Penner,
+       9-Nov-2019.) $)
+    frege132new $p |- ( ( ( R " ( { w | w F y } u. { w | y ( F u. _I ) w } ) )
+                     C_ ( { w | w F y } u. { w | y ( F u. _I ) w } )
+                     -> ( x F y -> ( x F z
+                                     -> ( -. z F y
+                                                -> y ( F u. _I ) z ) ) ) )
+                     -> ( Fun `' `' R
+                          -> ( x F y
+                               -> ( x F z
+                                    -> ( -. z F y
+                                         -> y ( F u. _I ) z ) ) ) ) ) $=
+      ( ccnv wfun cv wbr cab cid cun cima wss wi wn frege131 frege9 ax-mp ) EKK
+      LZEDMZBMZGNDOUGUFGPQZNDOQZRUISZTUJAMZUGGNUKCMZGNULUGGNUAUGULUHNTTTZTUEUMT
+      TBDEFGHIJUBUEUJUMUCUD $.
+
+    ${
+      $( If ` y ` and ` z ` both follow in the ` R ` -sequence determined by
+         single-valued procedure ` R ` and ` y ` does not follow ` z ` then
+         ` z ` belongs to the ` R ` -sequence begining with ` y ` .
+
+         Proposition 133 of [Frege1879] p. 86.  (Contributed by Richard Penner,
+         9-Nov-2019.) $)
+      frege133new $p |- ( Fun `' `' R
+                     -> ( x F y
+                          -> ( x F z
+                               -> ( -. z F y -> y ( F u. _I ) z ) ) ) ) $=
+        ( vw cv wbr cab cun wn wi ccnv wcel bicomi bitri cid cima frege83 brab1
+        wss wfun wo elun df-or notbii wsbc df-sbc cvv vex breq2 sbcie2g imbi12i
+        wb ax-mp imbi2i biimpi syl frege132 ) DJKZBKZFLJMZVEVDFUANZLZJMZNZUBVJU
+        EZAKZVEFLZVLCKZFLZVNVEFLZOZVEVNVGLZPZPZPZPDQQUFWAPVKVLVFRZVOVNVJRZPZPZW
+        AACVFVIDEFGHIUCWEWAWBVMWDVTVMWBAJVEFUDSWCVSVOWCVNVFRZVNVIRZUGZVSVNVFVIU
+        HWHWFOZWGPVSWFWGUIWIVQWGVRWFVPVPWFCJVEFUDSUJWGVHJVNUKZVRWJWGVHJVNULSVNU
+        MRWJVRURCUNVHVEVLVGLVRJAVNUMVDVLVEVGUOVLVNVEVGUOUPUSTUQTTUTUQVAVBABCJDE
+        FGHIVCUS $.
+    $}
+  $}
 
     $( If ` x ` is a result of an application of the single-valued procedure
        ` R ` to ` y ` and if ` m ` follows ` y ` in the ` R ` -sequence, then
@@ -2333,7 +2778,6 @@ $)
       ( frege111 frege128 ax-mp ) ???????????K??????????LM $.
 
     ${
-      $d a b R $.  $d a w $.  $d a y $.  $d a F $.
       $( PLEASE DESCRIBE ME.
 
 
@@ -2372,8 +2816,6 @@ $)
         UFUMSSABCDEFGHIJUBUFULUMUCUD $.
 
       ${
-        $d b w $.  $d b y $.  $d b F $.
-
         $( If the procedure ` R ` is single-valued, then the property of
            belonging to the ` R ` -sequence begining with ` y ` or preceeding
            ` y ` in the ` R ` -sequence is hereditary in the ` R ` -sequence.
@@ -2408,8 +2850,6 @@ $)
       TBDEFGHIJUBUEUJUMUCUD $.
 
     ${
-      $d w x $.  $d w y $.  $d w z $.  $d w F $.  $d x y $.  $d x z $.
-      $d x F $.  $d y z $.  $d F z $.  $d R z $.
       $( If ` y ` and ` z ` both follow in the ` R ` -sequence determined by
          single-valued procedure ` R ` and ` y ` does not follow ` z ` then
          ` z ` belongs to the ` R ` -sequence begining with ` y ` .
